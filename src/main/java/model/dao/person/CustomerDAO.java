@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  *
  * @author Matheus Henrique
  */
-public class CostumerDAO extends PersonDAO {
+public class CustomerDAO extends PersonDAO {
 
     public static int LAST_ID_INSERT = -1;
 
@@ -45,7 +45,7 @@ public class CostumerDAO extends PersonDAO {
             return true;
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(CostumerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            Logger.getLogger(CustomerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt);
@@ -74,7 +74,7 @@ public class CostumerDAO extends PersonDAO {
             return true;
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(CostumerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            Logger.getLogger(CustomerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt);
@@ -109,10 +109,10 @@ public class CostumerDAO extends PersonDAO {
             stmt.setInt(1, id);
             rs = stmt.executeQuery();
             rs.next();
-            customer = CostumerDAO.createInstance(rs);
+            customer = CustomerDAO.createInstance(rs);
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(CostumerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            Logger.getLogger(CustomerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -145,11 +145,11 @@ public class CostumerDAO extends PersonDAO {
             stmt = conn.prepareStatement(sql);
             rs = stmt.executeQuery();
             while(rs.next()) {
-                customers.add(CostumerDAO.createInstance(rs));
+                customers.add(CustomerDAO.createInstance(rs));
             }
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(CostumerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            Logger.getLogger(CustomerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -170,7 +170,7 @@ public class CostumerDAO extends PersonDAO {
             customer.setPhones(PhoneDAO.load(customer));
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(CostumerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            Logger.getLogger(CustomerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
         }
 
         return customer;
