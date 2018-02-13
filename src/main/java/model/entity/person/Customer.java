@@ -1,6 +1,6 @@
 package model.entity.person;
 
-import model.dao.person.CostumerDAO;
+import model.dao.person.CustomerDAO;
 
 import java.util.ArrayList;
 
@@ -13,11 +13,15 @@ public class Customer extends Person {
 	private boolean status;
 
 	public static Customer load(int id){
-		return CostumerDAO.load(id);
+		return CustomerDAO.load(id);
+	}
+
+	public static Customer search(String name){
+		return CustomerDAO.load(name);
 	}
 
 	public static ArrayList<Customer> loadAll(){
-		return CostumerDAO.loadAll();
+		return CustomerDAO.loadAll();
 	}
 
 	@Override
@@ -27,13 +31,13 @@ public class Customer extends Person {
 
 		if (super.save()) {
 			if (super.getId() == -1) {
-				if (CostumerDAO.create(this)) {
-					super.setId(CostumerDAO.LAST_ID_INSERT);
+				if (CustomerDAO.create(this)) {
+					super.setId(CustomerDAO.LAST_ID_INSERT);
 					isSaved = true;
 				}
 			}
 
-			if (CostumerDAO.update(this)) {
+			if (CustomerDAO.update(this)) {
 				isSaved = true;
 			}
 
