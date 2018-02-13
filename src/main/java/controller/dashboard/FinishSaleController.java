@@ -81,8 +81,6 @@ public class FinishSaleController implements Initializable {
                 itemsSale.Create();
             });
 
-            Sale.LAST_ID_SALE = -1;
-
         }
     }
 

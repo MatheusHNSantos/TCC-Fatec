@@ -1858,9 +1858,14 @@ public class DashboardController implements Initializable {
                 @Override
                 public void handle(WindowEvent windowEvent) {
                     mainAnchorPane.setDisable(false);
-                    resetAllComponentsOrder();
-                    resetTableViewCustomer();
-                    lbl_codeOfOrder.setText(String.valueOf(Sale.getLastIdSale()));
+
+                    if(Sale.LAST_ID_SALE != -1){
+                        resetAllComponentsOrder();
+                        resetTableViewCustomer();
+                        lbl_codeOfOrder.setText(String.valueOf(Sale.getLastIdSale()));
+                        Sale.LAST_ID_SALE = -1;
+                    }
+
                 }
             });
 

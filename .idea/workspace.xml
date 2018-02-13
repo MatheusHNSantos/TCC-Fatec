@@ -1,79 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="tcc-reborn:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/main/java/model/entity/person/supplier/Supplier.java" line="69" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d35d360a-5db5-415d-a262-cf1a1df397b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/img/no-image.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/listIngredients.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/ListIngredientsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/ManageUsersController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/historicCostumer.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/EditIngredientsController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/saleDetail.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/editProductType.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/util/viacep/Endereco.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/EditProductTypeController.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/editIngredients.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/util/viacep/Endereco.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/historicCostumer.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/listIngredients.fxml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/manageUsers.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/editProductType.fxml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/HistoricCostumerController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/saleDetail.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/EditProductTypeController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/EditIngredientsController.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/finishSale.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/img/no-image.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/ManageUsersController.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/SaleDetailController.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/model/entity/person/user/Account.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/phone/PhoneDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/person/SupplierDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/com_jfoenix_jfoenix_1_9_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/person/UserDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/product/ProductTypeDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/model/entity/DataModelTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/person/CostumerDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/product/IngredientDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/Matheus_Henrique.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/product/ProductIngredientDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/util/fxml/Loader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/DAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/sale/SaleDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/sale/ItemsSaleDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/product/ProductDAO.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/ListIngredientsController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/person/PersonDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/address/AddressDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/person/EmployeeDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/model/entity/person/user/Account.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/util/fxml/Loader.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/product/IngredientDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/person/CostumerDAO.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_6_0_6.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/com_jfoenix_jfoenix_1_9_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/sale/ItemsSaleDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/DAO.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/description.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/util/dialogs/FxDialogs.java" afterPath="$PROJECT_DIR$/src/main/java/util/dialogs/FxDialogs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/product/ProductIngredient.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/product/ProductIngredient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tcc-reborn.iml" afterPath="$PROJECT_DIR$/tcc-reborn.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/product/Product.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/product/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/address/Address.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/address/Address.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/controller/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/css/main.css" afterPath="$PROJECT_DIR$/src/main/resources/css/main.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/person/UserDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/product/ProductIngredientDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/Matheus_Henrique.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/address/AddressDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/model/entity/DataModelTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/product/ProductDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/product/ProductTypeDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/person/SupplierDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/sale/SaleDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/person/EmployeeDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/dao/entity/phone/PhoneDAO.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/product/Ingredient.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/product/Ingredient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/util/dialogs/FxDialogs.java" afterPath="$PROJECT_DIR$/src/main/java/util/dialogs/FxDialogs.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/person/supplier/Supplier.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/person/supplier/Supplier.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/dashboard.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/dashboard.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/login/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/login/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/sale/Sale.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/sale/Sale.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/person/user/User.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/person/user/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/product/ProductType.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/product/ProductType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/person/costumer/Costumer.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/person/costumer/Costumer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/phone/Phone.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/phone/Phone.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/person/Person.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/person/Person.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/person/employee/Employee.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/person/employee/Employee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/sale/ItemsSale.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/sale/ItemsSale.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/product/ProductType.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/product/ProductType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/product/Product.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/product/Product.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/person/user/User.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/person/user/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/login/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/login/LoginController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/phone/Phone.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/phone/Phone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/person/Person.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/person/Person.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/product/ProductIngredient.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/product/ProductIngredient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/person/employee/Employee.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/person/employee/Employee.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/css/main.css" afterPath="$PROJECT_DIR$/src/main/resources/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tcc-reborn.iml" afterPath="$PROJECT_DIR$/tcc-reborn.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/address/Address.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/address/Address.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/sale/Sale.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/sale/Sale.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/person/costumer/Costumer.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/person/costumer/Costumer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/controller/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/model/entity/sale/ItemsSale.java" afterPath="$PROJECT_DIR$/src/main/java/model/entity/sale/ItemsSale.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -90,11 +95,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DashboardController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DashboardController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="1182" column="8" lean-forward="false" selection-start-line="1182" selection-start-column="8" selection-end-line="1182" selection-end-column="8" />
+            <state relative-caret-position="166">
+              <caret line="1865" column="47" lean-forward="false" selection-start-line="1865" selection-start-column="47" selection-end-line="1865" selection-end-column="47" />
               <folding>
                 <element signature="docComment;class#DashboardController#0" expanded="false" />
                 <element signature="n#!!doc;n#mainAnchorPane#0;n#DashboardController#0" expanded="false" />
@@ -132,7 +137,6 @@
                 <element signature="e#21127#21151#0" expanded="false" />
                 <element signature="e#21774#21795#0" expanded="false" />
                 <element signature="e#21804#21831#0" expanded="false" />
-                <element signature="e#22027#22048#0" expanded="false" />
                 <element signature="e#22058#22100#0" expanded="false" />
                 <element signature="class#22345:22492" expanded="false" />
                 <element signature="e#22504#22522#0" expanded="false" />
@@ -140,7 +144,6 @@
                 <element signature="e#22847#22883#0" expanded="false" />
                 <element signature="e#23251#23279#0" expanded="false" />
                 <element signature="e#23616#23648#0" expanded="false" />
-                <element signature="e#23900#23930#0" expanded="false" />
                 <element signature="class#24605:25407" expanded="false" />
                 <element signature="method#onChanged#0;class#24605:25407" expanded="false" />
                 <element signature="class#25491:25740" expanded="false" />
@@ -172,12 +175,16 @@
                 <element signature="e#31835#31866#0" expanded="false" />
                 <element signature="class#31916:32705" expanded="false" />
                 <element signature="method#handle#0;class#31916:32705" expanded="false" />
+                <element signature="e#32737#32767#0" expanded="false" />
                 <element signature="class#32816:32983" expanded="false" />
+                <element signature="e#33015#33033#0" expanded="false" />
                 <element signature="e#33113#33142#0" expanded="false" />
                 <element signature="e#33486#33511#0" expanded="false" />
                 <element signature="e#33821#33836#0" expanded="false" />
                 <element signature="e#34385#34413#0" expanded="false" />
+                <element signature="e#35762#35790#0" expanded="false" />
                 <element signature="e#35800#35833#0" expanded="false" />
+                <element signature="e#35929#35949#0" expanded="false" />
                 <element signature="e#35959#35979#0" expanded="false" />
                 <element signature="class#36065:36899" expanded="false" />
                 <element signature="initializer##0;class#36065:36899" expanded="false" />
@@ -264,22 +271,18 @@
                 <element signature="n#!!doc;n#handlerHyperlinkActionLogout#0;n#DashboardController#0" expanded="false" />
                 <element signature="method#handlerHyperlinkActionLogout#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerHyperlinkActionFinish#0;class#DashboardController#0" expanded="false" />
-                <element signature="n#!!doc;n#handlerButtonActionRemoveProductOnOrder#0;n#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionRemoveProductOnOrder#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionAddProductOnOrder#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionClearOrderProducts#0;class#DashboardController#0" expanded="false" />
-                <element signature="method#handlerButtonActionFinishOrder#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#66197:66576" expanded="false" />
-                <element signature="method#handle#0;class#66197:66576" expanded="false" />
                 <element signature="method#handlerButtonActionHistoricCustomer#0;class#DashboardController#0" expanded="false" />
                 <element signature="n#!!doc;n#searchByTelephone#0;n#DashboardController#0" expanded="false" />
                 <element signature="method#searchByTelephone#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#68400#68457#0" expanded="false" />
+                <element signature="e#68533#68590#0" expanded="false" />
                 <element signature="method#resetAllComponentsOrder#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#clientDataDisableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#clientDataEnableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#clearTextFieldsFromOrder#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#70398#70429#0" expanded="false" />
+                <element signature="e#70531#70562#0" expanded="false" />
                 <element signature="docComment;method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionNewCustomer#0;class#DashboardController#0" expanded="false" />
@@ -292,14 +295,14 @@
                 <element signature="method#showCustomerDetails#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#saveCustomer#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#newCustomer#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#76604#76645#0" expanded="false" />
+                <element signature="e#76737#76778#0" expanded="false" />
                 <element signature="method#newCustomerGeneral#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setStatusCustomer#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#78469#78505#0" expanded="false" />
-                <element signature="e#78511#78545#0" expanded="false" />
-                <element signature="e#78616#78645#0" expanded="false" />
-                <element signature="e#78667#78702#0" expanded="false" />
-                <element signature="e#78759#78783#0" expanded="false" />
+                <element signature="e#78602#78638#0" expanded="false" />
+                <element signature="e#78644#78678#0" expanded="false" />
+                <element signature="e#78749#78778#0" expanded="false" />
+                <element signature="e#78800#78835#0" expanded="false" />
+                <element signature="e#78892#78916#0" expanded="false" />
                 <element signature="docComment;method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionNewSupplier#0;class#DashboardController#0" expanded="false" />
@@ -313,7 +316,7 @@
                 <element signature="method#newSupplier#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setStatusSupplier#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#resetTableViewSupplier#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#86057#86101#0" expanded="false" />
+                <element signature="e#86190#86234#0" expanded="false" />
                 <element signature="n#!!doc;n#showEmployeeDetails#0;n#DashboardController#0" expanded="false" />
                 <element signature="method#showEmployeeDetails#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#clearEmployeeDetails#0;class#DashboardController#0" expanded="false" />
@@ -336,18 +339,18 @@
                 <element signature="method#setStatusEmployee#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setStatusLogin#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#saveLogin#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#98975:99040" expanded="false" />
-                <element signature="class#99120:99173" expanded="false" />
-                <element signature="class#99256:99310" expanded="false" />
-                <element signature="class#99382:99446" expanded="false" />
+                <element signature="class#99108:99173" expanded="false" />
+                <element signature="class#99253:99306" expanded="false" />
+                <element signature="class#99389:99443" expanded="false" />
+                <element signature="class#99515:99579" expanded="false" />
                 <element signature="method#addLogin#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#100283:100348" expanded="false" />
-                <element signature="class#100428:100481" expanded="false" />
-                <element signature="class#100564:100618" expanded="false" />
-                <element signature="class#100690:100754" expanded="false" />
-                <element signature="e#100810#100841#0" expanded="false" />
+                <element signature="class#100416:100481" expanded="false" />
+                <element signature="class#100561:100614" expanded="false" />
+                <element signature="class#100697:100751" expanded="false" />
+                <element signature="class#100823:100887" expanded="false" />
+                <element signature="e#100943#100974#0" expanded="false" />
                 <element signature="docComment;method#addIngredient#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#100894#100918#0" expanded="false" />
+                <element signature="e#101027#101051#0" expanded="false" />
                 <element signature="method#addIngredient#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionCheckBoxProductType#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionEditProductType#0;class#DashboardController#0" expanded="false" />
@@ -367,24 +370,24 @@
                 <element signature="method#saveProduct#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#addProduct#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setStatusProduct#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#109221#109247#0" expanded="false" />
+                <element signature="e#109354#109380#0" expanded="false" />
                 <element signature="docComment;method#onKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#109328#109349#0" expanded="false" />
-                <element signature="e#109355#109380#0" expanded="false" />
+                <element signature="e#109461#109482#0" expanded="false" />
+                <element signature="e#109488#109513#0" expanded="false" />
                 <element signature="method#onKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handleronKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
                 <element signature="docComment;method#setCells#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setCells#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#110994:112484" expanded="false" />
-                <element signature="initializer##0;class#110994:112484" expanded="false" />
-                <element signature="method#updateItem#0;class#110994:112484" expanded="false" />
+                <element signature="class#111127:112617" expanded="false" />
+                <element signature="initializer##0;class#111127:112617" expanded="false" />
+                <element signature="method#updateItem#0;class#111127:112617" expanded="false" />
                 <element signature="n#!!doc;n#onShow#0;n#DashboardController#0" expanded="false" />
                 <element signature="method#onShow#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#112621:112803" expanded="false" />
+                <element signature="class#112754:112936" expanded="false" />
                 <element signature="method#onClose#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#112880:113063" expanded="false" />
+                <element signature="class#113013:113196" expanded="false" />
                 <element signature="method#loader#0;class#DashboardController#0" expanded="false" />
-                <marker date="1518496611689" expanded="false" signature="34507:35697" ph="{...}" />
+                <marker date="1518532493590" expanded="false" signature="34507:35697" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -393,18 +396,19 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="61" column="80" lean-forward="false" selection-start-line="61" selection-start-column="80" selection-end-line="61" selection-end-column="80" />
+            <state relative-caret-position="327">
+              <caret line="99" column="61" lean-forward="false" selection-start-line="99" selection-start-column="61" selection-end-line="99" selection-end-column="61" />
               <folding>
                 <element signature="docComment;class#Controller#0" expanded="false" />
+                <element signature="n#!!doc;n#loader#0;n#Controller#0" expanded="false" />
                 <element signature="method#loader#0;class#Controller#0" expanded="false" />
                 <element signature="method#icons#0;class#Controller#0" expanded="false" />
                 <element signature="method#loaderModal#0;class#Controller#0" expanded="false" />
+                <element signature="method#createStageInstance#0;class#Controller#0" expanded="false" />
                 <element signature="n#!!doc;n#fxmlLoaderContent#0;n#Controller#0" expanded="false" />
                 <element signature="method#fxmlLoaderContent#0;class#Controller#0" expanded="false" />
                 <element signature="method#buildStage#0;class#Controller#0" expanded="false" />
-                <element signature="n#!!doc;n#closeEntireApplication#0;n#Controller#0" expanded="false" />
-                <element signature="method#closeApplication#0;class#Controller#0" expanded="false" />
+                <element signature="method#closeAppicationWithoutRequest#0;class#Controller#0" expanded="false" />
                 <element signature="method#hideApplication#0;class#Controller#0" expanded="false" />
                 <element signature="method#showApplication#0;class#Controller#0" expanded="false" />
                 <element signature="method#renameApplication#0;class#Controller#0" expanded="false" />
@@ -414,13 +418,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinishSaleController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FinishSaleController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+            <state relative-caret-position="101">
+              <caret line="52" column="49" lean-forward="false" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
               <folding>
-                <element signature="method#saveItensSale#0;class#FinishSaleController#0" expanded="false" />
+                <element signature="e#1471#1472#0" expanded="true" />
+                <element signature="e#1537#1538#0" expanded="true" />
                 <element signature="method#setAllComponents#0;class#FinishSaleController#0" expanded="false" />
               </folding>
             </state>
@@ -523,9 +528,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/fxml/saleDetail.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/HistoricCustomerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/Calendar/CalendarUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java" />
       </list>
     </option>
   </component>
@@ -582,94 +587,60 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="tcc-reborn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-FATEC_2017-PAVG" type="462c0819:PsiDirectoryNode" />
+              <item name="TCC Fatec" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tcc-reborn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-FATEC_2017-PAVG" type="462c0819:PsiDirectoryNode" />
+              <item name="TCC Fatec" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tcc-reborn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-FATEC_2017-PAVG" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tcc-reborn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-FATEC_2017-PAVG" type="462c0819:PsiDirectoryNode" />
+              <item name="TCC Fatec" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tcc-reborn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-FATEC_2017-PAVG" type="462c0819:PsiDirectoryNode" />
+              <item name="TCC Fatec" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tcc-reborn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-FATEC_2017-PAVG" type="462c0819:PsiDirectoryNode" />
+              <item name="TCC Fatec" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tcc-reborn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-FATEC_2017-PAVG" type="462c0819:PsiDirectoryNode" />
+              <item name="TCC Fatec" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tcc-reborn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-FATEC_2017-PAVG" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="person" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tcc-reborn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-FATEC_2017-PAVG" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tcc-reborn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-FATEC_2017-PAVG" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -826,15 +797,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55263156" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47160885" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3569079" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3569079" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -850,7 +823,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55263156" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -895,7 +867,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="59" />
+      <option name="time" value="60" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1155,99 +1127,98 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/finishSale.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/editProductType.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/editIngredients.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/dashboard.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/dashboard.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="481" column="90" lean-forward="false" selection-start-line="481" selection-start-column="90" selection-end-line="481" selection-end-column="90" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/listIngredients.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/listIngredients.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/manageUsers.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/historicCustomer.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/historicCustomer.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
           <caret line="34" column="42" lean-forward="false" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/saleDetail.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/saleDetail.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="48" column="38" lean-forward="false" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/HistoricCustomerController.java">
@@ -1285,17 +1256,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding>
-            <element signature="method#saveItensSale#0;class#FinishSaleController#0" expanded="false" />
-            <element signature="method#setAllComponents#0;class#FinishSaleController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_CONFIG_DIR$/jdks/jbsdk8u112b287.2_windows_x64/jre/lib/ext/jfxrt.jar!/javafx/scene/control/Tab.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -1305,18 +1265,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="61" column="80" lean-forward="false" selection-start-line="61" selection-start-column="80" selection-end-line="61" selection-end-column="80" />
+        <state relative-caret-position="327">
+          <caret line="99" column="61" lean-forward="false" selection-start-line="99" selection-start-column="61" selection-end-line="99" selection-end-column="61" />
           <folding>
             <element signature="docComment;class#Controller#0" expanded="false" />
+            <element signature="n#!!doc;n#loader#0;n#Controller#0" expanded="false" />
             <element signature="method#loader#0;class#Controller#0" expanded="false" />
             <element signature="method#icons#0;class#Controller#0" expanded="false" />
             <element signature="method#loaderModal#0;class#Controller#0" expanded="false" />
+            <element signature="method#createStageInstance#0;class#Controller#0" expanded="false" />
             <element signature="n#!!doc;n#fxmlLoaderContent#0;n#Controller#0" expanded="false" />
             <element signature="method#fxmlLoaderContent#0;class#Controller#0" expanded="false" />
             <element signature="method#buildStage#0;class#Controller#0" expanded="false" />
-            <element signature="n#!!doc;n#closeEntireApplication#0;n#Controller#0" expanded="false" />
-            <element signature="method#closeApplication#0;class#Controller#0" expanded="false" />
+            <element signature="method#closeAppicationWithoutRequest#0;class#Controller#0" expanded="false" />
             <element signature="method#hideApplication#0;class#Controller#0" expanded="false" />
             <element signature="method#showApplication#0;class#Controller#0" expanded="false" />
             <element signature="method#renameApplication#0;class#Controller#0" expanded="false" />
@@ -1327,8 +1288,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="1182" column="8" lean-forward="false" selection-start-line="1182" selection-start-column="8" selection-end-line="1182" selection-end-column="8" />
+        <state relative-caret-position="166">
+          <caret line="1865" column="47" lean-forward="false" selection-start-line="1865" selection-start-column="47" selection-end-line="1865" selection-end-column="47" />
           <folding>
             <element signature="docComment;class#DashboardController#0" expanded="false" />
             <element signature="n#!!doc;n#mainAnchorPane#0;n#DashboardController#0" expanded="false" />
@@ -1366,7 +1327,6 @@
             <element signature="e#21127#21151#0" expanded="false" />
             <element signature="e#21774#21795#0" expanded="false" />
             <element signature="e#21804#21831#0" expanded="false" />
-            <element signature="e#22027#22048#0" expanded="false" />
             <element signature="e#22058#22100#0" expanded="false" />
             <element signature="class#22345:22492" expanded="false" />
             <element signature="e#22504#22522#0" expanded="false" />
@@ -1374,7 +1334,6 @@
             <element signature="e#22847#22883#0" expanded="false" />
             <element signature="e#23251#23279#0" expanded="false" />
             <element signature="e#23616#23648#0" expanded="false" />
-            <element signature="e#23900#23930#0" expanded="false" />
             <element signature="class#24605:25407" expanded="false" />
             <element signature="method#onChanged#0;class#24605:25407" expanded="false" />
             <element signature="class#25491:25740" expanded="false" />
@@ -1406,12 +1365,16 @@
             <element signature="e#31835#31866#0" expanded="false" />
             <element signature="class#31916:32705" expanded="false" />
             <element signature="method#handle#0;class#31916:32705" expanded="false" />
+            <element signature="e#32737#32767#0" expanded="false" />
             <element signature="class#32816:32983" expanded="false" />
+            <element signature="e#33015#33033#0" expanded="false" />
             <element signature="e#33113#33142#0" expanded="false" />
             <element signature="e#33486#33511#0" expanded="false" />
             <element signature="e#33821#33836#0" expanded="false" />
             <element signature="e#34385#34413#0" expanded="false" />
+            <element signature="e#35762#35790#0" expanded="false" />
             <element signature="e#35800#35833#0" expanded="false" />
+            <element signature="e#35929#35949#0" expanded="false" />
             <element signature="e#35959#35979#0" expanded="false" />
             <element signature="class#36065:36899" expanded="false" />
             <element signature="initializer##0;class#36065:36899" expanded="false" />
@@ -1498,22 +1461,18 @@
             <element signature="n#!!doc;n#handlerHyperlinkActionLogout#0;n#DashboardController#0" expanded="false" />
             <element signature="method#handlerHyperlinkActionLogout#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerHyperlinkActionFinish#0;class#DashboardController#0" expanded="false" />
-            <element signature="n#!!doc;n#handlerButtonActionRemoveProductOnOrder#0;n#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionRemoveProductOnOrder#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionAddProductOnOrder#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionClearOrderProducts#0;class#DashboardController#0" expanded="false" />
-            <element signature="method#handlerButtonActionFinishOrder#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#66197:66576" expanded="false" />
-            <element signature="method#handle#0;class#66197:66576" expanded="false" />
             <element signature="method#handlerButtonActionHistoricCustomer#0;class#DashboardController#0" expanded="false" />
             <element signature="n#!!doc;n#searchByTelephone#0;n#DashboardController#0" expanded="false" />
             <element signature="method#searchByTelephone#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#68400#68457#0" expanded="false" />
+            <element signature="e#68533#68590#0" expanded="false" />
             <element signature="method#resetAllComponentsOrder#0;class#DashboardController#0" expanded="false" />
             <element signature="method#clientDataDisableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
             <element signature="method#clientDataEnableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
             <element signature="method#clearTextFieldsFromOrder#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#70398#70429#0" expanded="false" />
+            <element signature="e#70531#70562#0" expanded="false" />
             <element signature="docComment;method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionNewCustomer#0;class#DashboardController#0" expanded="false" />
@@ -1526,14 +1485,14 @@
             <element signature="method#showCustomerDetails#0;class#DashboardController#0" expanded="false" />
             <element signature="method#saveCustomer#0;class#DashboardController#0" expanded="false" />
             <element signature="method#newCustomer#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#76604#76645#0" expanded="false" />
+            <element signature="e#76737#76778#0" expanded="false" />
             <element signature="method#newCustomerGeneral#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setStatusCustomer#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#78469#78505#0" expanded="false" />
-            <element signature="e#78511#78545#0" expanded="false" />
-            <element signature="e#78616#78645#0" expanded="false" />
-            <element signature="e#78667#78702#0" expanded="false" />
-            <element signature="e#78759#78783#0" expanded="false" />
+            <element signature="e#78602#78638#0" expanded="false" />
+            <element signature="e#78644#78678#0" expanded="false" />
+            <element signature="e#78749#78778#0" expanded="false" />
+            <element signature="e#78800#78835#0" expanded="false" />
+            <element signature="e#78892#78916#0" expanded="false" />
             <element signature="docComment;method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionNewSupplier#0;class#DashboardController#0" expanded="false" />
@@ -1547,7 +1506,7 @@
             <element signature="method#newSupplier#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setStatusSupplier#0;class#DashboardController#0" expanded="false" />
             <element signature="method#resetTableViewSupplier#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#86057#86101#0" expanded="false" />
+            <element signature="e#86190#86234#0" expanded="false" />
             <element signature="n#!!doc;n#showEmployeeDetails#0;n#DashboardController#0" expanded="false" />
             <element signature="method#showEmployeeDetails#0;class#DashboardController#0" expanded="false" />
             <element signature="method#clearEmployeeDetails#0;class#DashboardController#0" expanded="false" />
@@ -1570,18 +1529,18 @@
             <element signature="method#setStatusEmployee#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setStatusLogin#0;class#DashboardController#0" expanded="false" />
             <element signature="method#saveLogin#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#98975:99040" expanded="false" />
-            <element signature="class#99120:99173" expanded="false" />
-            <element signature="class#99256:99310" expanded="false" />
-            <element signature="class#99382:99446" expanded="false" />
+            <element signature="class#99108:99173" expanded="false" />
+            <element signature="class#99253:99306" expanded="false" />
+            <element signature="class#99389:99443" expanded="false" />
+            <element signature="class#99515:99579" expanded="false" />
             <element signature="method#addLogin#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#100283:100348" expanded="false" />
-            <element signature="class#100428:100481" expanded="false" />
-            <element signature="class#100564:100618" expanded="false" />
-            <element signature="class#100690:100754" expanded="false" />
-            <element signature="e#100810#100841#0" expanded="false" />
+            <element signature="class#100416:100481" expanded="false" />
+            <element signature="class#100561:100614" expanded="false" />
+            <element signature="class#100697:100751" expanded="false" />
+            <element signature="class#100823:100887" expanded="false" />
+            <element signature="e#100943#100974#0" expanded="false" />
             <element signature="docComment;method#addIngredient#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#100894#100918#0" expanded="false" />
+            <element signature="e#101027#101051#0" expanded="false" />
             <element signature="method#addIngredient#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionCheckBoxProductType#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionEditProductType#0;class#DashboardController#0" expanded="false" />
@@ -1601,24 +1560,36 @@
             <element signature="method#saveProduct#0;class#DashboardController#0" expanded="false" />
             <element signature="method#addProduct#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setStatusProduct#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#109221#109247#0" expanded="false" />
+            <element signature="e#109354#109380#0" expanded="false" />
             <element signature="docComment;method#onKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#109328#109349#0" expanded="false" />
-            <element signature="e#109355#109380#0" expanded="false" />
+            <element signature="e#109461#109482#0" expanded="false" />
+            <element signature="e#109488#109513#0" expanded="false" />
             <element signature="method#onKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handleronKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
             <element signature="docComment;method#setCells#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setCells#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#110994:112484" expanded="false" />
-            <element signature="initializer##0;class#110994:112484" expanded="false" />
-            <element signature="method#updateItem#0;class#110994:112484" expanded="false" />
+            <element signature="class#111127:112617" expanded="false" />
+            <element signature="initializer##0;class#111127:112617" expanded="false" />
+            <element signature="method#updateItem#0;class#111127:112617" expanded="false" />
             <element signature="n#!!doc;n#onShow#0;n#DashboardController#0" expanded="false" />
             <element signature="method#onShow#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#112621:112803" expanded="false" />
+            <element signature="class#112754:112936" expanded="false" />
             <element signature="method#onClose#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#112880:113063" expanded="false" />
+            <element signature="class#113013:113196" expanded="false" />
             <element signature="method#loader#0;class#DashboardController#0" expanded="false" />
-            <marker date="1518496611689" expanded="false" signature="34507:35697" ph="{...}" />
+            <marker date="1518532493590" expanded="false" signature="34507:35697" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="52" column="49" lean-forward="false" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
+          <folding>
+            <element signature="e#1471#1472#0" expanded="true" />
+            <element signature="e#1537#1538#0" expanded="true" />
+            <element signature="method#setAllComponents#0;class#FinishSaleController#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1629,7 +1600,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>tcc-reborn</last-edited>
+          <last-edited>tcc-reborn:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

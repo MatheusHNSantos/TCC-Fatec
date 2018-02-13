@@ -97,6 +97,11 @@ public class Controller {
         stage.fireEvent(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
     }
 
+    public static void closeAppicationWithoutRequest(Event e){
+        Stage stage = (Stage) ((Node) e.getTarget()).getScene().getWindow();
+        stage.close();
+    }
+
     public static void hideApplication(Event e) {
         Stage stage = (Stage) ((Node) e.getTarget()).getScene().getWindow();
         stage.hide();
