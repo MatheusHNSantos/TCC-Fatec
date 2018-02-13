@@ -1,8 +1,11 @@
 package model.entity.phone;
 
 import model.entity.Entity;
+import model.entity.person.Customer;
 import model.entity.person.Person;
 import model.dao.phone.PhoneDAO;
+
+import java.util.ArrayList;
 
 /**
 * 
@@ -48,6 +51,10 @@ public class Phone implements Entity{
 
 	public static Phone load(String number) {
 		return PhoneDAO.load(number);
+	}
+
+	public static ArrayList<Customer> searchCustomerByPhone(String number) {
+		return PhoneDAO.loadCustomerByPhone(number);
 	}
 
 	@Override
