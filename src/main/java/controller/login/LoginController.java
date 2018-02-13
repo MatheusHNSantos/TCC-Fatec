@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import model.entity.person.user.User;
+import model.entity.person.User;
 import util.dialogs.FxDialogs;
 import util.exception.UserException;
 
@@ -111,11 +111,10 @@ public class LoginController implements Initializable{
         User user;
 
         try {
-            user = new User(txt_login.getText(), txt_senha.getText());
 
-            if(user.doLogin()){
-                user = new User(txt_login.getText());
-                if(user.getStatus()) {
+            if(User.auth(txt_login.getText(), txt_senha.getText())){
+                user = User.load(txt_login.getText());
+                if(user.isStatus()) {
                     lblWarning.setText("");
 
                     Controller.closeApplication(event);
@@ -131,10 +130,8 @@ public class LoginController implements Initializable{
                 FxDialogs.showError("Acesso Negado!","Usuário ou senha incorretos");
                 lblWarning.setText("Acesso Negado!");
             }
-        } catch (UserException ex) {
+        } catch (Exception ex) {
             FxDialogs.showWarning(ex.getMessage(), "Tente novamente.");
-        } catch (IOException ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
