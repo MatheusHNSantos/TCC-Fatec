@@ -3,7 +3,7 @@ package model.entity.person;
 import model.entity.Entity;
 import model.dao.person.UserDAO;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class User implements Entity {
 
@@ -108,7 +108,7 @@ public class User implements Entity {
 		return false;
 	}
 
-    public static List<User> loadAll() {
+    public static ArrayList<User> loadAll() {
 		return UserDAO.loadAll();
     }
 }
