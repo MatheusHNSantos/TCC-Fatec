@@ -1832,7 +1832,7 @@ public class DashboardController implements Initializable {
             } else if (dataObervableProductsOnCart.isEmpty() || tfield_adress.getText().equals("") || tfield_name.getText().equals("") || tfield_telephone.getText().equals("")) {
                 FxDialogs.showWarning("Pedido em branco", "Por favor adicione produtos e/ou Insira os dados nos campos solicitados!");
 
-                tfield_name.pseudoClassStateChanged(errorClass, true);
+                //tfield_name.pseudoClassStateChanged(errorClass, true);
 
                 return;
             }
@@ -1862,7 +1862,10 @@ public class DashboardController implements Initializable {
                     if(Sale.LAST_ID_SALE != -1){
                         resetAllComponentsOrder();
                         resetTableViewCustomer();
-                        lbl_codeOfOrder.setText(String.valueOf(Sale.getLastIdSale()));
+                        lbl_codeOfOrder.setText(String.valueOf(Sale.getLastIdSale() +1));
+
+                        System.out.println(Sale.getLastIdSale());
+
                         Sale.LAST_ID_SALE = -1;
                     }
 

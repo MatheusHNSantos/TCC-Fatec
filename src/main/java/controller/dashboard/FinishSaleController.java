@@ -2,6 +2,7 @@ package controller.dashboard;
 
 import com.jfoenix.controls.JFXButton;
 import controller.Controller;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -74,12 +75,15 @@ public class FinishSaleController implements Initializable {
     private void saveItensSale(){
 
         if(Sale.LAST_ID_SALE != -1){
+
             products.forEach(product -> {
                 ItemsSale itemsSale = new ItemsSale();
                 itemsSale.setIdSale(Sale.LAST_ID_SALE);
                 itemsSale.setIdProduct(product.getIdProduct());
                 itemsSale.Create();
             });
+
+
 
         }
     }

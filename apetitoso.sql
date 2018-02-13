@@ -32,11 +32,7 @@ CREATE TABLE IF NOT EXISTS phone(
 
 
 CREATE TABLE IF NOT EXISTS customer(  
-  rg varchar(10),
-  cpf varchar(11),
   id_person int not null,
-  CONSTRAINT UNK_CPF_CUSTOMER UNIQUE KEY (cpf),
-  CONSTRAINT UNK_RG_CUSTOMER UNIQUE KEY (rg),
   CONSTRAINT FRK_ID_CUSTOMER FOREIGN KEY (id_person) REFERENCES person(id_person)
 );
 
@@ -145,7 +141,15 @@ insert into product values(11,"Marmita G",20, 500, 1,3);
 
 insert into address values (null, 'Rua 1', 1, 'Bairro 1', '13848000');
 
+insert into address values (null, 'Rua 2', 2, 'Bairro 2', '13848000');
+
 insert into person values (null, 1, 'Lucas', true);
+
+insert into person values(null, 2, 'Jorge Amancio', true);
+
+insert into phone values (null, '1140028922', 2);
+
+insert into customer values(2);
 
 insert into employee values (null, 'CEO', 1);
 
