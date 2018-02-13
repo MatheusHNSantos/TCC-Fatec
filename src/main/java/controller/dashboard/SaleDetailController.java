@@ -1,7 +1,5 @@
 package controller.dashboard;
 
-import controller.Controller;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -10,15 +8,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import model.entity.person.Person;
-import model.entity.person.user.User;
+import model.entity.person.Customer;
+import model.entity.person.Employee;
+import model.entity.person.User;
 import model.entity.product.Product;
 import model.entity.sale.ItemsSale;
 import model.entity.sale.Sale;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -68,10 +63,10 @@ public class SaleDetailController implements Initializable {
         dataObservableProducts.addAll(ItemsSale.readAllProduct(sale.getIdSale()));
         lbl_id.setText(String.valueOf(sale.getIdSale()));
 
-        System.out.println(sale.getIdCustomer());
+        User user = User.load(Employee.load(sale.getIdUser()));
 
-        lbl_customer.setText(String.valueOf(new Person(sale.getIdCustomer()).getNamePerson()));
-        lbl_user.setText(String.valueOf(new User(sale.getIdUser()).getLogin()));
+        lbl_customer.setText(String.valueOf(Customer.load(sale.getIdCustomer()).getNamePerson()));
+        lbl_user.setText(String.valueOf(user.getLogin()));
         lbl_date.setText(sale.getSaleDate());
         lbl_time.setText(sale.getSaleTime());
         lbl_price.setText(String.valueOf(sale.getSaleTotal()));
