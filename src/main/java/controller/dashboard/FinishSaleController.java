@@ -8,7 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import model.entity.person.Person;
-import model.entity.person.customer.Customer;
+import model.entity.person.Customer;
 import model.entity.product.Product;
 import model.entity.sale.ItemsSale;
 import model.entity.sale.Sale;
@@ -59,14 +59,14 @@ public class FinishSaleController implements Initializable {
 
         Sale sale = new Sale();
         if(person != null){
-            Customer customer = new Customer(person.getIdPerson());
-            sale.setIdCustomer(customer.getIdPerson());
+            Customer customer = Customer.load(person.getId());
+            sale.setIdCustomer(customer.getId());
         }
         sale.setSaleDate(CalendarUtil.getCurrentDateBR());
         sale.setSaleTime(CalendarUtil.getCurrentHourBR());
         sale.setSaleTotal(Float.parseFloat(lbl_totalPriceOnFinishSaleDialog.getText()));
         sale.setSaleTimeEstimate(0);
-        sale.setIdUser(DashboardController.getUser().getIdEmployee());
+        sale.setIdUser(DashboardController.getUser().getEmployee().getIdEmployee());
         sale.Create();
 
     }
