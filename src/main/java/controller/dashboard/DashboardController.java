@@ -5,27 +5,16 @@
  */
 package controller.dashboard;
 
-
-import javafx.beans.InvalidationListener;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableObjectValue;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
 import javafx.css.PseudoClass;
-import javafx.event.Event;
-import javafx.event.EventType;
 import javafx.scene.control.SingleSelectionModel;
-import javafx.scene.input.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Border;
-import javafx.stage.Modality;
 import javafx.util.Callback;
-import javafx.util.Pair;
 import javafx.util.StringConverter;
-import sun.util.resources.cldr.ne.CalendarData_ne_IN;
-import util.Calendar.CalendarUtil;
 import util.MaskField.MaskFieldUtil;
 import com.jfoenix.controls.*;
 import controller.Controller;
@@ -42,13 +31,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Priority;
@@ -59,10 +45,10 @@ import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import model.entity.address.Address;
 import model.entity.person.Person;
-import model.entity.person.customer.Customer;
-import model.entity.person.employee.Employee;
-import model.entity.person.supplier.Supplier;
-import model.entity.person.user.User;
+import model.entity.person.Customer;
+import model.entity.person.Employee;
+import model.entity.person.Supplier;
+import model.entity.person.User;
 import model.entity.phone.Phone;
 import model.entity.product.Ingredient;
 import model.entity.product.Product;
@@ -70,20 +56,16 @@ import model.entity.product.ProductIngredient;
 import model.entity.product.ProductType;
 import model.entity.sale.Sale;
 import util.dialogs.FxDialogs;
-import util.exception.UserException;
 import util.viacep.Endereco;
 import util.viacep.ViaCEP;
 
 import java.awt.event.*;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 import static java.lang.String.valueOf;
 
@@ -244,10 +226,6 @@ public class DashboardController implements Initializable {
     private Label lbl_pointsCustomer; //TextField de campo para nome cliente
     @FXML
     private JFXTextField txt_nameCustomer; //TextField de campo para nome cliente
-    @FXML
-    private JFXTextField txt_rgCustomer; //TextField de campo para RG cliente
-    @FXML
-    private JFXTextField txt_cpfCustomer; //TextField de campo para CPF cliente
     @FXML
     private JFXTextField txt_cepCustomer; //TextField de campo para CEP cliente
     @FXML
@@ -454,8 +432,8 @@ public class DashboardController implements Initializable {
     private JFXButton btn_cancelEmployee; //Botão Cancelar
     @FXML
     private JFXButton btn_addEmployee; //Botão Cadastrar
-    @FXML
-    private JFXTextField txt_cpfEmployee;
+    @FXML    private JFXTextField txt_rgEmployee; //TextField de campo para RG cliente
+    @FXML    private JFXTextField txt_cpfEmployee; //TextField de campo para CPF cliente
     @FXML
     private JFXTextField txt_searchEmployee; //TextField de campo para pesquisa
     @FXML
@@ -933,12 +911,12 @@ public class DashboardController implements Initializable {
                     case 0:
 
                         dataObservableCustomer.clear();
-                        dataObservableCustomer.addAll(Customer.readByName(txt_searchCustomer.getText()));
+                        dataObservableCustomer.addAll(Customer.search(txt_searchCustomer.getText()));
                         break;
 
                     case 1:
                         dataObservableCustomer.clear();
-                        dataObservableCustomer.addAll(Customer.readByPhone(txt_searchCustomer.getText()));
+                        dataObservableCustomer.addAll(Phone.searchCustomerByPhone(txt_searchCustomer.getText()));
                         break;
                 }
             }
@@ -964,7 +942,7 @@ public class DashboardController implements Initializable {
         setCells(columnCustomerPhone2, "phone2");
         setCells(columnCustomerCep, "cep");
 
-        dataObservableCustomer.addAll(Customer.ReadAll());
+        dataObservableCustomer.addAll(Customer.loadAll());
         tview_customer.setItems(dataObservableCustomer);
         //endregion
 
@@ -1187,7 +1165,8 @@ public class DashboardController implements Initializable {
         columnSaleCustomer.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Sale, String>, ObservableValue<String>>() {
             @Override
             public ObservableValue<String> call(TableColumn.CellDataFeatures<Sale, String> saleStringCellDataFeatures) {
-                return new SimpleStringProperty(new Person(saleStringCellDataFeatures.getValue().getIdCustomer()).getNamePerson());
+                Customer customer = Customer.load(saleStringCellDataFeatures.getValue().getIdCustomer());
+                return new SimpleStringProperty(customer.getNamePerson());
             }
         });
         columnSalePrice.setCellValueFactory(new PropertyValueFactory<>("saleTotal"));
@@ -1252,12 +1231,7 @@ public class DashboardController implements Initializable {
                 if (supplier == null) {
                     setGraphic(null);
                 } else {
-                    ArrayList<Phone> phoneList;
-                    phoneList = supplier.getListPhone();
-                    String phone = phoneList.get(0).getPhone();
-
-                    labelPhone1.setText(phone);
-
+                    labelPhone1.setText(supplier.getPhones().get(0).getNumber());
                     setGraphic(graphic);
                 }
             }
@@ -1284,11 +1258,8 @@ public class DashboardController implements Initializable {
                 if (supplier == null) {
                     setGraphic(null);
                 } else {
-                    ArrayList<Phone> listPhone;
-                    listPhone = supplier.getListPhone();
-                    if (listPhone.size() == 2) {
-                        String phone = listPhone.get(1).getPhone();
-                        labelPhone2.setText(phone);
+                    if (supplier.getPhones().size() == 2) {
+                        labelPhone2.setText(supplier.getPhones().get(1).getNumber());
 
                     } else {
                         labelPhone2.setText("");
@@ -1331,7 +1302,7 @@ public class DashboardController implements Initializable {
         //endregion
 
 
-        listSupplier = Supplier.ReadAll();
+        listSupplier = Supplier.loadAll();
         dataObervableSupplier.addAll(listSupplier);
         tview_supplier.setItems(dataObervableSupplier);
         //endregion
@@ -1371,15 +1342,6 @@ public class DashboardController implements Initializable {
         dataObervableEmployee = FXCollections.observableArrayList();
 
         columnEmployeeName.setCellValueFactory(new PropertyValueFactory<>("namePerson"));
-        /*columnEmployeePhone1.setCellFactory((Callback<TableColumn.CellDataFeatures<Employee, String>, ObservableValue<String>>) param -> {
-            Employee person = param.getValue();
-            ArrayList<Phone> teste = new ArrayList();
-            teste = person.getListPhone();
-            SimpleStringProperty booleanProp = new SimpleStringProperty(teste.get(0).getPhone());
-
-
-            return booleanProp;
-        });*/
         columnEmployeePhone1.setCellValueFactory(cellData ->
                 new ReadOnlyObjectWrapper<>(cellData.getValue()));
         columnEmployeePhone1.setCellFactory(column -> new TableCell<Employee, Employee>() {
@@ -1392,12 +1354,7 @@ public class DashboardController implements Initializable {
             // Anonymous constructor:
             {
                 graphic = new VBox();
-                //firstNameLabel = createLabel("#66BB66");
-                //lastNameLabel = createLabel("#79A8D8");
-                //phoneLabel = createLabel("#FF8888");
                 phoneLabel = createLabel();
-                /*graphic.getChildren().addAll(firstNameLabel,
-                        lastNameLabel, emailLabel);*/
                 graphic.getChildren().addAll(phoneLabel);
                 setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
             }
@@ -1406,7 +1363,6 @@ public class DashboardController implements Initializable {
                 Label label = new Label();
                 VBox.setVgrow(label, Priority.ALWAYS);
                 label.setMaxWidth(Double.MAX_VALUE);
-                //label.setStyle("-fx-background-color: "+color+" ;");
                 label.setAlignment(Pos.CENTER);
                 return label;
             }
@@ -1417,13 +1373,11 @@ public class DashboardController implements Initializable {
                     setGraphic(null);
                 } else {
                     ArrayList<Phone> teste;
-                    teste = person.getListPhone();
+                    teste = person.getPhones();
                     String phone = "";
                     if (teste.size() > 0)
-                        phone = teste.get(0).getPhone();
+                        phone = teste.get(0).getNumber();
 
-                    //firstNameLabel.setText(person.getNamePerson());
-                    //lastNameLabel.setText(person.getRole());
                     phoneLabel.setText(phone);
                     setGraphic(graphic);
                 }
@@ -1459,9 +1413,9 @@ public class DashboardController implements Initializable {
                     setGraphic(null);
                 } else {
                     ArrayList<Phone> listPhone;
-                    listPhone = person.getListPhone();
+                    listPhone = person.getPhones();
                     if (listPhone.size() == 2) {
-                        String phone = listPhone.get(1).getPhone();
+                        String phone = listPhone.get(1).getNumber();
                         phoneLabel2.setText(phone);
 
                     } else {
@@ -1473,7 +1427,7 @@ public class DashboardController implements Initializable {
         });
 
         columnEmployeeRole.setCellValueFactory(new PropertyValueFactory<>("role"));
-        listEmployee = Employee.ReadAll();
+        listEmployee = Employee.loadAll();
         dataObervableEmployee.addAll(listEmployee);
         tview_func.setItems(dataObervableEmployee);
         //endregion
@@ -1901,9 +1855,9 @@ public class DashboardController implements Initializable {
     //region default methods
     private void searchByTelephone() {
 
-        person = Phone.searchByTelephone(MaskFieldUtil.onlyDigitsValue(tfield_telephone));
+        person = Phone.searchCustomerByPhone(MaskFieldUtil.onlyDigitsValue(tfield_telephone)).get(0);
 
-        if (person.getIdPerson() == 0 || person == null) {
+        if (person.getId() == 0 || person == null) {
 
             if (FxDialogs.showConfirmYesNo("Cliente não cadastrado, deseja cadastrar?", "", FxDialogs.NO, FxDialogs.YES).equals(FxDialogs.YES)) {
                 SingleSelectionModel<Tab> selectionModel = paneTab.getSelectionModel();
@@ -2039,32 +1993,60 @@ public class DashboardController implements Initializable {
     }
 
     private void handlerButtonActionSaveCustomer(MouseEvent event) {
-        setCustomerActiveButtons(true, false, "node");
-        switch (actionCustomer) {
-            case "Editar":
-                saveCustomer();
-                break;
-            case "Adicionar":
-                newCustomer();
-                break;
-            case "Status":
-                setStatusCustomer();
-                break;
-            default:
-                break;
+        Customer customer = new Customer();
+        Address address = new Address();
+        Phone phone1 = new Phone();
+        Phone phone2 = new Phone();
+
+        if (idCustomerSelected > 0) {
+            customer = Customer.load(idCustomerSelected);
+            address = customer.getAddress();
+
+            if (!customer.getPhones().isEmpty()) {
+
+                phone1 = customer.getPhones().get(0);
+
+                if (customer.getPhones().size() == 2) {
+                    phone2 = customer.getPhones().get(1);
+                }
+            }
         }
-        actionCustomer = "";
+
+        if (!txt_phone1Customer.getText().isEmpty()) {
+            phone1.setNumber(txt_phone1Customer.getText());
+            customer.getPhones().add(0, phone1);
+        }
+
+        if (!txt_phone2Customer.getText().isEmpty()) {
+            phone2.setNumber(txt_phone2Customer.getText());
+            customer.getPhones().add(1, phone2);
+        }
+
+        customer.setNamePerson(txt_nameCustomer.getText());
+        customer.setStatus(tbtn_statusCustomer.isSelected());
+
+        address.setCep(txt_cepCustomer.getText());
+        address.setNeighborhood(txt_bairroCustomer.getText());
+        address.setStreet(txt_streetCustomer.getText());
+        address.setNumber(Integer.parseInt(txt_numberCustomer.getText()));
+
+        customer.setAddress(address);
+        customer.save();
+
+        idCustomerSelected = 0;
+
+        resetTableViewCustomer();
     }
 
     //region default methods
     private void clearCustomerDetails() {
-        txt_nameCustomer.setText("");
-        txt_cepCustomer.setText("");
-        txt_bairroCustomer.setText("");
-        txt_streetCustomer.setText("");
-        txt_numberCustomer.setText("");
-        txt_phone1Customer.setText("");
-        txt_phone2Customer.setText("");
+        txt_nameCustomer.clear();
+        txt_cepCustomer.clear();
+        txt_bairroCustomer.clear();
+        txt_streetCustomer.clear();
+        txt_numberCustomer.clear();
+        txt_phone1Customer.clear();
+        txt_phone2Customer.clear();
         tbtn_statusCustomer.setSelected(false);
         tbtn_statusCustomer.setText("Inativo");
         idCustomerSelected = 0;
@@ -2073,36 +2055,33 @@ public class DashboardController implements Initializable {
 
     private void resetTableViewCustomer() {
         dataObservableCustomer.clear();
-        dataObservableCustomer.addAll(Customer.ReadAll());
+        dataObservableCustomer.addAll(Customer.loadAll());
     }
 
     private void showCustomerDetails(Customer customer) {
         setCustomerActiveButtons(true, false, "");
         tbtn_statusCustomer.setSelected(false);
+
         if (customer != null) {
-            Address address = customer.getAddress();
-            ArrayList<Phone> listPhone = customer.getListPhone();
+
             btn_editCustomer.setDisable(false);
-            txt_nameCustomer.setText(customer.getNamePerson());
-            //txt_cpfCustomer.setText(customer.getCpf());
-            txt_cepCustomer.setText(address.getCep());
-            txt_bairroCustomer.setText(address.getNeighborhood());
-            txt_streetCustomer.setText(address.getStreet());
-            txt_numberCustomer.setText(String.valueOf(address.getNumber()));
+            txt_cepCustomer.setText(customer.getAddress().getCep());
+            txt_bairroCustomer.setText(customer.getAddress().getNeighborhood());
+            txt_streetCustomer.setText(customer.getAddress().getStreet());
+            txt_numberCustomer.setText(String.valueOf(customer.getAddress().getNumber()));
 
-            if (listPhone.size() > 0) {
-                txt_phone1Customer.setText(listPhone.get(0).getPhone());
-            }
-            if (listPhone.size() > 1) {
-                txt_phone2Customer.setText(listPhone.get(1).getPhone());
-            } else {
-                txt_phone2Customer.setText("");
+            if (customer.getPhones().size() > 0) {
+                txt_phone1Customer.setText(customer.getPhones().get(0).getNumber());
             }
 
-            idCustomerSelected = customer.getIdPerson();
+            if (customer.getPhones().size() > 1) {
+                txt_phone2Customer.setText(customer.getPhones().get(1).getNumber());
+            }
 
-            tbtn_statusCustomer.setSelected(customer.getStatus());
-            if (customer.getStatus()) tbtn_statusCustomer.setText("Ativo");
+            idCustomerSelected = customer.getId();
+
+            tbtn_statusCustomer.setSelected(customer.isStatus());
+            if (customer.isStatus()) tbtn_statusCustomer.setText("Ativo");
             else tbtn_statusCustomer.setText("Inativo");
 
         } else {
@@ -2111,123 +2090,6 @@ public class DashboardController implements Initializable {
         }
     }
 
-    private void saveCustomer() {
-
-        Customer customer = new Customer(idCustomerSelected);
-        Address address = customer.getAddress();
-        ArrayList<Phone> listPhone = new ArrayList();
-        listPhone = customer.getListPhone();
-
-        Phone phone1 = new Phone();
-        Phone phone2 = new Phone();
-
-        if (listPhone.size() > 0) {
-            phone1 = listPhone.get(0);
-        }
-        if (listPhone.size() > 1) {
-            phone2 = listPhone.get(1);
-        } else {
-
-        }
-
-        customer.setNamePerson(txt_nameCustomer.getText());
-        //customer.setCpf(txt_cpfCustomer.getText());
-        customer.setStatus(tbtn_statusCustomer.isSelected());
-        address.setCep(txt_cepCustomer.getText());
-        address.setNeighborhood(txt_bairroCustomer.getText());
-        address.setStreet(txt_streetCustomer.getText());
-        address.setNumber(Integer.parseInt(txt_numberCustomer.getText()));
-        phone1.setPhone(txt_phone1Customer.getText());
-        phone2.setPhone(txt_phone2Customer.getText());
-
-        customer.setAddress(address);
-        customer.Save();
-
-
-        if (listPhone.size() > 0) {
-            phone1.Save();
-        } else if (!txt_phone1Customer.getText().equals("")) {
-            phone1.setIdPerson(customer.getIdPerson());
-            phone1.Create();
-        }
-
-        if (listPhone.size() > 1) {
-            phone2.Save();
-        } else if (!txt_phone2Customer.getText().equals("")) {
-            phone2.setIdPerson(customer.getIdPerson());
-            phone2.Create();
-        }
-
-        resetTableViewCustomer();
-
-    }
-
-    private void newCustomer() {
-        //Código banco aqui
-
-        if (comeBackSearchByTelephone) {
-            SingleSelectionModel<Tab> selectionModel = paneTab.getSelectionModel();
-            selectionModel.select(tabOrder);
-
-            System.out.println("Come back called");
-
-            //Passar o obj do novo cliente adicionado
-            //person = novo obj cliente
-
-            //habilitar o hyperlink
-            newCustomerGeneral();
-            if (person != null) {
-                hl_historicCustomer.setDisable(false);
-                tfield_telephone.setDisable(true);
-                tfield_name.setText(person.getNamePerson());
-                tfield_adress.setText(person.getAddress().getStreet() + ", " + person.getAddress().getNeighborhood() + " " + person.getAddress().getNumber());
-            }
-
-        } else {
-            //só salva o cliente de forma normal sem voltar pra tela de pedido
-
-            newCustomerGeneral();
-
-        }
-
-
-    }
-
-    private void newCustomerGeneral() {
-        Customer customer = new Customer();
-        Address address = new Address();
-        Phone phone1 = new Phone();
-        Phone phone2 = new Phone();
-
-        customer.setNamePerson(txt_nameCustomer.getText());
-        customer.setStatus(tbtn_statusCustomer.isSelected());
-        address.setCep(txt_cepCustomer.getText());
-        address.setNeighborhood(txt_bairroCustomer.getText());
-        address.setStreet(txt_streetCustomer.getText());
-        address.setNumber(Integer.parseInt(txt_numberCustomer.getText()));
-        phone1.setPhone(txt_phone1Customer.getText());
-        phone2.setPhone(txt_phone2Customer.getText());
-
-        customer.setAddress(address);
-
-        customer.setPhone1(phone1);
-        customer.setPhone2(phone2);
-
-        customer.Create();
-
-        person = customer;
-
-        this.resetTableViewCustomer();
-    }
-
-    private void setStatusCustomer() {
-        //Código banco aqui
-        Customer customer = new Customer(idCustomerSelected);
-        customer.setStatus(tbtn_statusCustomer.isSelected());
-        customer.Save();
-
-        resetTableViewCustomer();
-    }
     //endregion
 
     //endregion
@@ -2298,39 +2160,68 @@ public class DashboardController implements Initializable {
     }
 
     private void handlerButtonActionSaveSupplier(MouseEvent event) {
-        setSupplierActiveButtons(true, false, "node");
-        switch (actionSupplier) {
-            case "Editar":
-                saveSupplier();
-                break;
-            case "Adicionar":
-                newSupplier();
-                break;
-            case "Status":
-                setStatusSupplier();
-                break;
-            default:
-                break;
+
+        Supplier supplier = new Supplier();
+        Address address = new Address();
+        Phone phone1 = new Phone();
+        Phone phone2 = new Phone();
+
+        if (idSupplierSelected > 0) {
+            supplier = Supplier.load(idSupplierSelected);
+            address = supplier.getAddress();
+
+            if (!supplier.getPhones().isEmpty()) {
+                phone1 = supplier.getPhones().get(0);
+
+                if (supplier.getPhones().size() == 2) {
+                    phone2 = supplier.getPhones().get(1);
+                }
+            }
         }
-        actionSupplier = "";
+
+        if (!txt_phone1Supplier.getText().isEmpty()) {
+            phone1.setNumber(txt_phone1Supplier.getText());
+            supplier.getPhones().add(0, phone1);
+        }
+
+        if (!txt_phone2Supplier.getText().isEmpty()) {
+            phone2.setNumber(txt_phone2Supplier.getText());
+            supplier.getPhones().add(1, phone2);
+        }
+
+        supplier.setNamePerson(txt_nameSupplier.getText());
+        supplier.setStatus(tbtn_statusSupplier.isSelected());
+        supplier.setCNPJ(txt_cnpjSupplier.getText());
+
+        address.setCep(txt_cepSupplier.getText());
+        address.setNeighborhood(txt_bairroSupplier.getText());
+        address.setStreet(txt_streetSupplier.getText());
+        address.setNumber(Integer.parseInt(txt_numberSupplier.getText()));
+
+        supplier.setAddress(address);
+        supplier.save();
+
+        idSupplierSelected = 0;
+
+        this.resetTableViewSupplier();
     }
 
     private void handlerButtonActionSearchSupplier(MouseEvent event) {
-        listSupplier = Supplier.ReadAll();
+        listSupplier = Supplier.loadAll();
         dataObervableSupplier.clear();
         dataObervableSupplier.addAll(listSupplier);
     }
     //endregion
 
     private void clearSupplierDetails() {
-        txt_nameSupplier.setText("");
-        txt_cnpjSupplier.setText("");
-        txt_cepSupplier.setText("");
-        txt_bairroSupplier.setText("");
-        txt_streetSupplier.setText("");
-        txt_numberSupplier.setText("");
-        txt_phone1Supplier.setText("");
-        txt_phone2Supplier.setText("");
+        txt_nameSupplier.clear();
+        txt_cnpjSupplier.clear();
+        txt_cepSupplier.clear();
+        txt_bairroSupplier.clear();
+        txt_streetSupplier.clear();
+        txt_numberSupplier.clear();
+        txt_phone1Supplier.clear();
+        txt_phone2Supplier.clear();
         tbtn_statusSupplier.setSelected(false);
         tbtn_statusSupplier.setText("Inativo");
         idSupplierSelected = 0;
@@ -2339,131 +2230,42 @@ public class DashboardController implements Initializable {
 
     private void showSupplierDetails(Supplier supplier) {
         setSupplierActiveButtons(true, false, "");
+
         tbtn_statusSupplier.setSelected(false);
+
         if (supplier != null) {
             btn_editSupplier.setDisable(false);
-            Address address = supplier.getAddress();
-            ArrayList<Phone> listPhone = supplier.getListPhone();
 
             txt_nameSupplier.setText(supplier.getNamePerson());
-            txt_cnpjSupplier.setText(supplier.getCnpj());
+            txt_cnpjSupplier.setText(supplier.getCNPJ());
 
-            txt_cepSupplier.setText(address.getCep());
-            txt_bairroSupplier.setText(address.getNeighborhood());
-            txt_streetSupplier.setText(address.getStreet());
-            txt_numberSupplier.setText(String.valueOf(address.getNumber()));
+            txt_cepSupplier.setText(supplier.getAddress().getCep());
+            txt_bairroSupplier.setText(supplier.getAddress().getNeighborhood());
+            txt_streetSupplier.setText(supplier.getAddress().getStreet());
+            txt_numberSupplier.setText(String.valueOf(supplier.getAddress().getNumber()));
 
-            if (listPhone.size() > 0) {
-                txt_phone1Supplier.setText(listPhone.get(0).getPhone());
-            }
-            if (listPhone.size() > 1) {
-                txt_phone2Supplier.setText(listPhone.get(1).getPhone());
-            } else {
-                txt_phone2Supplier.setText("");
+            if(supplier.getPhones().size()>0) {
+                txt_phone1Supplier.setText(supplier.getPhones().get(0).getNumber());
             }
 
-            idSupplierSelected = supplier.getIdPerson();
+            if(supplier.getPhones().size()>1) {
+                txt_phone2Supplier.setText(supplier.getPhones().get(1).getNumber());
+            }
 
-            tbtn_statusSupplier.setSelected(supplier.getStatus());
-            if (supplier.getStatus()) tbtn_statusSupplier.setText("Ativo");
+            idSupplierSelected  = supplier.getId();
+
+            tbtn_statusSupplier.setSelected(supplier.isStatus());
+            if(supplier.isStatus()) tbtn_statusSupplier.setText("Ativo");
             else tbtn_statusSupplier.setText("Inativo");
 
-        } else {
+        }
+        else {
             this.clearSupplierDetails();
-
         }
-    }
-
-    private void saveSupplier() {
-        Supplier supplier = new Supplier(idSupplierSelected);
-        Address address = supplier.getAddress();
-        ArrayList<Phone> listPhone = new ArrayList();
-        listPhone = supplier.getListPhone();
-
-
-        Phone phone1 = new Phone();
-        Phone phone2 = new Phone();
-
-        if (listPhone.size() > 0) {
-            phone1 = listPhone.get(0);
-        }
-        if (listPhone.size() > 1) {
-            phone2 = listPhone.get(1);
-        } else {
-
-        }
-
-        supplier.setNamePerson(txt_nameSupplier.getText());
-        supplier.setCnpj(txt_cnpjSupplier.getText());
-        supplier.setStatus(tbtn_statusSupplier.isSelected());
-        address.setCep(txt_cepSupplier.getText());
-        address.setNeighborhood(txt_bairroSupplier.getText());
-        address.setStreet(txt_streetSupplier.getText());
-        address.setNumber(Integer.parseInt(txt_numberSupplier.getText()));
-        phone1.setPhone(txt_phone1Supplier.getText());
-        phone2.setPhone(txt_phone2Supplier.getText());
-
-        supplier.setAddress(address);
-        supplier.Save();
-
-
-        if (listPhone.size() > 0) {
-            phone1.Save();
-        } else if (!txt_phone1Supplier.getText().equals("")) {
-            phone1.setIdPerson(supplier.getIdPerson());
-            phone1.Create();
-        }
-
-        if (listPhone.size() > 1) {
-            phone2.Save();
-        } else if (!txt_phone2Supplier.getText().equals("")) {
-            phone2.setIdPerson(supplier.getIdPerson());
-            phone2.Create();
-        }
-
-        this.resetTableViewSupplier();
-    }
-
-    private void newSupplier() {
-        Supplier supplier = new Supplier();
-        Address address = new Address();
-        Phone phone1 = new Phone();
-        Phone phone2 = new Phone();
-
-        supplier.setNamePerson(txt_nameSupplier.getText());
-        supplier.setCnpj(txt_cnpjSupplier.getText());
-        supplier.setStatus(tbtn_statusSupplier.isSelected());
-        address.setCep(txt_cepSupplier.getText());
-        address.setNeighborhood(txt_bairroSupplier.getText());
-        address.setStreet(txt_streetSupplier.getText());
-        address.setNumber(Integer.parseInt(txt_numberSupplier.getText()));
-        phone1.setPhone(txt_phone1Supplier.getText());
-        phone2.setPhone(txt_phone2Supplier.getText());
-
-        supplier.setAddress(address);
-
-        supplier.setPhone1(phone1);
-        supplier.setPhone2(phone2);
-
-
-        supplier.Create();
-
-
-        this.resetTableViewSupplier();
-
-    }
-
-    private void setStatusSupplier() {
-        Supplier supplier = new Supplier(idSupplierSelected);
-        supplier.setStatus(tbtn_statusSupplier.isSelected());
-        supplier.Save();
-
-        this.resetTableViewSupplier();
-
     }
 
     private void resetTableViewSupplier() {
-        listSupplier = Supplier.ReadAll();
+        listSupplier = Supplier.loadAll();
         dataObervableSupplier.clear();
         dataObervableSupplier.addAll(listSupplier);
     }
@@ -2483,24 +2285,25 @@ public class DashboardController implements Initializable {
             txt_bairroEmployee.setText(employee.getAddress().getNeighborhood());
             txt_streetEmployee.setText(employee.getAddress().getStreet());
             txt_numberEmployee.setText(valueOf(employee.getAddress().getNumber()));
-            ArrayList<Phone> listPhone;
-            listPhone = employee.getListPhone();
-            if (listPhone.size() > 0) {
-                txt_phone1Employee.setText(listPhone.get(0).getPhone());
-            }
-            if (listPhone.size() > 1) {
-                txt_phone2Employee.setText(listPhone.get(1).getPhone());
-            } else {
-                txt_phone2Employee.setText("");
-            }
-            idEmployeeSelected = employee.getIdEmployee();
-            idPersonEmployeeSelected = employee.getIdPerson();
 
-            select_typeStatusFunc.setSelected(employee.getStatus());
-            if (employee.getStatus()) select_typeStatusFunc.setText("Ativo");
+
+            if (employee.getPhones().size() > 0) {
+                txt_phone1Employee.setText(employee.getPhones().get(0).getNumber());
+            }
+
+            if (employee.getPhones().size() > 1) {
+                txt_phone2Employee.setText(employee.getPhones().get(1).getNumber());
+            }
+
+            idEmployeeSelected = employee.getIdEmployee();
+            idPersonEmployeeSelected = employee.getId();
+
+            select_typeStatusFunc.setSelected(employee.isStatus());
+            if (employee.isStatus()) select_typeStatusFunc.setText("Ativo");
             else select_typeStatusFunc.setText("Inativo");
 
-            User user = new User(idEmployeeSelected);
+            User user = User.load(Employee.load(idEmployeeSelected));
+
             if (!user.getLogin().isEmpty()) {
                 btn_editarLogin.setDisable(false);
                 btn_criarLogin.setDisable(true);
@@ -2516,8 +2319,8 @@ public class DashboardController implements Initializable {
                 }
 
 
-                select_loginStatus.setSelected(user.getStatus());
-                if (user.getStatus()) select_loginStatus.setText("Ativo");
+                select_loginStatus.setSelected(user.isStatus());
+                if (user.isStatus()) select_loginStatus.setText("Ativo");
                 else select_loginStatus.setText("Inativo");
 
                 this.selectLoginStatusAction();
@@ -2566,9 +2369,8 @@ public class DashboardController implements Initializable {
     }
 
     private void resetTableViewEmployee() {
-        listEmployee = Employee.ReadAll();
         dataObervableEmployee.clear();
-        dataObervableEmployee.addAll(listEmployee);
+        dataObervableEmployee.addAll(Employee.loadAll());
     }
 
     //region default methods
@@ -2648,28 +2450,58 @@ public class DashboardController implements Initializable {
     }
 
     private void handlerButtonActionSaveEmployee(MouseEvent event) {
-        setEmployeeActiveButtons(true, false, "node");
-        switch (actionEmployee) {
-            case "Editar":
-                saveEmployee();
-                break;
-            case "Adicionar":
-                addEmployee();
-                break;
-            case "Status":
-                setStatusEmployee();
-                break;
-            case "Login":
-                try {
-                    setStatusLogin();
-                } catch (UserException ex) {
-                    FxDialogs.showException("Erro ao salvar Usuário", ex.getClass() + " - " + ex.getMessage(), ex);
+        Employee employee = new Employee();
+        Address address = new Address();
+        Phone phone1 = new Phone();
+        Phone phone2 = new Phone();
+
+        if (idEmployeeSelected > 0) {
+            employee = Employee.load(idEmployeeSelected);
+            address = employee.getAddress();
+
+            if (!employee.getPhones().isEmpty()) {
+
+                phone1 = employee.getPhones().get(0);
+
+                if (employee.getPhones().size() == 2) {
+                    phone2 = employee.getPhones().get(1);
                 }
-                break;
-            default:
-                break;
+            }
         }
-        actionEmployee = "";
+
+        if (!txt_phone1Employee.getText().isEmpty()) {
+            phone1.setNumber(txt_phone1Employee.getText());
+            employee.getPhones().add(0, phone1);
+        }
+
+        if (!txt_phone2Employee.getText().isEmpty()) {
+            phone2.setNumber(txt_phone2Employee.getText());
+            employee.getPhones().add(1, phone2);
+        }
+
+        employee.setNamePerson(txt_nameEmployee.getText());
+        employee.setStatus(select_typeStatusFunc.isSelected());
+
+        employee.setRG(txt_rgEmployee.getText());
+        employee.setCPF(txt_cpfEmployee.getText());
+        employee.setRole(txt_roleEmployee.getText());
+
+        address.setCep(txt_cepEmployee.getText());
+        address.setNeighborhood(txt_bairroEmployee.getText());
+        address.setStreet(txt_streetEmployee.getText());
+        address.setNumber(Integer.parseInt(txt_numberEmployee.getText()));
+
+        employee.setAddress(address);
+        employee.save();
+
+        if(select_loginStatus.isSelected()) {
+            idEmployeeSelected = employee.getIdEmployee();
+            this.handlerButtonActionSaveLogin(event);
+        }
+
+        idEmployeeSelected = 0;
+        this.resetTableViewEmployee();
+
     }
 
     //Login methods
@@ -2692,7 +2524,7 @@ public class DashboardController implements Initializable {
 
     private void handlerButtonActionCancelLogin(MouseEvent event) {
         setLoginActiveButtons(true, false, "");
-        User user = new User(idEmployeeSelected);
+        User user = User.load(Employee.load(idEmployeeSelected));
         if (!user.getLogin().isEmpty()) {
             btn_editarLogin.setDisable(false);
             btn_criarLogin.setDisable(true);
@@ -2703,203 +2535,25 @@ public class DashboardController implements Initializable {
     }
 
     private void handlerButtonActionSaveLogin(MouseEvent event) {
-        setLoginActiveButtons(true, false, "node");
-        switch (actionLogin) {
-            case "Editar":
-                try {
-                    saveLogin();
-                } catch (UserException ex) {
-                    FxDialogs.showException("Erro ao salvar Usuário", ex.getClass() + " - " + ex.getMessage(), ex);
-                }
-                break;
-            case "Adicionar":
-                try {
-                    addLogin();
-                } catch (UserException ex) {
-                    FxDialogs.showException("Erro ao criar Usuário", ex.getClass() + " - " + ex.getMessage(), ex);
-                }
-                break;
-            default:
-                break;
-        }
-        actionLogin = "";
-    }
-    //endregion
 
-    private void saveEmployee() {
-        //Código banco aqui
-        Employee employee = new Employee(idPersonEmployeeSelected, idEmployeeSelected);
-        Address address = new Address(employee.getIdAddress());
-        ArrayList<Phone> listPhone = new ArrayList();
-        listPhone = employee.getListPhone();
-        Phone phone1 = new Phone();
-        Phone phone2 = new Phone();
+        Employee employee = Employee.load(idEmployeeSelected);
+        User user = User.load(employee);
 
-        if (listPhone.size() > 0) {
-            phone1 = listPhone.get(0);
-        }
-        if (listPhone.size() > 1) {
-            phone2 = listPhone.get(1);
-        } else {
-
+        if (user == null) {
+            user = new User();
+            user.setEmployee(employee);
         }
 
-        employee.setNamePerson(txt_nameEmployee.getText());
-        employee.setRole(txt_roleEmployee.getText());
-        employee.setStatus(select_typeStatusFunc.isSelected());
-        address.setCep(txt_cepEmployee.getText());
-        address.setNeighborhood(txt_bairroEmployee.getText());
-        address.setStreet(txt_streetEmployee.getText());
-        address.setNumber(Integer.parseInt(txt_numberEmployee.getText()));
-        phone1.setPhone(txt_phone1Employee.getText());
-        phone2.setPhone(txt_phone2Employee.getText());
-
-        employee.setAddress(address);
-        employee.Save();
-
-
-        if (listPhone.size() > 0) {
-            phone1.Save();
-        } else if (!txt_phone1Employee.getText().equals("")) {
-            phone1.setIdPerson(employee.getIdPerson());
-            phone1.Create();
-        }
-
-        if (listPhone.size() > 1) {
-            phone2.Save();
-        } else if (!txt_phone2Employee.getText().equals("")) {
-            phone2.setIdPerson(employee.getIdPerson());
-            phone2.Create();
-        }
-
-
-        this.resetTableViewEmployee();
-
-    }
-
-    private void addEmployee() {
-        //Código banco aqui
-        Employee employee = new Employee();
-        Address address = new Address();
-        Phone phone1 = new Phone();
-        Phone phone2 = new Phone();
-
-        employee.setNamePerson(txt_nameEmployee.getText());
-        employee.setRole(txt_roleEmployee.getText());
-        employee.setStatus(select_typeStatusFunc.isSelected());
-        address.setCep(txt_cepEmployee.getText());
-        address.setNeighborhood(txt_bairroEmployee.getText());
-        address.setStreet(txt_streetEmployee.getText());
-        address.setNumber(Integer.parseInt(txt_numberEmployee.getText()));
-        phone1.setPhone(txt_phone1Employee.getText());
-        phone2.setPhone(txt_phone2Employee.getText());
-
-
-        employee.setAddress(address);
-
-        employee.setPhone1(phone1);
-        employee.setPhone2(phone2);
-
-        employee.Create();
-
-
-        this.resetTableViewEmployee();
-
-
-    }
-
-    private void setStatusEmployee() {
-        Employee employee = new Employee(idPersonEmployeeSelected, idEmployeeSelected);
-        employee.setStatus(select_typeStatusFunc.isSelected());
-        employee.Save();
-
-        this.resetTableViewEmployee();
-
-    }
-
-
-    private void setStatusLogin() throws UserException {
-        saveLogin();
-    }
-
-    //Login methods
-    private void saveLogin() throws UserException {
-        //Código banco aqui
-        User user = new User(idEmployeeSelected);
-        String level = cbox_typeLevelLogin.getSelectionModel().getSelectedItem();
-
-        if (!user.getLogin().isEmpty() || !user.getPassword().isEmpty() || !level.equals("")) {
-
-            user.setLogin(txt_userLogin.getText());
-            user.setPassword(txt_passLogin.getText());
-
-
-            if (level.equals("Administrador")) {
-                user.setLevel(5);
-            } else if (level.equals("Operador")) {
-                user.setLevel(4);
-            }
-
-            user.setStatus(select_loginStatus.isSelected());
-
-
-            user.SaveByIdEmployee();
-
-        } else {
-            if (user.getLogin().isEmpty() && user.getPassword().isEmpty()) {
-                throw new UserException("Digite um login e uma senha!") {
-                };
-            } else if (user.getLogin().isEmpty()) {
-                throw new UserException("Digite um login!") {
-                };
-            } else if (user.getPassword().isEmpty()) {
-                throw new UserException("Digite uma senha!") {
-                };
-
-            } else if (level.equals("")) {
-                throw new UserException("Escolha um nivel de acesso!") {
-                };
-            }
-        }
-    }
-
-    private void addLogin() throws UserException {
-        //Código banco aqui
-        User user = new User();
-        user.setIdEmployee(idEmployeeSelected);
         user.setLogin(txt_userLogin.getText());
         user.setPassword(txt_passLogin.getText());
-        String level = cbox_typeLevelLogin.getSelectionModel().getSelectedItem();
-        if (level.equals("Administrador")) {
-            user.setLevel(5);
-        } else if (level.equals("Operador")) {
-            user.setLevel(4);
-        }
-
         user.setStatus(select_loginStatus.isSelected());
+        user.save();
+        idEmployeeSelected = 0;
 
-        if (!user.getLogin().isEmpty() || !user.getPassword().isEmpty() || !level.equals("")) {
-            user.Create();
-        } else {
-            if (user.getLogin().isEmpty() && user.getPassword().isEmpty()) {
-                throw new UserException("Digite um login e uma senha!") {
-                };
-            } else if (user.getLogin().isEmpty()) {
-                throw new UserException("Digite um login!") {
-                };
-            } else if (user.getPassword().isEmpty()) {
-                throw new UserException("Digite uma senha!") {
-                };
-
-            } else if (level.equals("")) {
-                throw new UserException("Escolha um nivel de acesso!") {
-                };
-            }
-        }
-
+        /***
+         * Precisa de validação aqui.
+         */
     }
-
-
     //endregion
 
     //region Tab "Produtos" methods
@@ -3226,11 +2880,11 @@ public class DashboardController implements Initializable {
                             break;
 
                         case "phone1":
-                            if (person.getListPhone().size() > 0) text = person.getListPhone().get(0).getPhone();
+                            if (person.getPhones().size() > 0) text = person.getPhones().get(0).getNumber();
                             break;
 
                         case "phone2":
-                            if (person.getListPhone().size() > 1) text = person.getListPhone().get(1).getPhone();
+                            if (person.getPhones().size() > 1) text = person.getPhones().get(1).getNumber();
                             break;
 
                         case "cep":
@@ -3276,6 +2930,4 @@ public class DashboardController implements Initializable {
         return Controller.loader(DashboardController.class, StageStyle.DECORATED, path, title);
 
     }
-
-
 }
