@@ -2,12 +2,12 @@ package model.entity.product;
 
 import util.connection.ConnectionFactory;
 import util.dialogs.FxDialogs;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
 * 
@@ -24,8 +24,6 @@ public class Product {
 	private ProductType productType;
 	private ArrayList<Ingredient> listIngredients = new ArrayList();
 
-
-
     public static int LAST_ID_INSERT = -1;
 
 	public Product(int idProduct){
@@ -36,10 +34,9 @@ public class Product {
     public Product() {
     }
 
-    public Product(String nameProduct, float finalPriceProduct, ArrayList<Ingredient> listIngredients ){
+    public Product(String nameProduct, float finalPriceProduct){
 		this.finalPriceProduct = finalPriceProduct;
 		this.nameProduct = nameProduct;
-		this.listIngredients = listIngredients;
 	}
 
 	private void Load(){
@@ -74,30 +71,6 @@ public class Product {
 		try{
 			stmt = con.prepareStatement("SELECT * FROM product where id_product_type = ?");
 			stmt.setInt(1,category);
-			rs = stmt.executeQuery();
-			while(rs.next()){
-				Product product = new Product(rs.getInt("id_product"));
-				product.setListIngredients(ProductIngredient.ReadAllIngredients(product.getIdProduct()));
-				product.setProductType(new ProductType(product.getIdProductType()));
-				productsList.add(product);
-			}
-		} catch (SQLException ex) {
-			FxDialogs.showException("Erro de Leitura!","class: Product" + " - " + ex.getMessage(),ex);
-		}
-		finally{
-			ConnectionFactory.closeConnection(con, stmt, rs);
-		}
-		return productsList;
-	}
-
-	public static ArrayList<Product> readByName(String name){
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-		ArrayList<Product> productsList = new ArrayList<>();
-		try{
-			stmt = con.prepareStatement("SELECT * FROM product where name_product LIKE ? ORDER BY id_product_type ASC");
-			stmt.setString(1,"%"+name+"%");
 			rs = stmt.executeQuery();
 			while(rs.next()){
 				Product product = new Product(rs.getInt("id_product"));
@@ -198,7 +171,6 @@ public class Product {
 		return listIngredients;
 	}
 
-	//region GET & SET
 	public void setListIngredients(ArrayList<Ingredient> listIngredients) {
 		this.listIngredients = listIngredients;
 	}
@@ -262,7 +234,7 @@ public class Product {
 	public void setProductType(ProductType productType) {
 		this.productType = productType;
 	}
-	//endregion
+
 
 } // END class product
 

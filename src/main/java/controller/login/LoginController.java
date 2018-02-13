@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import model.entity.person.user.User;
+import model.entity.person.User;
 import util.dialogs.FxDialogs;
 import util.exception.UserException;
 
@@ -98,44 +98,59 @@ public class LoginController implements Initializable{
 
     @FXML
     private void handlerButtonActionEntrar(MouseEvent event) {
+        /*MODULARIZAR METODOS NAO DEIXAR CODIGO CRITICO DENTRO DE BOTOES PORQUE MAIS METODOS PODEM UTILIZAR O MESMO
+        NESTE CASO VOU COLOCAR EVENT KEYLISTENER PRO ENTER NOS CAMPOS AI CHAMA O MESMO METODO DE LOGIN POUPANDO CODIGO*/
         executeLogin(event);
     }
 
     @FXML
     private void handlerButtonActionSair(MouseEvent event) {
+
+        /* ISSO PODE SER SUBSTITUIDO POR ISSO
+        Stage stage = (Stage) btn_sair.getScene().getWindow(); //Obtendo a janela atual
+        stage.close(); //Fechando o Stage
+        */
+
         Controller.closeApplication(event);
     }
 
     private void executeLogin(Event event){
 
+        //User user = null; -> SIMPLIFICAR
         User user;
 
-        try {
-            user = new User(txt_login.getText(), txt_senha.getText());
-
-            if(user.doLogin()){
-                user = new User(txt_login.getText());
-                if(user.getStatus()) {
-                    lblWarning.setText("");
-
-                    Controller.closeApplication(event);
-                    DashboardController.setUser(user);
-                    DashboardController.loader().show();
-
-                }else{
-                    FxDialogs.showError("Acesso Negado!","Login inativo!");
-                    lblWarning.setText("Acesso Negado!");
-                }
-
-            }else{
-                FxDialogs.showError("Acesso Negado!","Usuário ou senha incorretos");
-                lblWarning.setText("Acesso Negado!");
-            }
-        } catch (UserException ex) {
-            FxDialogs.showWarning(ex.getMessage(), "Tente novamente.");
-        } catch (IOException ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            user = new User(txt_login.getText(), txt_senha.getText());
+//
+//            if(user.doLogin()){
+//                user = new User(txt_login.getText());
+//                if(user.getStatus()) {
+//                    lblWarning.setText("");
+//
+//                    //((Node) (event.getSource())).getScene().getWindow().hide();
+//                    //da pra trocar isso aqui por
+//                    Controller.hideApplication(event);
+//                    //Controller.closeApplication(event);
+//
+//                    DashboardController.setUser(user);
+//                    DashboardController.loader().show();
+//                    /*DashboardController ds = new DashboardController();
+//                    ds.setUser(user);
+//                    ds.loader().show();*/
+//                }else{
+//                    FxDialogs.showError("Acesso Negado!","Login inativo!");
+//                    lblWarning.setText("Acesso Negado!");
+//                }
+//
+//            }else{
+//                FxDialogs.showError("Acesso Negado!","Usuário ou senha incorretos");
+//                lblWarning.setText("Acesso Negado!");
+//            }
+//        } catch (UserException ex) {
+//            FxDialogs.showWarning(ex.getMessage(), "Tente novamente.");
+//        } catch (IOException ex) {
+//            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     

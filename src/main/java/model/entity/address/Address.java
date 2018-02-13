@@ -1,138 +1,40 @@
 package model.entity.address;
 
-import util.connection.ConnectionFactory;
-import util.dialogs.FxDialogs;
+import model.entity.Entity;
+import model.dao.address.AddressDAO;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
 * 
-* @author Matheus Henrique
+* @author FelipeMantoan
 */
-public class Address {
-	private int idAddress;
-	private String street;
+public class Address implements Entity {
+
+	private int id = -1;
+
 	private int number;
+
+	private String street;
+
 	private String neighborhood;
+
 	private String cep;
 
-    public static int LAST_ID_INSERT = -1;
-
-	public Address(int idAddress){
-		this.setIdAddress(idAddress);
-		this.Load();
+	public static Address load(int id) {
+		return AddressDAO.load(id);
 	}
 
-	public Address(){
+	public static ArrayList<Address> loadAll() {
+		return AddressDAO.loadAll();
 	}
 
-	private void Load(){
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-		try{
-			stmt = con.prepareStatement("SELECT * FROM address WHERE id_address = ?");
-			stmt.setInt(1, this.getIdAddress());
-			rs = stmt.executeQuery();
-			rs.next();
-			this.setStreet(rs.getString("street"));
-			this.setNumber(rs.getInt("number"));
-			this.setNeighborhood(rs.getString("neighborhood"));
-			this.setCep(rs.getString("cep"));
-		} catch (SQLException ex) {
-			FxDialogs.showException("Erro de Leitura!",getClass().getSimpleName()+ " - " + ex.getMessage(),ex);
-		}
-		finally{
-			ConnectionFactory.closeConnection(con, stmt, rs);
-		}
+	public void setId(int idAddress){
+		this.id = idAddress;
 	}
 
-	public static ArrayList<Address> ReadAll(){
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		ResultSet rs = null;
-		ArrayList<Address> addresssList = new ArrayList<>();
-		try{
-			stmt = con.prepareStatement("SELECT id_address FROM address");
-			rs = stmt.executeQuery();
-			while(rs.next()){
-				Address address = new Address(rs.getInt("id_address"));
-				addresssList.add(address);
-			}
-		} catch (SQLException ex) {
-			FxDialogs.showException("Erro de Leitura!","class: Address" +  " - " + ex.getMessage(),ex);
-		}
-		finally{
-			ConnectionFactory.closeConnection(con, stmt, rs);
-		}
-		return addresssList;
-	}
-
-	public void Save(){
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		try{
-			stmt = con.prepareStatement("UPDATE address SET street = ?, number = ?, neighborhood = ?, cep = ?  WHERE id_address= ?");
-			stmt.setString(1, this.getStreet());
-			stmt.setInt(2, this.getNumber());
-			stmt.setString(3, this.getNeighborhood());
-			stmt.setString(4, this.getCep());
-			stmt.setInt(5, this.getIdAddress());
-			stmt.executeUpdate();
-		} catch (SQLException ex) {
-			FxDialogs.showException("Erro de Atualização!",getClass().getSimpleName()+ " - " + ex.getMessage(),ex);
-		}
-		finally{
-			ConnectionFactory.closeConnection(con,stmt);
-		}
-	}
-
-	public void Create(){
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		try{
-			stmt = con.prepareStatement("INSERT INTO address (street,number,neighborhood,cep) VALUES (?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS);
-			stmt.setString(1, this.getStreet());
-			stmt.setInt(2, this.getNumber());
-			stmt.setString(3, this.getNeighborhood());
-			stmt.setString(4, this.getCep());
-			stmt.executeUpdate();
-            ResultSet rs = stmt.getGeneratedKeys();
-            LAST_ID_INSERT = rs.next() ? rs.getInt(1) : -1;
-            this.setIdAddress(LAST_ID_INSERT);
-        } catch (SQLException ex) {
-			FxDialogs.showException("Erro de Gravação! " ,getClass().getSimpleName()+ " - " + ex.getMessage(),ex);
-		}
-		finally{
-			ConnectionFactory.closeConnection(con,stmt);
-		}
-	}
-
-	public void Delete(){
-		Connection con = ConnectionFactory.getConnection();
-		PreparedStatement stmt = null;
-		try{
-			stmt = con.prepareStatement("DELETE FROM address WHERE id_address = ?");
-			stmt.setInt(1, this.getIdAddress());
-			stmt.executeUpdate();
-		} catch (SQLException ex) {
-			FxDialogs.showException("Erro de Exclusão!",getClass().getSimpleName()+ " - " + ex.getMessage(),ex);
-		}
-		finally{
-			ConnectionFactory.closeConnection(con,stmt);
-		}
-	}
-
-	public void setIdAddress(int idAddress){
-		this.idAddress = idAddress;
-	}
-
-	public int getIdAddress(){
-		return this.idAddress;
+	public int getId(){
+		return this.id;
 	}
 
 	public void setStreet(String street){
@@ -167,5 +69,22 @@ public class Address {
 		return this.cep;
 	}
 
-} // END class address
+	@Override
+	public boolean save() {
+		boolean isSaved = false;
 
+		if (this.id == -1) {
+			if (AddressDAO.create(this)) {
+				this.setId(AddressDAO.LAST_ID_INSERT);
+				isSaved = true;
+			}
+		}
+
+		if (AddressDAO.update( this )) {
+			isSaved = true;
+		}
+
+		return isSaved;
+	}
+
+}

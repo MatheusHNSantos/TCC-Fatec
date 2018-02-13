@@ -14,8 +14,8 @@
    <children>
       <TableView fx:id="tview_saleDetail" focusTraversable="false" layoutX="226.0" layoutY="14.0" prefHeight="286.0" prefWidth="271.0">
          <columns>
-            <TableColumn fx:id="nameProduct" prefWidth="172.0" text="Produto" />
-            <TableColumn fx:id="priceProduct" minWidth="0.0" prefWidth="99.0" text="Preço" />
+            <TableColumn prefWidth="172.0" text="Produto" />
+            <TableColumn minWidth="0.0" prefWidth="99.0" text="Preço" />
          </columns>
       </TableView>
       <GridPane layoutX="22.0" layoutY="14.0" prefHeight="197.0" prefWidth="194.0">
@@ -46,7 +46,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="lbl_customer" text="#cliente" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label fx:id="lbl_costumer" text="#cliente" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="15.0" />
                </font>

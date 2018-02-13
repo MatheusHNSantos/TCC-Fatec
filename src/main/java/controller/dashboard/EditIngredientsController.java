@@ -20,6 +20,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.entity.product.Ingredient;
+import model.entity.product.Product;
+import model.entity.product.ProductType;
 
 import java.io.IOException;
 import java.net.URL;

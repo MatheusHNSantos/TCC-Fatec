@@ -16,12 +16,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.entity.product.Ingredient;
+import model.entity.product.Product;
 import model.entity.product.ProductType;
+
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import static java.lang.String.valueOf;
 
 public class EditProductTypeController implements Initializable {
 

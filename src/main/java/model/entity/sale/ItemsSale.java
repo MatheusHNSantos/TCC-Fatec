@@ -23,9 +23,6 @@ public class ItemsSale {
 		this.Load();
 	}
 
-	public ItemsSale(){
-	}
-
     public ItemsSale(int idItemsSale, int idSale, int idProduct){
         this.idItemsSale =idItemsSale;
         this.idSale = idSale;
@@ -80,9 +77,11 @@ public class ItemsSale {
 		ArrayList<Product> productList = new ArrayList<>();
 
 		try {
-			stmt = con.prepareStatement("select * from items_sale where id_sale = ?");
+			stmt = con.prepareStatement("select id_product from items_sale" +
+					"where id_sale = ?");
 			stmt.setInt(1, idSale);
 			rs = stmt.executeQuery();
+
 			while (rs.next()) {
 				Product product = new Product(rs.getInt("id_product"));
                 productList.add(product);

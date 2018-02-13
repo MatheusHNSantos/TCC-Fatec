@@ -37,22 +37,6 @@
     -fx-text-fill: #ffffff;
 }
 
-.text-field {
-    -fx-prompt-text-fill: 	#989898;
-}
-
-.text-field:error {
-  -fx-text-box-border: red ;
-  -fx-focus-color: red ;
-}
-
-.tooltip{
-  -fx-background-color: #2E8B57;
-  -fx-background-radius: 5;
-  -fx-text-fill: white;
-  -fx-font-weight: bold;
-}
-
 #txt_senha, #txt_login {
     -fx-border-radius: 1px;
     -fx-background-radius: 1px;
@@ -66,6 +50,8 @@
     -fx-faint-focus-color: #f2f2f2;
     -fx-effect: dropshadow(two-pass-box, rgba(204,204,204,0.2), 2, 0, 0, 0);
 }
+
+
 
 #togglePlus{
     -fx-graphic: url('plus.png');

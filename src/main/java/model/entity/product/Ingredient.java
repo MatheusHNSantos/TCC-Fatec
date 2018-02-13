@@ -2,7 +2,6 @@ package model.entity.product;
 
 import util.connection.ConnectionFactory;
 import util.dialogs.FxDialogs;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

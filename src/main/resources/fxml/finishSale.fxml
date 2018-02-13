@@ -24,7 +24,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="btn_cancelSale" alignment="TOP_LEFT" layoutX="2.0" layoutY="252.0" prefHeight="35.0" prefWidth="142.0" text="Cancelar Compra">
+      <JFXButton alignment="TOP_LEFT" layoutX="2.0" layoutY="252.0" prefHeight="35.0" prefWidth="142.0" text="Cancelar Compra">
          <graphic>
             <ImageView fitHeight="27.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>

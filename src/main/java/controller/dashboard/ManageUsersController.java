@@ -19,8 +19,8 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import model.entity.person.employee.Employee;
-import model.entity.person.user.User;
+import model.entity.person.Employee;
+import model.entity.person.User;
 import util.dialogs.FxDialogs;
 import util.exception.UserException;
 
@@ -28,6 +28,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import static java.lang.String.valueOf;
 
 public class ManageUsersController implements Initializable {
 
@@ -75,135 +77,135 @@ public class ManageUsersController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb){
 
-        btn_editUser.setDisable(true);
-
-        //region TableView
-        dataObervableUser = FXCollections.observableArrayList();
-
-        //region columns declarations
-        columnUserLogin.setCellValueFactory(new PropertyValueFactory<>("login"));
-
-        //column Level
-        columnUserLevel.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnUserLevel.setCellFactory(column -> new TableCell<User, User>() {
-
-            private VBox graphic ;
-            private Label labelLevel ;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelLevel = createLabel();
-                graphic.getChildren().addAll(labelLevel);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(User user, boolean empty) {
-                if (user == null) {
-                    setGraphic(null);
-                } else {
-                    int level = user.getLevel();
-                    if(level == 5){
-                        labelLevel.setText("Administrador");
-                    }else if (level == 4){
-                        labelLevel.setText("Operador");
-                    }
-
-                    setGraphic(graphic);
-                }
-            }
-        });
-
-        //column Employee
-        columnUserEmployee.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnUserEmployee.setCellFactory(column -> new TableCell<User, User>() {
-
-            private VBox graphic ;
-            private Label labelEmployee ;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelEmployee = createLabel();
-                graphic.getChildren().addAll(labelEmployee);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(User user, boolean empty) {
-                if (user == null) {
-                    setGraphic(null);
-                } else {
-                    Employee employee = new Employee(user.getIdEmployee());
-                    employee = new Employee(employee.getIdPerson(), employee.getIdEmployee());
-                    labelEmployee.setText(employee.getNamePerson());
-                    setGraphic(graphic);
-                }
-            }
-        });
-
-        //column Status
-        columnUserStatus.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnUserStatus.setCellFactory(column -> new TableCell<User, User>() {
-
-            private VBox graphic ;
-            private Label labelStatus ;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelStatus = createLabel();
-                graphic.getChildren().addAll(labelStatus);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(User user, boolean empty) {
-                if (user == null) {
-                    setGraphic(null);
-                } else {
-                    boolean status = user.getStatus();
-                    if(status)
-                        labelStatus.setText("Ativo");
-                    else
-                        labelStatus.setText("Inativo");
-
-
-                    setGraphic(graphic);
-                }
-            }
-        });
-        //endregion
-
-        listUser = User.ReadAll();
-        dataObervableUser.addAll(listUser);
-        tview_users.setItems(dataObervableUser);
-        //endregion
-
-        //region Employee Details
-        cbox_levelUser.getItems().addAll(
-                "",
-                "Operador",
-                "Administrador"
-        );
-
-        showUserDetails(null);
-
-        tview_users.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> showUserDetails(newValue));
-        //endregion
-
-
-        //region Events
-        btn_saveUser.setOnMouseClicked(this::handlerButtonActionSaveUser);
-        btn_cancelUser.setOnMouseClicked(this::handlerButtonActionCancelUser);
-        btn_editUser.setOnMouseClicked(this::handlerButtonActionEditUser);
-        tbtn_statusUser.setOnMouseClicked(this::handlerButtonActionStatusUser);
-        //endregion
+//        btn_editUser.setDisable(true);
+//
+//        //region TableView
+//        dataObervableUser = FXCollections.observableArrayList();
+//
+//        //region columns declarations
+//        columnUserLogin.setCellValueFactory(new PropertyValueFactory<>("login"));
+//
+//        //column Level
+//        columnUserLevel.setCellValueFactory(cellData ->
+//                new ReadOnlyObjectWrapper<>(cellData.getValue()));
+//        columnUserLevel.setCellFactory(column -> new TableCell<User, User>() {
+//
+//            private VBox graphic ;
+//            private Label labelLevel ;
+//
+//            // Anonymous constructor:
+//            {
+//                graphic = new VBox();
+//                labelLevel = createLabel();
+//                graphic.getChildren().addAll(labelLevel);
+//                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+//            }
+//
+//            @Override
+//            public void updateItem(User user, boolean empty) {
+//                if (user == null) {
+//                    setGraphic(null);
+//                } else {
+//                    int level = 5;
+//                    if(level == 5){
+//                        labelLevel.setText("Administrador");
+//                    }else if (level == 4){
+//                        labelLevel.setText("Operador");
+//                    }
+//
+//                    setGraphic(graphic);
+//                }
+//            }
+//        });
+//
+//        //column Employee
+//        columnUserEmployee.setCellValueFactory(cellData ->
+//                new ReadOnlyObjectWrapper<>(cellData.getValue()));
+//        columnUserEmployee.setCellFactory(column -> new TableCell<User, User>() {
+//
+//            private VBox graphic ;
+//            private Label labelEmployee ;
+//
+//            // Anonymous constructor:
+//            {
+//                graphic = new VBox();
+//                labelEmployee = createLabel();
+//                graphic.getChildren().addAll(labelEmployee);
+//                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+//            }
+//
+//            @Override
+//            public void updateItem(User user, boolean empty) {
+//                if (user == null) {
+//                    setGraphic(null);
+//                } else {
+////                    Employee employee = new Employee(user.getIdEmployee());
+////                    employee = new Employee(employee.getIdPerson(), employee.getIdEmployee());
+////                    labelEmployee.setText(employee.getNamePerson());
+////                    setGraphic(graphic);
+//                }
+//            }
+//        });
+//
+//        //column Status
+//        columnUserStatus.setCellValueFactory(cellData ->
+//                new ReadOnlyObjectWrapper<>(cellData.getValue()));
+//        columnUserStatus.setCellFactory(column -> new TableCell<User, User>() {
+//
+//            private VBox graphic ;
+//            private Label labelStatus ;
+//
+//            // Anonymous constructor:
+//            {
+//                graphic = new VBox();
+//                labelStatus = createLabel();
+//                graphic.getChildren().addAll(labelStatus);
+//                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+//            }
+//
+//            @Override
+//            public void updateItem(User user, boolean empty) {
+//                if (user == null) {
+//                    setGraphic(null);
+//                } else {
+//                    boolean status = user.isStatus();
+//                    if(status)
+//                        labelStatus.setText("Ativo");
+//                    else
+//                        labelStatus.setText("Inativo");
+//
+//
+//                    setGraphic(graphic);
+//                }
+//            }
+//        });
+//        //endregion
+//
+//        listUser = User.loadAll();
+//        dataObervableUser.addAll(listUser);
+//        tview_users.setItems(dataObervableUser);
+//        //endregion
+//
+//        //region Employee Details
+//        cbox_levelUser.getItems().addAll(
+//                "",
+//                "Operador",
+//                "Administrador"
+//        );
+//
+//        showUserDetails(null);
+//
+//        tview_users.getSelectionModel().selectedItemProperty().addListener(
+//                (observable, oldValue, newValue) -> showUserDetails(newValue));
+//        //endregion
+//
+//
+//        //region Events
+//        btn_saveUser.setOnMouseClicked(this::handlerButtonActionSaveUser);
+//        btn_cancelUser.setOnMouseClicked(this::handlerButtonActionCancelUser);
+//        btn_editUser.setOnMouseClicked(this::handlerButtonActionEditUser);
+//        tbtn_statusUser.setOnMouseClicked(this::handlerButtonActionStatusUser);
+//        //endregion
 
     }
 
@@ -270,89 +272,89 @@ public class ManageUsersController implements Initializable {
 
     //region methods
     private void showUserDetails(User user) {
-        setUserActiveButtons(true, false, "");
-        tbtn_statusUser.setSelected(false);
-        if (user != null) {
-            btn_editUser.setDisable(false);
-            // Preenche as labels com informações do objeto user.
-
-            Employee employee = new Employee(user.getIdEmployee());
-            employee = new Employee(employee.getIdPerson(), employee.getIdEmployee());
-            lbl_nameEmployee.setText(employee.getNamePerson());
-            lbl_roleEmployee.setText(employee.getRole());
-
-            //idUserSelected = ;
-            idUserEmployeeSelected  = user.getIdEmployee();
-
-
-            txt_userLogin.setText(user.getLogin());
-            txt_passUser.setText(user.getPassword());
-
-            if(user.getLevel() == 5) {
-                cbox_levelUser.setValue("Administrador");
-            }else if(user.getLevel() == 4) {
-                cbox_levelUser.setValue("Operador");
-            }else {
-                cbox_levelUser.setValue("");
-            }
-
-
-            tbtn_statusUser.setSelected(user.getStatus());
-            if(user.getStatus()) tbtn_statusUser.setText("Ativo");
-            else tbtn_statusUser.setText("Inativo");
-
-
-        } else {
-            // user é null, remove todo o texto.
-            lbl_nameEmployee.setText("");
-            lbl_roleEmployee.setText("");
-            txt_userLogin.setText("");
-            txt_passUser.setText("");
-            cbox_levelUser.setValue("");
-            tbtn_statusUser.setSelected(false);
-            idUserEmployeeSelected = 0;
-            btn_editUser.setDisable(true);
-
-        }
+//        setUserActiveButtons(true, false, "");
+//        tbtn_statusUser.setSelected(false);
+//        if (user != null) {
+//            btn_editUser.setDisable(false);
+//            // Preenche as labels com informações do objeto user.
+//
+//            Employee employee = new Employee(user.getIdEmployee());
+//            employee = new Employee(employee.getId(), employee.getIdEmployee());
+//            lbl_nameEmployee.setText(employee.getNamePerson());
+//            lbl_roleEmployee.setText(employee.getRole());
+//
+//            //idUserSelected = ;
+//            idUserEmployeeSelected  = user.getIdEmployee();
+//
+//
+//            txt_userLogin.setText(user.getLogin());
+//            txt_passUser.setText(user.getPassword());
+//
+//            if(user.getLevel() == 5) {
+//                cbox_levelUser.setValue("Administrador");
+//            }else if(user.getLevel() == 4) {
+//                cbox_levelUser.setValue("Operador");
+//            }else {
+//                cbox_levelUser.setValue("");
+//            }
+//
+//
+//            tbtn_statusUser.setSelected(user.isStatus());
+//            if(user.isStatus()) tbtn_statusUser.setText("Ativo");
+//            else tbtn_statusUser.setText("Inativo");
+//
+//
+//        } else {
+//            // user é null, remove todo o texto.
+//            lbl_nameEmployee.setText("");
+//            lbl_roleEmployee.setText("");
+//            txt_userLogin.setText("");
+//            txt_passUser.setText("");
+//            cbox_levelUser.setValue("");
+//            tbtn_statusUser.setSelected(false);
+//            idUserEmployeeSelected = 0;
+//            btn_editUser.setDisable(true);
+//
+//        }
     }
 
     private void saveUser() throws UserException {
-        //Código banco aqui
-        User user = new User(idUserEmployeeSelected);
-        String level = cbox_levelUser.getSelectionModel().getSelectedItem();
-
-        if(!user.getLogin().isEmpty() || !user.getPassword().isEmpty() || !level.equals("")){
-
-            user.setLogin(txt_userLogin.getText());
-            user.setPassword(txt_passUser.getText());
-
-
-            if(level.equals("Administrador")) {
-                user.setLevel(5);
-            }else if(level.equals("Operador")) {
-                user.setLevel(4);
-            }
-
-            user.setStatus(tbtn_statusUser.isSelected());
-
-            user.SaveByIdEmployee();
-
-        }else{
-            if(user.getLogin().isEmpty() && user.getPassword().isEmpty()){
-                throw new UserException("Digite um login e uma senha!") {};
-            }else if (user.getLogin().isEmpty()) {
-                throw new UserException("Digite um login!") {};
-            }else if (user.getPassword().isEmpty()) {
-                throw new UserException("Digite uma senha!") {};
-
-            }else if (level.equals("")){
-                throw new UserException("Escolha um nivel de acesso!") {};
-            }
-        }
-
-        listUser = User.ReadAll();
-        dataObervableUser.clear();
-        dataObervableUser.addAll(listUser);
+//        //Código banco aqui
+//        User user = new User(idUserEmployeeSelected);
+//        String level = cbox_levelUser.getSelectionModel().getSelectedItem();
+//
+//        if(!user.getLogin().isEmpty() || !user.getPassword().isEmpty() || !level.equals("")){
+//
+//            user.setLogin(txt_userLogin.getText());
+//            user.setPassword(txt_passUser.getText());
+//
+//
+//            if(level.equals("Administrador")) {
+//                user.setLevel(5);
+//            }else if(level.equals("Operador")) {
+//                user.setLevel(4);
+//            }
+//
+//            user.setStatus(tbtn_statusUser.isSelected());
+//
+//            user.SaveByIdEmployee();
+//
+//        }else{
+//            if(user.getLogin().isEmpty() && user.getPassword().isEmpty()){
+//                throw new UserException("Digite um login e uma senha!") {};
+//            }else if (user.getLogin().isEmpty()) {
+//                throw new UserException("Digite um login!") {};
+//            }else if (user.getPassword().isEmpty()) {
+//                throw new UserException("Digite uma senha!") {};
+//
+//            }else if (level.equals("")){
+//                throw new UserException("Escolha um nivel de acesso!") {};
+//            }
+//        }
+//
+//        listUser = User.loadAll();
+//        dataObervableUser.clear();
+//        dataObervableUser.addAll(listUser);
     }
 
     private void setStatusUser() throws UserException {
