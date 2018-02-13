@@ -2284,6 +2284,8 @@ public class DashboardController implements Initializable {
             txt_cepEmployee.setText(employee.getAddress().getCep());
             txt_bairroEmployee.setText(employee.getAddress().getNeighborhood());
             txt_streetEmployee.setText(employee.getAddress().getStreet());
+            txt_rgEmployee.setText(employee.getRG());
+            txt_cpfEmployee.setText(employee.getCPF());
             txt_numberEmployee.setText(valueOf(employee.getAddress().getNumber()));
 
 
