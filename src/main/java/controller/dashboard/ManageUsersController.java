@@ -19,8 +19,8 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import model.entity.person.employee.Employee;
-import model.entity.person.user.User;
+import model.entity.person.Employee;
+import model.entity.person.User;
 import util.dialogs.FxDialogs;
 import util.exception.UserException;
 
@@ -137,9 +137,7 @@ public class ManageUsersController implements Initializable {
                 if (user == null) {
                     setGraphic(null);
                 } else {
-                    Employee employee = new Employee(user.getIdEmployee());
-                    employee = new Employee(employee.getIdPerson(), employee.getIdEmployee());
-                    labelEmployee.setText(employee.getNamePerson());
+                    labelEmployee.setText(user.getEmployee().getNamePerson());
                     setGraphic(graphic);
                 }
             }
@@ -166,7 +164,7 @@ public class ManageUsersController implements Initializable {
                 if (user == null) {
                     setGraphic(null);
                 } else {
-                    boolean status = user.getStatus();
+                    boolean status = user.isStatus();
                     if(status)
                         labelStatus.setText("Ativo");
                     else
@@ -179,7 +177,7 @@ public class ManageUsersController implements Initializable {
         });
         //endregion
 
-        listUser = User.ReadAll();
+        listUser = User.loadAll();
         dataObervableUser.addAll(listUser);
         tview_users.setItems(dataObervableUser);
         //endregion
@@ -276,13 +274,11 @@ public class ManageUsersController implements Initializable {
             btn_editUser.setDisable(false);
             // Preenche as labels com informações do objeto user.
 
-            Employee employee = new Employee(user.getIdEmployee());
-            employee = new Employee(employee.getIdPerson(), employee.getIdEmployee());
-            lbl_nameEmployee.setText(employee.getNamePerson());
-            lbl_roleEmployee.setText(employee.getRole());
+            lbl_nameEmployee.setText(user.getEmployee().getNamePerson());
+            lbl_roleEmployee.setText(user.getEmployee().getRole());
 
             //idUserSelected = ;
-            idUserEmployeeSelected  = user.getIdEmployee();
+            idUserEmployeeSelected  = user.getEmployee().getIdEmployee();
 
 
             txt_userLogin.setText(user.getLogin());
@@ -297,8 +293,8 @@ public class ManageUsersController implements Initializable {
             }
 
 
-            tbtn_statusUser.setSelected(user.getStatus());
-            if(user.getStatus()) tbtn_statusUser.setText("Ativo");
+            tbtn_statusUser.setSelected(user.isStatus());
+            if(user.isStatus()) tbtn_statusUser.setText("Ativo");
             else tbtn_statusUser.setText("Inativo");
 
 
@@ -318,7 +314,7 @@ public class ManageUsersController implements Initializable {
 
     private void saveUser() throws UserException {
         //Código banco aqui
-        User user = new User(idUserEmployeeSelected);
+        User user = User.load(Employee.load(idUserEmployeeSelected));
         String level = cbox_levelUser.getSelectionModel().getSelectedItem();
 
         if(!user.getLogin().isEmpty() || !user.getPassword().isEmpty() || !level.equals("")){
@@ -335,7 +331,7 @@ public class ManageUsersController implements Initializable {
 
             user.setStatus(tbtn_statusUser.isSelected());
 
-            user.SaveByIdEmployee();
+            user.save();
 
         }else{
             if(user.getLogin().isEmpty() && user.getPassword().isEmpty()){
@@ -350,7 +346,7 @@ public class ManageUsersController implements Initializable {
             }
         }
 
-        listUser = User.ReadAll();
+        listUser = User.loadAll();
         dataObervableUser.clear();
         dataObervableUser.addAll(listUser);
     }
