@@ -163,7 +163,7 @@ public class PhoneDAO implements DAO {
         return ids;
     }
 
-    public static ArrayList<Customer> loadCostumerByPhone(String number) {
+    public static ArrayList<Customer> loadCustomerByPhone(String number) {
         ArrayList<Customer> customers = new ArrayList();
 
         for(Integer id : PhoneDAO.loadPersonByPhone(number)) {
