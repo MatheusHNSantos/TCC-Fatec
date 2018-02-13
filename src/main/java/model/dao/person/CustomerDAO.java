@@ -33,7 +33,7 @@ public class CustomerDAO extends PersonDAO {
     public static boolean create(Customer customer) {
         PersonDAO.create(customer);
         Connection conn = ConnectionFactory.getConnection();
-        String sql = "INSERT INTO customer (status_costumer, id_person) VALUES (?, ?)";
+        String sql = "INSERT INTO customer (status_customer, id_person) VALUES (?, ?)";
         PreparedStatement stmt = null;
 
         try {
@@ -63,7 +63,7 @@ public class CustomerDAO extends PersonDAO {
         PersonDAO.update(customer);
 
         Connection conn = ConnectionFactory.getConnection();
-        String sql = "UPDATE customer SET status_costumer = ? WHERE id_person = ?";
+        String sql = "UPDATE customer SET status_customer = ? WHERE id_person = ?";
         PreparedStatement stmt = null;
 
         try {
@@ -91,7 +91,7 @@ public class CustomerDAO extends PersonDAO {
     public static Customer load(int id) {
         Connection conn = ConnectionFactory.getConnection();
 
-        String sql = "SELECT customer.status_costumer, " +
+        String sql = "SELECT customer.status_customer, " +
                 "person.name_person, person.id_person, address.id_address, " +
                 "address.street_address, address.number_address,address.cep_address, " +
                 "address.neighborhood_address " +
@@ -123,6 +123,44 @@ public class CustomerDAO extends PersonDAO {
 
     /**
      *
+     * @param name
+     * @return
+     */
+    public static Customer load(String name) {
+        Connection conn = ConnectionFactory.getConnection();
+
+        String sql = "SELECT customer.status_customer, " +
+                "person.name_person, person.id_person, address.id_address, " +
+                "address.street_address, address.number_address,address.cep_address, " +
+                "address.neighborhood_address " +
+                "FROM customer " +
+                "INNER JOIN person ON person.id_person = customer.id_person " +
+                "INNER JOIN address ON address.id_address = person.id_address " +
+                "WHERE person.name_person LIKE %?%";
+
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        Customer customer = null;
+
+        try {
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, name);
+            rs = stmt.executeQuery();
+            rs.next();
+            customer = CustomerDAO.createInstance(rs);
+        }
+        catch (SQLException sqlE) {
+            Logger.getLogger(CustomerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+        }
+        finally {
+            ConnectionFactory.closeConnection(conn, stmt, rs);
+        }
+
+        return customer;
+    }
+
+    /**
+     *
      * @return
      */
     public static ArrayList<Customer> loadAll () {
@@ -130,12 +168,12 @@ public class CustomerDAO extends PersonDAO {
         ArrayList<Customer> customers = new ArrayList<>();
 
         Connection conn = ConnectionFactory.getConnection();
-        String sql = "SELECT costumer.status_costumer, " +
+        String sql = "SELECT customer.status_customer, " +
                 "person.name_person, person.id_person ,address.id_address, " +
                 "address.street_address, address.number_address, " +
                 "address.cep_address, address.neighborhood_address " +
-                "FROM costumer " +
-                "INNER JOIN person ON person.id_person = costumer.id_person " +
+                "FROM customer " +
+                "INNER JOIN person ON person.id_person = customer.id_person " +
                 "INNER JOIN address ON address.id_address = person.id_address";
 
         PreparedStatement stmt = null;
@@ -164,7 +202,7 @@ public class CustomerDAO extends PersonDAO {
         try {
             customer = new Customer();
             customer.setId(result.getInt("id_person"));
-            customer.setStatus(result.getBoolean("status_costumer"));
+            customer.setStatus(result.getBoolean("status_customer"));
             customer.setNamePerson(result.getString("name_person"));
             customer.setAddress( AddressDAO.createInstance(result));
             customer.setPhones(PhoneDAO.load(customer));
