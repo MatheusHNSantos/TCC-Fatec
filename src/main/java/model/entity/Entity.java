@@ -1,10 +1,17 @@
 package model.entity;
 
-import java.sql.SQLException;
-
 public interface Entity {
 
-    int id = -1;
+    public int id  = -1;
 
-    public void save() throws SQLException, ClassNotFoundException;
+    public void setId(int id);
+
+    public int getId();
+
+    /**
+     * Este método é responsável por criar ou atualizar um entidade.
+     *
+     * @return boolean
+     */
+    public boolean save();
 }
