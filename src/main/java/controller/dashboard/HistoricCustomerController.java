@@ -90,7 +90,7 @@ public class HistoricCustomerController implements Initializable{
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                Sale.readSaleByPersonId(person2.getIdPerson()).forEach(sale -> dataObservableSaleHistoric.addAll(sale));
+                Sale.readSaleByPersonId(person2.getId()).forEach(sale -> dataObservableSaleHistoric.addAll(sale));
             }
         });
 
