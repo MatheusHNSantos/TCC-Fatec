@@ -20,16 +20,12 @@ public class Main extends Application {
     @Override
     public void start(Stage PrimaryStage) {
         try {
-
            LoginController.loader().show();
         }
         catch (Exception ex) {
             ex.printStackTrace();
         }
-
-
     }
-
 
     /**
      * @param args the command line arguments

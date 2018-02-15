@@ -93,8 +93,9 @@
   <path id="library.mysql-connector-java-6.0.6.classpath">
     <pathelement location="${basedir}/lib/mysql-connector-java-6.0.6.jar"/>
   </path>
+
   <!-- Register Custom Compiler Taskdefs -->
-  <property name="javac2.home" value="${idea.home}/lib"/>
+  <property name="javac2.home" value="${jdk.home.1.8}/lib"/>
   <path id="javac2.classpath">
     <pathelement location="${javac2.home}/javac2.jar"/>
     <pathelement location="${javac2.home}/jdom.jar"/>

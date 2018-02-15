@@ -115,8 +115,6 @@ public class DashboardController implements Initializable {
     @FXML
     private Tab salesTab;
     @FXML
-    private Tab usersTab;
-    @FXML
     private JFXTabPane tablePaneAdm;
 
     @FXML
@@ -145,8 +143,6 @@ public class DashboardController implements Initializable {
     //region @FXML Objects
     @FXML
     private JFXButton btn_finishSale;
-    @FXML
-    private Hyperlink btn_historicCustomer;
     @FXML
     private Hyperlink hyperlinkVerifyRegister;
     @FXML

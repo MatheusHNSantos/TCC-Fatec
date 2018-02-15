@@ -55,14 +55,6 @@ public class LoginController implements Initializable{
 
     private int mandioca;
 
-    public int getMandioca() {
-        return mandioca;
-    }
-
-    public void setMandioca(int mandioca) {
-        this.mandioca = mandioca;
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         

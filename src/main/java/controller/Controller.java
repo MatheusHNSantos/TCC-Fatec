@@ -28,27 +28,37 @@ public class Controller {
     private static Class<? extends Window> controlledStage;
 
     //region Static Loader - For non interact Windows
-    public static Stage loader(Class<?> Class, StageStyle style, String path, String title) throws IOException {
-        Stage stage = createStageInstance(sPathControl + path, Class);
+    public static Stage loader(Class Class, StageStyle style, String path, String title) throws IOException {
         Controller ls = new Controller();
+        Stage stage = ls.createStageInstance(sPathControl+path, Class);
         stage = ls.icons(stage);
         stage.initStyle(style);
         stage.setTitle(title);
-
         controlledStage = stage.getClass();
         return stage;
     }
 
-    public Stage icons(Stage stage){
+    private Stage createStageInstance(String path, Class Class) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(Class.getClassLoader().getResource(path));
+        System.out.println(fxmlLoader.getLocation());
+        fxmlLoader.load();
+        Parent root = fxmlLoader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        return stage;
+    }
+
+    private Stage icons(Stage stage){
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/img/icon.jpg")));
         return stage;
     }
 
-    public static Stage loaderModal(Class<?> Class, StageStyle style, String path, String title,
+    public static Stage loaderModal(Class Class, StageStyle style, String path, String title,
                                     EventHandler<WindowEvent> onShow, EventHandler<WindowEvent> onClose) throws IOException {
 
-        Stage stage = createStageInstance(sPathControl + path, Class);
         Controller ls = new Controller();
+        Stage stage = ls.createStageInstance(path, Class);
         stage = ls.icons(stage);
         stage.initStyle(style);
         stage.setTitle(title);
@@ -58,12 +68,7 @@ public class Controller {
         return stage;
     }
 
-    public static Stage createStageInstance(String path, Class<?> Class) throws IOException {
-        Parent root = FXMLLoader.load(Class.getClassLoader().getResource(path));
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        return stage;
-    }
+
     //endregion
 
     //region Object Loader
