@@ -6,6 +6,7 @@
 package model.dao.phone;
 
 import model.dao.DAO;
+import model.dao.person.SupplierDAO;
 import model.entity.person.Customer;
 import model.entity.person.Employee;
 import model.entity.person.Person;
@@ -21,7 +22,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Matheus Henrique
+ * @author FelipeMantoan
  */
 public class PhoneDAO implements DAO {
 
@@ -193,6 +194,13 @@ public class PhoneDAO implements DAO {
         return suppliers;
     }
 
+    /**
+     * Recebe um Result e extrai os dados dele,
+     * porém não fecha a conexão, por questão de reaproveitamento de código.
+     *
+     * @param result
+     * @return
+     */
     public static Phone createInstance(ResultSet result) {
 
         Phone phone = null;
@@ -224,7 +232,7 @@ public class PhoneDAO implements DAO {
             return true;
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(PhoneDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao criar instância de telefone.","Class: "+ PhoneDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt);
