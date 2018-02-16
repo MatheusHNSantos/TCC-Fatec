@@ -5,11 +5,15 @@
  */
 package app;
 
+import controller.Controller;
 import controller.dashboard.DashboardController;
 import controller.login.LoginController;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 /**
  *
@@ -19,6 +23,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage PrimaryStage) {
+
         try {
            LoginController.loader().show();
         }

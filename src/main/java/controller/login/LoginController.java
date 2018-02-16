@@ -32,8 +32,8 @@ import java.util.logging.Logger;
  */
 public class LoginController implements Initializable{
     
-    private static final String path = "login.fxml";
-    private static final String title = "PAVG Apetitoso - Login";
+    public static final String path = "login.fxml";
+    public static final String title = "PAVG Apetitoso - Login";
     
     private Thread one;
     @FXML
@@ -61,16 +61,6 @@ public class LoginController implements Initializable{
         lblWarning.setText("");
 
         //Thread to wait css animation
-        one = new Thread() {
-            public void run() {
-                try {
-                    Thread.sleep(300);
-                    System.exit(0);
-                } catch (InterruptedException v) {
-                    System.out.println(v);
-                }
-            }
-        };
 
         btn_sair.setOnMouseClicked(this::handlerButtonActionSair);
         btn_entrar.setOnMouseClicked(this::handlerButtonActionEntrar);

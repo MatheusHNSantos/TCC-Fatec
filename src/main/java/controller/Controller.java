@@ -5,6 +5,7 @@
  */
 package controller;
 
+import app.Main;
 import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -15,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.*;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -23,14 +25,14 @@ import java.io.IOException;
  */
 public class Controller {
     
-    private static final String sPathControl = "fxml/";
+    private static final String sPathControl = "/fxml/";
 
     private static Class<? extends Window> controlledStage;
 
     //region Static Loader - For non interact Windows
-    public static Stage loader(Class Class, StageStyle style, String path, String title) throws IOException {
+    public static Stage loader(Class classO, StageStyle style, String path, String title) throws IOException {
         Controller ls = new Controller();
-        Stage stage = ls.createStageInstance(sPathControl+path, Class);
+        Stage stage = ls.createStageInstance(sPathControl+path, classO);
         stage = ls.icons(stage);
         stage.initStyle(style);
         stage.setTitle(title);
@@ -38,10 +40,9 @@ public class Controller {
         return stage;
     }
 
-    private Stage createStageInstance(String path, Class Class) throws IOException {
+    private Stage createStageInstance(String path, Class classO) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(Class.getClassLoader().getResource(path));
-        System.out.println(fxmlLoader.getLocation());
+        fxmlLoader.setLocation(classO.getResource(path));
         fxmlLoader.load();
         Parent root = fxmlLoader.getRoot();
         Stage stage = new Stage();
@@ -100,6 +101,7 @@ public class Controller {
     public static void closeApplication(Event e) {
         Stage stage = (Stage) ((Node) e.getTarget()).getScene().getWindow();
         stage.fireEvent(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
+
     }
 
     public static void closeAppicationWithoutRequest(Event e){

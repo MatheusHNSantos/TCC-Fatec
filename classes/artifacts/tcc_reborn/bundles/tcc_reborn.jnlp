@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="tcc_reborn.jnlp">
+  <information>
+    <title>tcc-reborn</title>
+    <vendor>Unknown</vendor>
+    <description>tcc-reborn</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="tcc_reborn.jar" size="5570547" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="app.Main"  name="tcc-reborn" />
+  <update check="background"/>
+</jnlp>

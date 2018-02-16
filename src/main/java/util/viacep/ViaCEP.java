@@ -1,21 +1,29 @@
 package util.viacep;
 
-import util.dialogs.FxDialogs;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Task;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.InetAddress;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Observable;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ViaCEP {
 
+    private boolean canRun = false;
+
     public static Endereco buscarCep(String cep) {
+
         String json;
 
         Endereco endereco = null;
@@ -45,18 +53,8 @@ public class ViaCEP {
             endereco.setRua(mapa.get("logradouro"));
             endereco.setBairro(mapa.get("bairro"));
 
-        } catch (Exception e) {
-
-        }
-
-        return endereco;
-    }
-
-
-}
-
-        /*
-
+            //region JSON FORMAT
+            /*
                 Json Obj format
 
                 "cep": "13848-111",
@@ -68,5 +66,21 @@ public class ViaCEP {
                 "unidade": "",
                 "ibge": "3530706",
                 "gia": "4558"
-                */
+            */
+            //endregion
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return endereco;
+    }
+
+
+}
+
+
+
+
+
 

@@ -30,7 +30,9 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin> <!-- Maven install plugin-->
+            </plugin>
+
+
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

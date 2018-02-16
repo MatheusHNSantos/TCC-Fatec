@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="tcc-reborn" default="all">
+<project name="tcc-fatec" default="all">
   
   
   <property file="tcc.properties"/>
@@ -54,10 +54,11 @@
   
   <!-- JDK definitions -->
   
-  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
-  <path id="jdk.classpath.1.8">
-    <fileset dir="${jdk.home.1.8}">
+  <property name="jdk.bin.1.8_162" value="${jdk.home.1.8_162}/bin"/>
+  <path id="jdk.classpath.1.8_162">
+    <fileset dir="${jdk.home.1.8_162}">
       <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
       <include name="jre/lib/ext/access-bridge-64.jar"/>
       <include name="jre/lib/ext/cldrdata.jar"/>
       <include name="jre/lib/ext/dnsns.jar"/>
@@ -70,18 +71,21 @@
       <include name="jre/lib/ext/sunmscapi.jar"/>
       <include name="jre/lib/ext/sunpkcs11.jar"/>
       <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
       <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
       <include name="jre/lib/jfxswt.jar"/>
       <include name="jre/lib/jsse.jar"/>
       <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
       <include name="jre/lib/resources.jar"/>
       <include name="jre/lib/rt.jar"/>
     </fileset>
   </path>
   
-  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
-  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
-  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  <property name="project.jdk.home" value="${jdk.home.1.8_162}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8_162}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8_162"/>
   
   
   <!-- Project Libraries -->
@@ -93,9 +97,8 @@
   <path id="library.mysql-connector-java-6.0.6.classpath">
     <pathelement location="${basedir}/lib/mysql-connector-java-6.0.6.jar"/>
   </path>
-
   <!-- Register Custom Compiler Taskdefs -->
-  <property name="javac2.home" value="${jdk.home.1.8}/lib"/>
+  <property name="javac2.home" value="${idea.home}/lib"/>
   <path id="javac2.classpath">
     <pathelement location="${javac2.home}/javac2.jar"/>
     <pathelement location="${javac2.home}/jdom.jar"/>
@@ -206,9 +209,67 @@
     <!-- Perform any build initialization in this target -->
   </target>
   
-  <target name="clean" depends="clean.module.tcc-reborn" description="cleanup all"/>
+  <target name="clean" depends="clean.module.tcc-reborn, clean.artifact.tcc-reborn" description="cleanup all"/>
   
   <target name="build.modules" depends="init, clean, compile.module.tcc-reborn" description="build all modules"/>
   
-  <target name="all" depends="build.modules" description="build all"/>
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.tcc-reborn" value="${basedir}/classes/artifacts/tcc_reborn"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="artifact.temp.output.tcc_reborn" value="${artifacts.temp.dir}/tcc_reborn.jar"/>
+    <taskdef resource="com/sun/javafx/tools/ant/antlib.xml" uri="javafx:com.sun.javafx.tools.ant" classpath="${jdk.home.1.8_162}/lib/ant-javafx.jar"/>
+  </target>
+  
+  <target name="clean.artifact.tcc-reborn" description="clean tcc-reborn artifact output">
+    <delete dir="${artifact.output.tcc-reborn}"/>
+  </target>
+  
+  <target name="artifact.tcc-reborn" depends="init.artifacts, compile.module.tcc-reborn" description="Build &#39;tcc-reborn&#39; artifact" xmlns:fx="javafx:com.sun.javafx.tools.ant">
+    <mkdir dir="${artifact.output.tcc-reborn}"/>
+    <copy todir="${artifact.temp.output.tcc_reborn}">
+      <fileset dir="${tcc-reborn.output.dir}"/>
+    </copy>
+    <mkdir dir="${artifact.temp.output.tcc_reborn}/META-INF"/>
+    <copy file="${basedir}/src/main/java/app/META-INF/MANIFEST.MF" tofile="${artifact.temp.output.tcc_reborn}/META-INF/MANIFEST.MF"/>
+    <unzip src="${basedir}/lib/jfoenix-1.9.1.jar" dest="${artifact.temp.output.tcc_reborn}"/>
+    <unzip src="${basedir}/lib/mysql-connector-java-6.0.6.jar" dest="${artifact.temp.output.tcc_reborn}"/>
+    <fx:fileset id="all_but_tcc_reborn" dir="${artifact.temp.output.tcc_reborn}" includes="**/*.jar">
+      <exclude name="tcc_reborn.jar"/>
+    </fx:fileset>
+    <fx:fileset id="all_tcc_reborn" dir="${artifact.temp.output.tcc_reborn}" includes="**/*.jar"/>
+    <fx:application id="tcc_reborn_id" name="tcc-reborn" mainClass="app.Main"/>
+    <fx:jar destfile="${artifact.temp.output.tcc_reborn}/tcc_reborn.jar">
+      <fx:application refid="tcc_reborn_id"/>
+      <fileset dir="${artifact.temp.output.tcc_reborn}" excludes="**/*.jar"/>
+      <fx:resources>
+        <fx:fileset refid="all_but_tcc_reborn"/>
+      </fx:resources>
+      <manifest>
+        <attribute name="Implementation-Title" value=""/>
+        <attribute name="Implementation-Version" value=""/>
+        <attribute name="Implementation-Vendor" value=""/>
+      </manifest>
+    </fx:jar>
+    <fx:deploy width="600" height="400" updatemode="background" outdir="${artifact.temp.output.tcc_reborn}/deploy" outfile="tcc_reborn">
+      <fx:application refid="tcc_reborn_id"/>
+      <fx:resources>
+        <fx:fileset refid="all_tcc_reborn"/>
+      </fx:resources>
+    </fx:deploy>
+    <copy todir="${artifact.output.tcc-reborn}">
+      <fileset dir="${artifact.temp.output.tcc_reborn}/deploy"/>
+    </copy>
+    <delete includeemptydirs="true">
+      <fileset dir="${artifact.temp.output.tcc_reborn}"/>
+    </delete>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.tcc-reborn" description="Build all artifacts">
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
 </project>

@@ -92,55 +92,373 @@
     <SUITE FILE_PATH="coverage/tcc_reborn$Main.coverage" NAME="Main Coverage Results" MODIFIED="1518107183759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>app.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Tcc_Fatec$Main.coverage" NAME="Main Coverage Results" MODIFIED="1518727533939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>app.*</FILTER>
+    </SUITE>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="DashboardController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38321">
-              <caret line="166" column="33" lean-forward="false" selection-start-line="166" selection-start-column="33" selection-end-line="166" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+            <state relative-caret-position="127">
+              <caret line="640" column="55" lean-forward="false" selection-start-line="640" selection-start-column="55" selection-end-line="640" selection-end-column="55" />
               <folding>
-                <element signature="method#icons#0;class#Controller#0" expanded="false" />
-                <element signature="method#loaderModal#0;class#Controller#0" expanded="false" />
-                <element signature="n#!!doc;n#fxmlLoaderContent#0;n#Controller#0" expanded="false" />
-                <element signature="method#fxmlLoaderContent#0;class#Controller#0" expanded="false" />
-                <element signature="method#buildStage#0;class#Controller#0" expanded="false" />
-                <element signature="n#!!doc;n#closeEntireApplication#0;n#Controller#0" expanded="false" />
+                <element signature="docComment;class#DashboardController#0" expanded="false" />
+                <element signature="n#!!doc;n#mainAnchorPane#0;n#DashboardController#0" expanded="false" />
+                <element signature="e#4023#4052#0" expanded="false" />
+                <element signature="e#4159#4188#0" expanded="false" />
+                <element signature="n#!!doc;n#btn_finishSale#0;n#DashboardController#0" expanded="false" />
+                <element signature="n#!!doc;n#totalPrice#0;n#DashboardController#0" expanded="false" />
+                <element signature="e#6000#6031#0" expanded="false" />
+                <element signature="n#!!doc;n#tview_customer#0;n#DashboardController#0" expanded="false" />
+                <element signature="n#!!doc;n#actionCustomer#0;n#DashboardController#0" expanded="false" />
+                <element signature="e#8641#8677#0" expanded="false" />
+                <element signature="e#8720#8754#0" expanded="false" />
+                <element signature="docComment;field#cbox_scopeBarChart#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#9078#9106#0" expanded="false" />
+                <element signature="docComment;field#btn_showSaleDetail#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#9156#9178#0" expanded="false" />
+                <element signature="n#!!doc;n#dataModelSale#0;n#DashboardController#0" expanded="false" />
+                <element signature="e#10192#10227#0" expanded="false" />
+                <element signature="docComment;field#tview_supplier#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#10283#10305#0" expanded="false" />
+                <element signature="n#!!doc;n#actionSupplier#0;n#DashboardController#0" expanded="false" />
+                <element signature="e#12788#12832#0" expanded="false" />
+                <element signature="docComment;field#btn_manageUsers#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#12974#12996#0" expanded="false" />
+                <element signature="n#!!doc;n#actionEmployee#0;n#DashboardController#0" expanded="false" />
+                <element signature="e#16576#16607#0" expanded="false" />
+                <element signature="docComment;field#btn_editProductType#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#16660#16682#0" expanded="false" />
+                <element signature="n#!!doc;n#actionProduct#0;n#DashboardController#0" expanded="false" />
+                <element signature="e#20000#20026#0" expanded="false" />
+                <element signature="docComment;field#tview_log#0;class#DashboardController#0" expanded="false" />
+                <element signature="n#!!doc;n#formatador#0;n#DashboardController#0" expanded="false" />
+                <element signature="method#initialize#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#20630#20652#0" expanded="false" />
+                <element signature="e#20662#20697#0" expanded="false" />
+                <element signature="e#20748#20855#0" expanded="false" />
+                <element signature="e#20939#20976#0" expanded="false" />
+                <element signature="e#21429#21453#0" expanded="false" />
+                <element signature="e#22076#22097#0" expanded="false" />
+                <element signature="e#22106#22133#0" expanded="false" />
+                <element signature="e#22329#22350#0" expanded="false" />
+                <element signature="e#22360#22402#0" expanded="false" />
+                <element signature="class#22647:22794" expanded="false" />
+                <element signature="e#22712#22713#0" expanded="true" />
+                <element signature="e#22783#22784#0" expanded="true" />
+                <element signature="e#22806#22824#0" expanded="false" />
+                <element signature="e#23048#23068#0" expanded="false" />
+                <element signature="e#23149#23185#0" expanded="false" />
+                <element signature="e#23553#23581#0" expanded="false" />
+                <element signature="e#23918#23950#0" expanded="false" />
+                <element signature="class#24907:25709" expanded="false" />
+                <element signature="method#onChanged#0;class#24907:25709" expanded="false" />
+                <element signature="class#25793:26042" expanded="false" />
+                <element signature="method#changed#0;class#25793:26042" expanded="false" />
+                <element signature="class#26092:26525" expanded="false" />
+                <element signature="method#handle#0;class#26092:26525" expanded="false" />
+                <element signature="class#26577:26954" expanded="false" />
+                <element signature="method#handle#0;class#26577:26954" expanded="false" />
+                <element signature="class#27045:27684" expanded="false" />
+                <element signature="method#changed#0;class#27045:27684" expanded="false" />
+                <element signature="class#27787:28340" expanded="false" />
+                <element signature="method#changed#0;class#27787:28340" expanded="false" />
+                <element signature="class#28409:28965" expanded="false" />
+                <element signature="class#29013:29408" expanded="false" />
+                <element signature="method#handle#0;class#29013:29408" expanded="false" />
+                <element signature="class#29467:29860" expanded="false" />
+                <element signature="e#29872#29902#0" expanded="false" />
+                <element signature="class#30696:31005" expanded="false" />
+                <element signature="method#handle#0;class#30696:31005" expanded="false" />
+                <element signature="class#31074:31902" expanded="false" />
+                <element signature="e#31956#31979#0" expanded="false" />
+                <element signature="e#32033#32053#0" expanded="false" />
+                <element signature="e#32316#32355#0" expanded="false" />
+                <element signature="e#32711#32742#0" expanded="false" />
+                <element signature="class#32792:33581" expanded="false" />
+                <element signature="method#handle#0;class#32792:33581" expanded="false" />
+                <element signature="e#33613#33643#0" expanded="false" />
+                <element signature="class#33692:33859" expanded="false" />
+                <element signature="e#33792#33793#0" expanded="true" />
+                <element signature="e#33848#33849#0" expanded="true" />
+                <element signature="e#33891#33909#0" expanded="false" />
+                <element signature="e#33989#34018#0" expanded="false" />
+                <element signature="e#34362#34387#0" expanded="false" />
+                <element signature="e#34697#34712#0" expanded="false" />
+                <element signature="e#35261#35289#0" expanded="false" />
+                <element signature="e#35299#35319#0" expanded="false" />
+                <element signature="e#35329#35357#0" expanded="false" />
+                <element signature="class#35640:37543" expanded="false" />
+                <element signature="e#37556#37586#0" expanded="false" />
+                <element signature="e#38992#39020#0" expanded="false" />
+                <element signature="e#39030#39063#0" expanded="false" />
+                <element signature="e#39189#39209#0" expanded="false" />
+                <element signature="class#39295:40129" expanded="false" />
+                <element signature="initializer##0;class#39295:40129" expanded="false" />
+                <element signature="method#toString#0;class#39295:40129" expanded="false" />
+                <element signature="method#fromString#0;class#39295:40129" expanded="false" />
+                <element signature="class#40172:40721" expanded="false" />
+                <element signature="method#handle#0;class#40172:40721" expanded="false" />
+                <element signature="e#40753#40778#0" expanded="false" />
+                <element signature="class#40828:41138" expanded="false" />
+                <element signature="method#handle#0;class#40828:41138" expanded="false" />
+                <element signature="e#41170#41197#0" expanded="false" />
+                <element signature="class#41293:42289" expanded="false" />
+                <element signature="method#handle#0;class#41293:42289" expanded="false" />
+                <element signature="e#42321#42343#0" expanded="false" />
+                <element signature="class#42389:43168" expanded="false" />
+                <element signature="method#handle#0;class#42389:43168" expanded="false" />
+                <element signature="e#43200#43220#0" expanded="false" />
+                <element signature="class#43277:43837" expanded="false" />
+                <element signature="e#43869#43907#0" expanded="false" />
+                <element signature="e#44256#44281#0" expanded="false" />
+                <element signature="class#44569:44949" expanded="false" />
+                <element signature="method#call#0;class#44569:44949" expanded="false" />
+                <element signature="class#45299:45693" expanded="false" />
+                <element signature="method#changed#0;class#45299:45693" expanded="false" />
+                <element signature="e#45747#45781#0" expanded="false" />
+                <element signature="e#46176#46194#0" expanded="false" />
+                <element signature="e#46273#46302#0" expanded="false" />
+                <element signature="class#46627:47506" expanded="false" />
+                <element signature="initializer##0;class#46627:47506" expanded="false" />
+                <element signature="method#updateItem#0;class#46627:47506" expanded="false" />
+                <element signature="class#47720:48755" expanded="false" />
+                <element signature="initializer##0;class#47720:48755" expanded="false" />
+                <element signature="method#updateItem#0;class#47720:48755" expanded="false" />
+                <element signature="class#48960:49681" expanded="false" />
+                <element signature="initializer##0;class#48960:49681" expanded="false" />
+                <element signature="method#updateItem#0;class#48960:49681" expanded="false" />
+                <element signature="e#49994#50019#0" expanded="false" />
+                <element signature="e#50250#50265#0" expanded="false" />
+                <element signature="e#50825#50868#0" expanded="false" />
+                <element signature="e#51185#51212#0" expanded="false" />
+                <element signature="class#51991:53793" expanded="false" />
+                <element signature="initializer##0;class#51991:53793" expanded="false" />
+                <element signature="e#52288#52330#0" expanded="false" />
+                <element signature="method#createLabel#0;class#51991:53793" expanded="false" />
+                <element signature="method#updateItem#0;class#51991:53793" expanded="false" />
+                <element signature="e#53551#53600#0" expanded="false" />
+                <element signature="class#53983:55304" expanded="false" />
+                <element signature="initializer##0;class#53983:55304" expanded="false" />
+                <element signature="method#createLabel#0;class#53983:55304" expanded="false" />
+                <element signature="method#updateItem#0;class#53983:55304" expanded="false" />
+                <element signature="e#55945#55960#0" expanded="false" />
+                <element signature="e#57014#57044#0" expanded="false" />
+                <element signature="e#57213#57240#0" expanded="false" />
+                <element signature="e#57250#57279#0" expanded="false" />
+                <element signature="class#57562:58315" expanded="false" />
+                <element signature="initializer##0;class#57562:58315" expanded="false" />
+                <element signature="method#updateItem#0;class#57562:58315" expanded="false" />
+                <element signature="class#58593:59357" expanded="false" />
+                <element signature="initializer##0;class#58593:59357" expanded="false" />
+                <element signature="method#updateItem#0;class#58593:59357" expanded="false" />
+                <element signature="class#59545:60434" expanded="false" />
+                <element signature="initializer##0;class#59545:60434" expanded="false" />
+                <element signature="method#updateItem#0;class#59545:60434" expanded="false" />
+                <element signature="e#60840#60870#0" expanded="false" />
+                <element signature="class#61155:61894" expanded="false" />
+                <element signature="initializer##0;class#61155:61894" expanded="false" />
+                <element signature="method#updateItem#0;class#61155:61894" expanded="false" />
+                <element signature="class#62087:62997" expanded="false" />
+                <element signature="initializer##0;class#62087:62997" expanded="false" />
+                <element signature="method#updateItem#0;class#62087:62997" expanded="false" />
+                <element signature="e#63098#63122#0" expanded="false" />
+                <element signature="e#63349#63364#0" expanded="false" />
+                <element signature="e#64504#64529#0" expanded="false" />
+                <element signature="n#!!doc;n#createLabel#0;n#DashboardController#0" expanded="false" />
+                <element signature="method#createLabel#0;class#DashboardController#0" expanded="false" />
+                <element signature="n#!!doc;n#hora#0;n#DashboardController#0" expanded="false" />
+                <element signature="class#hora#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#actionPerformed#0;class#hora#0;class#DashboardController#0" expanded="false" />
+                <element signature="class#65391:65637" expanded="false" />
+                <element signature="method#run#0;class#65391:65637" expanded="false" />
+                <element signature="method#atualizaHoras#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#atualizaHoras2#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#66007#66008#0" expanded="true" />
+                <element signature="e#66037#66038#0" expanded="true" />
+                <element signature="e#66073#66074#0" expanded="true" />
+                <element signature="e#66100#66101#0" expanded="true" />
+                <element signature="n#!!doc;n#handlerHyperlinkActionLogout#0;n#DashboardController#0" expanded="false" />
+                <element signature="method#handlerHyperlinkActionLogout#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerHyperlinkActionFinish#0;class#DashboardController#0" expanded="false" />
+                <element signature="n#!!doc;n#handlerButtonActionRemoveProductOnOrder#0;n#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionRemoveProductOnOrder#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionAddProductOnOrder#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionClearOrderProducts#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#67632#67633#0" expanded="true" />
+                <element signature="e#67673#67674#0" expanded="true" />
+                <element signature="method#handlerButtonActionFinishOrder#0;class#DashboardController#0" expanded="false" />
+                <element signature="class#69430:70016" expanded="false" />
+                <element signature="method#handle#0;class#69430:70016" expanded="false" />
+                <element signature="method#handlerButtonActionHistoricCustomer#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#71021#71022#0" expanded="true" />
+                <element signature="e#71056#71057#0" expanded="true" />
+                <element signature="method#executeSearchProductsOrder#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#71428#71695#0" expanded="false" />
+                <element signature="e#71731#71809#0" expanded="false" />
+                <element signature="method#resetAllComponentsOrder#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#clientDataDisableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#clientDataEnableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#clearTextFieldsFromOrder#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#74951#74982#0" expanded="false" />
+                <element signature="docComment;method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionNewCustomer#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#75869#75870#0" expanded="true" />
+                <element signature="e#75932#75933#0" expanded="true" />
+                <element signature="method#handlerButtonActionStatusCustomer#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionCancelCustomer#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionSaveCustomer#0;class#DashboardController#0" expanded="false" />
+                <element signature="n#!!doc;n#clearCustomerDetails#0;n#DashboardController#0" expanded="false" />
+                <element signature="method#clearCustomerDetails#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#resetTableViewCustomer#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#showCustomerDetails#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#saveCustomer#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#newCustomer#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#81157#81198#0" expanded="false" />
+                <element signature="method#newCustomerGeneral#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#setStatusCustomer#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#83022#83058#0" expanded="false" />
+                <element signature="e#83064#83098#0" expanded="false" />
+                <element signature="e#83169#83198#0" expanded="false" />
+                <element signature="e#83220#83255#0" expanded="false" />
+                <element signature="e#83312#83336#0" expanded="false" />
+                <element signature="docComment;method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionNewSupplier#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#84219#84220#0" expanded="true" />
+                <element signature="e#84282#84283#0" expanded="true" />
+                <element signature="method#handlerButtonActionStatusSupplier#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionCancelSupplier#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionSaveSupplier#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionSearchSupplier#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#clearSupplierDetails#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#showSupplierDetails#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#saveSupplier#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#newSupplier#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#setStatusSupplier#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#resetTableViewSupplier#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#90610#90654#0" expanded="false" />
+                <element signature="n#!!doc;n#showEmployeeDetails#0;n#DashboardController#0" expanded="false" />
+                <element signature="method#showEmployeeDetails#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#clearEmployeeDetails#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#resetTableViewEmployee#0;class#DashboardController#0" expanded="false" />
+                <element signature="n#!!doc;n#handlerButtonActionManageUsers#0;n#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionManageUsers#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#selectLoginStatusAction#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonSelectLoginStatus#0;class#DashboardController#0" expanded="false" />
+                <element signature="docComment;method#setEmployeeActiveButtons#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#setEmployeeActiveButtons#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionAddEmployee#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#96364#96365#0" expanded="true" />
+                <element signature="e#96427#96428#0" expanded="true" />
+                <element signature="method#handlerButtonActionStatusEmployee#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionCancelEmployee#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionSaveEmployee#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#setLoginActiveButtons#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#98284#98285#0" expanded="true" />
+                <element signature="e#98347#98348#0" expanded="true" />
+                <element signature="e#98414#98415#0" expanded="true" />
+                <element signature="e#98474#98475#0" expanded="true" />
+                <element signature="method#handlerButtonActionCancelLogin#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionSaveLogin#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#saveEmployee#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#addEmployee#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#setStatusEmployee#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#setStatusLogin#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#saveLogin#0;class#DashboardController#0" expanded="false" />
+                <element signature="class#103528:103593" expanded="false" />
+                <element signature="class#103673:103726" expanded="false" />
+                <element signature="class#103809:103863" expanded="false" />
+                <element signature="class#103935:103999" expanded="false" />
+                <element signature="method#addLogin#0;class#DashboardController#0" expanded="false" />
+                <element signature="class#104836:104901" expanded="false" />
+                <element signature="class#104981:105034" expanded="false" />
+                <element signature="class#105117:105171" expanded="false" />
+                <element signature="class#105243:105307" expanded="false" />
+                <element signature="e#105363#105394#0" expanded="false" />
+                <element signature="docComment;method#addIngredient#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#105447#105471#0" expanded="false" />
+                <element signature="method#addIngredient#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionCheckBoxProductType#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionEditProductType#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionEditIngredients#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionListIngredients#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionDropIngredients#0;class#DashboardController#0" expanded="false" />
+                <element signature="docComment;method#setProductActiveButtons#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#setProductActiveButtons#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#107974#107975#0" expanded="true" />
+                <element signature="e#108036#108037#0" expanded="true" />
+                <element signature="method#handlerButtonActionAddProduct#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionCancelProduct#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionSaveProduct#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionStatusProduct#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handlerButtonActionSearchProduct#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#clearProductDetails#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#resetTableViewProduct#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#110517#110518#0" expanded="true" />
+                <element signature="e#110564#110565#0" expanded="true" />
+                <element signature="method#showProductDetails#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#saveProduct#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#addProduct#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#setStatusProduct#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#113774#113800#0" expanded="false" />
+                <element signature="docComment;method#findTabPaneForNode#0;class#DashboardController#0" expanded="false" />
+                <element signature="e#113881#113902#0" expanded="false" />
+                <element signature="method#findTabPaneForNode#0;class#DashboardController#0" expanded="false" />
+                <element signature="n#!!doc;n#onKeyEnterPressedCEP#0;n#DashboardController#0" expanded="false" />
+                <element signature="method#onKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#handleronKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
+                <element signature="docComment;method#setCells#0;class#DashboardController#0" expanded="false" />
+                <element signature="method#setCells#0;class#DashboardController#0" expanded="false" />
+                <element signature="class#115908:117398" expanded="false" />
+                <element signature="initializer##0;class#115908:117398" expanded="false" />
+                <element signature="method#updateItem#0;class#115908:117398" expanded="false" />
+                <element signature="n#!!doc;n#onShow#0;n#DashboardController#0" expanded="false" />
+                <element signature="method#onShow#0;class#DashboardController#0" expanded="false" />
+                <element signature="class#117535:117717" expanded="false" />
+                <element signature="e#117643#117644#0" expanded="true" />
+                <element signature="e#117706#117707#0" expanded="true" />
+                <element signature="method#onClose#0;class#DashboardController#0" expanded="false" />
+                <element signature="class#117794:117977" expanded="false" />
+                <element signature="e#117902#117903#0" expanded="true" />
+                <element signature="e#117966#117967#0" expanded="true" />
+                <element signature="method#loader#0;class#DashboardController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoginController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/login/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1376">
-              <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
-              <folding>
-                <element signature="e#1552#1831#0" expanded="true" />
-                <element signature="e#1830#1831#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/app/Main.java">
+      <file leaf-file-name="MaskFieldUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/util/MaskField/MaskFieldUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+            <state relative-caret-position="-3517">
+              <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViaCEP.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/util/viacep/ViaCEP.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="24" column="48" lean-forward="false" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+              <folding>
+                <element signature="e#1654#1674#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -177,6 +495,8 @@
       <find>FxD</find>
       <find>searchB</find>
       <find>searchBy</find>
+      <find>Task</find>
+      <find>searchByTele</find>
     </findStrings>
     <replaceStrings>
       <replace>customer</replace>
@@ -193,7 +513,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/model/entity/address/Address.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/entity/person/user/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/validation/ValidationFields.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/entity/person/employee/Employee.java" />
@@ -212,14 +531,12 @@
         <option value="$PROJECT_DIR$/src/main/java/util/viacep/a.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/viacep/ClienteViaCepWS.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/viacep/Endereco.java" />
-        <option value="$PROJECT_DIR$/src/main/java/util/viacep/ViaCEP.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/MaskField/Maks.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/HoldScreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/entity/phone/Phone.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/entity/product/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/MaskField/MaskFieldUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/entity/sale/ItemsSale.java" />
-        <option value="$PROJECT_DIR$/tcc.properties" />
         <option value="$PROJECT_DIR$/src/main/java/model/entity/person/Person.java" />
         <option value="$PROJECT_DIR$/src/main/resources/strings/strings.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/strings/strings.xml" />
@@ -238,18 +555,22 @@
         <option value="$PROJECT_DIR$/src/main/java/model/entity/person/customer/Customer.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/login/login.fxml" />
-        <option value="$PROJECT_DIR$/tcc.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/login/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" />
         <option value="$PROJECT_DIR$/src/main/java/app/Main.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Controller.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/util/viacep/ViaCEP.java" />
+        <option value="$PROJECT_DIR$/tcc.properties" />
+        <option value="$PROJECT_DIR$/tcc.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/login/LoginController.java" />
       </list>
     </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="pluginUpdatePolicy" value="UPDATE" />
         <option name="usePluginRegistry" value="true" />
       </MavenGeneralSettings>
     </option>
@@ -266,19 +587,15 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="tcc-reborn" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="tcc-reborn" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-        </path>
       </expand>
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -320,8 +637,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,70 +648,25 @@
               <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
               <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="tcc_reborn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/classes/artifacts/tcc_reborn" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.20207852" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/../Current Version/src/main/java/controller/dashboard/DashboardController.java" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
-    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="tcc" />
+    <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="true" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -404,9 +678,9 @@
       <recent name="util.viacep" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\SAMSUNG\Desktop\TCC-Fatec\.idea" />
-      <recent name="C:\Users\SAMSUNG\Desktop\TCC-Fatec\src" />
       <recent name="C:\Users\SAMSUNG\Desktop\TCC-Fatec\src\main" />
+      <recent name="C:\Users\SAMSUNG\Desktop\TCC-Fatec\src" />
+      <recent name="C:\Users\SAMSUNG\Desktop\TCC-Fatec\.idea" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -421,7 +695,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module />
       <option name="HTML_USED" value="false" />
@@ -482,6 +756,14 @@
       <envs />
       <patterns />
     </configuration>
+    <configuration name="pom.xml" type="OdpsQLRunnerConfigurationType" factoryName="MaxCompute SQL">
+      <odps_target_file />
+      <odps_output_dir>C:\Users\SAMSUNG\AppData\Local\Temp\</odps_output_dir>
+    </configuration>
+    <configuration name="tcc.properties" type="OdpsQLRunnerConfigurationType" factoryName="MaxCompute SQL">
+      <odps_target_file />
+      <odps_output_dir>C:\Users\SAMSUNG\AppData\Local\Temp\</odps_output_dir>
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -534,6 +816,11 @@
       <module name="tcc-reborn" />
       <envs />
     </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="MaxCompute SQL.pom.xml" />
+      <item index="2" class="java.lang.String" itemvalue="MaxCompute SQL.tcc.properties" />
+    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -553,12 +840,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47160885" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37876385" sideWeight="0.50512445" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27458397" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -570,16 +856,15 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39802632" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5509868" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5493421" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5049342" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37664473" sideWeight="0.49487555" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24508321" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2193646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -588,36 +873,8 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15529905" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39979014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10703043" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.07974816" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.100520834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -629,111 +886,34 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="61" />
+      <option name="time" value="69" />
     </breakpoint-manager>
     <watches-manager />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
+        <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
+      </path>
+      <path>
+        <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
+        <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
+        <item name=".idea" type="462c0819:PsiDirectoryNode" />
+      </path>
+      <path>
+        <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
+        <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
+        <item name="src" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_CONFIG_DIR$/jdks/jbsdk8u112b287.2_windows_x64/jre/lib/rt.jar!/java/lang/Thread.class" />
-    <entry file="jar://$APPLICATION_CONFIG_DIR$/jdks/jbsdk8u112b287.2_windows_x64/jre/lib/ext/jfxrt.jar!/com/sun/javafx/event/CompositeEventHandler.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/validation/Validation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/validation/ValidationInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/validation/ValidationFields.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-284">
-          <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/fxml/Loader.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/dialogs/FxDialogs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="129" column="80" lean-forward="false" selection-start-line="129" selection-start-column="80" selection-end-line="129" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/viacep/Endereco.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/viacep/ViaCEP.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/strings/strings.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/holdScreen/HoldScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/ToolTip/ToolTip.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/MaskField/MaskFieldUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="192" column="53" lean-forward="false" selection-start-line="192" selection-start-column="53" selection-end-line="192" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/entity/person/user/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="46" column="11" lean-forward="false" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/entity/product/ProductType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/entity/product/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="114" column="5" lean-forward="false" selection-start-line="114" selection-start-column="5" selection-end-line="114" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/entity/sale/ItemsSale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="74" column="64" lean-forward="false" selection-start-line="74" selection-start-column="64" selection-end-line="74" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_CONFIG_DIR$/jdks/jbsdk8u112b287.2_windows_x64/jre/lib/ext/jfxrt.jar!/javafx/fxml/FXMLLoader.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/entity/sale/Sale.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -750,83 +930,63 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/finishSale.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/editProductType.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/editIngredients.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/listIngredients.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/login.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/manageUsers.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-57">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/historicCustomer.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/historicCustomer.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
           <caret line="34" column="42" lean-forward="false" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/saleDetail.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/saleDetail.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="48" column="38" lean-forward="false" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/HistoricCustomerController.java">
@@ -852,7 +1012,6 @@
     </entry>
     <entry file="jar://$APPLICATION_CONFIG_DIR$/jdks/jbsdk8u112b287.2_windows_x64/jre/lib/ext/jfxrt.jar!/javafx/scene/control/Tab.class" />
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-    <entry file="file://$PROJECT_DIR$/.idea/artifacts/tcc_reborn.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/entity/person/customer/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -889,109 +1048,551 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/login/login.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="97" column="52" lean-forward="false" selection-start-line="97" selection-start-column="52" selection-end-line="97" selection-end-column="52" />
-          <folding>
-            <element signature="n#patternset#0;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#patternset#1;n#project#0;n#!!top" expanded="false" />
-            <element signature="n#patternset#2;n#project#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/dashboard.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="202" column="54" lean-forward="false" selection-start-line="202" selection-start-column="54" selection-end-line="202" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/login/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1376">
-          <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
-          <folding>
-            <element signature="e#1552#1831#0" expanded="true" />
-            <element signature="e#1830#1831#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tcc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="72" lean-forward="false" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38321">
-          <caret line="166" column="33" lean-forward="false" selection-start-line="166" selection-start-column="33" selection-end-line="166" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/login/login.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/entity/person/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/io/Serializable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="168" column="17" lean-forward="false" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3189">
+          <caret line="219" column="34" lean-forward="true" selection-start-line="219" selection-start-column="34" selection-end-line="219" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/jfoenix-1.9.1.jar!/com/jfoenix/controls/JFXButton.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1310">
+          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/img/Apetitoso.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/img/no-image.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/img/checked.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/img/cancel.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/img/brush.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/img/plus.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/img/icon.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="45" column="24" lean-forward="false" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/EditIngredientsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/editIngredients.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="263" lean-forward="false" selection-start-line="6" selection-start-column="263" selection-end-line="6" selection-end-column="263" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/scene/input/MouseEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="130" column="13" lean-forward="false" selection-start-line="130" selection-start-column="13" selection-end-line="130" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="34" column="60" lean-forward="false" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
           <folding>
-            <marker date="1518534105282" expanded="true" signature="1012:1052" ph=" SELECT statement (PERSON)" />
-            <marker date="1518534105282" expanded="true" signature="2449:2530" ph=" UPDATE statement (PERSON)" />
-            <marker date="1518534105282" expanded="true" signature="3159:3224" ph=" INSERT statement (PERSON)" />
-            <marker date="1518534105282" expanded="true" signature="4228:4266" ph=" DELETE statement (PERSON)" />
+            <element signature="method#icons#0;class#Controller#0" expanded="false" />
+            <element signature="method#loaderModal#0;class#Controller#0" expanded="false" />
+            <element signature="n#!!doc;n#fxmlLoaderContent#0;n#Controller#0" expanded="false" />
+            <element signature="method#closeApplication#0;class#Controller#0" expanded="false" />
+            <element signature="method#closeAppicationWithoutRequest#0;class#Controller#0" expanded="false" />
+            <element signature="method#hideApplication#0;class#Controller#0" expanded="false" />
+            <element signature="method#showApplication#0;class#Controller#0" expanded="false" />
+            <element signature="method#renameApplication#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="158">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding>
             <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/concurrent/FutureTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="187" column="13" lean-forward="false" selection-start-line="187" selection-start-column="13" selection-end-line="187" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/artifacts/tcc_reborn.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcc_Thu_Feb_15_20-49-18_BRST_2018.properties" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/viacep/ViaCEP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <caret line="24" column="48" lean-forward="false" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
           <folding>
-            <element signature="method#icons#0;class#Controller#0" expanded="false" />
-            <element signature="method#loaderModal#0;class#Controller#0" expanded="false" />
-            <element signature="n#!!doc;n#fxmlLoaderContent#0;n#Controller#0" expanded="false" />
-            <element signature="method#fxmlLoaderContent#0;class#Controller#0" expanded="false" />
-            <element signature="method#buildStage#0;class#Controller#0" expanded="false" />
-            <element signature="n#!!doc;n#closeEntireApplication#0;n#Controller#0" expanded="false" />
+            <element signature="e#1654#1674#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcc-reborn.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="228" column="94" lean-forward="true" selection-start-line="228" selection-start-column="94" selection-end-line="228" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tcc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="47" lean-forward="false" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/MaskField/MaskFieldUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3517">
+          <caret line="25" column="22" lean-forward="false" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/dashboard.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="296" column="30" lean-forward="false" selection-start-line="296" selection-start-column="30" selection-end-line="296" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="640" column="55" lean-forward="false" selection-start-line="640" selection-start-column="55" selection-end-line="640" selection-end-column="55" />
+          <folding>
+            <element signature="docComment;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#mainAnchorPane#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#4023#4052#0" expanded="false" />
+            <element signature="e#4159#4188#0" expanded="false" />
+            <element signature="n#!!doc;n#btn_finishSale#0;n#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#totalPrice#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#6000#6031#0" expanded="false" />
+            <element signature="n#!!doc;n#tview_customer#0;n#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#actionCustomer#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#8641#8677#0" expanded="false" />
+            <element signature="e#8720#8754#0" expanded="false" />
+            <element signature="docComment;field#cbox_scopeBarChart#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#9078#9106#0" expanded="false" />
+            <element signature="docComment;field#btn_showSaleDetail#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#9156#9178#0" expanded="false" />
+            <element signature="n#!!doc;n#dataModelSale#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#10192#10227#0" expanded="false" />
+            <element signature="docComment;field#tview_supplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#10283#10305#0" expanded="false" />
+            <element signature="n#!!doc;n#actionSupplier#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#12788#12832#0" expanded="false" />
+            <element signature="docComment;field#btn_manageUsers#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#12974#12996#0" expanded="false" />
+            <element signature="n#!!doc;n#actionEmployee#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#16576#16607#0" expanded="false" />
+            <element signature="docComment;field#btn_editProductType#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#16660#16682#0" expanded="false" />
+            <element signature="n#!!doc;n#actionProduct#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#20000#20026#0" expanded="false" />
+            <element signature="docComment;field#tview_log#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#formatador#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#initialize#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#20630#20652#0" expanded="false" />
+            <element signature="e#20662#20697#0" expanded="false" />
+            <element signature="e#20748#20855#0" expanded="false" />
+            <element signature="e#20939#20976#0" expanded="false" />
+            <element signature="e#21429#21453#0" expanded="false" />
+            <element signature="e#22076#22097#0" expanded="false" />
+            <element signature="e#22106#22133#0" expanded="false" />
+            <element signature="e#22329#22350#0" expanded="false" />
+            <element signature="e#22360#22402#0" expanded="false" />
+            <element signature="class#22647:22794" expanded="false" />
+            <element signature="e#22712#22713#0" expanded="true" />
+            <element signature="e#22783#22784#0" expanded="true" />
+            <element signature="e#22806#22824#0" expanded="false" />
+            <element signature="e#23048#23068#0" expanded="false" />
+            <element signature="e#23149#23185#0" expanded="false" />
+            <element signature="e#23553#23581#0" expanded="false" />
+            <element signature="e#23918#23950#0" expanded="false" />
+            <element signature="class#24907:25709" expanded="false" />
+            <element signature="method#onChanged#0;class#24907:25709" expanded="false" />
+            <element signature="class#25793:26042" expanded="false" />
+            <element signature="method#changed#0;class#25793:26042" expanded="false" />
+            <element signature="class#26092:26525" expanded="false" />
+            <element signature="method#handle#0;class#26092:26525" expanded="false" />
+            <element signature="class#26577:26954" expanded="false" />
+            <element signature="method#handle#0;class#26577:26954" expanded="false" />
+            <element signature="class#27045:27684" expanded="false" />
+            <element signature="method#changed#0;class#27045:27684" expanded="false" />
+            <element signature="class#27787:28340" expanded="false" />
+            <element signature="method#changed#0;class#27787:28340" expanded="false" />
+            <element signature="class#28409:28965" expanded="false" />
+            <element signature="class#29013:29408" expanded="false" />
+            <element signature="method#handle#0;class#29013:29408" expanded="false" />
+            <element signature="class#29467:29860" expanded="false" />
+            <element signature="e#29872#29902#0" expanded="false" />
+            <element signature="class#30696:31005" expanded="false" />
+            <element signature="method#handle#0;class#30696:31005" expanded="false" />
+            <element signature="class#31074:31902" expanded="false" />
+            <element signature="e#31956#31979#0" expanded="false" />
+            <element signature="e#32033#32053#0" expanded="false" />
+            <element signature="e#32316#32355#0" expanded="false" />
+            <element signature="e#32711#32742#0" expanded="false" />
+            <element signature="class#32792:33581" expanded="false" />
+            <element signature="method#handle#0;class#32792:33581" expanded="false" />
+            <element signature="e#33613#33643#0" expanded="false" />
+            <element signature="class#33692:33859" expanded="false" />
+            <element signature="e#33792#33793#0" expanded="true" />
+            <element signature="e#33848#33849#0" expanded="true" />
+            <element signature="e#33891#33909#0" expanded="false" />
+            <element signature="e#33989#34018#0" expanded="false" />
+            <element signature="e#34362#34387#0" expanded="false" />
+            <element signature="e#34697#34712#0" expanded="false" />
+            <element signature="e#35261#35289#0" expanded="false" />
+            <element signature="e#35299#35319#0" expanded="false" />
+            <element signature="e#35329#35357#0" expanded="false" />
+            <element signature="class#35640:37543" expanded="false" />
+            <element signature="e#37556#37586#0" expanded="false" />
+            <element signature="e#38992#39020#0" expanded="false" />
+            <element signature="e#39030#39063#0" expanded="false" />
+            <element signature="e#39189#39209#0" expanded="false" />
+            <element signature="class#39295:40129" expanded="false" />
+            <element signature="initializer##0;class#39295:40129" expanded="false" />
+            <element signature="method#toString#0;class#39295:40129" expanded="false" />
+            <element signature="method#fromString#0;class#39295:40129" expanded="false" />
+            <element signature="class#40172:40721" expanded="false" />
+            <element signature="method#handle#0;class#40172:40721" expanded="false" />
+            <element signature="e#40753#40778#0" expanded="false" />
+            <element signature="class#40828:41138" expanded="false" />
+            <element signature="method#handle#0;class#40828:41138" expanded="false" />
+            <element signature="e#41170#41197#0" expanded="false" />
+            <element signature="class#41293:42289" expanded="false" />
+            <element signature="method#handle#0;class#41293:42289" expanded="false" />
+            <element signature="e#42321#42343#0" expanded="false" />
+            <element signature="class#42389:43168" expanded="false" />
+            <element signature="method#handle#0;class#42389:43168" expanded="false" />
+            <element signature="e#43200#43220#0" expanded="false" />
+            <element signature="class#43277:43837" expanded="false" />
+            <element signature="e#43869#43907#0" expanded="false" />
+            <element signature="e#44256#44281#0" expanded="false" />
+            <element signature="class#44569:44949" expanded="false" />
+            <element signature="method#call#0;class#44569:44949" expanded="false" />
+            <element signature="class#45299:45693" expanded="false" />
+            <element signature="method#changed#0;class#45299:45693" expanded="false" />
+            <element signature="e#45747#45781#0" expanded="false" />
+            <element signature="e#46176#46194#0" expanded="false" />
+            <element signature="e#46273#46302#0" expanded="false" />
+            <element signature="class#46627:47506" expanded="false" />
+            <element signature="initializer##0;class#46627:47506" expanded="false" />
+            <element signature="method#updateItem#0;class#46627:47506" expanded="false" />
+            <element signature="class#47720:48755" expanded="false" />
+            <element signature="initializer##0;class#47720:48755" expanded="false" />
+            <element signature="method#updateItem#0;class#47720:48755" expanded="false" />
+            <element signature="class#48960:49681" expanded="false" />
+            <element signature="initializer##0;class#48960:49681" expanded="false" />
+            <element signature="method#updateItem#0;class#48960:49681" expanded="false" />
+            <element signature="e#49994#50019#0" expanded="false" />
+            <element signature="e#50250#50265#0" expanded="false" />
+            <element signature="e#50825#50868#0" expanded="false" />
+            <element signature="e#51185#51212#0" expanded="false" />
+            <element signature="class#51991:53793" expanded="false" />
+            <element signature="initializer##0;class#51991:53793" expanded="false" />
+            <element signature="e#52288#52330#0" expanded="false" />
+            <element signature="method#createLabel#0;class#51991:53793" expanded="false" />
+            <element signature="method#updateItem#0;class#51991:53793" expanded="false" />
+            <element signature="e#53551#53600#0" expanded="false" />
+            <element signature="class#53983:55304" expanded="false" />
+            <element signature="initializer##0;class#53983:55304" expanded="false" />
+            <element signature="method#createLabel#0;class#53983:55304" expanded="false" />
+            <element signature="method#updateItem#0;class#53983:55304" expanded="false" />
+            <element signature="e#55945#55960#0" expanded="false" />
+            <element signature="e#57014#57044#0" expanded="false" />
+            <element signature="e#57213#57240#0" expanded="false" />
+            <element signature="e#57250#57279#0" expanded="false" />
+            <element signature="class#57562:58315" expanded="false" />
+            <element signature="initializer##0;class#57562:58315" expanded="false" />
+            <element signature="method#updateItem#0;class#57562:58315" expanded="false" />
+            <element signature="class#58593:59357" expanded="false" />
+            <element signature="initializer##0;class#58593:59357" expanded="false" />
+            <element signature="method#updateItem#0;class#58593:59357" expanded="false" />
+            <element signature="class#59545:60434" expanded="false" />
+            <element signature="initializer##0;class#59545:60434" expanded="false" />
+            <element signature="method#updateItem#0;class#59545:60434" expanded="false" />
+            <element signature="e#60840#60870#0" expanded="false" />
+            <element signature="class#61155:61894" expanded="false" />
+            <element signature="initializer##0;class#61155:61894" expanded="false" />
+            <element signature="method#updateItem#0;class#61155:61894" expanded="false" />
+            <element signature="class#62087:62997" expanded="false" />
+            <element signature="initializer##0;class#62087:62997" expanded="false" />
+            <element signature="method#updateItem#0;class#62087:62997" expanded="false" />
+            <element signature="e#63098#63122#0" expanded="false" />
+            <element signature="e#63349#63364#0" expanded="false" />
+            <element signature="e#64504#64529#0" expanded="false" />
+            <element signature="n#!!doc;n#createLabel#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#createLabel#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#hora#0;n#DashboardController#0" expanded="false" />
+            <element signature="class#hora#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#hora#0;class#DashboardController#0" expanded="false" />
+            <element signature="class#65391:65637" expanded="false" />
+            <element signature="method#run#0;class#65391:65637" expanded="false" />
+            <element signature="method#atualizaHoras#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#atualizaHoras2#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#66007#66008#0" expanded="true" />
+            <element signature="e#66037#66038#0" expanded="true" />
+            <element signature="e#66073#66074#0" expanded="true" />
+            <element signature="e#66100#66101#0" expanded="true" />
+            <element signature="n#!!doc;n#handlerHyperlinkActionLogout#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#handlerHyperlinkActionLogout#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerHyperlinkActionFinish#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#handlerButtonActionRemoveProductOnOrder#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionRemoveProductOnOrder#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionAddProductOnOrder#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionClearOrderProducts#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#67632#67633#0" expanded="true" />
+            <element signature="e#67673#67674#0" expanded="true" />
+            <element signature="method#handlerButtonActionFinishOrder#0;class#DashboardController#0" expanded="false" />
+            <element signature="class#69430:70016" expanded="false" />
+            <element signature="method#handle#0;class#69430:70016" expanded="false" />
+            <element signature="method#handlerButtonActionHistoricCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#71021#71022#0" expanded="true" />
+            <element signature="e#71056#71057#0" expanded="true" />
+            <element signature="method#executeSearchProductsOrder#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#71428#71695#0" expanded="false" />
+            <element signature="e#71731#71809#0" expanded="false" />
+            <element signature="method#resetAllComponentsOrder#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#clientDataDisableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#clientDataEnableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#clearTextFieldsFromOrder#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#74951#74982#0" expanded="false" />
+            <element signature="docComment;method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionNewCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#75869#75870#0" expanded="true" />
+            <element signature="e#75932#75933#0" expanded="true" />
+            <element signature="method#handlerButtonActionStatusCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionCancelCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSaveCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#clearCustomerDetails#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#clearCustomerDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#resetTableViewCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#showCustomerDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#saveCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#newCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#81157#81198#0" expanded="false" />
+            <element signature="method#newCustomerGeneral#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setStatusCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#83022#83058#0" expanded="false" />
+            <element signature="e#83064#83098#0" expanded="false" />
+            <element signature="e#83169#83198#0" expanded="false" />
+            <element signature="e#83220#83255#0" expanded="false" />
+            <element signature="e#83312#83336#0" expanded="false" />
+            <element signature="docComment;method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionNewSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#84219#84220#0" expanded="true" />
+            <element signature="e#84282#84283#0" expanded="true" />
+            <element signature="method#handlerButtonActionStatusSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionCancelSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSaveSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSearchSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#clearSupplierDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#showSupplierDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#saveSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#newSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setStatusSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#resetTableViewSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#90610#90654#0" expanded="false" />
+            <element signature="n#!!doc;n#showEmployeeDetails#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#showEmployeeDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#clearEmployeeDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#resetTableViewEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#handlerButtonActionManageUsers#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionManageUsers#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#selectLoginStatusAction#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonSelectLoginStatus#0;class#DashboardController#0" expanded="false" />
+            <element signature="docComment;method#setEmployeeActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setEmployeeActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionAddEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#96364#96365#0" expanded="true" />
+            <element signature="e#96427#96428#0" expanded="true" />
+            <element signature="method#handlerButtonActionStatusEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionCancelEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSaveEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setLoginActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#98284#98285#0" expanded="true" />
+            <element signature="e#98347#98348#0" expanded="true" />
+            <element signature="e#98414#98415#0" expanded="true" />
+            <element signature="e#98474#98475#0" expanded="true" />
+            <element signature="method#handlerButtonActionCancelLogin#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSaveLogin#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#saveEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#addEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setStatusEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setStatusLogin#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#saveLogin#0;class#DashboardController#0" expanded="false" />
+            <element signature="class#103528:103593" expanded="false" />
+            <element signature="class#103673:103726" expanded="false" />
+            <element signature="class#103809:103863" expanded="false" />
+            <element signature="class#103935:103999" expanded="false" />
+            <element signature="method#addLogin#0;class#DashboardController#0" expanded="false" />
+            <element signature="class#104836:104901" expanded="false" />
+            <element signature="class#104981:105034" expanded="false" />
+            <element signature="class#105117:105171" expanded="false" />
+            <element signature="class#105243:105307" expanded="false" />
+            <element signature="e#105363#105394#0" expanded="false" />
+            <element signature="docComment;method#addIngredient#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#105447#105471#0" expanded="false" />
+            <element signature="method#addIngredient#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionCheckBoxProductType#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionEditProductType#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionEditIngredients#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionListIngredients#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionDropIngredients#0;class#DashboardController#0" expanded="false" />
+            <element signature="docComment;method#setProductActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setProductActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#107974#107975#0" expanded="true" />
+            <element signature="e#108036#108037#0" expanded="true" />
+            <element signature="method#handlerButtonActionAddProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionCancelProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSaveProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionStatusProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSearchProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#clearProductDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#resetTableViewProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#110517#110518#0" expanded="true" />
+            <element signature="e#110564#110565#0" expanded="true" />
+            <element signature="method#showProductDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#saveProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#addProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setStatusProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#113774#113800#0" expanded="false" />
+            <element signature="docComment;method#findTabPaneForNode#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#113881#113902#0" expanded="false" />
+            <element signature="method#findTabPaneForNode#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#onKeyEnterPressedCEP#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#onKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handleronKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
+            <element signature="docComment;method#setCells#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setCells#0;class#DashboardController#0" expanded="false" />
+            <element signature="class#115908:117398" expanded="false" />
+            <element signature="initializer##0;class#115908:117398" expanded="false" />
+            <element signature="method#updateItem#0;class#115908:117398" expanded="false" />
+            <element signature="n#!!doc;n#onShow#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#onShow#0;class#DashboardController#0" expanded="false" />
+            <element signature="class#117535:117717" expanded="false" />
+            <element signature="e#117643#117644#0" expanded="true" />
+            <element signature="e#117706#117707#0" expanded="true" />
+            <element signature="method#onClose#0;class#DashboardController#0" expanded="false" />
+            <element signature="class#117794:117977" expanded="false" />
+            <element signature="e#117902#117903#0" expanded="true" />
+            <element signature="e#117966#117967#0" expanded="true" />
+            <element signature="method#loader#0;class#DashboardController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/login/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,7 +1619,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.20207852" />
               </list>
             </option>
           </splitter-proportions>
@@ -1029,7 +1630,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.20207852" />
               </list>
             </option>
           </splitter-proportions>
@@ -1037,11 +1638,11 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8 - OFFICIAL</last-edited>
+          <last-edited>1.8 162</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.20207852" />
               </list>
             </option>
           </splitter-proportions>
@@ -1054,7 +1655,6 @@
             <option name="proportions">
               <list>
                 <option value="0.20207852" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1066,7 +1666,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.20207852" />
               </list>
             </option>
           </splitter-proportions>
@@ -1084,5 +1684,8 @@
         </settings>
       </state>
     </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="" />
   </component>
 </project>

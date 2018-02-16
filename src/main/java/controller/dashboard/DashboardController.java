@@ -12,9 +12,11 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableObjectValue;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
+import javafx.concurrent.Task;
 import javafx.css.PseudoClass;
 import javafx.event.Event;
 import javafx.event.EventType;
+import javafx.scene.*;
 import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.input.*;
 import javafx.scene.input.KeyEvent;
@@ -41,9 +43,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
@@ -82,6 +81,8 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
 
@@ -104,6 +105,10 @@ public class DashboardController implements Initializable {
     private static final String title = "PAVG Apetitoso - v1.0.1117";
 
     private static User user;
+
+    private Executor executor;
+
+    private int LAST_TAB_INDEX_SELECTED = -1;
 
     //region general objects
     @FXML
@@ -289,6 +294,9 @@ public class DashboardController implements Initializable {
     //endregion
 
     //region Tab "Administração" Objects
+
+    @FXML
+    private Tab tabAdmin;
 
     //region Tab "Faturamento" Objects
     /**
@@ -635,6 +643,17 @@ public class DashboardController implements Initializable {
         dashboardControllerReference = this;
 
         //region Setup Inicial
+
+        //region Executor to Query database
+
+        executor = Executors.newCachedThreadPool(r -> {
+            Thread t = new Thread(r);
+            t.setDaemon(true);
+            return t;
+        });
+
+        //endregion
+
         tp_login.setVisible(false); //complementos
         //paneTab.getTabs().remove(salesTab);
         //paneTab.getTabs().remove(usersTab);
@@ -833,6 +852,7 @@ public class DashboardController implements Initializable {
             @Override
             public void handle(KeyEvent event) {
                 if (event.getCode().toString().equals("ENTER")) {
+                    if(!dataObservableProductsFinded.isEmpty())
                     dataObervableProductsOnCart.add(productsFinded.get(listView_products.getFocusModel().getFocusedIndex()));
                 }
             }
@@ -843,9 +863,23 @@ public class DashboardController implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
 
                 if (!txt_searchOrder.getText().equals("")) {
+                    executeSearchProductsOrder(t1);
+                } else {
+                    dataObservableProductsFinded.clear();
+                }
+            }
+        });
+
+        //region Method Working - Keep
+        /*
+        txt_searchOrder.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+
+                if (!txt_searchOrder.getText().equals("")) {
                     productsFinded.clear();
                     dataObservableProductsFinded.clear();
-                    productsFinded = Product.readByName(txt_searchOrder.getText());
+                    productsFinded = Product.readByName(t1);
                     productsFinded.forEach(product -> dataObservableProductsFinded.add(product.getNameProduct()));
 
                 } else {
@@ -853,6 +887,8 @@ public class DashboardController implements Initializable {
                 }
             }
         });
+        */
+        //endregion
 
         //endregion
 
@@ -988,6 +1024,61 @@ public class DashboardController implements Initializable {
 
         //region Tab Selection Event
 
+        //region ON TAB WORK
+
+        //region get ID NODE example
+        /*
+        Node source = (Node)event.getSource();
+
+        Node target = (Node)event.getSource();
+
+        String id = target / source .getId();
+        */
+        //endregion
+
+        //Listen for clicks when Search by Telephone is being used
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+
+                TabPane tabPane = findTabPaneForNode(tabCustomer.getContent());
+                tabPane.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+
+                        if(comeBackSearchByTelephone){
+
+                            if(!event.getTarget().toString().contains("Clientes")){
+
+                                if (FxDialogs.showConfirmYesNo("Deseja cancelar o cadastro do cliente?", "", FxDialogs.NO, FxDialogs.YES).equals(FxDialogs.YES)){
+                                    tfield_telephone.clear();
+                                    comeBackSearchByTelephone = false;
+                                    clearCustomerDetails();
+                                    setCustomerActiveButtons(true, false, "node");
+                                    resetTableViewCustomer();
+
+                                    paneTab.getTabs().forEach(tab -> tab.setDisable(false));
+
+                                    if(event.getTarget().toString().contains("Administração")){
+                                        paneTab.getSelectionModel().select(tabAdmin);
+                                    }else if(event.getTarget().toString().contains("Pedido")){
+                                        paneTab.getSelectionModel().select(tabOrder);
+                                    }else if(event.getTarget().toString().contains("Inicio")){
+                                        paneTab.getSelectionModel().select(welcomeTab);
+                                    }
+
+                                }else{
+                                    System.out.println(event.getTarget());
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+
+        //region "Working but not all"
         /*
         tabCustomer.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
@@ -996,13 +1087,8 @@ public class DashboardController implements Initializable {
                 if(comeBackSearchByTelephone && !t1){
 
                     SingleSelectionModel<Tab> selectionModel = paneTab.getSelectionModel();
+                    selectionModel.select(tabCustomer);
 
-                    Platform.runLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            selectionModel.select(tabCustomer);
-                        }
-                    });
 
                     if (FxDialogs.showConfirmYesNo("Deseja cancelar o cadastro do cliente?", "", FxDialogs.NO, FxDialogs.YES).equals(FxDialogs.YES)){
                         tfield_telephone.clear();
@@ -1012,12 +1098,20 @@ public class DashboardController implements Initializable {
                         resetTableViewCustomer();
                         System.out.println("Cadastro hibrido cancelado");
                     }else{
-                        System.out.println("NO - Selected");
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                selectionModel.clearAndSelect(2);
+                            }
+                        });
                     }
                 }
             }
         });
         */
+        //endregion
+
+        //endregion
 
         //endregion
 
@@ -1357,6 +1451,7 @@ public class DashboardController implements Initializable {
         btn_editEmployee.setDisable(true);
 
         MaskFieldUtil.cpfField(txt_cpfEmployee);
+
         MaskFieldUtil.cepField(txt_cepEmployee);
         MaskFieldUtil.numericField(txt_numberEmployee);
         MaskFieldUtil.foneField(txt_phone1Employee);
@@ -1855,10 +1950,10 @@ public class DashboardController implements Initializable {
                 public void handle(WindowEvent windowEvent) {
                     mainAnchorPane.setDisable(false);
 
-                    if(Sale.LAST_ID_SALE != -1){
+                    if (Sale.LAST_ID_SALE != -1) {
                         resetAllComponentsOrder();
                         resetTableViewCustomer();
-                        lbl_codeOfOrder.setText(String.valueOf(Sale.getLastIdSale() +1));
+                        lbl_codeOfOrder.setText(String.valueOf(Sale.getLastIdSale() + 1));
 
                         System.out.println(Sale.getLastIdSale());
 
@@ -1903,6 +1998,42 @@ public class DashboardController implements Initializable {
     }
 
     //region default methods
+    private void executeSearchProductsOrder(final String t1){
+
+        Task<ArrayList<Product>> productTask = new Task<ArrayList<Product>>() {
+            @Override
+            protected ArrayList<Product> call() throws Exception {
+                return Product.readByName(t1);
+            }
+        };
+
+        productTask.setOnSucceeded(event -> {
+            productsFinded.clear();
+            dataObservableProductsFinded.clear();
+            productsFinded = productTask.getValue();
+            productsFinded.forEach(product -> dataObservableProductsFinded.add(product.getNameProduct()));
+
+        });
+
+        productTask.setOnFailed(event -> {
+            productTask.getException().printStackTrace();
+        });
+
+        productTask.runningProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                if(newValue){
+                    //colocar aqui mouse loading
+                }
+            }
+        });
+
+        executor.execute(productTask);
+
+
+
+    }
+
     private void searchByTelephone() {
 
         person = Phone.searchByTelephone(MaskFieldUtil.onlyDigitsValue(tfield_telephone));
@@ -1912,15 +2043,13 @@ public class DashboardController implements Initializable {
             if (FxDialogs.showConfirmYesNo("Cliente não cadastrado, deseja cadastrar?", "", FxDialogs.NO, FxDialogs.YES).equals(FxDialogs.YES)) {
                 SingleSelectionModel<Tab> selectionModel = paneTab.getSelectionModel();
                 selectionModel.select(tabCustomer);
-
                 setCustomerActiveButtons(false, true, "Adicionar");
                 txt_phone1Customer.setText(tfield_telephone.getText());
                 txt_nameCustomer.setText(tfield_name.getText());
-
                 comeBackSearchByTelephone = true;
 
-                //paneTab.getTabs().forEach(tab -> tab.setDisable(true));
-                //tabCustomer.setDisable(false);
+                paneTab.getTabs().forEach(tab -> tab.setDisable(true));
+                tabCustomer.setDisable(false);
 
             }
 
@@ -3158,6 +3287,18 @@ public class DashboardController implements Initializable {
 
     //region Util Methods
 
+    private TabPane findTabPaneForNode(Node node) {
+        TabPane tabPane = null ;
+
+        for (Node n = node.getParent(); n != null && tabPane == null; n = n.getParent()) {
+            if (n instanceof TabPane) {
+                tabPane = (TabPane) n;
+            }
+        }
+
+        return tabPane;
+    }
+
     //region CEP Experimental
     private void onKeyEnterPressedCEP(String CEP, JFXTextField street, JFXTextField neighborhood) {
 
@@ -3170,8 +3311,11 @@ public class DashboardController implements Initializable {
 
         Endereco endereco = ViaCEP.buscarCep(CEP);
 
-        street.setText(endereco.getRua());
-        neighborhood.setText(endereco.getBairro());
+        if(endereco != null){
+            street.setText(endereco.getRua());
+            neighborhood.setText(endereco.getBairro());
+        }
+
 
     }
 
