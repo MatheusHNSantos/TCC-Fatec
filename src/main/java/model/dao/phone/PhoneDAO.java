@@ -6,7 +6,6 @@
 package model.dao.phone;
 
 import model.dao.DAO;
-import model.dao.person.SupplierDAO;
 import model.entity.person.Customer;
 import model.entity.person.Employee;
 import model.entity.person.Person;
@@ -17,8 +16,6 @@ import util.dialogs.FxDialogs;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -59,6 +56,11 @@ public class PhoneDAO implements DAO {
         return false;
     }
 
+    /**
+     * Carrega telefone pelo ID.
+     * @param id
+     * @return
+     */
     public static Phone load(int id) {
         Connection conn = ConnectionFactory.getConnection();
 
@@ -75,7 +77,7 @@ public class PhoneDAO implements DAO {
             phone = PhoneDAO.createInstance(rs);
         }
         catch (SQLException sqlE) {
-            System.out.println(sqlE.getMessage());
+            FxDialogs.showException("Falha ao carregar telefone por Id.","Class: "+ PhoneDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -84,6 +86,11 @@ public class PhoneDAO implements DAO {
         return phone;
     }
 
+    /**
+     * Carrega uma lista de pessoas por telefone.
+     * @param person
+     * @return
+     */
     public static ArrayList<Phone> load(Person person) {
         Connection conn = ConnectionFactory.getConnection();
 
@@ -102,7 +109,7 @@ public class PhoneDAO implements DAO {
             }
         }
         catch (SQLException sqlE) {
-            System.out.println(sqlE.getMessage());
+            FxDialogs.showException("Falha ao carregar telefone por pessoa.","Class: "+ PhoneDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -111,6 +118,11 @@ public class PhoneDAO implements DAO {
         return phones;
     }
 
+    /**
+     *  Carrega telefone pelo número.
+     * @param number
+     * @return
+     */
     public static Phone load(String number) {
         Connection conn = ConnectionFactory.getConnection();
 
@@ -126,8 +138,8 @@ public class PhoneDAO implements DAO {
             rs.next();
             phone = PhoneDAO.createInstance(rs);
         }
-        catch (SQLException ex) {
-            FxDialogs.showException("Erro de Leitura!", ex.getMessage(), ex);
+        catch (SQLException sqlE) {
+            FxDialogs.showException("Falha ao carregar pelo número de telefone.","Class: "+ PhoneDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -136,6 +148,11 @@ public class PhoneDAO implements DAO {
         return phone;
     }
 
+    /**
+     * Carrega pessoas a partir de um número de telefone.
+     * @param number
+     * @return
+     */
     protected static ArrayList<Integer> loadPersonByPhone(String number) {
         Connection conn = ConnectionFactory.getConnection();
 
@@ -155,7 +172,7 @@ public class PhoneDAO implements DAO {
             }
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(PhoneDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao carregar pessoa pelo número de telefone.","Class: "+ PhoneDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -164,6 +181,11 @@ public class PhoneDAO implements DAO {
         return ids;
     }
 
+    /**
+     * Carrega clientes a partir de um número de telefone.
+     * @param number
+     * @return
+     */
     public static ArrayList<Customer> loadCustomerByPhone(String number) {
         ArrayList<Customer> customers = new ArrayList();
 
@@ -174,6 +196,11 @@ public class PhoneDAO implements DAO {
         return customers;
     }
 
+    /**
+     * Carrega empregados a partir de um número de telefone.
+     * @param number
+     * @return
+     */
     public static ArrayList<Employee> loadEmployeeByPhone(String number) {
         ArrayList<Employee> employees = new ArrayList();
 
@@ -212,12 +239,16 @@ public class PhoneDAO implements DAO {
             phone.setStatus(result.getBoolean("status_phone"));
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(Phone.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao criar instância de telefone.","Class: "+ PhoneDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
-
         return phone;
     }
 
+    /**
+     * Atualiza um número de telefone.
+     * @param phone
+     * @return
+     */
     public static boolean update(Phone phone) {
         Connection conn = ConnectionFactory.getConnection();
         String sql = "UPDATE phone SET number_phone = ?, status_phone = ? WHERE id_phone = ?";
@@ -232,7 +263,7 @@ public class PhoneDAO implements DAO {
             return true;
         }
         catch (SQLException sqlE) {
-            FxDialogs.showException("Falha ao criar instância de telefone.","Class: "+ PhoneDAO.class + " - " + sqlE.getMessage(), sqlE);
+            FxDialogs.showException("Falha ao atualizar telefone.","Class: "+ PhoneDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt);

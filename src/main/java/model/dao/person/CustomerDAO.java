@@ -208,7 +208,7 @@ public class CustomerDAO extends PersonDAO {
             customer.setStatus(result.getBoolean("status_customer"));
             customer.setNamePerson(result.getString("name_person"));
             customer.setAddress( AddressDAO.createInstance(result));
-            // Usando a mágica 
+            // Usando a mágica
             customer.setPhones(PhoneDAO.load(customer));
         }
         catch (SQLException sqlE) {
