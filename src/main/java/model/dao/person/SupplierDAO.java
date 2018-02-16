@@ -9,23 +9,28 @@ import model.dao.address.AddressDAO;
 import model.dao.phone.PhoneDAO;
 import model.entity.person.Supplier;
 import util.connection.ConnectionFactory;
+import util.dialogs.FxDialogs;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
- * @author Matheus Henrique
+ * @author Felipe Mantoan
  */
 public class SupplierDAO extends PersonDAO {
 
     public static int LAST_ID_INSERT = -1;
 
+    /**
+     * Insere um registro no banco de dados baseado no tipo de entrada.
+     *
+     * @param supplier
+     * @return
+     */
     public static boolean create (Supplier supplier) {
 
         PersonDAO.create(supplier);
@@ -37,13 +42,15 @@ public class SupplierDAO extends PersonDAO {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, supplier.getCNPJ());
             stmt.setBoolean(2, supplier.isStatus());
+            // Faz a chamada do pai.
             stmt.setInt(3, PersonDAO.LAST_ID_INSERT);
+            // Faz o setup do ultimo id inserido baseado no pai.
             LAST_ID_INSERT = PersonDAO.LAST_ID_INSERT;
             stmt.execute();
             return true;
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(SupplierDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao criar fornecedor.","Class: "+ SupplierDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt);
@@ -52,6 +59,12 @@ public class SupplierDAO extends PersonDAO {
         return false;
     }
 
+    /**
+     * Atualiza os dados de forma genérica por tipo de objeto.
+     *
+     * @param supplier
+     * @return
+     */
     public static boolean update (Supplier supplier) {
         PersonDAO.update(supplier);
 
@@ -68,7 +81,7 @@ public class SupplierDAO extends PersonDAO {
             return true;
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(SupplierDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao atualizar fornecedor.","Class: "+ SupplierDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt);
@@ -77,6 +90,11 @@ public class SupplierDAO extends PersonDAO {
         return false;
     }
 
+    /**
+     * Carrega apenas 1 item da tabela.
+     * @param id
+     * @return
+     */
     public static Supplier load(int id) {
         Connection conn = ConnectionFactory.getConnection();
 
@@ -101,7 +119,7 @@ public class SupplierDAO extends PersonDAO {
             supplier = SupplierDAO.createInstance(rs);
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(SupplierDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao selecionar fornecedor.","Class: "+ SupplierDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -110,8 +128,13 @@ public class SupplierDAO extends PersonDAO {
         return supplier;
     }
 
+    /**
+     * Carrega todos os itens da tabela de forma indiscriminada.
+     * @return
+     */
     public static ArrayList<Supplier> loadAll () {
 
+        // Caso não existam itens isso evita um return null.
         ArrayList<Supplier> suppliers = new ArrayList<>();
 
         Connection conn = ConnectionFactory.getConnection();
@@ -134,7 +157,7 @@ public class SupplierDAO extends PersonDAO {
             }
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(SupplierDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao listar fornecedores.","Class: "+ SupplierDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -143,6 +166,14 @@ public class SupplierDAO extends PersonDAO {
         return suppliers;
     }
 
+
+    /**
+     * Bom este tipo de função recebe um Result e extrai os dados dele,
+     * porém não fecha a conexão, por questão de reaproveitamento de código.
+     *
+     * @param result
+     * @return
+     */
     public static Supplier createInstance (ResultSet result) {
 
         Supplier supplier = new Supplier ();
@@ -156,7 +187,7 @@ public class SupplierDAO extends PersonDAO {
             supplier.setPhones(PhoneDAO.load(supplier));
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(SupplierDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao criar instância fornecedor.","Class: "+ SupplierDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
 
         return supplier;
