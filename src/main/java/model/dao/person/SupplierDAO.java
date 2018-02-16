@@ -168,7 +168,7 @@ public class SupplierDAO extends PersonDAO {
 
 
     /**
-     * Bom este tipo de função recebe um Result e extrai os dados dele,
+     * Recebe um Result e extrai os dados dele,
      * porém não fecha a conexão, por questão de reaproveitamento de código.
      *
      * @param result
@@ -176,7 +176,7 @@ public class SupplierDAO extends PersonDAO {
      */
     public static Supplier createInstance (ResultSet result) {
 
-        Supplier supplier = new Supplier ();
+        Supplier supplier = new Supplier();
 
         try {
             supplier.setId(result.getInt("id_person"));
@@ -184,6 +184,7 @@ public class SupplierDAO extends PersonDAO {
             supplier.setAddress( AddressDAO.createInstance(result));
             supplier.setCNPJ( result.getString( "cnpj_supplier" ) );
             supplier.setStatus(result.getBoolean("status_supplier"));
+            // Cria a lista de telefones usando a maldade :)
             supplier.setPhones(PhoneDAO.load(supplier));
         }
         catch (SQLException sqlE) {
