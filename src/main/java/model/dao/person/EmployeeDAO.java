@@ -9,6 +9,7 @@ import model.dao.address.AddressDAO;
 import model.dao.phone.PhoneDAO;
 import model.entity.person.Employee;
 import util.connection.ConnectionFactory;
+import util.dialogs.FxDialogs;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -53,7 +54,7 @@ public class EmployeeDAO extends PersonDAO {
             return true;
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(EmployeeDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao criar empregado.","Class: "+ EmployeeDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -71,11 +72,7 @@ public class EmployeeDAO extends PersonDAO {
         PersonDAO.update(employee);
 
         Connection conn = ConnectionFactory.getConnection();
-        String sql = "UPDATE employee SET " +
-                "role_employee = ?, " +
-                "rg_employee = ?, " +
-                "cpf_employee = ?, " +
-                "status_employee = ? " +
+        String sql = "UPDATE employee SET role_employee = ?, rg_employee = ?, cpf_employee = ?, status_employee = ? " +
                 "WHERE id_employee = ?";
 
         PreparedStatement stmt = null;
@@ -90,7 +87,7 @@ public class EmployeeDAO extends PersonDAO {
             stmt.executeUpdate();
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(EmployeeDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao atualizar empregado.","Class: "+ EmployeeDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt);
@@ -130,7 +127,7 @@ public class EmployeeDAO extends PersonDAO {
             return EmployeeDAO.createInstance(rs);
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(EmployeeDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao selecionar empregado por ID.","Class: "+ EmployeeDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -170,7 +167,7 @@ public class EmployeeDAO extends PersonDAO {
             }
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(EmployeeDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao listar empregados.","Class: "+ EmployeeDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -201,7 +198,7 @@ public class EmployeeDAO extends PersonDAO {
             employee.setPhones(PhoneDAO.load(employee));
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(EmployeeDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao criar instância de empregado.","Class: "+ EmployeeDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
 
         return employee;

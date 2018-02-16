@@ -9,17 +9,17 @@ import model.dao.address.AddressDAO;
 import model.dao.phone.PhoneDAO;
 import model.entity.person.Customer;
 import util.connection.ConnectionFactory;
+import util.dialogs.FxDialogs;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
- * @author Matheus Henrique
+ * @author Felipe
  */
 public class CustomerDAO extends PersonDAO {
 
@@ -45,7 +45,7 @@ public class CustomerDAO extends PersonDAO {
             return true;
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(CustomerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao inserir um Cliente.","Class: "+ CustomerDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt);
@@ -74,7 +74,7 @@ public class CustomerDAO extends PersonDAO {
             return true;
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(CustomerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao atualizar cliente.","Class: "+ CustomerDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt);
@@ -112,7 +112,7 @@ public class CustomerDAO extends PersonDAO {
             customer = CustomerDAO.createInstance(rs);
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(CustomerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao selecionar cliente por ID.","Class: "+ CustomerDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -150,7 +150,7 @@ public class CustomerDAO extends PersonDAO {
             customer = CustomerDAO.createInstance(rs);
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(CustomerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao pesquisar cliente.","Class: "+ CustomerDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -187,7 +187,7 @@ public class CustomerDAO extends PersonDAO {
             }
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(CustomerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao listar cliente.","Class: "+ CustomerDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -208,7 +208,7 @@ public class CustomerDAO extends PersonDAO {
             customer.setPhones(PhoneDAO.load(customer));
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(CustomerDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao criar instância de cliente.","Class: "+ CustomerDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
 
         return customer;

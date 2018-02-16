@@ -8,6 +8,7 @@ package model.dao.person;
 import model.dao.DAO;
 import model.entity.person.Person;
 import util.connection.ConnectionFactory;
+import util.dialogs.FxDialogs;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -49,7 +50,7 @@ public abstract class PersonDAO implements DAO {
             return true;
         }
         catch (SQLException sqlE) {
-            System.out.println(sqlE.getMessage());
+            FxDialogs.showException("Falha ao criar pessoa.","Class: "+ PersonDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt, rs);
@@ -79,7 +80,7 @@ public abstract class PersonDAO implements DAO {
             return true;
         }
         catch (SQLException sqlE) {
-            Logger.getLogger(PersonDAO.class.getName()).log( Level.SEVERE, null, sqlE);
+            FxDialogs.showException("Falha ao atualizar pessoa.","Class: "+ PersonDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(conn, stmt);
