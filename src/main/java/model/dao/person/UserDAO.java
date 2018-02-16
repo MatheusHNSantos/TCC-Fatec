@@ -1,29 +1,29 @@
 package model.dao.person;
 
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import model.dao.DAO;
 import model.entity.person.Employee;
 import model.entity.person.User;
 import util.connection.ConnectionFactory;
-
-import javax.swing.*;
+import util.dialogs.FxDialogs;
 import java.sql.*;
 import java.util.ArrayList;
 
 /**
  *
- * @author Matheus Henrique
+ * @author FelipeMantoan
  */
 public class UserDAO implements DAO{
 
     public static int LAST_ID_INSERT = -1;
 
+
+    /**
+     * Efetua o login e retorna um valor booelano.
+     *
+     * @param login
+     * @param pass
+     * @return
+     */
     public static boolean login(String login, String pass) {
 
         Connection con = ConnectionFactory.getConnection();
@@ -43,8 +43,8 @@ public class UserDAO implements DAO{
             }
 
         }
-        catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Falha ao verificar login: " + ex.getMessage());
+        catch (SQLException sqlE) {
+            FxDialogs.showException("Falha ao efetuar o login.","Class: "+ UserDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(con, stmt, rs);
@@ -53,6 +53,12 @@ public class UserDAO implements DAO{
         return false;
     }
 
+    /**
+     * Insere um usuário na tabela.
+     *
+     * @param user
+     * @return
+     */
     public static boolean create(User user) {
 
         Connection con = ConnectionFactory.getConnection();
@@ -70,12 +76,13 @@ public class UserDAO implements DAO{
             stmt.executeUpdate();
             rs = stmt.getGeneratedKeys();
             rs.next();
+            // Faz uso o ultimo ID inserido.
             LAST_ID_INSERT = rs.getInt(1);
+
             return true;
         }
-        catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-            JOptionPane.showMessageDialog(null, "Erro ao Salvar: " + ex.getMessage());
+        catch (SQLException sqlE) {
+            FxDialogs.showException("Falha ao criar usuário.","Class: "+ UserDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(con, stmt, rs);
@@ -86,7 +93,11 @@ public class UserDAO implements DAO{
 
     }
 
-
+    /**
+     * Carrega um usuário por login e pode/deve ser usada para pesquisa ou validação.
+     * @param login
+     * @return
+     */
     public static User load(String login) {
         Connection con = ConnectionFactory.getConnection();
         ResultSet rs = null;
@@ -117,8 +128,8 @@ public class UserDAO implements DAO{
             }
 
         }
-        catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Falha ao consultar: " + ex.getMessage());
+        catch (SQLException sqlE) {
+            FxDialogs.showException("Falha ao carregar usuário pelo login.","Class: "+ UserDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(con, stmt, rs);
@@ -127,6 +138,11 @@ public class UserDAO implements DAO{
         return user;
     }
 
+    /**
+     * Retorna um usuário por empregado.
+     * @param employee
+     * @return
+     */
     public static User load(Employee employee) {
         Connection con = ConnectionFactory.getConnection();
         ResultSet rs = null;
@@ -157,8 +173,8 @@ public class UserDAO implements DAO{
             }
 
         }
-        catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Falha ao consultar: " + ex.getMessage());
+        catch (SQLException sqlE) {
+            FxDialogs.showException("Falha ao selecionar usuário pelo ID do empregado.","Class: "+ UserDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(con, stmt, rs);
@@ -167,6 +183,11 @@ public class UserDAO implements DAO{
         return user;
     }
 
+    /**
+     * Carrega um usuário por id.
+     * @param idUser
+     * @return
+     */
     public static User load(int idUser) {
         Connection con = ConnectionFactory.getConnection();
         ResultSet rs = null;
@@ -197,8 +218,8 @@ public class UserDAO implements DAO{
                 return UserDAO.createInstance(rs);
             }
         }
-        catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Falha ao consultar: " + ex.getMessage());
+        catch (SQLException sqlE) {
+            FxDialogs.showException("Falha ao criar usuário pelo ID.","Class: "+ UserDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(con, stmt, rs);
@@ -207,6 +228,10 @@ public class UserDAO implements DAO{
         return user;
     }
 
+    /**
+     * Carrega todos os usuários.
+     * @return
+     */
     public static ArrayList<User> loadAll() {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
@@ -234,8 +259,8 @@ public class UserDAO implements DAO{
                 users.add(UserDAO.createInstance(rs));
             }
         }
-        catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Falha ao consultar: " + ex.getMessage());
+        catch (SQLException sqlE) {
+            FxDialogs.showException("Falha ao listar usuários.","Class: "+ UserDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally {
             ConnectionFactory.closeConnection(con, stmt, rs);
@@ -244,6 +269,11 @@ public class UserDAO implements DAO{
         return users;
     }
 
+    /**
+     * Atualiza um usuário com base na classe.
+     * @param user
+     * @return
+     */
     public static boolean update(User user) {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
@@ -260,31 +290,38 @@ public class UserDAO implements DAO{
             
             return true;
         }
-        catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao Atualizar: " + ex.getMessage());
-            return false;
+        catch (SQLException sqlE) {
+            FxDialogs.showException("Falha ao atualizar usuário.","Class: "+ UserDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
         finally{
             ConnectionFactory.closeConnection(con, stmt);
         }
-      
+
+        return false;
     }
 
-
+    /**
+     * Cria a instância de um usuário mas não fecha a conexão.
+     * @param result
+     * @return
+     */
     public static User createInstance (ResultSet result) {
 
-        User user = new User();
+        User user = null;
 
         try {
+            user = new User();
             user.setId(result.getInt("id_user"));
             user.setLogin(result.getString( "login_user" ) );
             user.setPassword( result.getString( "password_user" ) );
             user.setStatus( result.getBoolean( "status_user" ) );
             user.setLevel(result.getInt("level_user"));
+
+            // Chama a classe employeeDao para criar a instância
             user.setEmployee(EmployeeDAO.createInstance(result));
         }
         catch (SQLException sqlE) {
-            JOptionPane.showMessageDialog(null, "Deu ruim aqui: " + sqlE.getMessage());
+            FxDialogs.showException("Falha ao criar instância de usuário.","Class: "+ UserDAO.class + " - " + sqlE.getMessage(), sqlE);
         }
 
         return user;
