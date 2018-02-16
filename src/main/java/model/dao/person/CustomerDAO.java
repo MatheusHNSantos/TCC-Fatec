@@ -183,6 +183,7 @@ public class CustomerDAO extends PersonDAO {
             stmt = conn.prepareStatement(sql);
             rs = stmt.executeQuery();
             while(rs.next()) {
+                // Acrescenta a instância de usuário na lista.
                 customers.add(CustomerDAO.createInstance(rs));
             }
         }
