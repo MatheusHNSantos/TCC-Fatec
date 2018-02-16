@@ -26,6 +26,7 @@ public class CustomerDAO extends PersonDAO {
     public static int LAST_ID_INSERT = -1;
 
     /**
+     * Insere um registro no banco de dados.
      *
      * @param customer
      * @return
@@ -40,6 +41,7 @@ public class CustomerDAO extends PersonDAO {
             stmt = conn.prepareStatement(sql);
             stmt.setBoolean(1, customer.isStatus());
             stmt.setInt(2, PersonDAO.LAST_ID_INSERT);
+            // Resgata o ultimo id inserido :P
             LAST_ID_INSERT = PersonDAO.LAST_ID_INSERT;
             stmt.execute();
             return true;
@@ -206,6 +208,7 @@ public class CustomerDAO extends PersonDAO {
             customer.setStatus(result.getBoolean("status_customer"));
             customer.setNamePerson(result.getString("name_person"));
             customer.setAddress( AddressDAO.createInstance(result));
+            // Usando a mágica 
             customer.setPhones(PhoneDAO.load(customer));
         }
         catch (SQLException sqlE) {
