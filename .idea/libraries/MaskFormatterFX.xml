@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="MaskFormatterFX">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/MaskFormatterFX.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

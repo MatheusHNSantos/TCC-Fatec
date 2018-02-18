@@ -6,11 +6,13 @@
         <option name="appClass" value="app.Main" />
         <option name="convertCss2Bin" value="true" />
         <option name="description" value="" />
+        <option name="height" value="720" />
         <option name="htmlPlaceholderId" value="" />
         <option name="nativeBundle" value="all" />
-        <option name="title" value="" />
-        <option name="vendor" value="" />
+        <option name="title" value="TCC Fatec" />
+        <option name="vendor" value="Owner" />
         <option name="version" value="" />
+        <option name="width" value="1280" />
       </options>
     </properties>
     <root id="root">
@@ -19,9 +21,10 @@
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/src/main/java/app/META-INF/MANIFEST.MF" />
         </element>
+        <element id="library" level="project" name="jfoenix-1.9.1" />
+        <element id="library" level="project" name="MaskFormatterFX" />
+        <element id="library" level="project" name="mysql-connector-java-6.0.6" />
       </element>
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfoenix-1.9.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql-connector-java-6.0.6.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

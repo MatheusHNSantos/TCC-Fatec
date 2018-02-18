@@ -5,29 +5,18 @@
  */
 package controller.dashboard;
 
-
-import javafx.beans.InvalidationListener;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableObjectValue;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
 import javafx.concurrent.Task;
 import javafx.css.PseudoClass;
-import javafx.event.Event;
-import javafx.event.EventType;
 import javafx.scene.*;
 import javafx.scene.control.SingleSelectionModel;
-import javafx.scene.input.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Border;
-import javafx.stage.Modality;
 import javafx.util.Callback;
-import javafx.util.Pair;
 import javafx.util.StringConverter;
-import sun.util.resources.cldr.ne.CalendarData_ne_IN;
-import util.Calendar.CalendarUtil;
 import util.MaskField.MaskFieldUtil;
 import com.jfoenix.controls.*;
 import controller.Controller;
@@ -47,7 +36,6 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Priority;
@@ -72,10 +60,8 @@ import util.dialogs.FxDialogs;
 import util.exception.UserException;
 import util.viacep.Endereco;
 import util.viacep.ViaCEP;
-
 import java.awt.event.*;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -83,11 +69,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
-
 import static java.lang.String.valueOf;
-
 
 /**
  * FXML Controller class
@@ -95,6 +77,7 @@ import static java.lang.String.valueOf;
  *
  * @author Matheus Henrique
  */
+
 public class DashboardController implements Initializable {
 
     public static DashboardController dashboardControllerReference;
@@ -245,10 +228,6 @@ public class DashboardController implements Initializable {
     private Label lbl_pointsCustomer; //TextField de campo para nome cliente
     @FXML
     private JFXTextField txt_nameCustomer; //TextField de campo para nome cliente
-    @FXML
-    private JFXTextField txt_rgCustomer; //TextField de campo para RG cliente
-    @FXML
-    private JFXTextField txt_cpfCustomer; //TextField de campo para CPF cliente
     @FXML
     private JFXTextField txt_cepCustomer; //TextField de campo para CEP cliente
     @FXML
@@ -434,6 +413,8 @@ public class DashboardController implements Initializable {
      */
 
     //region @FXML Objects
+    @FXML
+    private JFXTextField txt_rgEmployee;
     @FXML
     private Hyperlink btn_manageUsers;
     @FXML
@@ -852,8 +833,8 @@ public class DashboardController implements Initializable {
             @Override
             public void handle(KeyEvent event) {
                 if (event.getCode().toString().equals("ENTER")) {
-                    if(!dataObservableProductsFinded.isEmpty())
-                    dataObervableProductsOnCart.add(productsFinded.get(listView_products.getFocusModel().getFocusedIndex()));
+                    if (!dataObservableProductsFinded.isEmpty())
+                        dataObervableProductsOnCart.add(productsFinded.get(listView_products.getFocusModel().getFocusedIndex()));
                 }
             }
         });
@@ -935,7 +916,7 @@ public class DashboardController implements Initializable {
 
         btn_editCustomer.setDisable(true);
 
-        //region Mask Fields
+        //region CustomMask Fields
         /*
         MaskFieldUtil.cepField(txt_cepCustomer);
         MaskFieldUtil.numericField(txt_numberCustomer);
@@ -1046,11 +1027,11 @@ public class DashboardController implements Initializable {
                     @Override
                     public void handle(MouseEvent event) {
 
-                        if(comeBackSearchByTelephone){
+                        if (comeBackSearchByTelephone) {
 
-                            if(!event.getTarget().toString().contains("Clientes")){
+                            if (!event.getTarget().toString().contains("Clientes")) {
 
-                                if (FxDialogs.showConfirmYesNo("Deseja cancelar o cadastro do cliente?", "", FxDialogs.NO, FxDialogs.YES).equals(FxDialogs.YES)){
+                                if (FxDialogs.showConfirmYesNo("Deseja cancelar o cadastro do cliente?", "", FxDialogs.NO, FxDialogs.YES).equals(FxDialogs.YES)) {
                                     tfield_telephone.clear();
                                     comeBackSearchByTelephone = false;
                                     clearCustomerDetails();
@@ -1059,15 +1040,15 @@ public class DashboardController implements Initializable {
 
                                     paneTab.getTabs().forEach(tab -> tab.setDisable(false));
 
-                                    if(event.getTarget().toString().contains("Administração")){
+                                    if (event.getTarget().toString().contains("Administração")) {
                                         paneTab.getSelectionModel().select(tabAdmin);
-                                    }else if(event.getTarget().toString().contains("Pedido")){
+                                    } else if (event.getTarget().toString().contains("Pedido")) {
                                         paneTab.getSelectionModel().select(tabOrder);
-                                    }else if(event.getTarget().toString().contains("Inicio")){
+                                    } else if (event.getTarget().toString().contains("Inicio")) {
                                         paneTab.getSelectionModel().select(welcomeTab);
                                     }
 
-                                }else{
+                                } else {
                                     System.out.println(event.getTarget());
                                 }
                             }
@@ -1998,7 +1979,7 @@ public class DashboardController implements Initializable {
     }
 
     //region default methods
-    private void executeSearchProductsOrder(final String t1){
+    private void executeSearchProductsOrder(final String t1) {
 
         Task<ArrayList<Product>> productTask = new Task<ArrayList<Product>>() {
             @Override
@@ -2012,7 +1993,6 @@ public class DashboardController implements Initializable {
             dataObservableProductsFinded.clear();
             productsFinded = productTask.getValue();
             productsFinded.forEach(product -> dataObservableProductsFinded.add(product.getNameProduct()));
-
         });
 
         productTask.setOnFailed(event -> {
@@ -2022,15 +2002,15 @@ public class DashboardController implements Initializable {
         productTask.runningProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if(newValue){
-                    //colocar aqui mouse loading
+                if (newValue) {
+                    Controller.getCurrentStage().getScene().setCursor(Cursor.WAIT);
+                }else{
+                    Controller.getCurrentStage().getScene().setCursor(Cursor.DEFAULT);
                 }
             }
         });
 
         executor.execute(productTask);
-
-
 
     }
 
@@ -2120,6 +2100,7 @@ public class DashboardController implements Initializable {
     }
 
     //endregion
+
     //endregion
 
     //region Tab "Clientes" methods
@@ -3286,9 +3267,8 @@ public class DashboardController implements Initializable {
     //endregion
 
     //region Util Methods
-
     private TabPane findTabPaneForNode(Node node) {
-        TabPane tabPane = null ;
+        TabPane tabPane = null;
 
         for (Node n = node.getParent(); n != null && tabPane == null; n = n.getParent()) {
             if (n instanceof TabPane) {
@@ -3311,7 +3291,7 @@ public class DashboardController implements Initializable {
 
         Endereco endereco = ViaCEP.buscarCep(CEP);
 
-        if(endereco != null){
+        if (endereco != null) {
             street.setText(endereco.getRua());
             neighborhood.setText(endereco.getBairro());
         }

@@ -27,6 +27,8 @@ public class Controller {
     
     private static final String sPathControl = "/fxml/";
 
+    private static Stage currentStage;
+
     private static Class<? extends Window> controlledStage;
 
     //region Static Loader - For non interact Windows
@@ -37,6 +39,8 @@ public class Controller {
         stage.initStyle(style);
         stage.setTitle(title);
         controlledStage = stage.getClass();
+        currentStage = stage;
+
         return stage;
     }
 
@@ -132,6 +136,12 @@ public class Controller {
     public static Stage getStageFromEvent(Event e){
         Stage stage = (Stage) ((Node) e.getTarget()).getScene().getWindow();
         return stage;
+    }
+    //endregion
+
+    //region Get Stage
+    public static Stage getCurrentStage(){
+        return currentStage;
     }
     //endregion
 
