@@ -345,7 +345,7 @@ public class DashboardController implements Initializable {
     @FXML
     private TableView<Supplier> tview_supplier; //Tabela de fornecedores
     @FXML
-    private JFXComboBox<?> cbox_typeSearchSupplier; //Combo Box de tipo de Pesquisa de fornecedores
+    private JFXComboBox<String> cbox_typeSearchSupplier; //Combo Box de tipo de Pesquisa de fornecedores
     @FXML
     private JFXTextField txt_searchSupplier; //TextField de campo para pesquisa de fornecedores
     @FXML
@@ -429,7 +429,7 @@ public class DashboardController implements Initializable {
     @FXML
     private JFXToggleButton select_typeStatusFunc; //select status func
     @FXML
-    private JFXComboBox<?> cbox_typeSearchEmployee; //Combo Box de tipo de Pesquisa de Funcionário
+    private JFXComboBox<String> cbox_typeSearchEmployee; //Combo Box de tipo de Pesquisa de Funcionário
     @FXML
     private Group group_dataFunc; //Agrupamento de TextField atributos do funcionario
     @FXML
@@ -981,11 +981,13 @@ public class DashboardController implements Initializable {
                     return;
                 }
 
+                dataObservableCustomer.clear();
+                dataObservableCustomer.addAll(Customer.readByName(txt_searchCustomer.getText()));
+
                 switch (cbox_typeSearchCustomer.getSelectionModel().getSelectedIndex()) {
                     case 0:
 
-                        dataObservableCustomer.clear();
-                        dataObservableCustomer.addAll(Customer.readByName(txt_searchCustomer.getText()));
+
                         break;
 
                     case 1:
@@ -1330,6 +1332,7 @@ public class DashboardController implements Initializable {
 
         txt_cepSupplier.setOnKeyPressed(this::handleronKeyEnterPressedCEP);
 
+
         //region TableView
         dataObervableSupplier = FXCollections.observableArrayList();
 
@@ -1351,6 +1354,33 @@ public class DashboardController implements Initializable {
         tview_supplier.setItems(dataObervableSupplier);
         //endregion
 
+        //region Combo Box Type Search Supplier
+        cbox_typeSearchSupplier.getItems().addAll("Nome", "Telefone", "CNPJ");
+        cbox_typeSearchSupplier.getSelectionModel().select(0);
+        //endregion
+
+        //region Button Search Supplier
+        btn_searchSupplier.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                dataObervableSupplier.clear();
+
+                if (txt_searchSupplier.getText().equals("")) {
+                    dataObervableSupplier.addAll(Supplier.ReadAll());
+                    return;
+                }
+
+                dataObervableSupplier.addAll(
+                        Supplier.customReadAll(
+                            cbox_typeSearchSupplier.getSelectionModel().getSelectedIndex(),
+                                txt_searchSupplier.getText()
+                        ));
+
+
+            }
+        });
+        //endregion
+
         //region Supplier Details
 
         showSupplierDetails(null);
@@ -1359,15 +1389,16 @@ public class DashboardController implements Initializable {
                 (observable, oldValue, newValue) -> showSupplierDetails(newValue));
         //endregion
 
-
         //region Events
         btn_editSupplier.setOnMouseClicked(this::handlerButtonActionEditSupplier);
         btn_newSupplier.setOnMouseClicked(this::handlerButtonActionNewSupplier);
         btn_cancelSupplier.setOnMouseClicked(this::handlerButtonActionCancelSupplier);
         btn_saveSupplier.setOnMouseClicked(this::handlerButtonActionSaveSupplier);
         tbtn_statusSupplier.setOnMouseClicked(this::handlerButtonActionStatusSupplier);
-        btn_searchSupplier.setOnMouseClicked(this::handlerButtonActionSearchSupplier);
+        //btn_searchSupplier.setOnMouseClicked(this::handlerButtonActionSearchSupplier);
         //endregion
+
+
 
         //endregion
 
@@ -1399,12 +1430,39 @@ public class DashboardController implements Initializable {
         tview_func.setItems(dataObervableEmployee);
         //endregion
 
+        //region Combo Box Type Search Supplier
+        cbox_typeSearchEmployee.getItems().addAll("Nome", "Telefone", "Função");
+        cbox_typeSearchEmployee.getSelectionModel().select(0);
+        //endregion
+
+        //region Button Search Supplier
+        btn_searchEmployee.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                dataObervableEmployee.clear();
+
+                if (txt_searchEmployee.getText().equals("")) {
+                    dataObervableEmployee.addAll(Employee.ReadAll());
+                    return;
+                }
+
+                dataObervableEmployee.addAll(
+                        Employee.customReadAll(
+                                cbox_typeSearchEmployee.getSelectionModel().getSelectedIndex(),
+                                txt_searchEmployee.getText()
+                        ));
+
+
+            }
+        });
+        //endregion
 
         cbox_typeLevelLogin.getItems().addAll(
                 "",
                 "Operador",
                 "Administrador"
         );
+
 
         // Limpa os detalhes da pessoa.
         showEmployeeDetails(null);
@@ -2170,11 +2228,11 @@ public class DashboardController implements Initializable {
         actionSupplier = "";
     }
 
-    private void handlerButtonActionSearchSupplier(MouseEvent event) {
+    /*private void handlerButtonActionSearchSupplier(MouseEvent event) {
         listSupplier = Supplier.ReadAll();
         dataObervableSupplier.clear();
         dataObervableSupplier.addAll(listSupplier);
-    }
+    }*/
     //endregion
 
     private void clearSupplierDetails() {
