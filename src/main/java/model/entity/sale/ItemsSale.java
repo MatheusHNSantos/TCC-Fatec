@@ -101,7 +101,7 @@ public class ItemsSale {
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		try{
-			stmt = con.prepareStatement("UPDATE items_sale SET id_sale = ?, id_product = ?,  WHERE id_items_sale= ?");
+			stmt = con.prepareStatement("UPDATE items_sale SET id_sale = ?, id_product = ?  WHERE id_items_sale= ?");
 			stmt.setInt(1, this.getIdSale());
 			stmt.setInt(2, this.getIdProduct());
 			stmt.setInt(3, this.getIdItemsSale());

@@ -119,6 +119,24 @@ CREATE TABLE IF NOT EXISTS items_sale(
   CONSTRAINT FRK_ID_ITEMS_SALE_PRODUCT FOREIGN KEY (id_product) REFERENCES product(id_product)
 );
 
+CREATE TABLE IF NOT EXISTS voucher(
+  id_voucher int not null AUTO_INCREMENT,
+  id_sale int not null,
+  unified_code varchar(255),
+  sequential_code varchar(255),
+  total_order float,
+  date_order varchar(255),
+  hour_order varchar(255),
+  id_customer int not null,
+  name_customer varchar(255),
+  address_customer varchar(255),
+  phone_customer varchar(255),
+  CONSTRAINT PRK_ID_VOUCHER PRIMARY KEY (id_voucher),
+  CONSTRAINT FRK_ID_ITEMS_SALE_VOUCHER FOREIGN KEY (id_sale) REFERENCES sale(id_sale),
+  CONSTRAINT FRK_ID_CUSTOMER_VOUCHEr FOREIGN KEY (id_customer) REFERENCES customer(id_person)
+);
+
+
 insert into product_type values (1, "lanches");
 
 insert into product_type values (2, "porcoes");
