@@ -632,9 +632,13 @@ public class DashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
+
+
         dashboardControllerReference = this;
 
         //region Setup Inicial
+
+        
 
         //region Executor to Query database
 
@@ -972,6 +976,12 @@ public class DashboardController implements Initializable {
 
         //region Combo Box Type Search Customer
         cbox_typeSearchCustomer.getItems().addAll("Nome do cliente", "Telefone");
+        cbox_typeSearchCustomer.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                txt_searchCustomer.clear();
+            }
+        });
         cbox_typeSearchCustomer.getSelectionModel().select(0);
         //endregion
 
@@ -1312,13 +1322,14 @@ public class DashboardController implements Initializable {
 
         //region Combo Box Type Data to Search
         cbox_typeSearchSale.getItems().addAll("ID", "Nome do cliente");
-
-        Platform.runLater(new Runnable() {
+        cbox_typeSearchSale.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
-            public void run() {
-                cbox_typeSearchSale.getSelectionModel().select(0);
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                txt_searchSale.clear();
             }
         });
+        cbox_typeSearchSale.getSelectionModel().select(0);
+
         //endregion
 
         //region Table View Sales
@@ -2744,8 +2755,8 @@ public class DashboardController implements Initializable {
         address.setNeighborhood(txt_bairroEmployee.getText());
         address.setStreet(txt_streetEmployee.getText());
         address.setNumber(Integer.parseInt(txt_numberEmployee.getText()));
-        phone1.setPhone(txt_phone1Employee.getText());
-        phone2.setPhone(txt_phone2Employee.getText());
+        phone1.setPhone(MaskFieldUtil.onlyDigitsValue(txt_phone1Employee));
+        phone2.setPhone(MaskFieldUtil.onlyDigitsValue(txt_phone2Employee));
 
         employee.setAddress(address);
         employee.Save();
