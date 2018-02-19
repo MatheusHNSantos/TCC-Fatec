@@ -76,6 +76,16 @@ public abstract class MaskFieldUtil {
     }
 
     public static void numericField(final TextField textField) {
+
+        textField.textProperty().addListener((ChangeListener) new ChangeListener<String>() {
+
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                if (newValue.length() > 5) {
+                    textField.setText(oldValue);
+                }
+            }
+        });
+
         textField.lengthProperty().addListener((ChangeListener) new ChangeListener<Number>() {
 
             @Override
@@ -98,7 +108,7 @@ public abstract class MaskFieldUtil {
                     value = value.replaceAll("([0-9]{1})([0-9]{8})$", "$1.$2");
                     value = value.replaceAll("([0-9]{1})([0-9]{5})$", "$1.$2");
                     value = value.replaceAll("([0-9]{1})([0-9]{2})$", "$1,$2");
-
+                    textField.setText(value);
                     MaskFieldUtil.positionCaret(textField);
                     textField.textProperty().addListener((ChangeListener) new ChangeListener<String>() {
 
@@ -117,6 +127,38 @@ public abstract class MaskFieldUtil {
                     }
                 }
         );
+    }
+
+    public static void monetaryField_MAX100(final TextField textField) {
+        try {
+            textField.setAlignment(Pos.CENTER_RIGHT);
+            textField.lengthProperty().addListener((observable, oldValue, newValue) -> {
+                        String value = textField.getText();
+                        value = value.replaceAll("[^0-9]", "");
+                        value = value.replaceAll("([0-9]{1})([0-9]{5})$", "$1.$2");
+                        value = value.replaceAll("([0-9]{1})([0-9]{2})$", "$1.$2");
+                        textField.setText(value);
+                        MaskFieldUtil.positionCaret(textField);
+                        textField.textProperty().addListener((ChangeListener) new ChangeListener<String>() {
+
+                            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                                if (newValue.length() > 6) {
+                                    textField.setText(oldValue);
+                                }
+                            }
+                        });
+                    }
+            );
+            textField.focusedProperty().addListener((observableValue, aBoolean, fieldChange) -> {
+                        int length;
+                        if (!(fieldChange || (length = textField.getText().length()) <= 0 || length >= 3)) {
+                            textField.setText(textField.getText() + "00");
+                        }
+                    }
+            );
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public static BigDecimal monetaryValueFromField(TextField textField) {
