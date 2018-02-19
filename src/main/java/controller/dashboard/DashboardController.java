@@ -269,8 +269,6 @@ public class DashboardController implements Initializable {
     public ObservableList<Customer> dataObservableCustomer;
 
     private int idCustomerSelected = 0;
-
-    public ObservableList<String> dataObservableSearchCustomer;
     //endregion
 
     //endregion
@@ -328,8 +326,6 @@ public class DashboardController implements Initializable {
     //region Normal Objects
     public ArrayList<Sale> dataModelSale;
     public ObservableList<Sale> dataObservableSale;
-
-    public ObservableList<String> dataObservableSaleTypeData;
     //endregion
 
     //endregion
@@ -959,11 +955,8 @@ public class DashboardController implements Initializable {
         MaskFieldUtil.foneField(txt_phone2Customer);
         //endregion
 
-        //region Check Box Type Search Customer
-        dataObservableSearchCustomer = FXCollections.observableArrayList();
-        dataObservableSearchCustomer.add("Nome do cliente");
-        dataObservableSearchCustomer.add("Telefone");
-        cbox_typeSearchCustomer.setItems(dataObservableSearchCustomer);
+        //region Combo Box Type Search Customer
+        cbox_typeSearchCustomer.getItems().addAll("Nome do cliente", "Telefone");
         cbox_typeSearchCustomer.getSelectionModel().select(0);
         //endregion
 
@@ -1278,10 +1271,7 @@ public class DashboardController implements Initializable {
         //endregion
 
         //region Combo Box Type Data to Search
-        dataObservableSaleTypeData = FXCollections.observableArrayList(Arrays.asList());
-        dataObservableSaleTypeData.add("ID");
-        dataObservableSaleTypeData.add("Nome do cliente");
-        cbox_typeSearchSale.setItems(dataObservableSaleTypeData);
+        cbox_typeSearchSale.getItems().addAll("ID", "Nome do cliente");
         cbox_typeSearchSale.getSelectionModel().select(0);
         //endregion
 
@@ -3460,8 +3450,5 @@ public class DashboardController implements Initializable {
 
     }
 
-    /**
-     * Code need refactor
-     */
 
 }
