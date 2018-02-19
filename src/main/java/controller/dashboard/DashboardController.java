@@ -592,6 +592,9 @@ public class DashboardController implements Initializable {
     private ObservableList<Product> dataObervableProduct = FXCollections.observableArrayList();
     private ArrayList<Product> listProduct = new ArrayList<>();
 
+    private ObservableList<String> dataObervableProductType = FXCollections.observableArrayList();
+    private ArrayList<String> listProductType = new ArrayList<>();
+
     private static ObservableList<Ingredient> dataObervableIngredient = FXCollections.observableArrayList();
     private ArrayList<Ingredient> listIngredient = new ArrayList<>();
 
@@ -1453,10 +1456,18 @@ public class DashboardController implements Initializable {
         tview_product.setItems(dataObervableProduct);
         //endregion
 
-        cbox_categoryProduct.getItems().add("");
-        for (ProductType productType : ProductType.ReadAll()) {
+        listProductType = ProductType.readAllToString();
+        dataObervableProductType.add("");
+        dataObervableProductType.addAll(listProductType);
+        cbox_categoryProduct.setItems(dataObervableProductType);
+
+        //cbox_categoryProduct.getItems().add("");
+
+        /*for (ProductType productType : ProductType.ReadAll()) {
             cbox_categoryProduct.getItems().add(productType.getNameProductType());
-        }
+        }*/
+
+
 
         //region TableView Ingredients
         setCellsIngredient(columnIngredientName, "nameIngredient");
@@ -2767,12 +2778,18 @@ public class DashboardController implements Initializable {
 
     private void handlerButtonActionCheckBoxProductType(MouseEvent event) {
         if (refreshCategory) {
-            cbox_categoryProduct.getItems().clear();
-            cbox_categoryProduct.getItems().add("");
+            //cbox_categoryProduct.getItems().clear();
+            dataObervableProductType.clear();
+            listProductType = ProductType.readAllToString();
+            dataObervableProductType.add("");
+            dataObervableProductType.addAll(listProductType);
+
+            /*cbox_categoryProduct.getItems().add("");
             for (ProductType productType : ProductType.ReadAll()) {
                 cbox_categoryProduct.getItems().add(productType.getNameProductType());
-            }
-            resetTableViewProduct();
+            }*/
+
+            //resetTableViewProduct();
             refreshCategory = false;
         }
     }

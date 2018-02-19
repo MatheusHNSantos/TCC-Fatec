@@ -68,24 +68,6 @@ public class Log {
         return logsList;
     }
 
-    public void save(){
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        try{
-            stmt = con.prepareStatement("UPDATE log SET  id_user = ?, log_date = ?, user_action = ? WHERE id_log= ?");
-            stmt.setInt(1, this.getIdUser());
-            stmt.setString(2, this.getLogDate());
-            stmt.setString(3, this.getUserAction());
-            stmt.setInt(4, this.getIdLog());
-            stmt.executeUpdate();
-        } catch (SQLException ex) {
-            FxDialogs.showException("Erro de Atualização!", getClass().getSimpleName() + " - " + ex.getMessage(), ex);
-        }
-        finally{
-            ConnectionFactory.closeConnection(con, stmt);
-        }
-    }
-
     public void create(){
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
@@ -100,21 +82,6 @@ public class Log {
             this.setIdLog(LAST_ID_INSERT);
         } catch (SQLException ex) {
             FxDialogs.showException("Erro de Gravação! ", getClass().getSimpleName() + " - " + ex.getMessage(), ex);
-        }
-        finally{
-            ConnectionFactory.closeConnection(con, stmt);
-        }
-    }
-
-    public void delete(){
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        try{
-            stmt = con.prepareStatement("DELETE FROM log WHERE id_log = ?");
-            stmt.setInt(1, this.getIdLog());
-            stmt.executeUpdate();
-        } catch (SQLException ex) {
-            FxDialogs.showException("Erro de Exclusão!", getClass().getSimpleName() + " - " + ex.getMessage(), ex);
         }
         finally{
             ConnectionFactory.closeConnection(con, stmt);
