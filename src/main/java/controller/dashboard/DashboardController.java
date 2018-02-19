@@ -1002,12 +1002,12 @@ public class DashboardController implements Initializable {
                     return;
                 }
 
-                dataObservableCustomer.clear();
-                dataObservableCustomer.addAll(Customer.readByName(txt_searchCustomer.getText()));
+
 
                 switch (cbox_typeSearchCustomer.getSelectionModel().getSelectedIndex()) {
                     case 0:
-
+                        dataObservableCustomer.clear();
+                        dataObservableCustomer.addAll(Customer.readByName(txt_searchCustomer.getText()));
 
                         break;
 

@@ -10,73 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab15f9fe-1f94-4969-b587-42fde349af14" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$53.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$54.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$55.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$56.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$57.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$58.class" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$17$1.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$10.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$11$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$11$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$11.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$12.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$13$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$13$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$13.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$14.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$15.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$16.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$17.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$17.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$18$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$18$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$18.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$18.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$19.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$19.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$2.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$20.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$20.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$21.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$21.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$22.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$22.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$23.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$23.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$24.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$24.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$25.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$25.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$26.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$26.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$27.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$27.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$28.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$28.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$29.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$29.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$3.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$30.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$30.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$31.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$31.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$32.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$32.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$33.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$33.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$34.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$34.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$35.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$35.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$36.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$36.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$37.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$37.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$38$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$38$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$38.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$38.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$39.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$39.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$4$1.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$4$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$4.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$40.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$40.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$41.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$41.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$42.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$42.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$43.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$43.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$44.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$44.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$45.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$45.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$46.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$46.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$47.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$47.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$48.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$48.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$49.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$49.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$5.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$50.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$50.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$51.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$51.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$52.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$52.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$6.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$7.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$8.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$9.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$hora.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController$hora.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController.class" afterPath="$PROJECT_DIR$/target/classes/controller/dashboard/DashboardController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -99,40 +32,317 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="DashboardController.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="DashboardController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="5531">
-                  <caret line="361" column="31" lean-forward="false" selection-start-line="361" selection-start-column="31" selection-end-line="361" selection-end-column="31" />
+                <state relative-caret-position="803">
+                  <caret line="1067" column="0" lean-forward="true" selection-start-line="1067" selection-start-column="0" selection-end-line="1067" selection-end-column="0" />
                   <folding>
+                    <element signature="docComment;class#DashboardController#0" expanded="false" />
+                    <element signature="n#!!doc;n#mainAnchorPane#0;n#DashboardController#0" expanded="false" />
+                    <element signature="e#3751#3780#0" expanded="false" />
+                    <element signature="e#3930#3959#0" expanded="false" />
+                    <element signature="n#!!doc;n#btn_finishSale#0;n#DashboardController#0" expanded="false" />
+                    <element signature="n#!!doc;n#totalPrice#0;n#DashboardController#0" expanded="false" />
+                    <element signature="n#!!doc;n#actionCustomer#0;n#DashboardController#0" expanded="false" />
+                    <element signature="e#8186#8222#0" expanded="false" />
+                    <element signature="e#8265#8299#0" expanded="false" />
+                    <element signature="docComment;field#cbox_scopeBarChart#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#8623#8651#0" expanded="false" />
+                    <element signature="docComment;field#btn_showSaleDetail#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#8701#8723#0" expanded="false" />
+                    <element signature="n#!!doc;n#dataModelSale#0;n#DashboardController#0" expanded="false" />
+                    <element signature="e#9674#9709#0" expanded="false" />
+                    <element signature="docComment;field#tview_supplier#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#9765#9787#0" expanded="false" />
+                    <element signature="n#!!doc;n#actionSupplier#0;n#DashboardController#0" expanded="false" />
+                    <element signature="e#12261#12305#0" expanded="false" />
+                    <element signature="docComment;field#txt_rgEmployee#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#12447#12469#0" expanded="false" />
+                    <element signature="n#!!doc;n#actionEmployee#0;n#DashboardController#0" expanded="false" />
+                    <element signature="e#16095#16126#0" expanded="false" />
+                    <element signature="docComment;field#btn_editProductType#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#16179#16201#0" expanded="false" />
+                    <element signature="n#!!doc;n#actionProduct#0;n#DashboardController#0" expanded="false" />
+                    <element signature="e#19692#19718#0" expanded="false" />
+                    <element signature="docComment;field#tview_log#0;class#DashboardController#0" expanded="false" />
+                    <element signature="n#!!doc;n#formatador#0;n#DashboardController#0" expanded="false" />
+                    <element signature="e#20322#20344#0" expanded="false" />
+                    <element signature="e#20354#20389#0" expanded="false" />
+                    <element signature="e#20440#20547#0" expanded="false" />
+                    <element signature="e#20631#20668#0" expanded="false" />
+                    <element signature="e#21121#21145#0" expanded="false" />
+                    <element signature="e#21780#21801#0" expanded="false" />
+                    <element signature="e#21892#21919#0" expanded="false" />
+                    <element signature="e#22115#22136#0" expanded="false" />
+                    <element signature="e#22146#22188#0" expanded="false" />
+                    <element signature="class#22529:22676" expanded="false" />
+                    <element signature="e#22688#22706#0" expanded="false" />
+                    <element signature="e#22930#22950#0" expanded="false" />
+                    <element signature="e#23031#23067#0" expanded="false" />
+                    <element signature="e#23435#23463#0" expanded="false" />
+                    <element signature="e#23800#23832#0" expanded="false" />
+                    <element signature="e#24084#24114#0" expanded="false" />
+                    <element signature="class#24776:25269" expanded="false" />
+                    <element signature="method#changed#0;class#24776:25269" expanded="false" />
+                    <element signature="class#25325:26127" expanded="false" />
+                    <element signature="method#onChanged#0;class#25325:26127" expanded="false" />
+                    <element signature="class#26211:26723" expanded="false" />
+                    <element signature="method#changed#0;class#26211:26723" expanded="false" />
+                    <element signature="class#26378:26697" expanded="false" />
+                    <element signature="method#run#0;class#26378:26697" expanded="false" />
+                    <element signature="class#26773:27206" expanded="false" />
+                    <element signature="method#handle#0;class#26773:27206" expanded="false" />
+                    <element signature="class#27258:27635" expanded="false" />
+                    <element signature="method#handle#0;class#27258:27635" expanded="false" />
+                    <element signature="class#27726:28365" expanded="false" />
+                    <element signature="method#changed#0;class#27726:28365" expanded="false" />
+                    <element signature="e#28377#28409#0" expanded="false" />
+                    <element signature="class#28468:29061" expanded="false" />
+                    <element signature="method#changed#0;class#28468:29061" expanded="false" />
+                    <element signature="class#29130:29686" expanded="false" />
+                    <element signature="method#handle#0;class#29130:29686" expanded="false" />
+                    <element signature="class#29734:30134" expanded="false" />
+                    <element signature="method#handle#0;class#29734:30134" expanded="false" />
+                    <element signature="class#30193:30917" expanded="false" />
+                    <element signature="method#changed#0;class#30193:30917" expanded="false" />
+                    <element signature="class#30540:30786" expanded="false" />
+                    <element signature="method#run#0;class#30540:30786" expanded="false" />
+                    <element signature="class#30993:31302" expanded="false" />
+                    <element signature="method#handle#0;class#30993:31302" expanded="false" />
+                    <element signature="class#31371:32199" expanded="false" />
+                    <element signature="method#changed#0;class#31371:32199" expanded="false" />
+                    <element signature="class#31824:32154" expanded="false" />
+                    <element signature="method#handle#0;class#31824:32154" expanded="false" />
+                    <element signature="class#32255:32894" expanded="false" />
+                    <element signature="method#changed#0;class#32255:32894" expanded="false" />
+                    <element signature="e#33025#33051#0" expanded="false" />
+                    <element signature="e#33292#33331#0" expanded="false" />
+                    <element signature="e#34965#34995#0" expanded="false" />
+                    <element signature="class#35044:35211" expanded="false" />
+                    <element signature="e#35243#35261#0" expanded="false" />
+                    <element signature="e#35341#35370#0" expanded="false" />
+                    <element signature="e#35714#35739#0" expanded="false" />
+                    <element signature="e#36049#36064#0" expanded="false" />
+                    <element signature="e#36613#36641#0" expanded="false" />
+                    <element signature="e#36651#36671#0" expanded="false" />
+                    <element signature="e#36681#36709#0" expanded="false" />
+                    <element signature="class#36992:38910" expanded="false" />
+                    <element signature="method#run#0;class#36992:38910" expanded="false" />
+                    <element signature="class#37186:38884" expanded="false" />
+                    <element signature="method#handle#0;class#37186:38884" expanded="false" />
+                    <element signature="e#38923#38953#0" expanded="false" />
+                    <element signature="e#40359#40387#0" expanded="false" />
+                    <element signature="e#40397#40430#0" expanded="false" />
+                    <element signature="e#40526#40546#0" expanded="false" />
+                    <element signature="e#40556#40576#0" expanded="false" />
+                    <element signature="class#40662:41496" expanded="false" />
+                    <element signature="initializer##0;class#40662:41496" expanded="false" />
+                    <element signature="method#toString#0;class#40662:41496" expanded="false" />
+                    <element signature="method#fromString#0;class#40662:41496" expanded="false" />
+                    <element signature="class#41539:42088" expanded="false" />
+                    <element signature="method#handle#0;class#41539:42088" expanded="false" />
+                    <element signature="e#42120#42145#0" expanded="false" />
+                    <element signature="class#42195:42505" expanded="false" />
+                    <element signature="method#handle#0;class#42195:42505" expanded="false" />
+                    <element signature="e#42537#42564#0" expanded="false" />
+                    <element signature="class#42660:43656" expanded="false" />
+                    <element signature="method#handle#0;class#42660:43656" expanded="false" />
+                    <element signature="e#43688#43710#0" expanded="false" />
+                    <element signature="class#43756:44454" expanded="false" />
+                    <element signature="method#handle#0;class#43756:44454" expanded="false" />
+                    <element signature="e#44486#44506#0" expanded="false" />
+                    <element signature="class#44563:45400" expanded="false" />
+                    <element signature="method#handle#0;class#44563:45400" expanded="false" />
+                    <element signature="e#45432#45470#0" expanded="false" />
+                    <element signature="class#45574:45731" expanded="false" />
+                    <element signature="e#45763#45788#0" expanded="false" />
+                    <element signature="class#46076:46456" expanded="false" />
+                    <element signature="method#call#0;class#46076:46456" expanded="false" />
+                    <element signature="class#46806:47200" expanded="false" />
+                    <element signature="method#changed#0;class#46806:47200" expanded="false" />
+                    <element signature="e#47254#47288#0" expanded="false" />
+                    <element signature="e#47684#47702#0" expanded="false" />
+                    <element signature="e#47781#47810#0" expanded="false" />
+                    <element signature="e#47820#47833#0" expanded="false" />
+                    <element signature="e#48430#48469#0" expanded="false" />
+                    <element signature="e#48641#48672#0" expanded="false" />
+                    <element signature="class#48722:49352" expanded="false" />
+                    <element signature="method#handle#0;class#48722:49352" expanded="false" />
+                    <element signature="e#49384#49409#0" expanded="false" />
+                    <element signature="e#49639#49654#0" expanded="false" />
+                    <element signature="e#50218#50261#0" expanded="false" />
+                    <element signature="e#50700#50727#0" expanded="false" />
+                    <element signature="e#51301#51340#0" expanded="false" />
+                    <element signature="e#51514#51545#0" expanded="false" />
+                    <element signature="class#51595:52229" expanded="false" />
+                    <element signature="method#handle#0;class#51595:52229" expanded="false" />
+                    <element signature="e#52638#52653#0" expanded="false" />
+                    <element signature="e#53707#53737#0" expanded="false" />
+                    <element signature="e#53913#53940#0" expanded="false" />
+                    <element signature="e#53950#53979#0" expanded="false" />
+                    <element signature="e#54936#54966#0" expanded="false" />
+                    <element signature="e#55276#55300#0" expanded="false" />
+                    <element signature="e#55527#55542#0" expanded="false" />
+                    <element signature="e#56682#56707#0" expanded="false" />
+                    <element signature="n#!!doc;n#createLabel#0;n#DashboardController#0" expanded="false" />
+                    <element signature="method#createLabel#0;class#DashboardController#0" expanded="false" />
+                    <element signature="n#!!doc;n#hora#0;n#DashboardController#0" expanded="false" />
+                    <element signature="class#hora#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#actionPerformed#0;class#hora#0;class#DashboardController#0" expanded="false" />
+                    <element signature="class#57569:57815" expanded="false" />
+                    <element signature="method#run#0;class#57569:57815" expanded="false" />
+                    <element signature="method#atualizaHoras#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#atualizaHoras2#0;class#DashboardController#0" expanded="false" />
+                    <element signature="n#!!doc;n#handlerHyperlinkActionLogout#0;n#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerHyperlinkActionLogout#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerHyperlinkActionFinish#0;class#DashboardController#0" expanded="false" />
+                    <element signature="n#!!doc;n#handlerButtonActionRemoveProductOnOrder#0;n#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionRemoveProductOnOrder#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionAddProductOnOrder#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionClearOrderProducts#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionFinishOrder#0;class#DashboardController#0" expanded="false" />
+                    <element signature="class#61665:62247" expanded="false" />
+                    <element signature="method#handle#0;class#61665:62247" expanded="false" />
+                    <element signature="method#handlerButtonActionHistoricCustomer#0;class#DashboardController#0" expanded="false" />
+                    <element signature="n#!!doc;n#executeSearchProductsOrder#0;n#DashboardController#0" expanded="false" />
+                    <element signature="method#executeSearchProductsOrder#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#63679#64190#0" expanded="false" />
+                    <element signature="class#63971:64177" expanded="false" />
+                    <element signature="e#64226#64304#0" expanded="false" />
+                    <element signature="class#64362:64798" expanded="false" />
+                    <element signature="method#changed#0;class#64362:64798" expanded="false" />
+                    <element signature="method#searchByTelephone#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#resetAllComponentsOrder#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#clientDataDisableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#clientDataEnableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#clearTextFieldsFromOrder#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#67756#67787#0" expanded="false" />
+                    <element signature="docComment;method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionNewCustomer#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionStatusCustomer#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionCancelCustomer#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionSaveCustomer#0;class#DashboardController#0" expanded="false" />
+                    <element signature="n#!!doc;n#clearCustomerDetails#0;n#DashboardController#0" expanded="false" />
+                    <element signature="method#clearCustomerDetails#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#resetTableViewCustomer#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#showCustomerDetails#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#saveCustomer#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#newCustomer#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#74093#74134#0" expanded="false" />
+                    <element signature="method#newCustomerGeneral#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#setStatusCustomer#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#76203#76239#0" expanded="false" />
+                    <element signature="e#76245#76279#0" expanded="false" />
+                    <element signature="docComment;method#resetTableViewSale#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#76351#76380#0" expanded="false" />
+                    <element signature="method#resetTableViewSale#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#executeSearchSaleByName#0;class#DashboardController#0" expanded="false" />
+                    <element signature="class#76840:77081" expanded="false" />
+                    <element signature="method#handle#0;class#76840:77081" expanded="false" />
+                    <element signature="class#77114:77306" expanded="false" />
+                    <element signature="class#77357:77793" expanded="false" />
+                    <element signature="method#changed#0;class#77357:77793" expanded="false" />
+                    <element signature="e#77858#77893#0" expanded="false" />
+                    <element signature="e#77950#77974#0" expanded="false" />
+                    <element signature="docComment;method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionNewSupplier#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionStatusSupplier#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionCancelSupplier#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionSaveSupplier#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#clearSupplierDetails#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#showSupplierDetails#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#saveSupplier#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#newSupplier#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#setStatusSupplier#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#resetTableViewSupplier#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#85420#85464#0" expanded="false" />
+                    <element signature="n#!!doc;n#showEmployeeDetails#0;n#DashboardController#0" expanded="false" />
+                    <element signature="method#showEmployeeDetails#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#clearEmployeeDetails#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#resetTableViewEmployee#0;class#DashboardController#0" expanded="false" />
+                    <element signature="n#!!doc;n#handlerButtonActionManageUsers#0;n#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionManageUsers#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#selectLoginStatusAction#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonSelectLoginStatus#0;class#DashboardController#0" expanded="false" />
+                    <element signature="docComment;method#setEmployeeActiveButtons#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#setEmployeeActiveButtons#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionAddEmployee#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionStatusEmployee#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionCancelEmployee#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionSaveEmployee#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#setLoginActiveButtons#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionCancelLogin#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionSaveLogin#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#saveEmployee#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#addEmployee#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#setStatusEmployee#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#setStatusLogin#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#saveLogin#0;class#DashboardController#0" expanded="false" />
+                    <element signature="class#98825:98890" expanded="false" />
+                    <element signature="class#98970:99023" expanded="false" />
+                    <element signature="class#99106:99160" expanded="false" />
+                    <element signature="class#99232:99296" expanded="false" />
+                    <element signature="method#addLogin#0;class#DashboardController#0" expanded="false" />
+                    <element signature="class#100133:100198" expanded="false" />
+                    <element signature="class#100278:100331" expanded="false" />
+                    <element signature="class#100414:100468" expanded="false" />
+                    <element signature="class#100540:100604" expanded="false" />
+                    <element signature="e#100660#100691#0" expanded="false" />
+                    <element signature="docComment;method#addIngredient#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#100744#100768#0" expanded="false" />
+                    <element signature="method#addIngredient#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionCheckBoxProductType#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionEditProductType#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionEditIngredients#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionListIngredients#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionDropIngredients#0;class#DashboardController#0" expanded="false" />
+                    <element signature="docComment;method#setProductActiveButtons#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#setProductActiveButtons#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionAddProduct#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionCancelProduct#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionSaveProduct#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionStatusProduct#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#handlerButtonActionSearchProduct#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#clearProductDetails#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#resetTableViewProduct#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#showProductDetails#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#saveProduct#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#addProduct#0;class#DashboardController#0" expanded="false" />
+                    <element signature="method#setStatusProduct#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#110304#110330#0" expanded="false" />
+                    <element signature="docComment;method#checkNumeric#0;class#DashboardController#0" expanded="false" />
+                    <element signature="e#110411#110432#0" expanded="false" />
+                    <element signature="method#checkNumeric#0;class#DashboardController#0" expanded="false" />
                     <element signature="method#loader#0;class#DashboardController#0" expanded="false" />
-                    <marker date="1519071211298" expanded="false" signature="110739:118450" ph="Util Methods" />
-                    <marker date="1519071211298" expanded="false" signature="110790:111049" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="111055:112421" ph="CEP Experimental" />
-                    <marker date="1519071211298" expanded="false" signature="111179:111476" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="111539:112404" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="112427:112550" ph="/**...*/" />
-                    <marker date="1519071211298" expanded="false" signature="112632:114306" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="112836:114298" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="112956:113165" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="113254:114288" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="114398:116219" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="114604:116211" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="114724:114933" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="115024:116201" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="116320:117839" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="116532:117831" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="116652:116861" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="116958:117821" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="117845:118433" ph="Controller Stage Window Show and Close request" />
-                    <marker date="1519071211298" expanded="false" signature="117947:118157" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="117996:118150" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="118075:118094" ph=" { " />
-                    <marker date="1519071211298" expanded="false" signature="118126:118140" ph=" }" />
-                    <marker date="1519071211298" expanded="false" signature="118206:118417" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="118255:118410" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="118334:118353" ph=" { " />
-                    <marker date="1519071211298" expanded="false" signature="118386:118400" ph=" }" />
+                    <marker date="1519072113910" expanded="false" signature="110806:111065" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="111071:112437" ph="CEP Experimental" />
+                    <marker date="1519072113910" expanded="false" signature="111195:111492" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="111555:112420" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="112443:112566" ph="/**...*/" />
+                    <marker date="1519072113910" expanded="false" signature="112648:114322" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="112852:114314" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="112972:113181" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="113270:114304" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="114414:116235" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="114620:116227" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="114740:114949" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="115040:116217" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="116336:117855" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="116548:117847" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="116668:116877" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="116974:117837" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="117861:118449" ph="Controller Stage Window Show and Close request" />
+                    <marker date="1519072113910" expanded="false" signature="117963:118173" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="118012:118166" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="118091:118110" ph=" { " />
+                    <marker date="1519072113910" expanded="false" signature="118142:118156" ph=" }" />
+                    <marker date="1519072113910" expanded="false" signature="118222:118433" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="118271:118426" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="118350:118369" ph=" { " />
+                    <marker date="1519072113910" expanded="false" signature="118402:118416" ph=" }" />
                   </folding>
                 </state>
               </provider>
@@ -142,18 +352,61 @@
             <entry file="file://$PROJECT_DIR$/src/main/java/model/entity/person/employee/Employee.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="408">
-                  <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+                  <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="4692">
+                  <caret line="345" column="28" lean-forward="false" selection-start-line="345" selection-start-column="28" selection-end-line="345" selection-end-column="28" />
+                  <folding>
+                    <marker date="1519072124685" expanded="true" signature="143876:143893" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="143876:143911" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="143876:143924" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="143876:143939" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="143974:146587" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="143987:146572" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144041:144430" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144060:144415" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144171:144395" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144211:144361" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144232:144339" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144480:144814" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144499:144799" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144594:144779" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144634:144745" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144655:144723" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144865:145137" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144884:145122" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144917:145102" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144957:145068" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="144978:145046" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="145180:145497" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="145199:145482" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="145277:145462" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="145317:145428" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="145338:145406" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="145548:145868" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="145567:145853" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="145648:145833" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="145688:145799" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="145709:145777" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="145920:146245" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="145939:146230" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="146025:146210" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="146065:146176" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="146086:146154" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="146293:146558" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="146312:146543" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="146345:146523" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="146385:146489" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="146406:146467" ph="..." />
+                    <marker date="1519072124685" expanded="true" signature="146632:146671" ph="..." />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -185,70 +438,70 @@
           <file leaf-file-name="DashboardController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23367">
-                  <caret line="1482" column="48" lean-forward="false" selection-start-line="1482" selection-start-column="48" selection-end-line="1482" selection-end-column="48" />
+                <state relative-caret-position="366">
+                  <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
                   <folding>
                     <element signature="e#22594#22595#0" expanded="true" />
                     <element signature="e#22665#22666#0" expanded="true" />
-                    <element signature="e#35128#35129#0" expanded="true" />
-                    <element signature="e#35184#35185#0" expanded="true" />
-                    <element signature="e#45623#45624#0" expanded="true" />
-                    <element signature="e#45704#45705#0" expanded="true" />
-                    <element signature="e#57455#57817#0" expanded="true" />
-                    <element signature="e#57816#57817#0" expanded="true" />
-                    <element signature="e#58169#58170#0" expanded="true" />
-                    <element signature="e#58199#58200#0" expanded="true" />
-                    <element signature="e#58235#58236#0" expanded="true" />
-                    <element signature="e#58262#58263#0" expanded="true" />
-                    <element signature="e#59794#59795#0" expanded="true" />
-                    <element signature="e#59835#59836#0" expanded="true" />
-                    <element signature="e#63255#63256#0" expanded="true" />
-                    <element signature="e#63290#63291#0" expanded="true" />
-                    <element signature="e#63433#63625#0" expanded="true" />
-                    <element signature="e#63624#63625#0" expanded="true" />
-                    <element signature="e#64028#64029#0" expanded="true" />
-                    <element signature="e#64146#64147#0" expanded="true" />
-                    <element signature="e#68658#68659#0" expanded="true" />
-                    <element signature="e#68721#68722#0" expanded="true" />
-                    <element signature="e#76594#76789#0" expanded="true" />
-                    <element signature="e#76788#76789#0" expanded="true" />
-                    <element signature="e#77210#77211#0" expanded="true" />
-                    <element signature="e#77279#77280#0" expanded="true" />
-                    <element signature="e#78841#78842#0" expanded="true" />
-                    <element signature="e#78904#78905#0" expanded="true" />
-                    <element signature="e#91561#91562#0" expanded="true" />
-                    <element signature="e#91624#91625#0" expanded="true" />
-                    <element signature="e#93481#93482#0" expanded="true" />
-                    <element signature="e#93544#93545#0" expanded="true" />
-                    <element signature="e#93611#93612#0" expanded="true" />
-                    <element signature="e#93671#93672#0" expanded="true" />
-                    <element signature="e#104489#104490#0" expanded="true" />
-                    <element signature="e#104551#104552#0" expanded="true" />
-                    <element signature="e#107032#107033#0" expanded="true" />
-                    <element signature="e#107079#107080#0" expanded="true" />
+                    <element signature="e#35144#35145#0" expanded="true" />
+                    <element signature="e#35200#35201#0" expanded="true" />
+                    <element signature="e#45639#45640#0" expanded="true" />
+                    <element signature="e#45720#45721#0" expanded="true" />
+                    <element signature="e#57471#57833#0" expanded="true" />
+                    <element signature="e#57832#57833#0" expanded="true" />
+                    <element signature="e#58185#58186#0" expanded="true" />
+                    <element signature="e#58215#58216#0" expanded="true" />
+                    <element signature="e#58251#58252#0" expanded="true" />
+                    <element signature="e#58278#58279#0" expanded="true" />
+                    <element signature="e#59810#59811#0" expanded="true" />
+                    <element signature="e#59851#59852#0" expanded="true" />
+                    <element signature="e#63271#63272#0" expanded="true" />
+                    <element signature="e#63306#63307#0" expanded="true" />
+                    <element signature="e#63449#63641#0" expanded="true" />
+                    <element signature="e#63640#63641#0" expanded="true" />
+                    <element signature="e#64044#64045#0" expanded="true" />
+                    <element signature="e#64162#64163#0" expanded="true" />
+                    <element signature="e#68674#68675#0" expanded="true" />
+                    <element signature="e#68737#68738#0" expanded="true" />
+                    <element signature="e#76610#76805#0" expanded="true" />
+                    <element signature="e#76804#76805#0" expanded="true" />
+                    <element signature="e#77226#77227#0" expanded="true" />
+                    <element signature="e#77295#77296#0" expanded="true" />
+                    <element signature="e#78857#78858#0" expanded="true" />
+                    <element signature="e#78920#78921#0" expanded="true" />
+                    <element signature="e#91577#91578#0" expanded="true" />
+                    <element signature="e#91640#91641#0" expanded="true" />
+                    <element signature="e#93497#93498#0" expanded="true" />
+                    <element signature="e#93560#93561#0" expanded="true" />
+                    <element signature="e#93627#93628#0" expanded="true" />
+                    <element signature="e#93687#93688#0" expanded="true" />
+                    <element signature="e#104505#104506#0" expanded="true" />
+                    <element signature="e#104567#104568#0" expanded="true" />
+                    <element signature="e#107048#107049#0" expanded="true" />
+                    <element signature="e#107095#107096#0" expanded="true" />
                     <element signature="method#setCellsIngredient#0;class#DashboardController#0" expanded="false" />
-                    <element signature="class#116496:117831" expanded="false" />
-                    <element signature="initializer##0;class#116496:117831" expanded="false" />
-                    <element signature="method#updateItem#0;class#116496:117831" expanded="false" />
+                    <element signature="class#116512:117847" expanded="false" />
+                    <element signature="initializer##0;class#116512:117847" expanded="false" />
+                    <element signature="method#updateItem#0;class#116512:117847" expanded="false" />
                     <element signature="n#!!doc;n#onShow#0;n#DashboardController#0" expanded="false" />
                     <element signature="method#onShow#0;class#DashboardController#0" expanded="false" />
-                    <element signature="class#117968:118150" expanded="false" />
+                    <element signature="class#117984:118166" expanded="false" />
                     <element signature="method#onClose#0;class#DashboardController#0" expanded="false" />
-                    <element signature="class#118227:118410" expanded="false" />
+                    <element signature="class#118243:118426" expanded="false" />
                     <element signature="method#loader#0;class#DashboardController#0" expanded="false" />
-                    <marker date="1519071211298" expanded="false" signature="110790:111049" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="111055:112421" ph="CEP Experimental" />
-                    <marker date="1519071211298" expanded="false" signature="111179:111476" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="111539:112404" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="112427:112550" ph="/**...*/" />
-                    <marker date="1519071211298" expanded="false" signature="112632:114306" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="112836:114298" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="112956:113165" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="113254:114288" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="114398:116219" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="114604:116211" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="114724:114933" ph="{...}" />
-                    <marker date="1519071211298" expanded="false" signature="115024:116201" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="110806:111065" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="111071:112437" ph="CEP Experimental" />
+                    <marker date="1519072113910" expanded="false" signature="111195:111492" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="111555:112420" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="112443:112566" ph="/**...*/" />
+                    <marker date="1519072113910" expanded="false" signature="112648:114322" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="112852:114314" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="112972:113181" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="113270:114304" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="114414:116235" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="114620:116227" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="114740:114949" ph="{...}" />
+                    <marker date="1519072113910" expanded="false" signature="115040:116217" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -366,8 +619,8 @@
         <option value="$PROJECT_DIR$/src/main/java/util/MaskField/MaskFieldUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/HistoricCustomerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" />
       </list>
     </option>
   </component>
@@ -401,10 +654,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="469" />
-    <option name="width" value="904" />
-    <option name="height" value="735" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-27" />
+    <option name="y" value="7" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -1162,7 +1416,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/model/entity/person/employee/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1222,48 +1476,368 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5531">
-          <caret line="361" column="31" lean-forward="false" selection-start-line="361" selection-start-column="31" selection-end-line="361" selection-end-column="31" />
+        <state relative-caret-position="4692">
+          <caret line="345" column="28" lean-forward="false" selection-start-line="345" selection-start-column="28" selection-end-line="345" selection-end-column="28" />
           <folding>
-            <element signature="method#loader#0;class#DashboardController#0" expanded="false" />
-            <marker date="1519071211298" expanded="false" signature="110739:118450" ph="Util Methods" />
-            <marker date="1519071211298" expanded="false" signature="110790:111049" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="111055:112421" ph="CEP Experimental" />
-            <marker date="1519071211298" expanded="false" signature="111179:111476" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="111539:112404" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="112427:112550" ph="/**...*/" />
-            <marker date="1519071211298" expanded="false" signature="112632:114306" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="112836:114298" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="112956:113165" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="113254:114288" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="114398:116219" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="114604:116211" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="114724:114933" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="115024:116201" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="116320:117839" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="116532:117831" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="116652:116861" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="116958:117821" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="117845:118433" ph="Controller Stage Window Show and Close request" />
-            <marker date="1519071211298" expanded="false" signature="117947:118157" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="117996:118150" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="118075:118094" ph=" { " />
-            <marker date="1519071211298" expanded="false" signature="118126:118140" ph=" }" />
-            <marker date="1519071211298" expanded="false" signature="118206:118417" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="118255:118410" ph="{...}" />
-            <marker date="1519071211298" expanded="false" signature="118334:118353" ph=" { " />
-            <marker date="1519071211298" expanded="false" signature="118386:118400" ph=" }" />
+            <marker date="1519072124685" expanded="true" signature="143876:143893" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="143876:143911" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="143876:143924" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="143876:143939" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="143974:146587" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="143987:146572" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144041:144430" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144060:144415" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144171:144395" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144211:144361" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144232:144339" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144480:144814" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144499:144799" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144594:144779" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144634:144745" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144655:144723" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144865:145137" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144884:145122" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144917:145102" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144957:145068" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="144978:145046" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="145180:145497" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="145199:145482" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="145277:145462" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="145317:145428" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="145338:145406" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="145548:145868" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="145567:145853" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="145648:145833" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="145688:145799" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="145709:145777" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="145920:146245" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="145939:146230" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="146025:146210" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="146065:146176" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="146086:146154" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="146293:146558" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="146312:146543" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="146345:146523" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="146385:146489" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="146406:146467" ph="..." />
+            <marker date="1519072124685" expanded="true" signature="146632:146671" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="803">
+          <caret line="1067" column="0" lean-forward="true" selection-start-line="1067" selection-start-column="0" selection-end-line="1067" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#mainAnchorPane#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#3751#3780#0" expanded="false" />
+            <element signature="e#3930#3959#0" expanded="false" />
+            <element signature="n#!!doc;n#btn_finishSale#0;n#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#totalPrice#0;n#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#actionCustomer#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#8186#8222#0" expanded="false" />
+            <element signature="e#8265#8299#0" expanded="false" />
+            <element signature="docComment;field#cbox_scopeBarChart#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#8623#8651#0" expanded="false" />
+            <element signature="docComment;field#btn_showSaleDetail#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#8701#8723#0" expanded="false" />
+            <element signature="n#!!doc;n#dataModelSale#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#9674#9709#0" expanded="false" />
+            <element signature="docComment;field#tview_supplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#9765#9787#0" expanded="false" />
+            <element signature="n#!!doc;n#actionSupplier#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#12261#12305#0" expanded="false" />
+            <element signature="docComment;field#txt_rgEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#12447#12469#0" expanded="false" />
+            <element signature="n#!!doc;n#actionEmployee#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#16095#16126#0" expanded="false" />
+            <element signature="docComment;field#btn_editProductType#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#16179#16201#0" expanded="false" />
+            <element signature="n#!!doc;n#actionProduct#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#19692#19718#0" expanded="false" />
+            <element signature="docComment;field#tview_log#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#formatador#0;n#DashboardController#0" expanded="false" />
+            <element signature="e#20322#20344#0" expanded="false" />
+            <element signature="e#20354#20389#0" expanded="false" />
+            <element signature="e#20440#20547#0" expanded="false" />
+            <element signature="e#20631#20668#0" expanded="false" />
+            <element signature="e#21121#21145#0" expanded="false" />
+            <element signature="e#21780#21801#0" expanded="false" />
+            <element signature="e#21892#21919#0" expanded="false" />
+            <element signature="e#22115#22136#0" expanded="false" />
+            <element signature="e#22146#22188#0" expanded="false" />
+            <element signature="class#22529:22676" expanded="false" />
+            <element signature="e#22688#22706#0" expanded="false" />
+            <element signature="e#22930#22950#0" expanded="false" />
+            <element signature="e#23031#23067#0" expanded="false" />
+            <element signature="e#23435#23463#0" expanded="false" />
+            <element signature="e#23800#23832#0" expanded="false" />
+            <element signature="e#24084#24114#0" expanded="false" />
+            <element signature="class#24776:25269" expanded="false" />
+            <element signature="method#changed#0;class#24776:25269" expanded="false" />
+            <element signature="class#25325:26127" expanded="false" />
+            <element signature="method#onChanged#0;class#25325:26127" expanded="false" />
+            <element signature="class#26211:26723" expanded="false" />
+            <element signature="method#changed#0;class#26211:26723" expanded="false" />
+            <element signature="class#26378:26697" expanded="false" />
+            <element signature="method#run#0;class#26378:26697" expanded="false" />
+            <element signature="class#26773:27206" expanded="false" />
+            <element signature="method#handle#0;class#26773:27206" expanded="false" />
+            <element signature="class#27258:27635" expanded="false" />
+            <element signature="method#handle#0;class#27258:27635" expanded="false" />
+            <element signature="class#27726:28365" expanded="false" />
+            <element signature="method#changed#0;class#27726:28365" expanded="false" />
+            <element signature="e#28377#28409#0" expanded="false" />
+            <element signature="class#28468:29061" expanded="false" />
+            <element signature="method#changed#0;class#28468:29061" expanded="false" />
+            <element signature="class#29130:29686" expanded="false" />
+            <element signature="method#handle#0;class#29130:29686" expanded="false" />
+            <element signature="class#29734:30134" expanded="false" />
+            <element signature="method#handle#0;class#29734:30134" expanded="false" />
+            <element signature="class#30193:30917" expanded="false" />
+            <element signature="method#changed#0;class#30193:30917" expanded="false" />
+            <element signature="class#30540:30786" expanded="false" />
+            <element signature="method#run#0;class#30540:30786" expanded="false" />
+            <element signature="class#30993:31302" expanded="false" />
+            <element signature="method#handle#0;class#30993:31302" expanded="false" />
+            <element signature="class#31371:32199" expanded="false" />
+            <element signature="method#changed#0;class#31371:32199" expanded="false" />
+            <element signature="class#31824:32154" expanded="false" />
+            <element signature="method#handle#0;class#31824:32154" expanded="false" />
+            <element signature="class#32255:32894" expanded="false" />
+            <element signature="method#changed#0;class#32255:32894" expanded="false" />
+            <element signature="e#33025#33051#0" expanded="false" />
+            <element signature="e#33292#33331#0" expanded="false" />
+            <element signature="e#34965#34995#0" expanded="false" />
+            <element signature="class#35044:35211" expanded="false" />
+            <element signature="e#35243#35261#0" expanded="false" />
+            <element signature="e#35341#35370#0" expanded="false" />
+            <element signature="e#35714#35739#0" expanded="false" />
+            <element signature="e#36049#36064#0" expanded="false" />
+            <element signature="e#36613#36641#0" expanded="false" />
+            <element signature="e#36651#36671#0" expanded="false" />
+            <element signature="e#36681#36709#0" expanded="false" />
+            <element signature="class#36992:38910" expanded="false" />
+            <element signature="method#run#0;class#36992:38910" expanded="false" />
+            <element signature="class#37186:38884" expanded="false" />
+            <element signature="method#handle#0;class#37186:38884" expanded="false" />
+            <element signature="e#38923#38953#0" expanded="false" />
+            <element signature="e#40359#40387#0" expanded="false" />
+            <element signature="e#40397#40430#0" expanded="false" />
+            <element signature="e#40526#40546#0" expanded="false" />
+            <element signature="e#40556#40576#0" expanded="false" />
+            <element signature="class#40662:41496" expanded="false" />
+            <element signature="initializer##0;class#40662:41496" expanded="false" />
+            <element signature="method#toString#0;class#40662:41496" expanded="false" />
+            <element signature="method#fromString#0;class#40662:41496" expanded="false" />
+            <element signature="class#41539:42088" expanded="false" />
+            <element signature="method#handle#0;class#41539:42088" expanded="false" />
+            <element signature="e#42120#42145#0" expanded="false" />
+            <element signature="class#42195:42505" expanded="false" />
+            <element signature="method#handle#0;class#42195:42505" expanded="false" />
+            <element signature="e#42537#42564#0" expanded="false" />
+            <element signature="class#42660:43656" expanded="false" />
+            <element signature="method#handle#0;class#42660:43656" expanded="false" />
+            <element signature="e#43688#43710#0" expanded="false" />
+            <element signature="class#43756:44454" expanded="false" />
+            <element signature="method#handle#0;class#43756:44454" expanded="false" />
+            <element signature="e#44486#44506#0" expanded="false" />
+            <element signature="class#44563:45400" expanded="false" />
+            <element signature="method#handle#0;class#44563:45400" expanded="false" />
+            <element signature="e#45432#45470#0" expanded="false" />
+            <element signature="class#45574:45731" expanded="false" />
+            <element signature="e#45763#45788#0" expanded="false" />
+            <element signature="class#46076:46456" expanded="false" />
+            <element signature="method#call#0;class#46076:46456" expanded="false" />
+            <element signature="class#46806:47200" expanded="false" />
+            <element signature="method#changed#0;class#46806:47200" expanded="false" />
+            <element signature="e#47254#47288#0" expanded="false" />
+            <element signature="e#47684#47702#0" expanded="false" />
+            <element signature="e#47781#47810#0" expanded="false" />
+            <element signature="e#47820#47833#0" expanded="false" />
+            <element signature="e#48430#48469#0" expanded="false" />
+            <element signature="e#48641#48672#0" expanded="false" />
+            <element signature="class#48722:49352" expanded="false" />
+            <element signature="method#handle#0;class#48722:49352" expanded="false" />
+            <element signature="e#49384#49409#0" expanded="false" />
+            <element signature="e#49639#49654#0" expanded="false" />
+            <element signature="e#50218#50261#0" expanded="false" />
+            <element signature="e#50700#50727#0" expanded="false" />
+            <element signature="e#51301#51340#0" expanded="false" />
+            <element signature="e#51514#51545#0" expanded="false" />
+            <element signature="class#51595:52229" expanded="false" />
+            <element signature="method#handle#0;class#51595:52229" expanded="false" />
+            <element signature="e#52638#52653#0" expanded="false" />
+            <element signature="e#53707#53737#0" expanded="false" />
+            <element signature="e#53913#53940#0" expanded="false" />
+            <element signature="e#53950#53979#0" expanded="false" />
+            <element signature="e#54936#54966#0" expanded="false" />
+            <element signature="e#55276#55300#0" expanded="false" />
+            <element signature="e#55527#55542#0" expanded="false" />
+            <element signature="e#56682#56707#0" expanded="false" />
+            <element signature="n#!!doc;n#createLabel#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#createLabel#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#hora#0;n#DashboardController#0" expanded="false" />
+            <element signature="class#hora#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#actionPerformed#0;class#hora#0;class#DashboardController#0" expanded="false" />
+            <element signature="class#57569:57815" expanded="false" />
+            <element signature="method#run#0;class#57569:57815" expanded="false" />
+            <element signature="method#atualizaHoras#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#atualizaHoras2#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#handlerHyperlinkActionLogout#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#handlerHyperlinkActionLogout#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerHyperlinkActionFinish#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#handlerButtonActionRemoveProductOnOrder#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionRemoveProductOnOrder#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionAddProductOnOrder#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionClearOrderProducts#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionFinishOrder#0;class#DashboardController#0" expanded="false" />
+            <element signature="class#61665:62247" expanded="false" />
+            <element signature="method#handle#0;class#61665:62247" expanded="false" />
+            <element signature="method#handlerButtonActionHistoricCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#executeSearchProductsOrder#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#executeSearchProductsOrder#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#63679#64190#0" expanded="false" />
+            <element signature="class#63971:64177" expanded="false" />
+            <element signature="e#64226#64304#0" expanded="false" />
+            <element signature="class#64362:64798" expanded="false" />
+            <element signature="method#changed#0;class#64362:64798" expanded="false" />
+            <element signature="method#searchByTelephone#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#resetAllComponentsOrder#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#clientDataDisableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#clientDataEnableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#clearTextFieldsFromOrder#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#67756#67787#0" expanded="false" />
+            <element signature="docComment;method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionNewCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionStatusCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionCancelCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSaveCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#clearCustomerDetails#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#clearCustomerDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#resetTableViewCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#showCustomerDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#saveCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#newCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#74093#74134#0" expanded="false" />
+            <element signature="method#newCustomerGeneral#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setStatusCustomer#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#76203#76239#0" expanded="false" />
+            <element signature="e#76245#76279#0" expanded="false" />
+            <element signature="docComment;method#resetTableViewSale#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#76351#76380#0" expanded="false" />
+            <element signature="method#resetTableViewSale#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#executeSearchSaleByName#0;class#DashboardController#0" expanded="false" />
+            <element signature="class#76840:77081" expanded="false" />
+            <element signature="method#handle#0;class#76840:77081" expanded="false" />
+            <element signature="class#77114:77306" expanded="false" />
+            <element signature="class#77357:77793" expanded="false" />
+            <element signature="method#changed#0;class#77357:77793" expanded="false" />
+            <element signature="e#77858#77893#0" expanded="false" />
+            <element signature="e#77950#77974#0" expanded="false" />
+            <element signature="docComment;method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionNewSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionStatusSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionCancelSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSaveSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#clearSupplierDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#showSupplierDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#saveSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#newSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setStatusSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#resetTableViewSupplier#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#85420#85464#0" expanded="false" />
+            <element signature="n#!!doc;n#showEmployeeDetails#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#showEmployeeDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#clearEmployeeDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#resetTableViewEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="n#!!doc;n#handlerButtonActionManageUsers#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionManageUsers#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#selectLoginStatusAction#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonSelectLoginStatus#0;class#DashboardController#0" expanded="false" />
+            <element signature="docComment;method#setEmployeeActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setEmployeeActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionAddEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionStatusEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionCancelEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSaveEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setLoginActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionCancelLogin#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSaveLogin#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#saveEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#addEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setStatusEmployee#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setStatusLogin#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#saveLogin#0;class#DashboardController#0" expanded="false" />
+            <element signature="class#98825:98890" expanded="false" />
+            <element signature="class#98970:99023" expanded="false" />
+            <element signature="class#99106:99160" expanded="false" />
+            <element signature="class#99232:99296" expanded="false" />
+            <element signature="method#addLogin#0;class#DashboardController#0" expanded="false" />
+            <element signature="class#100133:100198" expanded="false" />
+            <element signature="class#100278:100331" expanded="false" />
+            <element signature="class#100414:100468" expanded="false" />
+            <element signature="class#100540:100604" expanded="false" />
+            <element signature="e#100660#100691#0" expanded="false" />
+            <element signature="docComment;method#addIngredient#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#100744#100768#0" expanded="false" />
+            <element signature="method#addIngredient#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionCheckBoxProductType#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionEditProductType#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionEditIngredients#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionListIngredients#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionDropIngredients#0;class#DashboardController#0" expanded="false" />
+            <element signature="docComment;method#setProductActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setProductActiveButtons#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionAddProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionCancelProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSaveProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionStatusProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#handlerButtonActionSearchProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#clearProductDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#resetTableViewProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#showProductDetails#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#saveProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#addProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#setStatusProduct#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#110304#110330#0" expanded="false" />
+            <element signature="docComment;method#checkNumeric#0;class#DashboardController#0" expanded="false" />
+            <element signature="e#110411#110432#0" expanded="false" />
+            <element signature="method#checkNumeric#0;class#DashboardController#0" expanded="false" />
+            <element signature="method#loader#0;class#DashboardController#0" expanded="false" />
+            <marker date="1519072113910" expanded="false" signature="110806:111065" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="111071:112437" ph="CEP Experimental" />
+            <marker date="1519072113910" expanded="false" signature="111195:111492" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="111555:112420" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="112443:112566" ph="/**...*/" />
+            <marker date="1519072113910" expanded="false" signature="112648:114322" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="112852:114314" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="112972:113181" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="113270:114304" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="114414:116235" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="114620:116227" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="114740:114949" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="115040:116217" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="116336:117855" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="116548:117847" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="116668:116877" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="116974:117837" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="117861:118449" ph="Controller Stage Window Show and Close request" />
+            <marker date="1519072113910" expanded="false" signature="117963:118173" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="118012:118166" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="118091:118110" ph=" { " />
+            <marker date="1519072113910" expanded="false" signature="118142:118156" ph=" }" />
+            <marker date="1519072113910" expanded="false" signature="118222:118433" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="118271:118426" ph="{...}" />
+            <marker date="1519072113910" expanded="false" signature="118350:118369" ph=" { " />
+            <marker date="1519072113910" expanded="false" signature="118402:118416" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
