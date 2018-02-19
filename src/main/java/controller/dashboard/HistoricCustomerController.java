@@ -39,9 +39,7 @@ public class HistoricCustomerController implements Initializable{
     public static final String path = "historicCustomer.fxml";
     public static final String title = "Histórico de Compras do Cliente";
 
-    public static Person person;
-
-    private Person person2;
+    private Person person;
 
     @FXML    private Label lbl_nameCustomerHistoric; //TextField de campo para função de funcionario
     @FXML    private JFXButton btn_closeHistoric; //Botão Editar
@@ -62,6 +60,7 @@ public class HistoricCustomerController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
+
 
         //region TableView Product Historic
         dataObservableProductHistoric = FXCollections.observableArrayList();
@@ -90,7 +89,7 @@ public class HistoricCustomerController implements Initializable{
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                Sale.readSaleByPersonId(person2.getIdPerson()).forEach(sale -> dataObservableSaleHistoric.addAll(sale));
+                Sale.readSaleByPersonId(person.getIdPerson()).forEach(sale -> dataObservableSaleHistoric.addAll(sale));
             }
         });
 
@@ -109,7 +108,7 @@ public class HistoricCustomerController implements Initializable{
     }
 
     public void setPerson(Person person){
-        this.person2 = person;
+        this.person = person;
         lbl_nameCustomerHistoric.setText(person.getNamePerson());
     }
 

@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import controller.Controller;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
@@ -75,6 +76,29 @@ public class FinishSaleController implements Initializable {
             Thread t = new Thread(r);
             t.setDaemon(true);
             return t;
+        });
+
+        comboBoxPayMethod.getItems().addAll("Dinheiro","Cartão");
+
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                comboBoxPayMethod.getSelectionModel().select(0);
+            }
+        });
+
+        comboBoxPayMethod.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                switch (newValue.intValue()){
+                    case 0:
+                        txt_paymentAmmount.setDisable(false);
+                        break;
+                    case 1:
+                        txt_paymentAmmount.setDisable(true);
+                        break;
+                }
+            }
         });
 
         finishSaleOnDialog.setOnMouseClicked(new EventHandler<MouseEvent>() {
