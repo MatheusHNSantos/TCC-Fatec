@@ -63,7 +63,7 @@
                                     <Font size="24.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="628.0" layoutY="14.0" text="Bem Vindo User!">
+                              <Label fx:id="welcome_user" layoutX="628.0" layoutY="14.0" text="Bem Vindo User!">
                                  <font>
                                     <Font size="37.0" />
                                  </font>

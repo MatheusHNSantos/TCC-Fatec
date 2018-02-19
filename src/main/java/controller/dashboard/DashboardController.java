@@ -61,6 +61,8 @@ import util.exception.UserException;
 import util.viacep.Endereco;
 import util.viacep.ViaCEP;
 
+import util.Functions.UpCase;
+
 import java.awt.event.*;
 import java.io.IOException;
 import java.net.URL;
@@ -74,6 +76,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 import static java.lang.String.valueOf;
+import static util.Functions.UpCase.upCaseFirst;
 
 /**
  * FXML Controller class
@@ -128,6 +131,9 @@ public class DashboardController implements Initializable {
     public Hyperlink hl_finish;
     @FXML
     public Hyperlink hl_logout;
+    @FXML
+    private Label welcome_user;
+
     //endregion
 
     //region Tab "Pedido" Objects
@@ -671,11 +677,14 @@ public class DashboardController implements Initializable {
 
         //dataModelTests = new ArrayList<>();
 
-        //label_user.setText(user.getLogin()); //ativar para usar o a tela de login
+        label_user.setText(upCaseFirst(user.getLogin())); //ativar para usar o a tela de login
+
 
         //endregion
 
         //region Tab "Inicio"
+        welcome_user.setText("Bem Vindo " + upCaseFirst(user.getLogin()) + "!");
+
         //region Tab "Incio" Events
         hl_logout.setOnMouseClicked(this::handlerHyperlinkActionLogout);
         hl_finish.setOnMouseClicked(this::handlerHyperlinkActionFinish);
@@ -2430,7 +2439,15 @@ public class DashboardController implements Initializable {
     //region default methods
     private void handlerButtonActionManageUsers(MouseEvent event) {
         try {
-            ManageUsersController.loader().show();
+            //ManageUsersController.loader().show();
+
+            Controller controller = new Controller();
+            FXMLLoader fxmlLoader = controller.fxmlLoaderContent(ManageUsersController.path);
+            Stage stage = controller.buildStage(fxmlLoader, ManageUsersController.title);
+            stage.setResizable(false);
+            stage.setOnShowing(onShow());
+            stage.setOnCloseRequest(onClose());
+            stage.showAndWait();
         } catch (IOException ex) {
             FxDialogs.showWarning(ex.getMessage(), "Tente novamente.");
         }
@@ -2784,11 +2801,6 @@ public class DashboardController implements Initializable {
             dataObervableProductType.add("");
             dataObervableProductType.addAll(listProductType);
 
-            /*cbox_categoryProduct.getItems().add("");
-            for (ProductType productType : ProductType.ReadAll()) {
-                cbox_categoryProduct.getItems().add(productType.getNameProductType());
-            }*/
-
             //resetTableViewProduct();
             refreshCategory = false;
         }
@@ -2796,7 +2808,16 @@ public class DashboardController implements Initializable {
 
     private void handlerButtonActionEditProductType(MouseEvent event) {
         try {
-            EditProductTypeController.loader().show();
+            //EditProductTypeController.loader().show();
+            Controller controller = new Controller();
+            FXMLLoader fxmlLoader = controller.fxmlLoaderContent(EditProductTypeController.path);
+
+            Stage stage = controller.buildStage(fxmlLoader, EditProductTypeController.title);
+            stage.setResizable(false);
+            stage.setOnShowing(onShow());
+            stage.setOnCloseRequest(onClose());
+            stage.showAndWait();
+
 
 
         } catch (IOException ex) {
@@ -2808,7 +2829,17 @@ public class DashboardController implements Initializable {
 
     private void handlerButtonActionEditIngredients(MouseEvent event) {
         try {
-            EditIngredientsController.loader().show();
+            //EditIngredientsController.loader().show();
+
+            Controller controller = new Controller();
+            FXMLLoader fxmlLoader = controller.fxmlLoaderContent(EditIngredientsController.path);
+
+            Stage stage = controller.buildStage(fxmlLoader, EditIngredientsController.title);
+            stage.setResizable(false);
+            stage.setOnShowing(onShow());
+            stage.setOnCloseRequest(onClose());
+            stage.showAndWait();
+
         } catch (IOException ex) {
             FxDialogs.showWarning(ex.getMessage(), "Tente novamente.");
         }
@@ -2816,7 +2847,15 @@ public class DashboardController implements Initializable {
 
     private void handlerButtonActionListIngredients(MouseEvent event) {
         try {
-            ListIngredientsController.loader().show();
+            //ListIngredientsController.loader().show();
+
+            Controller controller = new Controller();
+            FXMLLoader fxmlLoader = controller.fxmlLoaderContent(ListIngredientsController.path);
+            Stage stage = controller.buildStage(fxmlLoader, ListIngredientsController.title);
+            stage.setResizable(false);
+            stage.setOnShowing(onShow());
+            stage.setOnCloseRequest(onClose());
+            stage.showAndWait();
         } catch (IOException ex) {
             FxDialogs.showWarning(ex.getMessage(), "Tente novamente.");
         }
@@ -3248,8 +3287,6 @@ public class DashboardController implements Initializable {
     }
     //endregion
 
-        //teste
-
     //endregion
 
     //--------------------------------------------------
@@ -3258,9 +3295,5 @@ public class DashboardController implements Initializable {
         return Controller.loader(DashboardController.class, StageStyle.DECORATED, path, title);
 
     }
-
-    /**
-     * Code need refactor
-     */
 
 }
