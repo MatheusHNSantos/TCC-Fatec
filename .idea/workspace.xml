@@ -98,11 +98,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DashboardController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DashboardController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="1629" column="43" lean-forward="false" selection-start-line="1629" selection-start-column="43" selection-end-line="1629" selection-end-column="43" />
+            <state relative-caret-position="510">
+              <caret line="277" column="4" lean-forward="false" selection-start-line="277" selection-start-column="4" selection-end-line="277" selection-end-column="4" />
               <folding>
                 <element signature="docComment;class#DashboardController#0" expanded="false" />
                 <element signature="n#!!doc;n#mainAnchorPane#0;n#DashboardController#0" expanded="false" />
@@ -135,6 +135,7 @@
                 <element signature="e#19429#19455#0" expanded="false" />
                 <element signature="docComment;field#tview_log#0;class#DashboardController#0" expanded="false" />
                 <element signature="n#!!doc;n#formatador#0;n#DashboardController#0" expanded="false" />
+                <element signature="method#initialize#0;class#DashboardController#0" expanded="false" />
                 <element signature="e#20059#20081#0" expanded="false" />
                 <element signature="e#20091#20126#0" expanded="false" />
                 <element signature="e#20177#20284#0" expanded="false" />
@@ -183,107 +184,111 @@
                 <element signature="class#31467:31797" expanded="false" />
                 <element signature="method#handle#0;class#31467:31797" expanded="false" />
                 <element signature="class#31898:32537" expanded="false" />
+                <element signature="method#changed#0;class#31898:32537" expanded="false" />
                 <element signature="e#32591#32614#0" expanded="false" />
                 <element signature="e#32668#32694#0" expanded="false" />
-                <element signature="e#32957#32996#0" expanded="false" />
-                <element signature="e#33352#33383#0" expanded="false" />
-                <element signature="class#33433:34222" expanded="false" />
-                <element signature="method#handle#0;class#33433:34222" expanded="false" />
-                <element signature="e#34254#34284#0" expanded="false" />
-                <element signature="class#34333:34500" expanded="false" />
-                <element signature="e#34532#34550#0" expanded="false" />
-                <element signature="e#34630#34659#0" expanded="false" />
-                <element signature="e#35003#35028#0" expanded="false" />
-                <element signature="e#35338#35353#0" expanded="false" />
-                <element signature="e#35902#35930#0" expanded="false" />
-                <element signature="e#35940#35960#0" expanded="false" />
-                <element signature="e#35970#35998#0" expanded="false" />
-                <element signature="class#36281:38199" expanded="false" />
-                <element signature="method#run#0;class#36281:38199" expanded="false" />
-                <element signature="class#36475:38173" expanded="false" />
-                <element signature="method#handle#0;class#36475:38173" expanded="false" />
-                <element signature="e#38212#38242#0" expanded="false" />
-                <element signature="e#39686#39719#0" expanded="false" />
-                <element signature="e#39815#39835#0" expanded="false" />
-                <element signature="e#39845#39865#0" expanded="false" />
-                <element signature="class#39951:40785" expanded="false" />
-                <element signature="initializer##0;class#39951:40785" expanded="false" />
-                <element signature="method#toString#0;class#39951:40785" expanded="false" />
-                <element signature="method#fromString#0;class#39951:40785" expanded="false" />
-                <element signature="class#40828:41377" expanded="false" />
-                <element signature="method#handle#0;class#40828:41377" expanded="false" />
-                <element signature="e#41409#41434#0" expanded="false" />
-                <element signature="class#41484:41794" expanded="false" />
-                <element signature="method#handle#0;class#41484:41794" expanded="false" />
-                <element signature="e#41826#41853#0" expanded="false" />
-                <element signature="class#41949:42945" expanded="false" />
-                <element signature="method#handle#0;class#41949:42945" expanded="false" />
-                <element signature="e#42977#42999#0" expanded="false" />
-                <element signature="class#43045:43824" expanded="false" />
-                <element signature="method#handle#0;class#43045:43824" expanded="false" />
-                <element signature="e#43856#43876#0" expanded="false" />
-                <element signature="class#43933:44493" expanded="false" />
-                <element signature="method#handle#0;class#43933:44493" expanded="false" />
-                <element signature="e#44525#44563#0" expanded="false" />
-                <element signature="e#44912#44937#0" expanded="false" />
-                <element signature="class#45225:45605" expanded="false" />
-                <element signature="class#45955:46349" expanded="false" />
-                <element signature="method#changed#0;class#45955:46349" expanded="false" />
-                <element signature="e#46403#46437#0" expanded="false" />
-                <element signature="e#46832#46850#0" expanded="false" />
-                <element signature="e#46929#46958#0" expanded="false" />
-                <element signature="class#47283:48162" expanded="false" />
-                <element signature="initializer##0;class#47283:48162" expanded="false" />
-                <element signature="method#updateItem#0;class#47283:48162" expanded="false" />
-                <element signature="class#48376:49411" expanded="false" />
-                <element signature="initializer##0;class#48376:49411" expanded="false" />
-                <element signature="method#updateItem#0;class#48376:49411" expanded="false" />
-                <element signature="class#49616:50337" expanded="false" />
-                <element signature="initializer##0;class#49616:50337" expanded="false" />
-                <element signature="method#updateItem#0;class#49616:50337" expanded="false" />
-                <element signature="e#50650#50675#0" expanded="false" />
-                <element signature="e#50906#50921#0" expanded="false" />
-                <element signature="e#51481#51524#0" expanded="false" />
-                <element signature="e#51964#51991#0" expanded="false" />
-                <element signature="class#52770:54572" expanded="false" />
-                <element signature="initializer##0;class#52770:54572" expanded="false" />
-                <element signature="e#53067#53109#0" expanded="false" />
-                <element signature="method#createLabel#0;class#52770:54572" expanded="false" />
-                <element signature="method#updateItem#0;class#52770:54572" expanded="false" />
-                <element signature="e#54330#54379#0" expanded="false" />
-                <element signature="class#54762:56083" expanded="false" />
-                <element signature="initializer##0;class#54762:56083" expanded="false" />
-                <element signature="method#createLabel#0;class#54762:56083" expanded="false" />
-                <element signature="method#updateItem#0;class#54762:56083" expanded="false" />
-                <element signature="e#56724#56739#0" expanded="false" />
-                <element signature="e#57999#58026#0" expanded="false" />
-                <element signature="e#58036#58065#0" expanded="false" />
-                <element signature="class#58348:59101" expanded="false" />
-                <element signature="initializer##0;class#58348:59101" expanded="false" />
-                <element signature="method#updateItem#0;class#58348:59101" expanded="false" />
-                <element signature="class#59379:60143" expanded="false" />
-                <element signature="initializer##0;class#59379:60143" expanded="false" />
-                <element signature="method#updateItem#0;class#59379:60143" expanded="false" />
-                <element signature="class#60331:61220" expanded="false" />
-                <element signature="initializer##0;class#60331:61220" expanded="false" />
-                <element signature="method#updateItem#0;class#60331:61220" expanded="false" />
-                <element signature="e#61626#61656#0" expanded="false" />
-                <element signature="class#61941:62680" expanded="false" />
-                <element signature="initializer##0;class#61941:62680" expanded="false" />
-                <element signature="method#updateItem#0;class#61941:62680" expanded="false" />
-                <element signature="class#62873:63783" expanded="false" />
-                <element signature="initializer##0;class#62873:63783" expanded="false" />
-                <element signature="method#updateItem#0;class#62873:63783" expanded="false" />
-                <element signature="e#63884#63908#0" expanded="false" />
-                <element signature="e#64135#64150#0" expanded="false" />
-                <element signature="e#65290#65315#0" expanded="false" />
+                <element signature="e#32935#32974#0" expanded="false" />
+                <element signature="e#33330#33361#0" expanded="false" />
+                <element signature="class#33411:34200" expanded="false" />
+                <element signature="method#handle#0;class#33411:34200" expanded="false" />
+                <element signature="e#34232#34262#0" expanded="false" />
+                <element signature="class#34311:34478" expanded="false" />
+                <element signature="e#34510#34528#0" expanded="false" />
+                <element signature="e#34608#34637#0" expanded="false" />
+                <element signature="e#34981#35006#0" expanded="false" />
+                <element signature="e#35316#35331#0" expanded="false" />
+                <element signature="e#35880#35908#0" expanded="false" />
+                <element signature="e#35918#35938#0" expanded="false" />
+                <element signature="e#35948#35976#0" expanded="false" />
+                <element signature="class#36259:38177" expanded="false" />
+                <element signature="method#run#0;class#36259:38177" expanded="false" />
+                <element signature="class#36453:38151" expanded="false" />
+                <element signature="method#handle#0;class#36453:38151" expanded="false" />
+                <element signature="e#38190#38220#0" expanded="false" />
+                <element signature="e#39626#39654#0" expanded="false" />
+                <element signature="e#39664#39697#0" expanded="false" />
+                <element signature="e#39793#39813#0" expanded="false" />
+                <element signature="e#39823#39843#0" expanded="false" />
+                <element signature="class#39929:40763" expanded="false" />
+                <element signature="initializer##0;class#39929:40763" expanded="false" />
+                <element signature="method#toString#0;class#39929:40763" expanded="false" />
+                <element signature="method#fromString#0;class#39929:40763" expanded="false" />
+                <element signature="class#40806:41355" expanded="false" />
+                <element signature="method#handle#0;class#40806:41355" expanded="false" />
+                <element signature="e#41387#41412#0" expanded="false" />
+                <element signature="class#41462:41772" expanded="false" />
+                <element signature="method#handle#0;class#41462:41772" expanded="false" />
+                <element signature="e#41804#41831#0" expanded="false" />
+                <element signature="class#41927:42923" expanded="false" />
+                <element signature="method#handle#0;class#41927:42923" expanded="false" />
+                <element signature="e#42955#42977#0" expanded="false" />
+                <element signature="class#43023:43802" expanded="false" />
+                <element signature="method#handle#0;class#43023:43802" expanded="false" />
+                <element signature="e#43834#43854#0" expanded="false" />
+                <element signature="class#43911:44471" expanded="false" />
+                <element signature="method#handle#0;class#43911:44471" expanded="false" />
+                <element signature="e#44503#44541#0" expanded="false" />
+                <element signature="e#44890#44915#0" expanded="false" />
+                <element signature="class#45203:45583" expanded="false" />
+                <element signature="method#call#0;class#45203:45583" expanded="false" />
+                <element signature="class#45933:46327" expanded="false" />
+                <element signature="method#changed#0;class#45933:46327" expanded="false" />
+                <element signature="e#46381#46415#0" expanded="false" />
+                <element signature="e#46810#46828#0" expanded="false" />
+                <element signature="e#46907#46936#0" expanded="false" />
+                <element signature="class#47261:48140" expanded="false" />
+                <element signature="initializer##0;class#47261:48140" expanded="false" />
+                <element signature="method#updateItem#0;class#47261:48140" expanded="false" />
+                <element signature="class#48354:49389" expanded="false" />
+                <element signature="initializer##0;class#48354:49389" expanded="false" />
+                <element signature="method#updateItem#0;class#48354:49389" expanded="false" />
+                <element signature="class#49594:50315" expanded="false" />
+                <element signature="initializer##0;class#49594:50315" expanded="false" />
+                <element signature="method#updateItem#0;class#49594:50315" expanded="false" />
+                <element signature="e#50628#50653#0" expanded="false" />
+                <element signature="e#50884#50899#0" expanded="false" />
+                <element signature="e#51459#51502#0" expanded="false" />
+                <element signature="e#51941#51968#0" expanded="false" />
+                <element signature="class#52747:54549" expanded="false" />
+                <element signature="initializer##0;class#52747:54549" expanded="false" />
+                <element signature="e#53044#53086#0" expanded="false" />
+                <element signature="method#createLabel#0;class#52747:54549" expanded="false" />
+                <element signature="method#updateItem#0;class#52747:54549" expanded="false" />
+                <element signature="e#54307#54356#0" expanded="false" />
+                <element signature="class#54739:56060" expanded="false" />
+                <element signature="initializer##0;class#54739:56060" expanded="false" />
+                <element signature="method#createLabel#0;class#54739:56060" expanded="false" />
+                <element signature="method#updateItem#0;class#54739:56060" expanded="false" />
+                <element signature="e#56701#56716#0" expanded="false" />
+                <element signature="e#57770#57800#0" expanded="false" />
+                <element signature="e#57976#58003#0" expanded="false" />
+                <element signature="e#58013#58042#0" expanded="false" />
+                <element signature="class#58325:59078" expanded="false" />
+                <element signature="initializer##0;class#58325:59078" expanded="false" />
+                <element signature="method#updateItem#0;class#58325:59078" expanded="false" />
+                <element signature="class#59356:60120" expanded="false" />
+                <element signature="initializer##0;class#59356:60120" expanded="false" />
+                <element signature="method#updateItem#0;class#59356:60120" expanded="false" />
+                <element signature="class#60308:61197" expanded="false" />
+                <element signature="initializer##0;class#60308:61197" expanded="false" />
+                <element signature="method#updateItem#0;class#60308:61197" expanded="false" />
+                <element signature="e#61603#61633#0" expanded="false" />
+                <element signature="class#61918:62657" expanded="false" />
+                <element signature="initializer##0;class#61918:62657" expanded="false" />
+                <element signature="method#updateItem#0;class#61918:62657" expanded="false" />
+                <element signature="class#62850:63760" expanded="false" />
+                <element signature="initializer##0;class#62850:63760" expanded="false" />
+                <element signature="method#updateItem#0;class#62850:63760" expanded="false" />
+                <element signature="e#63861#63885#0" expanded="false" />
+                <element signature="e#64112#64127#0" expanded="false" />
+                <element signature="e#65267#65292#0" expanded="false" />
                 <element signature="n#!!doc;n#createLabel#0;n#DashboardController#0" expanded="false" />
                 <element signature="method#createLabel#0;class#DashboardController#0" expanded="false" />
                 <element signature="n#!!doc;n#hora#0;n#DashboardController#0" expanded="false" />
                 <element signature="class#hora#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#actionPerformed#0;class#hora#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#66177:66423" expanded="false" />
-                <element signature="method#run#0;class#66177:66423" expanded="false" />
+                <element signature="class#66154:66400" expanded="false" />
+                <element signature="method#run#0;class#66154:66400" expanded="false" />
                 <element signature="method#atualizaHoras#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#atualizaHoras2#0;class#DashboardController#0" expanded="false" />
                 <element signature="n#!!doc;n#handlerHyperlinkActionLogout#0;n#DashboardController#0" expanded="false" />
@@ -294,22 +299,22 @@
                 <element signature="method#handlerButtonActionAddProductOnOrder#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionClearOrderProducts#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionFinishOrder#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#70273:70855" expanded="false" />
-                <element signature="method#handle#0;class#70273:70855" expanded="false" />
+                <element signature="class#70250:70832" expanded="false" />
+                <element signature="method#handle#0;class#70250:70832" expanded="false" />
                 <element signature="method#handlerButtonActionHistoricCustomer#0;class#DashboardController#0" expanded="false" />
                 <element signature="n#!!doc;n#executeSearchProductsOrder#0;n#DashboardController#0" expanded="false" />
                 <element signature="method#executeSearchProductsOrder#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#72287#72798#0" expanded="false" />
-                <element signature="class#72579:72785" expanded="false" />
-                <element signature="e#72834#72912#0" expanded="false" />
-                <element signature="class#72970:73406" expanded="false" />
-                <element signature="method#changed#0;class#72970:73406" expanded="false" />
+                <element signature="e#72264#72775#0" expanded="false" />
+                <element signature="class#72556:72762" expanded="false" />
+                <element signature="e#72811#72889#0" expanded="false" />
+                <element signature="class#72947:73383" expanded="false" />
+                <element signature="method#changed#0;class#72947:73383" expanded="false" />
                 <element signature="method#searchByTelephone#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#resetAllComponentsOrder#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#clientDataDisableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#clientDataEnableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#clearTextFieldsFromOrder#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#76364#76395#0" expanded="false" />
+                <element signature="e#76341#76372#0" expanded="false" />
                 <element signature="docComment;method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionNewCustomer#0;class#DashboardController#0" expanded="false" />
@@ -322,16 +327,16 @@
                 <element signature="method#showCustomerDetails#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#saveCustomer#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#newCustomer#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#82636#82677#0" expanded="false" />
+                <element signature="e#82678#82719#0" expanded="false" />
                 <element signature="method#newCustomerGeneral#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setStatusCustomer#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#84683#84719#0" expanded="false" />
-                <element signature="e#84725#84759#0" expanded="false" />
+                <element signature="e#84788#84824#0" expanded="false" />
+                <element signature="e#84830#84864#0" expanded="false" />
                 <element signature="docComment;method#resetTableViewSale#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#84831#84860#0" expanded="false" />
+                <element signature="e#84936#84965#0" expanded="false" />
                 <element signature="method#resetTableViewSale#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#85011#85046#0" expanded="false" />
-                <element signature="e#85103#85127#0" expanded="false" />
+                <element signature="e#85116#85151#0" expanded="false" />
+                <element signature="e#85208#85232#0" expanded="false" />
                 <element signature="docComment;method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionNewSupplier#0;class#DashboardController#0" expanded="false" />
@@ -345,7 +350,7 @@
                 <element signature="method#newSupplier#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setStatusSupplier#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#resetTableViewSupplier#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#92401#92445#0" expanded="false" />
+                <element signature="e#92674#92718#0" expanded="false" />
                 <element signature="n#!!doc;n#showEmployeeDetails#0;n#DashboardController#0" expanded="false" />
                 <element signature="method#showEmployeeDetails#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#clearEmployeeDetails#0;class#DashboardController#0" expanded="false" />
@@ -368,18 +373,18 @@
                 <element signature="method#setStatusEmployee#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setStatusLogin#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#saveLogin#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#105319:105384" expanded="false" />
-                <element signature="class#105464:105517" expanded="false" />
-                <element signature="class#105600:105654" expanded="false" />
-                <element signature="class#105726:105790" expanded="false" />
+                <element signature="class#105676:105741" expanded="false" />
+                <element signature="class#105821:105874" expanded="false" />
+                <element signature="class#105957:106011" expanded="false" />
+                <element signature="class#106083:106147" expanded="false" />
                 <element signature="method#addLogin#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#106627:106692" expanded="false" />
-                <element signature="class#106772:106825" expanded="false" />
-                <element signature="class#106908:106962" expanded="false" />
-                <element signature="class#107034:107098" expanded="false" />
-                <element signature="e#107154#107185#0" expanded="false" />
+                <element signature="class#106984:107049" expanded="false" />
+                <element signature="class#107129:107182" expanded="false" />
+                <element signature="class#107265:107319" expanded="false" />
+                <element signature="class#107391:107455" expanded="false" />
+                <element signature="e#107511#107542#0" expanded="false" />
                 <element signature="docComment;method#addIngredient#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#107238#107262#0" expanded="false" />
+                <element signature="e#107595#107619#0" expanded="false" />
                 <element signature="method#addIngredient#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionCheckBoxProductType#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handlerButtonActionEditProductType#0;class#DashboardController#0" expanded="false" />
@@ -399,92 +404,46 @@
                 <element signature="method#saveProduct#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#addProduct#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setStatusProduct#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#115564#115590#0" expanded="false" />
+                <element signature="e#115921#115947#0" expanded="false" />
                 <element signature="docComment;method#findTabPaneForNode#0;class#DashboardController#0" expanded="false" />
-                <element signature="e#115671#115692#0" expanded="false" />
+                <element signature="e#116028#116049#0" expanded="false" />
                 <element signature="method#findTabPaneForNode#0;class#DashboardController#0" expanded="false" />
                 <element signature="n#!!doc;n#onKeyEnterPressedCEP#0;n#DashboardController#0" expanded="false" />
                 <element signature="method#onKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#handleronKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
                 <element signature="docComment;method#setCells#0;class#DashboardController#0" expanded="false" />
                 <element signature="method#setCells#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#117698:119188" expanded="false" />
-                <element signature="initializer##0;class#117698:119188" expanded="false" />
-                <element signature="method#updateItem#0;class#117698:119188" expanded="false" />
+                <element signature="class#118118:119608" expanded="false" />
+                <element signature="initializer##0;class#118118:119608" expanded="false" />
+                <element signature="method#updateItem#0;class#118118:119608" expanded="false" />
                 <element signature="n#!!doc;n#onShow#0;n#DashboardController#0" expanded="false" />
                 <element signature="method#onShow#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#119325:119507" expanded="false" />
+                <element signature="class#119745:119927" expanded="false" />
                 <element signature="method#onClose#0;class#DashboardController#0" expanded="false" />
-                <element signature="class#119584:119767" expanded="false" />
+                <element signature="class#120004:120187" expanded="false" />
                 <element signature="method#loader#0;class#DashboardController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinishSaleController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java">
+      <file leaf-file-name="HistoricCustomerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/HistoricCustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
-                <element signature="e#1963#2070#0" expanded="false" />
-                <element signature="class#2123:2316" expanded="false" />
-                <element signature="class#2365:2542" expanded="false" />
-                <element signature="e#2465#2466#0" expanded="true" />
-                <element signature="e#2531#2532#0" expanded="true" />
-                <element signature="class#2612:2958" expanded="false" />
-                <element signature="class#3020:3539" expanded="false" />
-                <element signature="method#saveSale#0;class#FinishSaleController#0" expanded="false" />
-                <element signature="method#saveItensSale#0;class#FinishSaleController#0" expanded="false" />
-                <element signature="class#4848:5204" expanded="false" />
-                <element signature="class#5255:5746" expanded="false" />
-                <element signature="e#5839#5840#0" expanded="true" />
-                <element signature="e#5875#5876#0" expanded="true" />
-                <element signature="method#setPrice#0;class#FinishSaleController#0" expanded="false" />
-                <element signature="e#6070#6071#0" expanded="true" />
-                <element signature="e#6106#6107#0" expanded="true" />
-                <element signature="method#setAllComponents#0;class#FinishSaleController#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MaskFieldUtil.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/util/MaskField/MaskFieldUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="88" column="5" lean-forward="false" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-              <folding>
-                <element signature="method#ignoreKeys#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#serialTextField#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#dateField#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#numericField#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#monetaryField#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#monetaryValueFromField#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#cpfCnpjField#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#cepField#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#foneField#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#cpfField#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#cnpjField#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#positionCaret#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#maxField#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#onlyDigitsValue#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#onlyDigitsValueFromString#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="method#onlyAlfaNumericValue#0;class#MaskFieldUtil#0" expanded="false" />
-                <element signature="initializer##0;class#MaskFieldUtil#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CalendarUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/util/Calendar/CalendarUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="27" column="48" lean-forward="false" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
-              <folding>
-                <element signature="method#getCurrentDateBR#0;class#CalendarUtil#0" expanded="false" />
+                <element signature="method#initialize#0;class#HistoricCustomerController#0" expanded="false" />
+                <element signature="e#2262#2297#0" expanded="false" />
+                <element signature="e#2651#2683#0" expanded="false" />
+                <element signature="class#3144:3621" expanded="false" />
+                <element signature="method#changed#0;class#3144:3621" expanded="false" />
+                <element signature="class#3655:3866" expanded="false" />
+                <element signature="method#run#0;class#3655:3866" expanded="false" />
+                <element signature="e#3899#3914#0" expanded="false" />
+                <element signature="class#3963:4153" expanded="false" />
+                <element signature="method#setPerson#0;class#HistoricCustomerController#0" expanded="false" />
+                <element signature="method#loader#0;class#HistoricCustomerController#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -503,8 +462,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>btn</find>
-      <find>finishOr</find>
       <find>main</find>
       <find>client</find>
       <find>cpf</find>
@@ -529,9 +486,17 @@
       <find>MaskF</find>
       <find>RG</find>
       <find>txt_rgEmployee</find>
+      <find>txt_weight</find>
+      <find>txt_cepCu</find>
+      <find>txt_cepCustomer.getText()</find>
+      <find>MaskFieldUtil.onlyDigitsValue(txt_cepCustomer.getText());</find>
+      <find>txt_cep</find>
+      <find>txt_phon</find>
     </findStrings>
     <replaceStrings>
       <replace>customer</replace>
+      <replace>MaskFieldUtil.onlyDigitsValue(txt_cepCustomer.getText());</replace>
+      <replace>MaskFieldUtil.onlyDigitsValue(txt_cepCustomer.getText())</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -594,8 +559,8 @@
         <option value="$PROJECT_DIR$/src/main/java/util/Calendar/CalendarUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" />
         <option value="$PROJECT_DIR$/src/main/java/util/MaskField/MaskFieldUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java" />
       </list>
     </option>
   </component>
@@ -629,7 +594,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="469" />
     <option name="width" value="904" />
     <option name="height" value="735" />
@@ -695,17 +660,6 @@
             <path>
               <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
               <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="MaskFormatterFX.jar" type="ab9368bb:PsiFileNode" />
-            </path>
-            <path>
-              <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -720,14 +674,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tcc-Fatec" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TCC-Fatec" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -925,8 +871,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -948,7 +893,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.375" sideWeight="0.49487555" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.375" sideWeight="0.49487555" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="FAQ Robot" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23298033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1001,8 +946,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_CONFIG_DIR$/jdks/jbsdk8u112b287.2_windows_x64/jre/lib/ext/jfxrt.jar!/javafx/scene/control/Tab.class" />
-    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/src/main/java/model/entity/person/customer/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1019,13 +962,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1317,10 +1253,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <element signature="e#1963#2070#0" expanded="false" />
+            <element signature="class#2123:2316" expanded="false" />
+            <element signature="class#2365:2542" expanded="false" />
+            <element signature="e#2465#2466#0" expanded="true" />
+            <element signature="e#2531#2532#0" expanded="true" />
+            <element signature="class#2612:2958" expanded="false" />
+            <element signature="class#3020:3539" expanded="false" />
+            <element signature="method#saveSale#0;class#FinishSaleController#0" expanded="false" />
+            <element signature="method#saveItensSale#0;class#FinishSaleController#0" expanded="false" />
+            <element signature="class#4848:5204" expanded="false" />
+            <element signature="class#5255:5746" expanded="false" />
+            <element signature="e#5839#5840#0" expanded="true" />
+            <element signature="e#5875#5876#0" expanded="true" />
+            <element signature="method#setPrice#0;class#FinishSaleController#0" expanded="false" />
+            <element signature="e#6070#6071#0" expanded="true" />
+            <element signature="e#6106#6107#0" expanded="true" />
+            <element signature="method#setAllComponents#0;class#FinishSaleController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1666">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/util/MaskField/MaskFieldUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="82" column="41" lean-forward="false" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
+          <folding>
+            <element signature="method#ignoreKeys#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#serialTextField#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#dateField#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#monetaryField#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#monetaryValueFromField#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#cpfCnpjField#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#cepField#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#foneField#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#cpfField#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#cnpjField#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#positionCaret#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#maxField#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#onlyDigitsValue#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#onlyDigitsValueFromString#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="method#onlyAlfaNumericValue#0;class#MaskFieldUtil#0" expanded="false" />
+            <element signature="initializer##0;class#MaskFieldUtil#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/entity/person/employee/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <marker date="1518534105284" expanded="true" signature="870:914" ph=" SELECT statement (EMPLOYEE)" />
+            <marker date="1518534105284" expanded="true" signature="1547:1590" ph=" SELECT statement (EMPLOYEE)" />
+            <marker date="1518534105284" expanded="true" signature="2159:2224" ph=" UPDATE statement (EMPLOYEE)" />
+            <marker date="1518534105284" expanded="true" signature="2747:2797" ph=" INSERT statement (EMPLOYEE)" />
+            <marker date="1518534105284" expanded="true" signature="3485:3527" ph=" DELETE statement (EMPLOYEE)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/HistoricCustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="method#initialize#0;class#HistoricCustomerController#0" expanded="false" />
+            <element signature="e#2262#2297#0" expanded="false" />
+            <element signature="e#2651#2683#0" expanded="false" />
+            <element signature="class#3144:3621" expanded="false" />
+            <element signature="method#changed#0;class#3144:3621" expanded="false" />
+            <element signature="class#3655:3866" expanded="false" />
+            <element signature="method#run#0;class#3655:3866" expanded="false" />
+            <element signature="e#3899#3914#0" expanded="false" />
+            <element signature="class#3963:4153" expanded="false" />
+            <element signature="method#setPerson#0;class#HistoricCustomerController#0" expanded="false" />
+            <element signature="method#loader#0;class#HistoricCustomerController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/DashboardController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="1629" column="43" lean-forward="false" selection-start-line="1629" selection-start-column="43" selection-end-line="1629" selection-end-column="43" />
+        <state relative-caret-position="510">
+          <caret line="277" column="4" lean-forward="false" selection-start-line="277" selection-start-column="4" selection-end-line="277" selection-end-column="4" />
           <folding>
             <element signature="docComment;class#DashboardController#0" expanded="false" />
             <element signature="n#!!doc;n#mainAnchorPane#0;n#DashboardController#0" expanded="false" />
@@ -1353,6 +1382,7 @@
             <element signature="e#19429#19455#0" expanded="false" />
             <element signature="docComment;field#tview_log#0;class#DashboardController#0" expanded="false" />
             <element signature="n#!!doc;n#formatador#0;n#DashboardController#0" expanded="false" />
+            <element signature="method#initialize#0;class#DashboardController#0" expanded="false" />
             <element signature="e#20059#20081#0" expanded="false" />
             <element signature="e#20091#20126#0" expanded="false" />
             <element signature="e#20177#20284#0" expanded="false" />
@@ -1401,107 +1431,111 @@
             <element signature="class#31467:31797" expanded="false" />
             <element signature="method#handle#0;class#31467:31797" expanded="false" />
             <element signature="class#31898:32537" expanded="false" />
+            <element signature="method#changed#0;class#31898:32537" expanded="false" />
             <element signature="e#32591#32614#0" expanded="false" />
             <element signature="e#32668#32694#0" expanded="false" />
-            <element signature="e#32957#32996#0" expanded="false" />
-            <element signature="e#33352#33383#0" expanded="false" />
-            <element signature="class#33433:34222" expanded="false" />
-            <element signature="method#handle#0;class#33433:34222" expanded="false" />
-            <element signature="e#34254#34284#0" expanded="false" />
-            <element signature="class#34333:34500" expanded="false" />
-            <element signature="e#34532#34550#0" expanded="false" />
-            <element signature="e#34630#34659#0" expanded="false" />
-            <element signature="e#35003#35028#0" expanded="false" />
-            <element signature="e#35338#35353#0" expanded="false" />
-            <element signature="e#35902#35930#0" expanded="false" />
-            <element signature="e#35940#35960#0" expanded="false" />
-            <element signature="e#35970#35998#0" expanded="false" />
-            <element signature="class#36281:38199" expanded="false" />
-            <element signature="method#run#0;class#36281:38199" expanded="false" />
-            <element signature="class#36475:38173" expanded="false" />
-            <element signature="method#handle#0;class#36475:38173" expanded="false" />
-            <element signature="e#38212#38242#0" expanded="false" />
-            <element signature="e#39686#39719#0" expanded="false" />
-            <element signature="e#39815#39835#0" expanded="false" />
-            <element signature="e#39845#39865#0" expanded="false" />
-            <element signature="class#39951:40785" expanded="false" />
-            <element signature="initializer##0;class#39951:40785" expanded="false" />
-            <element signature="method#toString#0;class#39951:40785" expanded="false" />
-            <element signature="method#fromString#0;class#39951:40785" expanded="false" />
-            <element signature="class#40828:41377" expanded="false" />
-            <element signature="method#handle#0;class#40828:41377" expanded="false" />
-            <element signature="e#41409#41434#0" expanded="false" />
-            <element signature="class#41484:41794" expanded="false" />
-            <element signature="method#handle#0;class#41484:41794" expanded="false" />
-            <element signature="e#41826#41853#0" expanded="false" />
-            <element signature="class#41949:42945" expanded="false" />
-            <element signature="method#handle#0;class#41949:42945" expanded="false" />
-            <element signature="e#42977#42999#0" expanded="false" />
-            <element signature="class#43045:43824" expanded="false" />
-            <element signature="method#handle#0;class#43045:43824" expanded="false" />
-            <element signature="e#43856#43876#0" expanded="false" />
-            <element signature="class#43933:44493" expanded="false" />
-            <element signature="method#handle#0;class#43933:44493" expanded="false" />
-            <element signature="e#44525#44563#0" expanded="false" />
-            <element signature="e#44912#44937#0" expanded="false" />
-            <element signature="class#45225:45605" expanded="false" />
-            <element signature="class#45955:46349" expanded="false" />
-            <element signature="method#changed#0;class#45955:46349" expanded="false" />
-            <element signature="e#46403#46437#0" expanded="false" />
-            <element signature="e#46832#46850#0" expanded="false" />
-            <element signature="e#46929#46958#0" expanded="false" />
-            <element signature="class#47283:48162" expanded="false" />
-            <element signature="initializer##0;class#47283:48162" expanded="false" />
-            <element signature="method#updateItem#0;class#47283:48162" expanded="false" />
-            <element signature="class#48376:49411" expanded="false" />
-            <element signature="initializer##0;class#48376:49411" expanded="false" />
-            <element signature="method#updateItem#0;class#48376:49411" expanded="false" />
-            <element signature="class#49616:50337" expanded="false" />
-            <element signature="initializer##0;class#49616:50337" expanded="false" />
-            <element signature="method#updateItem#0;class#49616:50337" expanded="false" />
-            <element signature="e#50650#50675#0" expanded="false" />
-            <element signature="e#50906#50921#0" expanded="false" />
-            <element signature="e#51481#51524#0" expanded="false" />
-            <element signature="e#51964#51991#0" expanded="false" />
-            <element signature="class#52770:54572" expanded="false" />
-            <element signature="initializer##0;class#52770:54572" expanded="false" />
-            <element signature="e#53067#53109#0" expanded="false" />
-            <element signature="method#createLabel#0;class#52770:54572" expanded="false" />
-            <element signature="method#updateItem#0;class#52770:54572" expanded="false" />
-            <element signature="e#54330#54379#0" expanded="false" />
-            <element signature="class#54762:56083" expanded="false" />
-            <element signature="initializer##0;class#54762:56083" expanded="false" />
-            <element signature="method#createLabel#0;class#54762:56083" expanded="false" />
-            <element signature="method#updateItem#0;class#54762:56083" expanded="false" />
-            <element signature="e#56724#56739#0" expanded="false" />
-            <element signature="e#57999#58026#0" expanded="false" />
-            <element signature="e#58036#58065#0" expanded="false" />
-            <element signature="class#58348:59101" expanded="false" />
-            <element signature="initializer##0;class#58348:59101" expanded="false" />
-            <element signature="method#updateItem#0;class#58348:59101" expanded="false" />
-            <element signature="class#59379:60143" expanded="false" />
-            <element signature="initializer##0;class#59379:60143" expanded="false" />
-            <element signature="method#updateItem#0;class#59379:60143" expanded="false" />
-            <element signature="class#60331:61220" expanded="false" />
-            <element signature="initializer##0;class#60331:61220" expanded="false" />
-            <element signature="method#updateItem#0;class#60331:61220" expanded="false" />
-            <element signature="e#61626#61656#0" expanded="false" />
-            <element signature="class#61941:62680" expanded="false" />
-            <element signature="initializer##0;class#61941:62680" expanded="false" />
-            <element signature="method#updateItem#0;class#61941:62680" expanded="false" />
-            <element signature="class#62873:63783" expanded="false" />
-            <element signature="initializer##0;class#62873:63783" expanded="false" />
-            <element signature="method#updateItem#0;class#62873:63783" expanded="false" />
-            <element signature="e#63884#63908#0" expanded="false" />
-            <element signature="e#64135#64150#0" expanded="false" />
-            <element signature="e#65290#65315#0" expanded="false" />
+            <element signature="e#32935#32974#0" expanded="false" />
+            <element signature="e#33330#33361#0" expanded="false" />
+            <element signature="class#33411:34200" expanded="false" />
+            <element signature="method#handle#0;class#33411:34200" expanded="false" />
+            <element signature="e#34232#34262#0" expanded="false" />
+            <element signature="class#34311:34478" expanded="false" />
+            <element signature="e#34510#34528#0" expanded="false" />
+            <element signature="e#34608#34637#0" expanded="false" />
+            <element signature="e#34981#35006#0" expanded="false" />
+            <element signature="e#35316#35331#0" expanded="false" />
+            <element signature="e#35880#35908#0" expanded="false" />
+            <element signature="e#35918#35938#0" expanded="false" />
+            <element signature="e#35948#35976#0" expanded="false" />
+            <element signature="class#36259:38177" expanded="false" />
+            <element signature="method#run#0;class#36259:38177" expanded="false" />
+            <element signature="class#36453:38151" expanded="false" />
+            <element signature="method#handle#0;class#36453:38151" expanded="false" />
+            <element signature="e#38190#38220#0" expanded="false" />
+            <element signature="e#39626#39654#0" expanded="false" />
+            <element signature="e#39664#39697#0" expanded="false" />
+            <element signature="e#39793#39813#0" expanded="false" />
+            <element signature="e#39823#39843#0" expanded="false" />
+            <element signature="class#39929:40763" expanded="false" />
+            <element signature="initializer##0;class#39929:40763" expanded="false" />
+            <element signature="method#toString#0;class#39929:40763" expanded="false" />
+            <element signature="method#fromString#0;class#39929:40763" expanded="false" />
+            <element signature="class#40806:41355" expanded="false" />
+            <element signature="method#handle#0;class#40806:41355" expanded="false" />
+            <element signature="e#41387#41412#0" expanded="false" />
+            <element signature="class#41462:41772" expanded="false" />
+            <element signature="method#handle#0;class#41462:41772" expanded="false" />
+            <element signature="e#41804#41831#0" expanded="false" />
+            <element signature="class#41927:42923" expanded="false" />
+            <element signature="method#handle#0;class#41927:42923" expanded="false" />
+            <element signature="e#42955#42977#0" expanded="false" />
+            <element signature="class#43023:43802" expanded="false" />
+            <element signature="method#handle#0;class#43023:43802" expanded="false" />
+            <element signature="e#43834#43854#0" expanded="false" />
+            <element signature="class#43911:44471" expanded="false" />
+            <element signature="method#handle#0;class#43911:44471" expanded="false" />
+            <element signature="e#44503#44541#0" expanded="false" />
+            <element signature="e#44890#44915#0" expanded="false" />
+            <element signature="class#45203:45583" expanded="false" />
+            <element signature="method#call#0;class#45203:45583" expanded="false" />
+            <element signature="class#45933:46327" expanded="false" />
+            <element signature="method#changed#0;class#45933:46327" expanded="false" />
+            <element signature="e#46381#46415#0" expanded="false" />
+            <element signature="e#46810#46828#0" expanded="false" />
+            <element signature="e#46907#46936#0" expanded="false" />
+            <element signature="class#47261:48140" expanded="false" />
+            <element signature="initializer##0;class#47261:48140" expanded="false" />
+            <element signature="method#updateItem#0;class#47261:48140" expanded="false" />
+            <element signature="class#48354:49389" expanded="false" />
+            <element signature="initializer##0;class#48354:49389" expanded="false" />
+            <element signature="method#updateItem#0;class#48354:49389" expanded="false" />
+            <element signature="class#49594:50315" expanded="false" />
+            <element signature="initializer##0;class#49594:50315" expanded="false" />
+            <element signature="method#updateItem#0;class#49594:50315" expanded="false" />
+            <element signature="e#50628#50653#0" expanded="false" />
+            <element signature="e#50884#50899#0" expanded="false" />
+            <element signature="e#51459#51502#0" expanded="false" />
+            <element signature="e#51941#51968#0" expanded="false" />
+            <element signature="class#52747:54549" expanded="false" />
+            <element signature="initializer##0;class#52747:54549" expanded="false" />
+            <element signature="e#53044#53086#0" expanded="false" />
+            <element signature="method#createLabel#0;class#52747:54549" expanded="false" />
+            <element signature="method#updateItem#0;class#52747:54549" expanded="false" />
+            <element signature="e#54307#54356#0" expanded="false" />
+            <element signature="class#54739:56060" expanded="false" />
+            <element signature="initializer##0;class#54739:56060" expanded="false" />
+            <element signature="method#createLabel#0;class#54739:56060" expanded="false" />
+            <element signature="method#updateItem#0;class#54739:56060" expanded="false" />
+            <element signature="e#56701#56716#0" expanded="false" />
+            <element signature="e#57770#57800#0" expanded="false" />
+            <element signature="e#57976#58003#0" expanded="false" />
+            <element signature="e#58013#58042#0" expanded="false" />
+            <element signature="class#58325:59078" expanded="false" />
+            <element signature="initializer##0;class#58325:59078" expanded="false" />
+            <element signature="method#updateItem#0;class#58325:59078" expanded="false" />
+            <element signature="class#59356:60120" expanded="false" />
+            <element signature="initializer##0;class#59356:60120" expanded="false" />
+            <element signature="method#updateItem#0;class#59356:60120" expanded="false" />
+            <element signature="class#60308:61197" expanded="false" />
+            <element signature="initializer##0;class#60308:61197" expanded="false" />
+            <element signature="method#updateItem#0;class#60308:61197" expanded="false" />
+            <element signature="e#61603#61633#0" expanded="false" />
+            <element signature="class#61918:62657" expanded="false" />
+            <element signature="initializer##0;class#61918:62657" expanded="false" />
+            <element signature="method#updateItem#0;class#61918:62657" expanded="false" />
+            <element signature="class#62850:63760" expanded="false" />
+            <element signature="initializer##0;class#62850:63760" expanded="false" />
+            <element signature="method#updateItem#0;class#62850:63760" expanded="false" />
+            <element signature="e#63861#63885#0" expanded="false" />
+            <element signature="e#64112#64127#0" expanded="false" />
+            <element signature="e#65267#65292#0" expanded="false" />
             <element signature="n#!!doc;n#createLabel#0;n#DashboardController#0" expanded="false" />
             <element signature="method#createLabel#0;class#DashboardController#0" expanded="false" />
             <element signature="n#!!doc;n#hora#0;n#DashboardController#0" expanded="false" />
             <element signature="class#hora#0;class#DashboardController#0" expanded="false" />
             <element signature="method#actionPerformed#0;class#hora#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#66177:66423" expanded="false" />
-            <element signature="method#run#0;class#66177:66423" expanded="false" />
+            <element signature="class#66154:66400" expanded="false" />
+            <element signature="method#run#0;class#66154:66400" expanded="false" />
             <element signature="method#atualizaHoras#0;class#DashboardController#0" expanded="false" />
             <element signature="method#atualizaHoras2#0;class#DashboardController#0" expanded="false" />
             <element signature="n#!!doc;n#handlerHyperlinkActionLogout#0;n#DashboardController#0" expanded="false" />
@@ -1512,22 +1546,22 @@
             <element signature="method#handlerButtonActionAddProductOnOrder#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionClearOrderProducts#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionFinishOrder#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#70273:70855" expanded="false" />
-            <element signature="method#handle#0;class#70273:70855" expanded="false" />
+            <element signature="class#70250:70832" expanded="false" />
+            <element signature="method#handle#0;class#70250:70832" expanded="false" />
             <element signature="method#handlerButtonActionHistoricCustomer#0;class#DashboardController#0" expanded="false" />
             <element signature="n#!!doc;n#executeSearchProductsOrder#0;n#DashboardController#0" expanded="false" />
             <element signature="method#executeSearchProductsOrder#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#72287#72798#0" expanded="false" />
-            <element signature="class#72579:72785" expanded="false" />
-            <element signature="e#72834#72912#0" expanded="false" />
-            <element signature="class#72970:73406" expanded="false" />
-            <element signature="method#changed#0;class#72970:73406" expanded="false" />
+            <element signature="e#72264#72775#0" expanded="false" />
+            <element signature="class#72556:72762" expanded="false" />
+            <element signature="e#72811#72889#0" expanded="false" />
+            <element signature="class#72947:73383" expanded="false" />
+            <element signature="method#changed#0;class#72947:73383" expanded="false" />
             <element signature="method#searchByTelephone#0;class#DashboardController#0" expanded="false" />
             <element signature="method#resetAllComponentsOrder#0;class#DashboardController#0" expanded="false" />
             <element signature="method#clientDataDisableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
             <element signature="method#clientDataEnableSearchByTelephone#0;class#DashboardController#0" expanded="false" />
             <element signature="method#clearTextFieldsFromOrder#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#76364#76395#0" expanded="false" />
+            <element signature="e#76341#76372#0" expanded="false" />
             <element signature="docComment;method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setCustomerActiveButtons#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionNewCustomer#0;class#DashboardController#0" expanded="false" />
@@ -1540,16 +1574,16 @@
             <element signature="method#showCustomerDetails#0;class#DashboardController#0" expanded="false" />
             <element signature="method#saveCustomer#0;class#DashboardController#0" expanded="false" />
             <element signature="method#newCustomer#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#82636#82677#0" expanded="false" />
+            <element signature="e#82678#82719#0" expanded="false" />
             <element signature="method#newCustomerGeneral#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setStatusCustomer#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#84683#84719#0" expanded="false" />
-            <element signature="e#84725#84759#0" expanded="false" />
+            <element signature="e#84788#84824#0" expanded="false" />
+            <element signature="e#84830#84864#0" expanded="false" />
             <element signature="docComment;method#resetTableViewSale#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#84831#84860#0" expanded="false" />
+            <element signature="e#84936#84965#0" expanded="false" />
             <element signature="method#resetTableViewSale#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#85011#85046#0" expanded="false" />
-            <element signature="e#85103#85127#0" expanded="false" />
+            <element signature="e#85116#85151#0" expanded="false" />
+            <element signature="e#85208#85232#0" expanded="false" />
             <element signature="docComment;method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setSupplierActiveButtons#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionNewSupplier#0;class#DashboardController#0" expanded="false" />
@@ -1563,7 +1597,7 @@
             <element signature="method#newSupplier#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setStatusSupplier#0;class#DashboardController#0" expanded="false" />
             <element signature="method#resetTableViewSupplier#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#92401#92445#0" expanded="false" />
+            <element signature="e#92674#92718#0" expanded="false" />
             <element signature="n#!!doc;n#showEmployeeDetails#0;n#DashboardController#0" expanded="false" />
             <element signature="method#showEmployeeDetails#0;class#DashboardController#0" expanded="false" />
             <element signature="method#clearEmployeeDetails#0;class#DashboardController#0" expanded="false" />
@@ -1586,18 +1620,18 @@
             <element signature="method#setStatusEmployee#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setStatusLogin#0;class#DashboardController#0" expanded="false" />
             <element signature="method#saveLogin#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#105319:105384" expanded="false" />
-            <element signature="class#105464:105517" expanded="false" />
-            <element signature="class#105600:105654" expanded="false" />
-            <element signature="class#105726:105790" expanded="false" />
+            <element signature="class#105676:105741" expanded="false" />
+            <element signature="class#105821:105874" expanded="false" />
+            <element signature="class#105957:106011" expanded="false" />
+            <element signature="class#106083:106147" expanded="false" />
             <element signature="method#addLogin#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#106627:106692" expanded="false" />
-            <element signature="class#106772:106825" expanded="false" />
-            <element signature="class#106908:106962" expanded="false" />
-            <element signature="class#107034:107098" expanded="false" />
-            <element signature="e#107154#107185#0" expanded="false" />
+            <element signature="class#106984:107049" expanded="false" />
+            <element signature="class#107129:107182" expanded="false" />
+            <element signature="class#107265:107319" expanded="false" />
+            <element signature="class#107391:107455" expanded="false" />
+            <element signature="e#107511#107542#0" expanded="false" />
             <element signature="docComment;method#addIngredient#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#107238#107262#0" expanded="false" />
+            <element signature="e#107595#107619#0" expanded="false" />
             <element signature="method#addIngredient#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionCheckBoxProductType#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handlerButtonActionEditProductType#0;class#DashboardController#0" expanded="false" />
@@ -1617,76 +1651,24 @@
             <element signature="method#saveProduct#0;class#DashboardController#0" expanded="false" />
             <element signature="method#addProduct#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setStatusProduct#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#115564#115590#0" expanded="false" />
+            <element signature="e#115921#115947#0" expanded="false" />
             <element signature="docComment;method#findTabPaneForNode#0;class#DashboardController#0" expanded="false" />
-            <element signature="e#115671#115692#0" expanded="false" />
+            <element signature="e#116028#116049#0" expanded="false" />
             <element signature="method#findTabPaneForNode#0;class#DashboardController#0" expanded="false" />
             <element signature="n#!!doc;n#onKeyEnterPressedCEP#0;n#DashboardController#0" expanded="false" />
             <element signature="method#onKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
             <element signature="method#handleronKeyEnterPressedCEP#0;class#DashboardController#0" expanded="false" />
             <element signature="docComment;method#setCells#0;class#DashboardController#0" expanded="false" />
             <element signature="method#setCells#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#117698:119188" expanded="false" />
-            <element signature="initializer##0;class#117698:119188" expanded="false" />
-            <element signature="method#updateItem#0;class#117698:119188" expanded="false" />
+            <element signature="class#118118:119608" expanded="false" />
+            <element signature="initializer##0;class#118118:119608" expanded="false" />
+            <element signature="method#updateItem#0;class#118118:119608" expanded="false" />
             <element signature="n#!!doc;n#onShow#0;n#DashboardController#0" expanded="false" />
             <element signature="method#onShow#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#119325:119507" expanded="false" />
+            <element signature="class#119745:119927" expanded="false" />
             <element signature="method#onClose#0;class#DashboardController#0" expanded="false" />
-            <element signature="class#119584:119767" expanded="false" />
+            <element signature="class#120004:120187" expanded="false" />
             <element signature="method#loader#0;class#DashboardController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/dashboard/FinishSaleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <element signature="e#1963#2070#0" expanded="false" />
-            <element signature="class#2123:2316" expanded="false" />
-            <element signature="class#2365:2542" expanded="false" />
-            <element signature="e#2465#2466#0" expanded="true" />
-            <element signature="e#2531#2532#0" expanded="true" />
-            <element signature="class#2612:2958" expanded="false" />
-            <element signature="class#3020:3539" expanded="false" />
-            <element signature="method#saveSale#0;class#FinishSaleController#0" expanded="false" />
-            <element signature="method#saveItensSale#0;class#FinishSaleController#0" expanded="false" />
-            <element signature="class#4848:5204" expanded="false" />
-            <element signature="class#5255:5746" expanded="false" />
-            <element signature="e#5839#5840#0" expanded="true" />
-            <element signature="e#5875#5876#0" expanded="true" />
-            <element signature="method#setPrice#0;class#FinishSaleController#0" expanded="false" />
-            <element signature="e#6070#6071#0" expanded="true" />
-            <element signature="e#6106#6107#0" expanded="true" />
-            <element signature="method#setAllComponents#0;class#FinishSaleController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/MaskField/MaskFieldUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="88" column="5" lean-forward="false" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-          <folding>
-            <element signature="method#ignoreKeys#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#serialTextField#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#dateField#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#numericField#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#monetaryField#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#monetaryValueFromField#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#cpfCnpjField#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#cepField#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#foneField#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#cpfField#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#cnpjField#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#positionCaret#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#maxField#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#onlyDigitsValue#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#onlyDigitsValueFromString#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="method#onlyAlfaNumericValue#0;class#MaskFieldUtil#0" expanded="false" />
-            <element signature="initializer##0;class#MaskFieldUtil#0" expanded="false" />
           </folding>
         </state>
       </provider>
