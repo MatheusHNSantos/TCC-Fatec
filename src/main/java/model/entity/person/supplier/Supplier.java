@@ -89,6 +89,52 @@ public class Supplier extends Person {
 		return suppliersList;
 	}
 
+	public static ArrayList<Supplier> customReadAll(int opc, String text){
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		ArrayList<Supplier> suppliersList = new ArrayList<>();
+        String query = "";
+		switch (opc) {
+            case 0:
+                query = "SELECT SP.id_person " +
+                        "FROM supplier SP, person PE " +
+                        "WHERE  SP.id_person = PE.id_person and PE.name_person LIKE ? " +
+                        "ORDER BY PE.name_person ASC";
+                break;
+            case 1:
+                query = "SELECT SP.id_person " +
+                        "FROM supplier SP, phone PH "  +
+                        "WHERE  SP.id_person = PH.id_person and PH.phone LIKE ? " +
+                        "ORDER BY PH.phone";
+                break;
+            case 2:
+                query = "SELECT SP.id_person " +
+                        "FROM supplier SP " +
+                        "WHERE  SP.cnpj LIKE ? " +
+                        "ORDER BY SP.cnpj";
+                break;
+            default:
+                break;
+        }
+		try{
+            stmt = con.prepareStatement(query);
+			stmt.setString(1, "%"+text+"%");
+			rs = stmt.executeQuery();
+			while(rs.next()){
+				Supplier supplier = new Supplier(rs.getInt("id_person"));
+				suppliersList.add(supplier);
+			}
+		} catch (SQLException ex) {
+			FxDialogs.showException("Erro de Leitura! - ReadAll Custom","class: Supplier" + " - " + ex.getMessage(),ex);
+		}
+		finally{
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+		return suppliersList;
+	}
+
+
 	public void Save(){
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;

@@ -64,6 +64,8 @@ import util.exception.UserException;
 import util.viacep.Endereco;
 import util.viacep.ViaCEP;
 
+import util.Functions.UpCase;
+
 import java.awt.event.*;
 import java.io.IOException;
 import java.net.URL;
@@ -77,6 +79,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 import static java.lang.String.valueOf;
+import static util.Functions.UpCase.upCaseFirst;
 
 /**
  * FXML Controller class
@@ -131,6 +134,9 @@ public class DashboardController implements Initializable {
     public Hyperlink hl_finish;
     @FXML
     public Hyperlink hl_logout;
+    @FXML
+    private Label welcome_user;
+
     //endregion
 
     //region Tab "Pedido" Objects
@@ -342,7 +348,7 @@ public class DashboardController implements Initializable {
     @FXML
     private TableView<Supplier> tview_supplier; //Tabela de fornecedores
     @FXML
-    private JFXComboBox<?> cbox_typeSearchSupplier; //Combo Box de tipo de Pesquisa de fornecedores
+    private JFXComboBox<String> cbox_typeSearchSupplier; //Combo Box de tipo de Pesquisa de fornecedores
     @FXML
     private JFXTextField txt_searchSupplier; //TextField de campo para pesquisa de fornecedores
     @FXML
@@ -382,13 +388,13 @@ public class DashboardController implements Initializable {
     private JFXButton btn_editSupplier; //Botão Editar
 
     @FXML
-    private TableColumn<Supplier, String> columnSupplierName;
+    private TableColumn<Person, Person> columnSupplierName;
     @FXML
-    private TableColumn<Supplier, Supplier> columnSupplierPhone1;
+    private TableColumn<Person, Person> columnSupplierPhone1;
     @FXML
-    private TableColumn<Supplier, Supplier> columnSupplierPhone2;
+    private TableColumn<Person, Person> columnSupplierPhone2;
     @FXML
-    private TableColumn<Supplier, Supplier> columnSupplierCep;
+    private TableColumn<Person, Person> columnSupplierCep;
     @FXML
     private TableColumn<Supplier, String> columnSupplierCnpj;
     //endregion
@@ -426,7 +432,7 @@ public class DashboardController implements Initializable {
     @FXML
     private JFXToggleButton select_typeStatusFunc; //select status func
     @FXML
-    private JFXComboBox<?> cbox_typeSearchEmployee; //Combo Box de tipo de Pesquisa de Funcionário
+    private JFXComboBox<String> cbox_typeSearchEmployee; //Combo Box de tipo de Pesquisa de Funcionário
     @FXML
     private Group group_dataFunc; //Agrupamento de TextField atributos do funcionario
     @FXML
@@ -464,13 +470,13 @@ public class DashboardController implements Initializable {
     @FXML
     private TableView<Employee> tview_func; //Tabela de funcionarios
     @FXML
-    private TableColumn<Employee, String> columnEmployeeName;
+    private TableColumn<Person, Person> columnEmployeeName;
     //@FXML    private TableColumn<Employee, String> columnEmployeePhone1;
     //@FXML    private TableColumn<Employee, String> columnEmployeePhone2;
     @FXML
-    private TableColumn<Employee, Employee> columnEmployeePhone1;
+    private TableColumn<Person, Person> columnEmployeePhone1;
     @FXML
-    private TableColumn<Employee, Employee> columnEmployeePhone2;
+    private TableColumn<Person, Person> columnEmployeePhone2;
     @FXML
     private TableColumn<Employee, String> columnEmployeeRole;
     @FXML
@@ -558,11 +564,11 @@ public class DashboardController implements Initializable {
     @FXML
     private TableView<Product> tview_product; //Tabela de produtos
     @FXML
-    private TableColumn<Product, String> columnProductName;
+    private TableColumn<Product, Product> columnProductName;
     @FXML
     private TableColumn<Product, Product> columnProductFinalPrice;
     @FXML
-    private TableColumn<Product, String> columnProductWeight;
+    private TableColumn<Product, Product> columnProductWeight;
     @FXML
     private TableColumn<Product, Product> columnProductType;
     @FXML
@@ -570,7 +576,7 @@ public class DashboardController implements Initializable {
     @FXML
     private TableView<Ingredient> tview_productIngredient; //Tabela de Ingredientes do produto
     @FXML
-    private TableColumn<Ingredient, String> columnIngredientName;
+    private TableColumn<Ingredient, Ingredient> columnIngredientName;
     @FXML
     private TableColumn<Ingredient, Ingredient> columnIngredientPrice;
     @FXML
@@ -590,6 +596,9 @@ public class DashboardController implements Initializable {
 
     private ObservableList<Product> dataObervableProduct = FXCollections.observableArrayList();
     private ArrayList<Product> listProduct = new ArrayList<>();
+
+    private ObservableList<String> dataObervableProductType = FXCollections.observableArrayList();
+    private ArrayList<String> listProductType = new ArrayList<>();
 
     private static ObservableList<Ingredient> dataObervableIngredient = FXCollections.observableArrayList();
     private ArrayList<Ingredient> listIngredient = new ArrayList<>();
@@ -667,11 +676,14 @@ public class DashboardController implements Initializable {
 
         //dataModelTests = new ArrayList<>();
 
-        //label_user.setText(user.getLogin()); //ativar para usar o a tela de login
+        label_user.setText(upCaseFirst(user.getLogin())); //ativar para usar o a tela de login
+
 
         //endregion
 
         //region Tab "Inicio"
+        welcome_user.setText("Bem Vindo " + upCaseFirst(user.getLogin()) + "!");
+
         //region Tab "Incio" Events
         hl_logout.setOnMouseClicked(this::handlerHyperlinkActionLogout);
         hl_finish.setOnMouseClicked(this::handlerHyperlinkActionFinish);
@@ -990,11 +1002,13 @@ public class DashboardController implements Initializable {
                     return;
                 }
 
+
+
                 switch (cbox_typeSearchCustomer.getSelectionModel().getSelectedIndex()) {
                     case 0:
-
                         dataObservableCustomer.clear();
                         dataObservableCustomer.addAll(Customer.readByName(txt_searchCustomer.getText()));
+
                         break;
 
                     case 1:
@@ -1350,109 +1364,18 @@ public class DashboardController implements Initializable {
 
         txt_cepSupplier.setOnKeyPressed(this::handleronKeyEnterPressedCEP);
 
+
         //region TableView
         dataObervableSupplier = FXCollections.observableArrayList();
 
         //region columns declarations
 
         //column name
-        columnSupplierName.setCellValueFactory(new PropertyValueFactory<>("namePerson"));
-
-        //column phone1
-        columnSupplierPhone1.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnSupplierPhone1.setCellFactory(column -> new TableCell<Supplier, Supplier>() {
-
-            private VBox graphic;
-            private Label labelPhone1;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelPhone1 = createLabel();
-                graphic.getChildren().addAll(labelPhone1);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(Supplier supplier, boolean empty) {
-                if (supplier == null) {
-                    setGraphic(null);
-                } else {
-                    ArrayList<Phone> phoneList;
-                    phoneList = supplier.getListPhone();
-                    String phone = phoneList.get(0).getPhone();
-
-                    labelPhone1.setText(phone);
-
-                    setGraphic(graphic);
-                }
-            }
-        });
-
-        //column phone2
-        columnSupplierPhone2.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnSupplierPhone2.setCellFactory(column -> new TableCell<Supplier, Supplier>() {
-
-            private VBox graphic;
-            private Label labelPhone2;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelPhone2 = createLabel();
-                graphic.getChildren().addAll(labelPhone2);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(Supplier supplier, boolean empty) {
-                if (supplier == null) {
-                    setGraphic(null);
-                } else {
-                    ArrayList<Phone> listPhone;
-                    listPhone = supplier.getListPhone();
-                    if (listPhone.size() == 2) {
-                        String phone = listPhone.get(1).getPhone();
-                        labelPhone2.setText(phone);
-
-                    } else {
-                        labelPhone2.setText("");
-                    }
-                    setGraphic(graphic);
-                }
-            }
-        });
-
-        //column cep
-        columnSupplierCep.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnSupplierCep.setCellFactory(column -> new TableCell<Supplier, Supplier>() {
-
-            private VBox graphic;
-            private Label labelCep;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelCep = createLabel();
-                graphic.getChildren().addAll(labelCep);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(Supplier supplier, boolean empty) {
-                if (supplier == null) {
-                    setGraphic(null);
-                } else {
-                    labelCep.setText(supplier.getAddress().getCep());
-                    setGraphic(graphic);
-                }
-            }
-        });
-
-
+        //columnSupplierName.setCellValueFactory(new PropertyValueFactory<>("namePerson"));
+        setCells(columnSupplierName, "namePerson");
+        setCells(columnSupplierPhone1, "phone1");
+        setCells(columnSupplierPhone2, "phone2");
+        setCells(columnSupplierCep, "cep");
         //column cnpj
         columnSupplierCnpj.setCellValueFactory(new PropertyValueFactory<>("cnpj"));
         //endregion
@@ -1463,6 +1386,33 @@ public class DashboardController implements Initializable {
         tview_supplier.setItems(dataObervableSupplier);
         //endregion
 
+        //region Combo Box Type Search Supplier
+        cbox_typeSearchSupplier.getItems().addAll("Nome", "Telefone", "CNPJ");
+        cbox_typeSearchSupplier.getSelectionModel().select(0);
+        //endregion
+
+        //region Button Search Supplier
+        btn_searchSupplier.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                dataObervableSupplier.clear();
+
+                if (txt_searchSupplier.getText().equals("")) {
+                    dataObervableSupplier.addAll(Supplier.ReadAll());
+                    return;
+                }
+
+                dataObervableSupplier.addAll(
+                        Supplier.customReadAll(
+                            cbox_typeSearchSupplier.getSelectionModel().getSelectedIndex(),
+                                txt_searchSupplier.getText()
+                        ));
+
+
+            }
+        });
+        //endregion
+
         //region Supplier Details
 
         showSupplierDetails(null);
@@ -1471,15 +1421,16 @@ public class DashboardController implements Initializable {
                 (observable, oldValue, newValue) -> showSupplierDetails(newValue));
         //endregion
 
-
         //region Events
         btn_editSupplier.setOnMouseClicked(this::handlerButtonActionEditSupplier);
         btn_newSupplier.setOnMouseClicked(this::handlerButtonActionNewSupplier);
         btn_cancelSupplier.setOnMouseClicked(this::handlerButtonActionCancelSupplier);
         btn_saveSupplier.setOnMouseClicked(this::handlerButtonActionSaveSupplier);
         tbtn_statusSupplier.setOnMouseClicked(this::handlerButtonActionStatusSupplier);
-        btn_searchSupplier.setOnMouseClicked(this::handlerButtonActionSearchSupplier);
+        //btn_searchSupplier.setOnMouseClicked(this::handlerButtonActionSearchSupplier);
         //endregion
+
+
 
         //endregion
 
@@ -1501,119 +1452,49 @@ public class DashboardController implements Initializable {
         dataObervableEmployee = FXCollections.observableArrayList();
 
         columnEmployeeName.setCellValueFactory(new PropertyValueFactory<>("namePerson"));
-        /*columnEmployeePhone1.setCellFactory((Callback<TableColumn.CellDataFeatures<Employee, String>, ObservableValue<String>>) param -> {
-            Employee person = param.getValue();
-            ArrayList<Phone> teste = new ArrayList();
-            teste = person.getListPhone();
-            SimpleStringProperty booleanProp = new SimpleStringProperty(teste.get(0).getPhone());
-
-
-            return booleanProp;
-        });*/
-        columnEmployeePhone1.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnEmployeePhone1.setCellFactory(column -> new TableCell<Employee, Employee>() {
-
-            private VBox graphic;
-            private Label firstNameLabel;
-            private Label lastNameLabel;
-            private Label phoneLabel;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                //firstNameLabel = createLabel("#66BB66");
-                //lastNameLabel = createLabel("#79A8D8");
-                //phoneLabel = createLabel("#FF8888");
-                phoneLabel = createLabel();
-                /*graphic.getChildren().addAll(firstNameLabel,
-                        lastNameLabel, emailLabel);*/
-                graphic.getChildren().addAll(phoneLabel);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            private final Label createLabel() {
-                Label label = new Label();
-                VBox.setVgrow(label, Priority.ALWAYS);
-                label.setMaxWidth(Double.MAX_VALUE);
-                //label.setStyle("-fx-background-color: "+color+" ;");
-                label.setAlignment(Pos.CENTER);
-                return label;
-            }
-
-            @Override
-            public void updateItem(Employee person, boolean empty) {
-                if (person == null) {
-                    setGraphic(null);
-                } else {
-                    ArrayList<Phone> teste;
-                    teste = person.getListPhone();
-                    String phone = "";
-                    if (teste.size() > 0)
-                        phone = teste.get(0).getPhone();
-
-                    //firstNameLabel.setText(person.getNamePerson());
-                    //lastNameLabel.setText(person.getRole());
-                    phoneLabel.setText(phone);
-                    setGraphic(graphic);
-                }
-            }
-        });
-
-        columnEmployeePhone2.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnEmployeePhone2.setCellFactory(column -> new TableCell<Employee, Employee>() {
-
-            private VBox graphic;
-            private Label phoneLabel2;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                phoneLabel2 = createLabel();
-                graphic.getChildren().addAll(phoneLabel2);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            private final Label createLabel() {
-                Label label = new Label();
-                VBox.setVgrow(label, Priority.ALWAYS);
-                label.setMaxWidth(Double.MAX_VALUE);
-                label.setAlignment(Pos.CENTER);
-                return label;
-            }
-
-            @Override
-            public void updateItem(Employee person, boolean empty) {
-                if (person == null) {
-                    setGraphic(null);
-                } else {
-                    ArrayList<Phone> listPhone;
-                    listPhone = person.getListPhone();
-                    if (listPhone.size() == 2) {
-                        String phone = listPhone.get(1).getPhone();
-                        phoneLabel2.setText(phone);
-
-                    } else {
-                        phoneLabel2.setText("");
-                    }
-                    setGraphic(graphic);
-                }
-            }
-        });
-
+        setCells(columnEmployeeName, "namePerson");
+        setCells(columnEmployeePhone1, "phone1");
+        setCells(columnEmployeePhone1, "phone2");
         columnEmployeeRole.setCellValueFactory(new PropertyValueFactory<>("role"));
+
         listEmployee = Employee.ReadAll();
         dataObervableEmployee.addAll(listEmployee);
         tview_func.setItems(dataObervableEmployee);
         //endregion
 
+        //region Combo Box Type Search Supplier
+        cbox_typeSearchEmployee.getItems().addAll("Nome", "Telefone", "Função");
+        cbox_typeSearchEmployee.getSelectionModel().select(0);
+        //endregion
+
+        //region Button Search Supplier
+        btn_searchEmployee.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                dataObervableEmployee.clear();
+
+                if (txt_searchEmployee.getText().equals("")) {
+                    dataObervableEmployee.addAll(Employee.ReadAll());
+                    return;
+                }
+
+                dataObervableEmployee.addAll(
+                        Employee.customReadAll(
+                                cbox_typeSearchEmployee.getSelectionModel().getSelectedIndex(),
+                                txt_searchEmployee.getText()
+                        ));
+
+
+            }
+        });
+        //endregion
 
         cbox_typeLevelLogin.getItems().addAll(
                 "",
                 "Operador",
                 "Administrador"
         );
+
 
         // Limpa os detalhes da pessoa.
         showEmployeeDetails(null);
@@ -1651,93 +1532,11 @@ public class DashboardController implements Initializable {
         //region TableView Products
 
         //region columns declarations
-        columnProductName.setCellValueFactory(new PropertyValueFactory<>("nameProduct"));
-        columnProductFinalPrice.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnProductFinalPrice.setCellFactory(column -> new TableCell<Product, Product>() {
-
-            private VBox graphic;
-            private Label labelFinalPrice;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelFinalPrice = createLabel();
-                graphic.getChildren().addAll(labelFinalPrice);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(Product product, boolean empty) {
-                if (product == null) {
-                    setGraphic(null);
-                } else {
-
-                    labelFinalPrice.setText("R$ " + product.getFinalPriceProduct());
-                    setGraphic(graphic);
-                }
-            }
-        });
-
-        columnProductWeight.setCellValueFactory(new PropertyValueFactory<>("weightProduct"));
-        columnProductType.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnProductType.setCellFactory(column -> new TableCell<Product, Product>() {
-
-            private VBox graphic;
-            private Label labelProductType;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelProductType = createLabel();
-                graphic.getChildren().addAll(labelProductType);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(Product product, boolean empty) {
-                if (product == null) {
-                    setGraphic(null);
-                } else {
-
-                    labelProductType.setText(product.getProductType().getNameProductType());
-                    setGraphic(graphic);
-                }
-            }
-        });
-
-        columnProductStatus.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnProductStatus.setCellFactory(column -> new TableCell<Product, Product>() {
-
-            private VBox graphic;
-            private Label labelStatus;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelStatus = createLabel();
-                graphic.getChildren().addAll(labelStatus);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(Product product, boolean empty) {
-                if (product == null) {
-                    setGraphic(null);
-                } else {
-                    boolean status = product.getStatusProduct();
-                    if (status)
-                        labelStatus.setText("Ativo");
-                    else
-                        labelStatus.setText("Inativo");
-
-
-                    setGraphic(graphic);
-                }
-            }
-        });
+        setCellsProduct(columnProductName, "nameProduct");
+        setCellsProduct(columnProductFinalPrice, "finalPriceProduct");
+        setCellsProduct(columnProductWeight, "weightProduct");
+        setCellsProduct(columnProductType, "productType");
+        setCellsProduct(columnProductStatus, "columnProductStatus");
 
         //endregion
 
@@ -1746,70 +1545,24 @@ public class DashboardController implements Initializable {
         tview_product.setItems(dataObervableProduct);
         //endregion
 
-        cbox_categoryProduct.getItems().add("");
-        for (ProductType productType : ProductType.ReadAll()) {
+        listProductType = ProductType.readAllToString();
+        dataObervableProductType.add("");
+        dataObervableProductType.addAll(listProductType);
+        cbox_categoryProduct.setItems(dataObervableProductType);
+
+        //cbox_categoryProduct.getItems().add("");
+
+        /*for (ProductType productType : ProductType.ReadAll()) {
             cbox_categoryProduct.getItems().add(productType.getNameProductType());
-        }
+        }*/
+
+
 
         //region TableView Ingredients
-        columnIngredientName.setCellValueFactory(new PropertyValueFactory<>("nameIngredient"));
-        columnIngredientPrice.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnIngredientPrice.setCellFactory(column -> new TableCell<Ingredient, Ingredient>() {
+        setCellsIngredient(columnIngredientName, "nameIngredient");
+        setCellsIngredient(columnIngredientPrice, "priceIngredient");
+        setCellsIngredient(columnIngredientStatus, "statusIngredient");
 
-            private VBox graphic;
-            private Label labelPrice;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelPrice = createLabel();
-                graphic.getChildren().addAll(labelPrice);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(Ingredient ingredient, boolean empty) {
-                if (ingredient == null) {
-                    setGraphic(null);
-                } else {
-
-                    labelPrice.setText("R$ " + ingredient.getPrice());
-                    setGraphic(graphic);
-                }
-            }
-        });
-        columnIngredientStatus.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnIngredientStatus.setCellFactory(column -> new TableCell<Ingredient, Ingredient>() {
-
-            private VBox graphic;
-            private Label labelStatus;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelStatus = createLabel();
-                graphic.getChildren().addAll(labelStatus);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(Ingredient ingredient, boolean empty) {
-                if (ingredient == null) {
-                    setGraphic(null);
-                } else {
-                    boolean status = ingredient.getStatusIngredient();
-                    if (status)
-                        labelStatus.setText("Ativo");
-                    else
-                        labelStatus.setText("Inativo");
-
-
-                    setGraphic(graphic);
-                }
-            }
-        });
 
         tview_productIngredient.setItems(dataObervableIngredient);
         //endregion
@@ -2547,11 +2300,11 @@ public class DashboardController implements Initializable {
         actionSupplier = "";
     }
 
-    private void handlerButtonActionSearchSupplier(MouseEvent event) {
+    /*private void handlerButtonActionSearchSupplier(MouseEvent event) {
         listSupplier = Supplier.ReadAll();
         dataObervableSupplier.clear();
         dataObervableSupplier.addAll(listSupplier);
-    }
+    }*/
     //endregion
 
     private void clearSupplierDetails() {
@@ -2806,7 +2559,15 @@ public class DashboardController implements Initializable {
     //region default methods
     private void handlerButtonActionManageUsers(MouseEvent event) {
         try {
-            ManageUsersController.loader().show();
+            //ManageUsersController.loader().show();
+
+            Controller controller = new Controller();
+            FXMLLoader fxmlLoader = controller.fxmlLoaderContent(ManageUsersController.path);
+            Stage stage = controller.buildStage(fxmlLoader, ManageUsersController.title);
+            stage.setResizable(false);
+            stage.setOnShowing(onShow());
+            stage.setOnCloseRequest(onClose());
+            stage.showAndWait();
         } catch (IOException ex) {
             FxDialogs.showWarning(ex.getMessage(), "Tente novamente.");
         }
@@ -3154,19 +2915,29 @@ public class DashboardController implements Initializable {
 
     private void handlerButtonActionCheckBoxProductType(MouseEvent event) {
         if (refreshCategory) {
-            cbox_categoryProduct.getItems().clear();
-            cbox_categoryProduct.getItems().add("");
-            for (ProductType productType : ProductType.ReadAll()) {
-                cbox_categoryProduct.getItems().add(productType.getNameProductType());
-            }
-            resetTableViewProduct();
+            //cbox_categoryProduct.getItems().clear();
+            dataObervableProductType.clear();
+            listProductType = ProductType.readAllToString();
+            dataObervableProductType.add("");
+            dataObervableProductType.addAll(listProductType);
+
+            //resetTableViewProduct();
             refreshCategory = false;
         }
     }
 
     private void handlerButtonActionEditProductType(MouseEvent event) {
         try {
-            EditProductTypeController.loader().show();
+            //EditProductTypeController.loader().show();
+            Controller controller = new Controller();
+            FXMLLoader fxmlLoader = controller.fxmlLoaderContent(EditProductTypeController.path);
+
+            Stage stage = controller.buildStage(fxmlLoader, EditProductTypeController.title);
+            stage.setResizable(false);
+            stage.setOnShowing(onShow());
+            stage.setOnCloseRequest(onClose());
+            stage.showAndWait();
+
 
 
         } catch (IOException ex) {
@@ -3178,7 +2949,17 @@ public class DashboardController implements Initializable {
 
     private void handlerButtonActionEditIngredients(MouseEvent event) {
         try {
-            EditIngredientsController.loader().show();
+            //EditIngredientsController.loader().show();
+
+            Controller controller = new Controller();
+            FXMLLoader fxmlLoader = controller.fxmlLoaderContent(EditIngredientsController.path);
+
+            Stage stage = controller.buildStage(fxmlLoader, EditIngredientsController.title);
+            stage.setResizable(false);
+            stage.setOnShowing(onShow());
+            stage.setOnCloseRequest(onClose());
+            stage.showAndWait();
+
         } catch (IOException ex) {
             FxDialogs.showWarning(ex.getMessage(), "Tente novamente.");
         }
@@ -3186,7 +2967,15 @@ public class DashboardController implements Initializable {
 
     private void handlerButtonActionListIngredients(MouseEvent event) {
         try {
-            ListIngredientsController.loader().show();
+            //ListIngredientsController.loader().show();
+
+            Controller controller = new Controller();
+            FXMLLoader fxmlLoader = controller.fxmlLoaderContent(ListIngredientsController.path);
+            Stage stage = controller.buildStage(fxmlLoader, ListIngredientsController.title);
+            stage.setResizable(false);
+            stage.setOnShowing(onShow());
+            stage.setOnCloseRequest(onClose());
+            stage.showAndWait();
         } catch (IOException ex) {
             FxDialogs.showWarning(ex.getMessage(), "Tente novamente.");
         }
@@ -3492,6 +3281,111 @@ public class DashboardController implements Initializable {
 
                         case "cep":
                             text = person.getAddress().getCep();
+                            break;
+
+                        default:
+                            break;
+
+                    }
+                    label.setText(text);
+                    setGraphic(graphic);
+                }
+            }
+        });
+    }
+
+    private void setCellsProduct(TableColumn<Product, Product> columnDefault, String opc) {
+
+        columnDefault.setCellValueFactory(cellData ->
+                new ReadOnlyObjectWrapper<>(cellData.getValue()));
+
+        columnDefault.setCellFactory(column -> new TableCell<Product, Product>() {
+            private VBox graphic;
+            private Label label;
+
+            // Anonymous constructor:
+            {
+                graphic = new VBox();
+                label = createLabel();
+                graphic.getChildren().addAll(label);
+                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+            }
+
+            @Override
+            public void updateItem(Product product, boolean empty) {
+                if (product == null) {
+                    setGraphic(null);
+                } else {
+                    String text = "";
+
+                    switch (opc) {
+                        case "nameProduct":
+                            text = product.getNameProduct();
+                            break;
+
+                        case "finalPriceProduct":
+                            text = "R$ " + product.getFinalPriceProduct();
+                            break;
+
+                        case "weightProduct":
+                            text = Float.toString(product.getWeightProduct());
+                            break;
+
+                        case "productType":
+                            text = product.getProductType().getNameProductType();
+                            break;
+
+                        case "statusProduct":
+                            text = (product.getStatusProduct()) ? "Ativo" : "Inativo";
+                            break;
+
+
+                        default:
+                            break;
+
+                    }
+                    label.setText(text);
+                    setGraphic(graphic);
+                }
+            }
+        });
+    }
+
+    private void setCellsIngredient(TableColumn<Ingredient, Ingredient> columnDefault, String opc) {
+
+        columnDefault.setCellValueFactory(cellData ->
+                new ReadOnlyObjectWrapper<>(cellData.getValue()));
+
+        columnDefault.setCellFactory(column -> new TableCell<Ingredient, Ingredient>() {
+            private VBox graphic;
+            private Label label;
+
+            // Anonymous constructor:
+            {
+                graphic = new VBox();
+                label = createLabel();
+                graphic.getChildren().addAll(label);
+                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+            }
+
+            @Override
+            public void updateItem(Ingredient ingredient, boolean empty) {
+                if (ingredient == null) {
+                    setGraphic(null);
+                } else {
+                    String text = "";
+
+                    switch (opc) {
+                        case "nameIngredient":
+                            text = ingredient.getNameIngredient();
+                            break;
+
+                        case "priceIngredient":
+                            text = "R$ " + ingredient.getPrice();
+                            break;
+
+                        case "statusIngredient":
+                            text = (ingredient.getStatusIngredient()) ? "Ativo" : "Inativo";
                             break;
 
                         default:

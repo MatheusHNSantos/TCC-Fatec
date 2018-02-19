@@ -22,8 +22,8 @@ import java.util.ResourceBundle;
 
 public class ListIngredientsController implements Initializable {
 
-    private static final String path = "listIngredients.fxml";
-    private static final String title = "Adicionar Ingredientes";
+    public static final String path = "listIngredients.fxml";
+    public static final String title = "Adicionar Ingredientes";
 
     @FXML    private TableView<Ingredient> tview_ingredient; //Tabela de ingredientes
     @FXML    private TableColumn<Ingredient, String> columnIngredientName;

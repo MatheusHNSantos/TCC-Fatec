@@ -25,8 +25,8 @@ import java.util.ResourceBundle;
 
 public class EditProductTypeController implements Initializable {
 
-    private static final String path = "editProductType.fxml";
-    private static final String title = "Editar Categorias";
+    public static final String path = "editProductType.fxml";
+    public static final String title = "Editar Categorias";
 
     @FXML    private TableView<ProductType> tview_productType; //Tabela de tipos de ingredientes
     @FXML    private TableColumn<ProductType, String> columnProductTypeName;

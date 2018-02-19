@@ -88,6 +88,28 @@ public class ProductType {
 		return product_typesList;
 	}
 
+	public static ArrayList<String> readAllToString(){
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		ArrayList<String> product_typesList = new ArrayList<>();
+		try{
+			stmt = con.prepareStatement("SELECT id_product_type FROM product_type");
+			rs = stmt.executeQuery();
+			while(rs.next()){
+				int aux = rs.getInt("id_product_type");
+				ProductType product_type = new ProductType(aux);
+				product_typesList.add(product_type.getNameProductType());
+			}
+		} catch (SQLException ex) {
+			FxDialogs.showException("Erro de Leitura!","class: ProductType" + " - " + ex.getMessage(),ex);
+		}
+		finally{
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+		return product_typesList;
+	}
+
     public static boolean isUsing(int idProductType){
 	    if(idProductType == 0) return true;
         Connection con = ConnectionFactory.getConnection();

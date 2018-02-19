@@ -1,4 +1,11 @@
+<<<<<<< HEAD:.gitignore
 ./target/**
 .idea/workspace.xml
 .idea/misc.xml
 classes/
+=======
+target/
+.idea/workspace.xml
+.idea/misc.xml
+classes/
+>>>>>>> copia-lucas:gitignore

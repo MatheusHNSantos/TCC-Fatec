@@ -30,8 +30,8 @@ import static java.lang.String.valueOf;
 
 public class EditIngredientsController implements Initializable {
 
-    private static final String path = "editIngredients.fxml";
-    private static final String title = "Editar Ingredientes";
+    public static final String path = "editIngredients.fxml";
+    public static final String title = "Editar Ingredientes";
 
     @FXML    private TableView<Ingredient> tview_ingredients; //Tabela de funcionarios
     @FXML    private TableColumn<Ingredient, String> columnIngredientName;

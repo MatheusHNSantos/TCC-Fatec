@@ -31,8 +31,8 @@ import java.util.ResourceBundle;
 
 public class ManageUsersController implements Initializable {
 
-    private static final String path = "manageUsers.fxml";
-    private static final String title = "Gerenciar Usuários";
+    public static final String path = "manageUsers.fxml";
+    public static final String title = "Gerenciar Usuários";
 
     //region @FXML Objects
     @FXML    private JFXComboBox<?> cbox_exibitionModeUser; //Combo Box de tipo de Pesquisa de usuarios
