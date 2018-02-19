@@ -11,7 +11,7 @@
     <jar href="MaskFormatterFX.jar" size="6102" download="eager" />
     <jar href="jfoenix-1.9.1.jar" size="2384613" download="eager" />
     <jar href="mysql-connector-java-6.0.6.jar" size="2001778" download="eager" />
-    <jar href="tcc_reborn.jar" size="1145241" download="eager" />
+    <jar href="tcc_reborn.jar" size="1159057" download="eager" />
   </resources>
   <jfx:javafx-desc  width="1280" height="720" main-class="app.Main"  name="tcc-reborn" />
   <update check="background"/>
