@@ -25,6 +25,6 @@ public class CalendarUtil {
 
     public static String getCurrentHourBR(){
         Calendar calendar = Calendar.getInstance();
-        return calendar.get(Calendar.HOUR)+":"+calendar.get(Calendar.MINUTE)+":"+calendar.get(Calendar.SECOND);
+        return calendar.get(Calendar.HOUR_OF_DAY)+":"+calendar.get(Calendar.MINUTE)+":"+calendar.get(Calendar.SECOND);
     }
 }

@@ -27,7 +27,9 @@ public class Controller {
     
     private static final String sPathControl = "/fxml/";
 
-    private static Stage currentStage;
+    private static Stage mainScreensStage;
+
+    private static Stage modalScreenStage;
 
     private static Class<? extends Window> controlledStage;
 
@@ -39,7 +41,7 @@ public class Controller {
         stage.initStyle(style);
         stage.setTitle(title);
         controlledStage = stage.getClass();
-        currentStage = stage;
+        mainScreensStage = stage;
 
         return stage;
     }
@@ -93,6 +95,7 @@ public class Controller {
         stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.initStyle(StageStyle.UTILITY);
+        modalScreenStage = stage;
         return stage;
     }
     //endregion
@@ -140,8 +143,12 @@ public class Controller {
     //endregion
 
     //region Get Stage
+    public static Stage getModalScreenStage(){
+        return modalScreenStage;
+    }
+
     public static Stage getCurrentStage(){
-        return currentStage;
+        return mainScreensStage;
     }
     //endregion
 

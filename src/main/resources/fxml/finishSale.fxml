@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="288.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dashboard.FinishSaleController">
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="288.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dashboard.FinishSaleController">
    <children>
       <Separator layoutX="6.0" layoutY="54.0" prefHeight="3.0" prefWidth="388.0" />
       <Separator focusTraversable="false" layoutX="6.0" layoutY="243.0" prefHeight="3.0" prefWidth="388.0" />
-      <JFXComboBox focusColor="DARKORANGE" layoutX="191.0" layoutY="14.0" prefHeight="28.0" prefWidth="164.0" unFocusColor="SEAGREEN" />
+      <JFXComboBox fx:id="comboBoxPayMethod" focusColor="DARKORANGE" layoutX="191.0" layoutY="14.0" prefHeight="28.0" prefWidth="164.0" unFocusColor="SEAGREEN" />
       <JFXButton fx:id="finishSaleOnDialog" alignment="TOP_LEFT" layoutX="268.0" layoutY="252.0" prefHeight="35.0" prefWidth="130.0" text="Fechar Compra">
          <graphic>
             <ImageView fitHeight="27.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" smooth="false">
@@ -43,7 +43,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="260.0" layoutY="174.0" prefHeight="49.0" prefWidth="111.0" text="0000,00">
+      <Label fx:id="txt_transshipment" layoutX="260.0" layoutY="174.0" prefHeight="49.0" prefWidth="111.0" text="0.0">
          <font>
             <Font size="31.0" />
          </font>
@@ -73,7 +73,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <JFXTextField alignment="CENTER" focusColor="DARKORANGE" layoutX="260.0" layoutY="128.0" prefHeight="17.0" prefWidth="111.0" unFocusColor="SEAGREEN">
+      <JFXTextField fx:id="txt_paymentAmmount" alignment="CENTER" focusColor="DARKORANGE" layoutX="260.0" layoutY="128.0" prefHeight="17.0" prefWidth="111.0" unFocusColor="SEAGREEN">
          <font>
             <Font size="24.0" />
          </font>
