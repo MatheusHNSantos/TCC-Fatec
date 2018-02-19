@@ -136,6 +136,15 @@ CREATE TABLE IF NOT EXISTS voucher(
   CONSTRAINT FRK_ID_CUSTOMER_VOUCHEr FOREIGN KEY (id_customer) REFERENCES customer(id_person)
 );
 
+CREATE TABLE IF NOT EXISTS log(
+  id_log int not null AUTO_INCREMENT,
+  id_user int not null,
+  log_date varchar(255),
+  user_action varchar(255),
+  CONSTRAINT PRK_ID_LOG PRIMARY KEY (id_log),
+  CONSTRAINT FRK_ID_EMPLOYEE_LOG FOREIGN KEY (id_user) REFERENCES user(id_employee)
+);
+
 
 insert into product_type values (1, "lanches");
 
