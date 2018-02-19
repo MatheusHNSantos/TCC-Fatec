@@ -5,7 +5,7 @@
  */
 package controller.dashboard;
 
-import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.*;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
@@ -17,6 +17,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
+import jeanderson.br.util.MaskFormatter;
 import util.MaskField.MaskFieldUtil;
 import com.jfoenix.controls.*;
 import controller.Controller;
@@ -24,7 +25,6 @@ import controller.login.LoginController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
-import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -60,15 +60,19 @@ import util.dialogs.FxDialogs;
 import util.exception.UserException;
 import util.viacep.Endereco;
 import util.viacep.ViaCEP;
+
 import java.awt.event.*;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+
 import static java.lang.String.valueOf;
 
 /**
@@ -195,8 +199,7 @@ public class DashboardController implements Initializable {
     public ObservableList<String> dataObservableProductsFinded;
     public ArrayList<Product> productsFinded;
 
-    private Person person;
-
+    private Property<Person> propertyPerson;
     //endregion
 
     //endregion
@@ -680,6 +683,10 @@ public class DashboardController implements Initializable {
 
         //region Tab "Pedido" Initialize Variables
 
+        propertyPerson = new SimpleObjectProperty<>();
+
+        propertyPerson.setValue(null);
+
         lbl_codeOfOrder.setText(String.valueOf(Sale.getLastIdSale() + 1));
 
         hl_historicCustomer.setDisable(true);
@@ -734,6 +741,19 @@ public class DashboardController implements Initializable {
         hl_historicCustomer.setOnMouseClicked(this::handlerButtonActionHistoricCustomer);
         hyperlinkVerifyRegister.setOnMouseClicked(this::handlerHyperlinkVerifyRegister);
 
+        propertyPerson.addListener(new ChangeListener<Person>() {
+            @Override
+            public void changed(ObservableValue<? extends Person> observable, Person oldValue, Person newValue) {
+                if (newValue == null) {
+                    hl_historicCustomer.setDisable(true);
+                    btn_finishSale.setDisable(true);
+                } else {
+                    hl_historicCustomer.setDisable(false);
+                    btn_finishSale.setDisable(false);
+                }
+            }
+        });
+
         dataObervableProductsOnCart.addListener(new ListChangeListener<Product>() {
             @Override
             public void onChanged(Change<? extends Product> change) {
@@ -761,7 +781,14 @@ public class DashboardController implements Initializable {
         listView_products.getFocusModel().focusedItemProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observableValue, Object o, Object t1) {
-                listView_products.scrollTo(listView_products.getFocusModel().getFocusedIndex());
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (!listView_products.isFocused()) {
+                            listView_products.scrollTo(listView_products.getFocusModel().getFocusedIndex());
+                        }
+                    }
+                });
             }
         });
 
@@ -801,7 +828,7 @@ public class DashboardController implements Initializable {
         txt_searchOrder.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean t1) {
-                if (t1) {
+                if (t1 && txt_searchOrder.getText().equals("")) {
                     listView_categories.getSelectionModel().clearSelection();
                     listView_categories.setDisable(true);
                     dataObservableProductsFinded.clear();
@@ -843,33 +870,29 @@ public class DashboardController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
 
+                //double check
+
+
                 if (!txt_searchOrder.getText().equals("")) {
+
+
                     executeSearchProductsOrder(t1);
-                } else {
-                    dataObservableProductsFinded.clear();
-                }
-            }
-        });
 
-        //region Method Working - Keep
-        /*
-        txt_searchOrder.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (txt_searchOrder.getText().equals("")) dataObservableProductsFinded.clear();
+                        }
+                    });
 
-                if (!txt_searchOrder.getText().equals("")) {
-                    productsFinded.clear();
-                    dataObservableProductsFinded.clear();
-                    productsFinded = Product.readByName(t1);
-                    productsFinded.forEach(product -> dataObservableProductsFinded.add(product.getNameProduct()));
 
                 } else {
                     dataObservableProductsFinded.clear();
                 }
+
+
             }
         });
-        */
-        //endregion
 
         //endregion
 
@@ -904,6 +927,19 @@ public class DashboardController implements Initializable {
                         }
                     });
 
+                }
+            }
+        });
+
+        tabOrder.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                ArrayList<ProductType> newProductTypes = ProductType.ReadAll();
+                if(productType.size() != newProductTypes.size()){
+                    productType = newProductTypes;
+                    dataObservableProductType.clear();
+                    productType.forEach(productType1 -> dataObservableProductType.add(productType1.getNameProductType()));
+                    System.out.println("SIZE CHANGED");
                 }
             }
         });
@@ -1337,6 +1373,9 @@ public class DashboardController implements Initializable {
 
         //region Tab "Funcionários/Usuários" Events
 
+        MaskFormatter maskFormatter = new MaskFormatter(txt_rgEmployee);
+        maskFormatter.setMask(MaskFormatter.RG);
+
         btn_editEmployee.setDisable(true);
 
         MaskFieldUtil.cpfField(txt_cpfEmployee);
@@ -1399,7 +1438,7 @@ public class DashboardController implements Initializable {
         btn_editProduct.setDisable(true);
 
         MaskFieldUtil.numericField(txt_weightProduct);
-        MaskFieldUtil.monetaryField(txt_finalPriceProduct);
+        MaskFieldUtil.decimalMonetaryField(txt_finalPriceProduct);
 
         //region TableView Products
 
@@ -1570,7 +1609,7 @@ public class DashboardController implements Initializable {
     private void handlerButtonActionFinishOrder(MouseEvent event) {
         try {
 
-            if (checkboxOrderCustomer.isSelected() && person == null) {
+            if (checkboxOrderCustomer.isSelected() && propertyPerson.getValue() == null) {
                 FxDialogs.showWarning("Cliente não selecionado", "Por favor selecione um cliente ou desmarque a caixa de" +
                         " seleção \"Seleção automatica via telefone\"!");
                 checkboxOrderCustomer.requestFocus();
@@ -1591,8 +1630,8 @@ public class DashboardController implements Initializable {
             ArrayList<Product> products = new ArrayList<>();
             dataObervableProductsOnCart.forEach(product -> products.add(product));
 
-            if (person != null) {
-                finishSaleController.setAllComponents(lbl_total.getText(), person, products);
+            if (propertyPerson.getValue() != null) {
+                finishSaleController.setAllComponents(lbl_total.getText(), propertyPerson.getValue(), products);
             } else {
                 finishSaleController.setPrice(lbl_total.getText());
                 finishSaleController.setProducts(products);
@@ -1608,7 +1647,7 @@ public class DashboardController implements Initializable {
 
                     if (Sale.LAST_ID_SALE != -1) {
                         resetAllComponentsOrder();
-                        resetTableViewCustomer();
+                        resetTableViewSale();
                         lbl_codeOfOrder.setText(String.valueOf(Sale.getLastIdSale() + 1));
 
                         System.out.println(Sale.getLastIdSale());
@@ -1635,7 +1674,7 @@ public class DashboardController implements Initializable {
             FXMLLoader fxmlLoader = controller.fxmlLoaderContent(HistoricCustomerController.path);
 
             HistoricCustomerController historicCustomerController = fxmlLoader.getController();
-            historicCustomerController.setPerson(person);
+            historicCustomerController.setPerson(propertyPerson.getValue());
 
             Stage stage = controller.buildStage(fxmlLoader, HistoricCustomerController.title);
             stage.setOnShowing(onShow());
@@ -1668,6 +1707,14 @@ public class DashboardController implements Initializable {
             dataObservableProductsFinded.clear();
             productsFinded = productTask.getValue();
             productsFinded.forEach(product -> dataObservableProductsFinded.add(product.getNameProduct()));
+
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    if (txt_searchOrder.getText().equals("")) dataObservableProductsFinded.clear();
+                }
+            });
+
         });
 
         productTask.setOnFailed(event -> {
@@ -1679,7 +1726,7 @@ public class DashboardController implements Initializable {
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (newValue) {
                     Controller.getCurrentStage().getScene().setCursor(Cursor.WAIT);
-                }else{
+                } else {
                     Controller.getCurrentStage().getScene().setCursor(Cursor.DEFAULT);
                 }
             }
@@ -1691,9 +1738,9 @@ public class DashboardController implements Initializable {
 
     private void searchByTelephone() {
 
-        person = Phone.searchByTelephone(MaskFieldUtil.onlyDigitsValue(tfield_telephone));
+        propertyPerson.setValue(Phone.searchByTelephone(MaskFieldUtil.onlyDigitsValue(tfield_telephone)));
 
-        if (person.getIdPerson() == 0 || person == null) {
+        if (propertyPerson.getValue().getIdPerson() == 0 || propertyPerson.getValue() == null) {
 
             if (FxDialogs.showConfirmYesNo("Cliente não cadastrado, deseja cadastrar?", "", FxDialogs.NO, FxDialogs.YES).equals(FxDialogs.YES)) {
                 SingleSelectionModel<Tab> selectionModel = paneTab.getSelectionModel();
@@ -1709,8 +1756,8 @@ public class DashboardController implements Initializable {
             }
 
         } else {
-            tfield_name.setText(person.getNamePerson());
-            tfield_adress.setText(person.getAddress().getStreet() + ", " + person.getAddress().getNeighborhood() + ", " + person.getAddress().getNumber());
+            tfield_name.setText(propertyPerson.getValue().getNamePerson());
+            tfield_adress.setText(propertyPerson.getValue().getAddress().getStreet() + ", " + propertyPerson.getValue().getAddress().getNeighborhood() + ", " + propertyPerson.getValue().getAddress().getNumber());
             hl_historicCustomer.setDisable(false);
             tfield_telephone.setDisable(true);
             listView_categories.requestFocus();
@@ -1741,7 +1788,7 @@ public class DashboardController implements Initializable {
         listView_categories.setDisable(false);
         listView_categories.requestFocus();
 
-        person = null;
+        propertyPerson.setValue(null);
     }
 
     private void clientDataDisableSearchByTelephone() {
@@ -1755,7 +1802,7 @@ public class DashboardController implements Initializable {
 
         hl_historicCustomer.setDisable(true);
 
-        person = null;
+        propertyPerson.setValue(null);
     }
 
     private void clientDataEnableSearchByTelephone() {
@@ -1824,6 +1871,8 @@ public class DashboardController implements Initializable {
             }
         }
         setCustomerActiveButtons(true, false, "");
+        paneTab.getTabs().forEach(tab -> tab.setDisable(false));
+
         comeBackSearchByTelephone = false;
     }
 
@@ -1965,12 +2014,15 @@ public class DashboardController implements Initializable {
 
             //habilitar o hyperlink
             newCustomerGeneral();
-            if (person != null) {
+
+            if (propertyPerson.getValue() != null) {
                 hl_historicCustomer.setDisable(false);
                 tfield_telephone.setDisable(true);
-                tfield_name.setText(person.getNamePerson());
-                tfield_adress.setText(person.getAddress().getStreet() + ", " + person.getAddress().getNeighborhood() + " " + person.getAddress().getNumber());
+                tfield_name.setText(propertyPerson.getValue().getNamePerson());
+                tfield_adress.setText(propertyPerson.getValue().getAddress().getStreet() + ", " + propertyPerson.getValue().getAddress().getNeighborhood() + " " + propertyPerson.getValue().getAddress().getNumber());
             }
+
+            paneTab.getTabs().forEach(tab -> tab.setDisable(false));
 
         } else {
             //só salva o cliente de forma normal sem voltar pra tela de pedido
@@ -2004,7 +2056,7 @@ public class DashboardController implements Initializable {
 
         customer.Create();
 
-        person = customer;
+        propertyPerson.setValue(customer);
 
         this.resetTableViewCustomer();
     }
@@ -2024,12 +2076,17 @@ public class DashboardController implements Initializable {
     //region Tab "Administração" methods
 
     //region Tab "Faturamento" methods
+
     /**
      * tab "Faturamento" methods
      */
     //endregion
 
     //region Tab "Vendas" methods
+    private void resetTableViewSale() {
+        dataObservableSale.addAll(Sale.ReadAll());
+        txt_searchSale.clear();
+    }
     //endregion
 
     //region Tab "Fornecedores" methods
@@ -2905,7 +2962,6 @@ public class DashboardController implements Initializable {
         Product product = new Product();
         ProductType productType;
         ArrayList<Ingredient> listIngredient = new ArrayList<>();
-
 
         product.setNameProduct(txt_nameProduct.getText());
         product.setFinalPriceProduct(Float.parseFloat(txt_finalPriceProduct.getText()));

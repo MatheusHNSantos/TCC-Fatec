@@ -7,6 +7,7 @@ Last Update: 24/11/2015
 package util.MaskField;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -96,7 +98,7 @@ public abstract class MaskFieldUtil {
                     value = value.replaceAll("([0-9]{1})([0-9]{8})$", "$1.$2");
                     value = value.replaceAll("([0-9]{1})([0-9]{5})$", "$1.$2");
                     value = value.replaceAll("([0-9]{1})([0-9]{2})$", "$1,$2");
-                    textField.setText(value);
+
                     MaskFieldUtil.positionCaret(textField);
                     textField.textProperty().addListener((ChangeListener) new ChangeListener<String>() {
 
@@ -201,7 +203,8 @@ public abstract class MaskFieldUtil {
                     try {
                         textField.setText(value);
                         MaskFieldUtil.positionCaret(textField);
-                    }catch(Exception ex){}
+                    } catch (Exception ex) {
+                    }
                 }
         );
     }
@@ -245,6 +248,13 @@ public abstract class MaskFieldUtil {
             return null;
         }
         return result.replaceAll("[^0-9]", "");
+    }
+
+    public static String onlyDigitsValueFromString(String field) {
+        if (field == null) {
+            return null;
+        }
+        return field.replaceAll("[^0-9]", "");
     }
 
     public static String onlyAlfaNumericValue(TextField field) {
