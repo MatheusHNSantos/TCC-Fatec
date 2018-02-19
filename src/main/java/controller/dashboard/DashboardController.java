@@ -10,9 +10,12 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
 import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
 import javafx.css.PseudoClass;
+import javafx.event.EventType;
 import javafx.scene.*;
 import javafx.scene.control.SingleSelectionModel;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
@@ -960,6 +963,24 @@ public class DashboardController implements Initializable {
         cbox_typeSearchCustomer.getSelectionModel().select(0);
         //endregion
 
+        //region Text Search Customer
+        txt_searchCustomer.addEventFilter(KeyEvent.KEY_TYPED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+
+                switch (cbox_typeSearchCustomer.getSelectionModel().getSelectedIndex()){
+                    case 1:
+                        if(!checkNumeric(event.getCharacter())){
+                            event.consume();
+                        }
+
+                        break;
+                }
+
+            }
+        });
+        //endregion
+
         //region Button Search Customer
         btn_searchCustomer.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -977,6 +998,7 @@ public class DashboardController implements Initializable {
                         break;
 
                     case 1:
+
                         dataObservableCustomer.clear();
                         dataObservableCustomer.addAll(Customer.readByPhone(txt_searchCustomer.getText()));
                         break;
@@ -1236,8 +1258,7 @@ public class DashboardController implements Initializable {
                         break;
 
                     case 1:
-                        dataObservableSale.clear();
-                        dataObservableSale.addAll(Sale.readSaleByPersonName(txt_searchSale.getText()));
+                        executeSearchSaleByName(txt_searchSale.getText());
                         break;
 
                 }
@@ -1254,8 +1275,13 @@ public class DashboardController implements Initializable {
             @Override
             public void handle(KeyEvent event) {
 
-
                 if (consume) {
+                    event.consume();
+                }
+
+                if(event.getCode().equals(KeyCode.BACK_SPACE)){
+                    return;
+                }else if(cbox_typeSearchSale.getSelectionModel().getSelectedIndex() == 0 && !checkNumeric(event.getCharacter())){
                     event.consume();
                 }
 
@@ -1272,7 +1298,13 @@ public class DashboardController implements Initializable {
 
         //region Combo Box Type Data to Search
         cbox_typeSearchSale.getItems().addAll("ID", "Nome do cliente");
-        cbox_typeSearchSale.getSelectionModel().select(0);
+
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                cbox_typeSearchSale.getSelectionModel().select(0);
+            }
+        });
         //endregion
 
         //region Table View Sales
@@ -2401,6 +2433,46 @@ public class DashboardController implements Initializable {
         dataObservableSale.addAll(Sale.ReadAll());
         txt_searchSale.clear();
     }
+
+    private void executeSearchSaleByName(final String name){
+
+        Task<ArrayList<Sale>> task = new Task<ArrayList<Sale>>() {
+            @Override
+            protected ArrayList<Sale> call() throws Exception {
+                return Sale.readSaleByPersonName(name);
+            }
+        };
+
+        task.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+            @Override
+            public void handle(WorkerStateEvent event) {
+                dataObservableSale.clear();
+                dataObservableSale.addAll(task.getValue());
+            }
+        });
+
+        task.setOnFailed(new EventHandler<WorkerStateEvent>() {
+            @Override
+            public void handle(WorkerStateEvent event) {
+                task.getException().printStackTrace();
+            }
+        });
+
+        task.runningProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                if (newValue) {
+                    Controller.getCurrentStage().getScene().setCursor(Cursor.WAIT);
+                } else {
+                    Controller.getCurrentStage().getScene().setCursor(Cursor.DEFAULT);
+                }
+            }
+        });
+
+        executor.execute(task);
+
+    }
+
     //endregion
 
     //region Tab "Fornecedores" methods
@@ -3312,6 +3384,18 @@ public class DashboardController implements Initializable {
     //endregion
 
     //region Util Methods
+
+    public boolean checkNumeric(String value)    {
+        String number=value.replaceAll("\\s+","");
+        for(int j = 0 ; j<number.length();j++){
+            if(!(((int)number.charAt(j)>=47 && (int)number.charAt(j)<=57)))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private TabPane findTabPaneForNode(Node node) {
         TabPane tabPane = null;
 
