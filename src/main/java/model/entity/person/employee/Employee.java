@@ -85,19 +85,19 @@ public class Employee extends Person {
 		String query = "";
 		switch (opc) {
 			case 0:
-				query = "SELECT EP.id_person " +
+				query = "SELECT EP.id_person, EP.id_employee " +
 						"FROM employee EP, person PE " +
 						"WHERE  EP.id_person = PE.id_person and PE.name_person LIKE ? " +
 						"ORDER BY PE.name_person ASC";
 				break;
 			case 1:
-				query = "SELECT EP.id_person " +
+				query = "SELECT EP.id_person, EP.id_employee " +
 						"FROM employee EP, phone PH "  +
 						"WHERE  EP.id_person = PH.id_person and PH.phone LIKE ? " +
 						"ORDER BY PH.phone";
 				break;
             case 2:
-                query = "SELECT EP.id_person " +
+                query = "SELECT EP.id_person, EP.id_employee " +
                         "FROM employee EP, person PE "  +
                         "WHERE  EP.id_person = PE.id_person and EP.role LIKE ? " +
                         "ORDER BY PE.name_person ASC";
@@ -110,7 +110,7 @@ public class Employee extends Person {
 			stmt.setString(1, "%"+text+"%");
 			rs = stmt.executeQuery();
 			while(rs.next()){
-                Employee employee = new Employee(rs.getInt("id_person"));
+                Employee employee = new Employee(rs.getInt("id_person"), rs.getInt("id_employee"));
                 employeeList.add(employee);
 			}
 		} catch (SQLException ex) {
