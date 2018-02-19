@@ -95,7 +95,7 @@ public class DashboardController implements Initializable {
     final PseudoClass errorClass = PseudoClass.getPseudoClass("error");
 
     private static final String path = "dashboard.fxml";
-    private static final String title = "PAVG Apetitoso - v1.0.1117";
+    private static final String title = "PAVG Apetitoso - v1.0.1118";
 
     private static User user;
 
@@ -480,7 +480,7 @@ public class DashboardController implements Initializable {
     @FXML
     private TableColumn<Employee, String> columnEmployeeRole;
     @FXML
-    private TableColumn<Employee, String> columnEmployeeStatus;
+    private TableColumn<Person, Person> columnEmployeeStatus;
     //login
     @FXML
     private TitledPane tp_login;
@@ -1465,7 +1465,8 @@ public class DashboardController implements Initializable {
         columnEmployeeName.setCellValueFactory(new PropertyValueFactory<>("namePerson"));
         setCells(columnEmployeeName, "namePerson");
         setCells(columnEmployeePhone1, "phone1");
-        setCells(columnEmployeePhone1, "phone2");
+        setCells(columnEmployeePhone2, "phone2");
+        setCells(columnEmployeeStatus, "status");
         columnEmployeeRole.setCellValueFactory(new PropertyValueFactory<>("role"));
 
         listEmployee = Employee.ReadAll();
@@ -1473,12 +1474,12 @@ public class DashboardController implements Initializable {
         tview_func.setItems(dataObervableEmployee);
         //endregion
 
-        //region Combo Box Type Search Supplier
+        //region Combo Box Type Search Employee
         cbox_typeSearchEmployee.getItems().addAll("Nome", "Telefone", "Função");
         cbox_typeSearchEmployee.getSelectionModel().select(0);
         //endregion
 
-        //region Button Search Supplier
+        //region Button Search Employee
         btn_searchEmployee.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -3294,6 +3295,9 @@ public class DashboardController implements Initializable {
                             text = person.getAddress().getCep();
                             break;
 
+                        case "status":
+                            text = (person.getStatus()) ? "Ativo" : "Inativo";
+                            break;
                         default:
                             break;
 

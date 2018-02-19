@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< HEAD:.gitignore
 ./target/**
 .idea/workspace.xml
@@ -5,6 +6,9 @@
 classes/
 =======
 target/
+=======
+./target/**
+>>>>>>> Matheus
 .idea/workspace.xml
 .idea/misc.xml
 classes/
