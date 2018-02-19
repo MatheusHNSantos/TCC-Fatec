@@ -953,12 +953,10 @@ public class DashboardController implements Initializable {
         btn_editCustomer.setDisable(true);
 
         //region CustomMask Fields
-        /*
         MaskFieldUtil.cepField(txt_cepCustomer);
         MaskFieldUtil.numericField(txt_numberCustomer);
         MaskFieldUtil.foneField(txt_phone1Customer);
         MaskFieldUtil.foneField(txt_phone2Customer);
-        */
         //endregion
 
         //region Check Box Type Search Customer
@@ -1379,7 +1377,6 @@ public class DashboardController implements Initializable {
         btn_editEmployee.setDisable(true);
 
         MaskFieldUtil.cpfField(txt_cpfEmployee);
-
         MaskFieldUtil.cepField(txt_cepEmployee);
         MaskFieldUtil.numericField(txt_numberEmployee);
         MaskFieldUtil.foneField(txt_phone1Employee);
@@ -1438,7 +1435,7 @@ public class DashboardController implements Initializable {
         btn_editProduct.setDisable(true);
 
         MaskFieldUtil.numericField(txt_weightProduct);
-        MaskFieldUtil.decimalMonetaryField(txt_finalPriceProduct);
+        MaskFieldUtil.monetaryField_MAX100(txt_finalPriceProduct);
 
         //region TableView Products
 
@@ -1968,15 +1965,17 @@ public class DashboardController implements Initializable {
 
         }
 
+
+
         customer.setNamePerson(txt_nameCustomer.getText());
         //customer.setCpf(txt_cpfCustomer.getText());
         customer.setStatus(tbtn_statusCustomer.isSelected());
-        address.setCep(txt_cepCustomer.getText());
+        address.setCep(MaskFieldUtil.onlyDigitsValue(txt_cepCustomer));
         address.setNeighborhood(txt_bairroCustomer.getText());
         address.setStreet(txt_streetCustomer.getText());
         address.setNumber(Integer.parseInt(txt_numberCustomer.getText()));
-        phone1.setPhone(txt_phone1Customer.getText());
-        phone2.setPhone(txt_phone2Customer.getText());
+        phone1.setPhone(MaskFieldUtil.onlyDigitsValue(txt_phone1Customer));
+        phone2.setPhone(MaskFieldUtil.onlyDigitsValue(txt_phone2Customer));
 
         customer.setAddress(address);
         customer.Save();
@@ -2042,12 +2041,12 @@ public class DashboardController implements Initializable {
 
         customer.setNamePerson(txt_nameCustomer.getText());
         customer.setStatus(tbtn_statusCustomer.isSelected());
-        address.setCep(txt_cepCustomer.getText());
+        address.setCep(MaskFieldUtil.onlyDigitsValue(txt_cepCustomer));
         address.setNeighborhood(txt_bairroCustomer.getText());
         address.setStreet(txt_streetCustomer.getText());
         address.setNumber(Integer.parseInt(txt_numberCustomer.getText()));
-        phone1.setPhone(txt_phone1Customer.getText());
-        phone2.setPhone(txt_phone2Customer.getText());
+        phone1.setPhone(MaskFieldUtil.onlyDigitsValue(txt_phone1Customer));
+        phone2.setPhone(MaskFieldUtil.onlyDigitsValue(txt_phone2Customer));
 
         customer.setAddress(address);
 
@@ -2240,14 +2239,14 @@ public class DashboardController implements Initializable {
         }
 
         supplier.setNamePerson(txt_nameSupplier.getText());
-        supplier.setCnpj(txt_cnpjSupplier.getText());
+        supplier.setCnpj(MaskFieldUtil.onlyDigitsValue(txt_cnpjSupplier));
         supplier.setStatus(tbtn_statusSupplier.isSelected());
-        address.setCep(txt_cepSupplier.getText());
+        address.setCep(MaskFieldUtil.onlyDigitsValue(txt_cepSupplier));
         address.setNeighborhood(txt_bairroSupplier.getText());
         address.setStreet(txt_streetSupplier.getText());
         address.setNumber(Integer.parseInt(txt_numberSupplier.getText()));
-        phone1.setPhone(txt_phone1Supplier.getText());
-        phone2.setPhone(txt_phone2Supplier.getText());
+        phone1.setPhone(MaskFieldUtil.onlyDigitsValue(txt_phone1Supplier));
+        phone2.setPhone(MaskFieldUtil.onlyDigitsValue(txt_phone2Supplier));
 
         supplier.setAddress(address);
         supplier.Save();
@@ -2277,14 +2276,14 @@ public class DashboardController implements Initializable {
         Phone phone2 = new Phone();
 
         supplier.setNamePerson(txt_nameSupplier.getText());
-        supplier.setCnpj(txt_cnpjSupplier.getText());
+        supplier.setCnpj(MaskFieldUtil.onlyDigitsValue(txt_cnpjSupplier));
         supplier.setStatus(tbtn_statusSupplier.isSelected());
-        address.setCep(txt_cepSupplier.getText());
+        address.setCep(MaskFieldUtil.onlyDigitsValue(txt_cepSupplier));
         address.setNeighborhood(txt_bairroSupplier.getText());
         address.setStreet(txt_streetSupplier.getText());
         address.setNumber(Integer.parseInt(txt_numberSupplier.getText()));
-        phone1.setPhone(txt_phone1Supplier.getText());
-        phone2.setPhone(txt_phone2Supplier.getText());
+        phone1.setPhone(MaskFieldUtil.onlyDigitsValue(txt_phone1Supplier));
+        phone2.setPhone(MaskFieldUtil.onlyDigitsValue(txt_phone2Supplier));
 
         supplier.setAddress(address);
 
@@ -2593,7 +2592,7 @@ public class DashboardController implements Initializable {
         employee.setNamePerson(txt_nameEmployee.getText());
         employee.setRole(txt_roleEmployee.getText());
         employee.setStatus(select_typeStatusFunc.isSelected());
-        address.setCep(txt_cepEmployee.getText());
+        address.setCep(MaskFieldUtil.onlyDigitsValue(txt_cepEmployee));
         address.setNeighborhood(txt_bairroEmployee.getText());
         address.setStreet(txt_streetEmployee.getText());
         address.setNumber(Integer.parseInt(txt_numberEmployee.getText()));
@@ -2633,12 +2632,12 @@ public class DashboardController implements Initializable {
         employee.setNamePerson(txt_nameEmployee.getText());
         employee.setRole(txt_roleEmployee.getText());
         employee.setStatus(select_typeStatusFunc.isSelected());
-        address.setCep(txt_cepEmployee.getText());
+        address.setCep(MaskFieldUtil.onlyDigitsValue(txt_cepEmployee));
         address.setNeighborhood(txt_bairroEmployee.getText());
         address.setStreet(txt_streetEmployee.getText());
         address.setNumber(Integer.parseInt(txt_numberEmployee.getText()));
-        phone1.setPhone(txt_phone1Employee.getText());
-        phone2.setPhone(txt_phone2Employee.getText());
+        phone1.setPhone(MaskFieldUtil.onlyDigitsValue(txt_phone1Employee));
+        phone2.setPhone(MaskFieldUtil.onlyDigitsValue(txt_phone2Employee));
 
 
         employee.setAddress(address);
@@ -3037,15 +3036,15 @@ public class DashboardController implements Initializable {
             if (paneTab.getSelectionModel().getSelectedItem().getText().equals("Administração")) {
                 switch (tablePaneAdm.getSelectionModel().getSelectedItem().getText()) {
                     case "Fornecedores":
-                        onKeyEnterPressedCEP(txt_cepSupplier.getText(), txt_streetSupplier, txt_bairroSupplier);
+                        onKeyEnterPressedCEP(MaskFieldUtil.onlyDigitsValue(txt_cepSupplier), txt_streetSupplier, txt_bairroSupplier);
                         break;
 
                     case "Funcionários/Usuários":
-                        onKeyEnterPressedCEP(txt_cepEmployee.getText(), txt_streetEmployee, txt_bairroEmployee);
+                        onKeyEnterPressedCEP(MaskFieldUtil.onlyDigitsValue(txt_cepEmployee), txt_streetEmployee, txt_bairroEmployee);
                         break;
                 }
             } else {
-                onKeyEnterPressedCEP(txt_cepCustomer.getText(), txt_streetCustomer, txt_bairroCustomer);
+                onKeyEnterPressedCEP(MaskFieldUtil.onlyDigitsValue(txt_cepCustomer), txt_streetCustomer, txt_bairroCustomer);
             }
         }
     }
@@ -3232,8 +3231,8 @@ public class DashboardController implements Initializable {
     }
     //endregion
 
-
         //teste
+
     //endregion
 
     //--------------------------------------------------
