@@ -188,6 +188,7 @@ public class FinishSaleController implements Initializable {
             @Override
             public void handle(WorkerStateEvent event) {
                 if(task.getValue()){
+
                     Controller.closeApplication(eventOutTask);
                 }else{
                     FxDialogs.showWarning("Erro ao salvar", "Senta e chora");

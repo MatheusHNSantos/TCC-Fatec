@@ -92,6 +92,8 @@ import static util.Functions.UpCase.upCaseFirst;
 
 public class DashboardController implements Initializable {
 
+    public Thread executorAuxThread;
+
     public static DashboardController dashboardControllerReference;
 
     final PseudoClass errorClass = PseudoClass.getPseudoClass("error");
@@ -631,6 +633,13 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        tabOrder.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                System.out.println("FIRED");
+            }
+        });
 
         dashboardControllerReference = this;
 
@@ -2246,6 +2255,7 @@ public class DashboardController implements Initializable {
             public void handle(WorkerStateEvent event) {
                 dataObservableSale.clear();
                 dataObservableSale.addAll(task.getValue());
+                executorAuxThread.interrupt();
             }
         });
 
@@ -2267,7 +2277,16 @@ public class DashboardController implements Initializable {
             }
         });
 
-        executor.execute(task);
+
+         executorAuxThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                executor.execute(task);
+            }
+        });
+
+         executorAuxThread.run();
+
 
     }
 
@@ -2281,23 +2300,6 @@ public class DashboardController implements Initializable {
 
 
     //region default methods
-    private boolean verifyRegistryBeforeSaveSupplier() {
-
-        if (!isTextFieldEmpty(txt_nameSupplier)
-                || !isTextFieldEmpty(txt_cepSupplier)
-                || !isTextFieldEmpty(txt_bairroSupplier)
-                || !isTextFieldEmpty(txt_streetSupplier)
-                || !isTextFieldEmpty(txt_numberSupplier)
-                || !isTextFieldEmpty(txt_phone1Supplier)
-                || !isTextFieldEmpty(txt_cnpjSupplier)
-                || !isCEPSizeValid(MaskFieldUtil.onlyDigitsValue(txt_cepSupplier))
-                || !Validation.validaCNPJ(MaskFieldUtil.onlyDigitsValue(txt_cnpjSupplier))) {
-            FxDialogs.showWarning("Dados invalidos", "Verifique se alguma caixa de texto se encontra em branco ou com dados invalidos!");
-            return false;
-        } else {
-            return true;
-        }
-    }
 
     /**
      * @param bool_1 afeta a disponibilidade dos campos de inserção de dados e confirmação
@@ -2374,6 +2376,25 @@ public class DashboardController implements Initializable {
         dataObervableSupplier.addAll(listSupplier);
     }*/
     //endregion
+
+    private boolean verifyRegistryBeforeSaveSupplier() {
+
+        if (!isTextFieldEmpty(txt_nameSupplier)
+                || !isTextFieldEmpty(txt_cepSupplier)
+                || !isTextFieldEmpty(txt_bairroSupplier)
+                || !isTextFieldEmpty(txt_streetSupplier)
+                || !isTextFieldEmpty(txt_numberSupplier)
+                || !isTextFieldEmpty(txt_phone1Supplier)
+                || !isTextFieldEmpty(txt_cnpjSupplier)
+                || !isCEPSizeValid(MaskFieldUtil.onlyDigitsValue(txt_cepSupplier))
+                || !Validation.validaCNPJ(MaskFieldUtil.onlyDigitsValue(txt_cnpjSupplier))
+                || MaskFieldUtil.onlyDigitsValue(txt_phone1Supplier).length() < 10) {
+            FxDialogs.showWarning("Dados invalidos", "Verifique se alguma caixa de texto se encontra em branco ou com dados invalidos!");
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     private void clearSupplierDetails() {
         txt_nameSupplier.setText("");
@@ -2610,7 +2631,8 @@ public class DashboardController implements Initializable {
                 || !isTextFieldEmpty(txt_roleEmployee)
                 || !isTextFieldEmpty(txt_rgEmployee)
                 || MaskFieldUtil.onlyDigitsValueFromString(txt_rgEmployee.getText()).length() != 9
-                || !Validation.validaCPF(MaskFieldUtil.onlyDigitsValue(txt_cpfEmployee))) {
+                || !Validation.validaCPF(MaskFieldUtil.onlyDigitsValue(txt_cpfEmployee))
+                || MaskFieldUtil.onlyDigitsValue(txt_phone1Employee).length() < 10) {
             FxDialogs.showWarning("Dados invalidos", "Verifique se alguma caixa de texto se encontra em branco ou com dados invalidos!");
             return false;
         } else {
@@ -3187,7 +3209,7 @@ public class DashboardController implements Initializable {
         } else if (cbox_categoryProduct.getSelectionModel().getSelectedIndex() == 0) {
             FxDialogs.showWarning("Dados invalidos", "Selecione uma categoria valida!");
             return false;
-        }else {
+        } else {
             return true;
         }
 
@@ -3322,11 +3344,11 @@ public class DashboardController implements Initializable {
         }
     }
 
-    public boolean isPhoneValid(TextField textField){
+    public boolean isPhoneValid(TextField textField) {
         String tx = MaskFieldUtil.onlyDigitsValue(textField);
-        if(tx.length() < 10){
+        if (tx.length() < 10) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
