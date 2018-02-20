@@ -1,4 +1,15 @@
+<<<<<<< HEAD
+<<<<<<< HEAD:.gitignore
 ./target/**
 .idea/workspace.xml
 .idea/misc.xml
 classes/
+=======
+target/
+=======
+./target/**
+>>>>>>> Matheus
+.idea/workspace.xml
+.idea/misc.xml
+classes/
+>>>>>>> copia-lucas:gitignore

@@ -5,6 +5,7 @@
  */
 package controller.dashboard;
 
+import com.sun.istack.internal.NotNull;
 import javafx.beans.property.*;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -61,6 +62,7 @@ import model.entity.product.Product;
 import model.entity.product.ProductIngredient;
 import model.entity.product.ProductType;
 import model.entity.sale.Sale;
+import util.Validacoes.Validation;
 import util.dialogs.FxDialogs;
 import util.exception.UserException;
 import util.viacep.Endereco;
@@ -102,8 +104,6 @@ public class DashboardController implements Initializable {
     private static User user;
 
     private Executor executor;
-
-    private int LAST_TAB_INDEX_SELECTED = -1;
 
     //region general objects
     @FXML
@@ -654,6 +654,12 @@ public class DashboardController implements Initializable {
 
         //region Setup Inicial
 
+        if (user.getLevel() != 5) {
+            paneTab.getTabs().remove(tabAdmin);
+        }
+
+        label_user.setText(upCaseFirst(user.getEmployee().getNamePerson()));
+
         //region Executor to Query database
 
         executor = Executors.newCachedThreadPool(r -> {
@@ -665,8 +671,6 @@ public class DashboardController implements Initializable {
         //endregion
 
         tp_login.setVisible(false); //complementos
-        //paneTab.getTabs().remove(salesTab);
-        //paneTab.getTabs().remove(usersTab);
 
         //Data
         Date dataSistema = new Date();
@@ -679,20 +683,7 @@ public class DashboardController implements Initializable {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 
-        //Hora //future examples
-        // LocalDateTime dt = LocalDateTime.now();
-        //String dataAtual = dt.getDayOfMonth() + "/" + dt.getMonthValue() + "/" + dt.getYear();
-        //String horaAtual = dt.getHour() + ":" + dt.getMinute();
-        //label_date.setText(dataAtual);
-        //label_time.setText(horaAtual);
-        //Timer timer = new Timer(1000, new hora());
-        //timer.start();
-        //Timer tm = new Timer();
 
-        //tm.scheduleAtFixedRate(task,1000,1000);
-
-
-        //dataModelTests = new ArrayList<>();
 
         label_user.setText(upCaseFirst(user.getEmployee().getNamePerson())); //ativar para usar o a tela de login
 
@@ -964,7 +955,7 @@ public class DashboardController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 ArrayList<ProductType> newProductTypes = ProductType.ReadAll();
-                if(productType.size() != newProductTypes.size()){
+                if (productType.size() != newProductTypes.size()) {
                     productType = newProductTypes;
                     dataObservableProductType.clear();
                     productType.forEach(productType1 -> dataObservableProductType.add(productType1.getNameProductType()));
@@ -990,6 +981,12 @@ public class DashboardController implements Initializable {
 
         //region Combo Box Type Search Customer
         cbox_typeSearchCustomer.getItems().addAll("Nome do cliente", "Telefone");
+        cbox_typeSearchCustomer.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                txt_searchCustomer.clear();
+            }
+        });
         cbox_typeSearchCustomer.getSelectionModel().select(0);
         //endregion
 
@@ -998,9 +995,9 @@ public class DashboardController implements Initializable {
             @Override
             public void handle(KeyEvent event) {
 
-                switch (cbox_typeSearchCustomer.getSelectionModel().getSelectedIndex()){
+                switch (cbox_typeSearchCustomer.getSelectionModel().getSelectedIndex()) {
                     case 1:
-                        if(!checkNumeric(event.getCharacter())){
+                        if (!checkNumeric(event.getCharacter())) {
                             event.consume();
                         }
 
@@ -1019,7 +1016,6 @@ public class DashboardController implements Initializable {
                 if (txt_searchCustomer.getText().equals("")) {
                     return;
                 }
-
 
 
                 switch (cbox_typeSearchCustomer.getSelectionModel().getSelectedIndex()) {
@@ -1313,9 +1309,9 @@ public class DashboardController implements Initializable {
                     event.consume();
                 }
 
-                if(event.getCode().equals(KeyCode.BACK_SPACE)){
+                if (event.getCode().equals(KeyCode.BACK_SPACE)) {
                     return;
-                }else if(cbox_typeSearchSale.getSelectionModel().getSelectedIndex() == 0 && !checkNumeric(event.getCharacter())){
+                } else if (cbox_typeSearchSale.getSelectionModel().getSelectedIndex() == 0 && !checkNumeric(event.getCharacter())) {
                     event.consume();
                 }
 
@@ -1332,13 +1328,14 @@ public class DashboardController implements Initializable {
 
         //region Combo Box Type Data to Search
         cbox_typeSearchSale.getItems().addAll("ID", "Nome do cliente");
-
-        Platform.runLater(new Runnable() {
+        cbox_typeSearchSale.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
-            public void run() {
-                cbox_typeSearchSale.getSelectionModel().select(0);
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                txt_searchSale.clear();
             }
         });
+        cbox_typeSearchSale.getSelectionModel().select(0);
+
         //endregion
 
         //region Table View Sales
@@ -1424,7 +1421,7 @@ public class DashboardController implements Initializable {
 
                 dataObervableSupplier.addAll(
                         Supplier.customReadAll(
-                            cbox_typeSearchSupplier.getSelectionModel().getSelectedIndex(),
+                                cbox_typeSearchSupplier.getSelectionModel().getSelectedIndex(),
                                 txt_searchSupplier.getText()
                         ));
 
@@ -1449,7 +1446,6 @@ public class DashboardController implements Initializable {
         tbtn_statusSupplier.setOnMouseClicked(this::handlerButtonActionStatusSupplier);
         //btn_searchSupplier.setOnMouseClicked(this::handlerButtonActionSearchSupplier);
         //endregion
-
 
 
         //endregion
@@ -1607,7 +1603,6 @@ public class DashboardController implements Initializable {
         /*for (ProductType productType : ProductType.ReadAll()) {
             cbox_categoryProduct.getItems().add(productType.getNameProductType());
         }*/
-
 
 
         //region TableView Ingredients
@@ -2116,6 +2111,11 @@ public class DashboardController implements Initializable {
     }
 
     private void handlerButtonActionSaveCustomer(MouseEvent event) {
+
+        if (!verifyRegistryBeforeSaveCustomer() && !actionCustomer.equals("Status")) {
+            return;
+        }
+
         setCustomerActiveButtons(true, false, "node");
         switch (actionCustomer) {
             case "Editar":
@@ -2134,6 +2134,24 @@ public class DashboardController implements Initializable {
     }
 
     //region default methods
+    private boolean verifyRegistryBeforeSaveCustomer() {
+
+        if (!isTextFieldEmpty(txt_nameCustomer)
+                || !isTextFieldEmpty(txt_cepCustomer)
+                || !isTextFieldEmpty(txt_bairroCustomer)
+                || !isTextFieldEmpty(txt_streetCustomer)
+                || !isTextFieldEmpty(txt_numberCustomer)
+                || !isCEPSizeValid(MaskFieldUtil.onlyDigitsValue(txt_cepCustomer))
+                || !isTextFieldEmpty(txt_phone1Customer)
+                || !isPhoneValid(txt_phone1Customer)
+                || MaskFieldUtil.onlyDigitsValue(txt_phone1Customer).length() < 10) {
+            FxDialogs.showWarning("Dados invalidos", "Verifique se alguma caixa de texto se encontra em branco ou com dados invalidos!");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     private void clearCustomerDetails() {
         txt_nameCustomer.setText("");
         txt_cepCustomer.setText("");
@@ -2208,7 +2226,6 @@ public class DashboardController implements Initializable {
         }
 
 
-
         customer.setNamePerson(txt_nameCustomer.getText());
         //customer.setCpf(txt_cpfCustomer.getText());
         customer.setStatus(tbtn_statusCustomer.isSelected());
@@ -2277,6 +2294,7 @@ public class DashboardController implements Initializable {
     }
 
     private void newCustomerGeneral() {
+
         Customer customer = new Customer();
         Address address = new Address();
         Phone phone1 = new Phone();
@@ -2332,7 +2350,7 @@ public class DashboardController implements Initializable {
         txt_searchSale.clear();
     }
 
-    private void executeSearchSaleByName(final String name){
+    private void executeSearchSaleByName(final String name) {
 
         Task<ArrayList<Sale>> task = new Task<ArrayList<Sale>>() {
             @Override
@@ -2374,12 +2392,30 @@ public class DashboardController implements Initializable {
     //endregion
 
     //region Tab "Fornecedores" methods
+
     /**
      * tab "Fornecedores" methods
      */
 
 
     //region default methods
+    private boolean verifyRegistryBeforeSaveSupplier() {
+
+        if (!isTextFieldEmpty(txt_nameSupplier)
+                || !isTextFieldEmpty(txt_cepSupplier)
+                || !isTextFieldEmpty(txt_bairroSupplier)
+                || !isTextFieldEmpty(txt_streetSupplier)
+                || !isTextFieldEmpty(txt_numberSupplier)
+                || !isTextFieldEmpty(txt_phone1Supplier)
+                || !isTextFieldEmpty(txt_cnpjSupplier)
+                || !isCEPSizeValid(MaskFieldUtil.onlyDigitsValue(txt_cepSupplier))
+                || !Validation.validaCNPJ(MaskFieldUtil.onlyDigitsValue(txt_cnpjSupplier))) {
+            FxDialogs.showWarning("Dados invalidos", "Verifique se alguma caixa de texto se encontra em branco ou com dados invalidos!");
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     /**
      * @param bool_1 afeta a disponibilidade dos campos de inserção de dados e confirmação
@@ -2428,6 +2464,11 @@ public class DashboardController implements Initializable {
     }
 
     private void handlerButtonActionSaveSupplier(MouseEvent event) {
+
+        if (!verifyRegistryBeforeSaveSupplier() && !actionSupplier.equals("Status")) {
+            return;
+        }
+
         setSupplierActiveButtons(true, false, "node");
         switch (actionSupplier) {
             case "Editar":
@@ -2505,6 +2546,7 @@ public class DashboardController implements Initializable {
     }
 
     private void saveSupplier() {
+
         Supplier supplier = new Supplier(idSupplierSelected);
         Address address = supplier.getAddress();
         ArrayList<Phone> listPhone = new ArrayList();
@@ -2556,6 +2598,7 @@ public class DashboardController implements Initializable {
     }
 
     private void newSupplier() {
+
         Supplier supplier = new Supplier();
         Address address = new Address();
         Phone phone1 = new Phone();
@@ -2679,6 +2722,39 @@ public class DashboardController implements Initializable {
         }
     }
     //endregion
+
+    private boolean verifyRegistryBeforeSaveEmployee() {
+
+        if (!isTextFieldEmpty(txt_nameEmployee)
+                || !isTextFieldEmpty(txt_cepEmployee)
+                || !isTextFieldEmpty(txt_bairroEmployee)
+                || !isTextFieldEmpty(txt_streetEmployee)
+                || !isTextFieldEmpty(txt_numberEmployee)
+                || !isTextFieldEmpty(txt_phone1Employee)
+                || !isTextFieldEmpty(txt_cpfEmployee)
+                || !isTextFieldEmpty(txt_roleEmployee)
+                || !isTextFieldEmpty(txt_rgEmployee)
+                || MaskFieldUtil.onlyDigitsValueFromString(txt_rgEmployee.getText()).length() != 9
+                || !Validation.validaCPF(MaskFieldUtil.onlyDigitsValue(txt_cpfEmployee))) {
+            FxDialogs.showWarning("Dados invalidos", "Verifique se alguma caixa de texto se encontra em branco ou com dados invalidos!");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private boolean verifyRegistryBeforeSaveLogin() {
+        if (!isTextFieldEmpty(txt_userLogin) || !isTextFieldEmpty(txt_passLogin)) {
+
+            FxDialogs.showWarning("Dados invalidos", "Verifique se alguma caixa de texto se encontra em branco ou com dados invalidos!");
+            return false;
+        } else if (cbox_typeLevelLogin.getSelectionModel().getSelectedIndex() == 0) {
+            FxDialogs.showWarning("Dados invalidos", "Selecione um nivel de usuario!");
+            return false;
+        }
+
+        return true;
+    }
 
     private void clearEmployeeDetails() {
         txt_nameEmployee.setText("");
@@ -2804,6 +2880,13 @@ public class DashboardController implements Initializable {
     }
 
     private void handlerButtonActionSaveEmployee(MouseEvent event) {
+
+        if (!actionEmployee.equals("Status") && !actionEmployee.equals("Login")) {
+            if (!verifyRegistryBeforeSaveEmployee()) {
+                return;
+            }
+        }
+
         setEmployeeActiveButtons(true, false, "node");
         switch (actionEmployee) {
             case "Editar":
@@ -2839,6 +2922,7 @@ public class DashboardController implements Initializable {
     }
 
     private void handlerButtonActionAddLogin(MouseEvent event) {
+
         setLoginActiveButtons(false, true, "Adicionar");
     }
 
@@ -2859,6 +2943,11 @@ public class DashboardController implements Initializable {
     }
 
     private void handlerButtonActionSaveLogin(MouseEvent event) {
+
+        if (!verifyRegistryBeforeSaveLogin()) {
+            return;
+        }
+
         setLoginActiveButtons(true, false, "node");
         switch (actionLogin) {
             case "Editar":
@@ -3085,7 +3174,6 @@ public class DashboardController implements Initializable {
         if (flag) dataObervableIngredient.add(ingredient);
     }
 
-
     private void handlerButtonActionCheckBoxProductType(MouseEvent event) {
         if (refreshCategory) {
             //cbox_categoryProduct.getItems().clear();
@@ -3110,7 +3198,6 @@ public class DashboardController implements Initializable {
             stage.setOnShowing(onShow());
             stage.setOnCloseRequest(onClose());
             stage.showAndWait();
-
 
 
         } catch (IOException ex) {
@@ -3200,6 +3287,11 @@ public class DashboardController implements Initializable {
     }
 
     private void handlerButtonActionSaveProduct(MouseEvent event) {
+
+        if (!verifyRegistryBeforeSaveProduct()) {
+            return;
+        }
+
         setProductActiveButtons(true, false, "node");
         switch (actionProduct) {
             case "Editar":
@@ -3233,6 +3325,19 @@ public class DashboardController implements Initializable {
         dataObervableProduct.addAll(listProduct);
     }*/
     //endregion
+
+    private boolean verifyRegistryBeforeSaveProduct() {
+        if (!isTextFieldEmpty(txt_nameProduct) || !isTextFieldEmpty(txt_weightProduct) || !isTextFieldEmpty(txt_finalPriceProduct)) {
+            FxDialogs.showWarning("Dados invalidos", "Verifique se alguma caixa de texto se encontra em branco ou com dados invalidos!");
+            return false;
+        } else if (cbox_categoryProduct.getSelectionModel().getSelectedIndex() == 0) {
+            FxDialogs.showWarning("Dados invalidos", "Selecione uma categoria valida!");
+            return false;
+        }else {
+            return true;
+        }
+
+    }
 
     private void clearProductDetails() {
         txt_nameProduct.setText("");
@@ -3346,13 +3451,36 @@ public class DashboardController implements Initializable {
     //endregion
 
     //region Util Methods
+    public boolean isCEPSizeValid(String text) {
+        if (text.length() != 8) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
+    public boolean isTextFieldEmpty(TextField textField) {
+        if (textField.getText().equals("")) {
+            System.out.println("EMPTY: " + textField.getId());
+            return false;
+        } else {
+            return true;
+        }
+    }
 
-    public boolean checkNumeric(String value)    {
-        String number=value.replaceAll("\\s+","");
-        for(int j = 0 ; j<number.length();j++){
-            if(!(((int)number.charAt(j)>=47 && (int)number.charAt(j)<=57)))
-            {
+    public boolean isPhoneValid(TextField textField){
+        String tx = MaskFieldUtil.onlyDigitsValue(textField);
+        if(tx.length() < 10){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public boolean checkNumeric(String value) {
+        String number = value.replaceAll("\\s+", "");
+        for (int j = 0; j < number.length(); j++) {
+            if (!(((int) number.charAt(j) >= 47 && (int) number.charAt(j) <= 57))) {
                 return false;
             }
         }
