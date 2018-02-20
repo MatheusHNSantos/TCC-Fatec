@@ -101,8 +101,6 @@ public class DashboardController implements Initializable {
 
     private Executor executor;
 
-    private int LAST_TAB_INDEX_SELECTED = -1;
-
     //region general objects
     @FXML
     public AnchorPane mainAnchorPane;
@@ -632,13 +630,15 @@ public class DashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-
-
         dashboardControllerReference = this;
 
         //region Setup Inicial
 
-        
+        if(user.getLevel() != 5){
+            paneTab.getTabs().remove(tabAdmin);
+        }
+
+        label_user.setText(upCaseFirst(user.getLogin())); //ativar para usar o a tela de login
 
         //region Executor to Query database
 
@@ -679,9 +679,6 @@ public class DashboardController implements Initializable {
 
 
         //dataModelTests = new ArrayList<>();
-
-        label_user.setText(upCaseFirst(user.getLogin())); //ativar para usar o a tela de login
-
 
         //endregion
 
