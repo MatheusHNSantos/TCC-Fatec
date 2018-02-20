@@ -676,13 +676,13 @@ public class DashboardController implements Initializable {
 
         //dataModelTests = new ArrayList<>();
 
-        label_user.setText(upCaseFirst(user.getLogin())); //ativar para usar o a tela de login
+        label_user.setText(upCaseFirst(user.getEmployee().getNamePerson())); //ativar para usar o a tela de login
 
 
         //endregion
 
         //region Tab "Inicio"
-        welcome_user.setText("Bem Vindo " + upCaseFirst(user.getLogin()) + "!");
+        welcome_user.setText("Bem Vindo " + upCaseFirst(user.getEmployee().getNamePerson()) + "!");
 
         //region Tab "Incio" Events
         hl_logout.setOnMouseClicked(this::handlerHyperlinkActionLogout);
