@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS person(
 
 
 
+
 CREATE TABLE IF NOT EXISTS phone( 
   id_phone int not null auto_increment,
   phone varchar(12) not null,
@@ -46,11 +47,12 @@ CREATE TABLE IF NOT EXISTS supplier(
 CREATE TABLE IF NOT EXISTS employee(
   id_employee int not null auto_increment,
   role varchar(255) not null,
+  cpf varchar(11) unique not null,
+  rg varchar(9) unique not null,
   id_person int not null,
   CONSTRAINT PRK_ID_EMPLOYEE PRIMARY KEY (id_employee),
   CONSTRAINT FRK_ID_EMPLOYEE FOREIGN KEY (id_person) REFERENCES person(id_person)
 );
-
 
 /* 4- operador 5- administrador*/
 CREATE TABLE IF NOT EXISTS user( 
@@ -182,3 +184,4 @@ insert into employee values (null, 'CEO', 1);
 
 insert into user values ('admin', 'admin', 1, true, 5);
 
+select * from employee

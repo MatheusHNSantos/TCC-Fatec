@@ -1,5 +1,7 @@
 package model.entity.person.customer;
 
+import controller.dashboard.DashboardController;
+import model.entity.log.Log;
 import model.entity.person.Person;
 import util.connection.ConnectionFactory;
 import util.dialogs.FxDialogs;
@@ -17,7 +19,8 @@ import java.util.ArrayList;
 public class Customer extends Person {
 
 	public Customer(int idPerson){
-        super(idPerson);
+        //super(idPerson);
+        this.setIdPerson(idPerson);
         this.Load();
 	}
 
@@ -25,7 +28,7 @@ public class Customer extends Person {
 
     }
 
-	private void Load(){
+	protected void Load(){
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -34,6 +37,7 @@ public class Customer extends Person {
 			stmt.setInt(1, this.getIdPerson());
 			rs = stmt.executeQuery();
 			rs.next();
+			super.Load();
         } catch (SQLException ex) {
 			FxDialogs.showException("Erro de Leitura! - Load",getClass().getSimpleName()+ " - " + ex.getMessage(),ex);
 		}
@@ -122,6 +126,21 @@ public class Customer extends Person {
 			ConnectionFactory.closeConnection(con,stmt);
 		}
 	}
+
+    public void newLog(String action){
+        switch (action){
+            case "save":
+                action = "Alterado";
+                break;
+            case "create":
+                action = "Cadastrado";
+                break;
+            case "status":
+                action = (this.getStatus()) ? "Ativado" : "Inativado";
+                break;
+        }
+        Log.gerarLog("Cliente " + this.getNamePerson() + " " + action);
+    }
 
 } // END class customer
 

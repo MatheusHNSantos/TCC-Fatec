@@ -1,5 +1,6 @@
 package model.entity.person.employee;
 
+import model.entity.log.Log;
 import model.entity.person.Person;
 import util.connection.ConnectionFactory;
 import util.dialogs.FxDialogs;
@@ -17,11 +18,14 @@ import java.util.ArrayList;
 public class Employee extends Person {
 	private int idEmployee;
 	private String role;
+	private String cpf;
+	private String rg;
+
 
     public static int LAST_ID_INSERT = -1;
 
 	public Employee(int idPerson, int idEmployee){
-		super(idPerson);
+		//super(idPerson);
 		this.setIdEmployee(idEmployee);
 		this.Load();
 
@@ -37,7 +41,7 @@ public class Employee extends Person {
 
 
 
-	private void Load(){
+	protected void Load(){
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -47,7 +51,10 @@ public class Employee extends Person {
 			rs = stmt.executeQuery();
 			rs.next();
 			this.setRole(rs.getString("role"));
+            this.setCpf(rs.getString("cpf"));
+            this.setRg(rs.getString("rg"));
 			this.setIdPerson(rs.getInt("id_person"));
+			super.Load();
 		} catch (SQLException ex) {
 			FxDialogs.showException("Erro de Leitura!",getClass().getSimpleName()+ " - " + ex.getMessage(),ex);
 		}
@@ -127,10 +134,12 @@ public class Employee extends Person {
 		PreparedStatement stmt = null;
 		try{
 			super.Save();
-			stmt = con.prepareStatement("UPDATE employee SET role = ?, id_person = ?  WHERE id_employee= ?");
+			stmt = con.prepareStatement("UPDATE employee SET role = ?, cpf = ?, rg = ?, id_person = ?  WHERE id_employee= ?");
 			stmt.setString(1, this.getRole());
-			stmt.setInt(2, this.getIdPerson());
-			stmt.setInt(3, this.getIdEmployee());
+            stmt.setString(2, this.getCpf());
+            stmt.setString(3, this.getRg());
+			stmt.setInt(4, this.getIdPerson());
+			stmt.setInt(5, this.getIdEmployee());
 			stmt.executeUpdate();
 		} catch (SQLException ex) {
 			FxDialogs.showException("Erro de Atualização!",getClass().getSimpleName()+ " - " + ex.getMessage(),ex);
@@ -145,9 +154,11 @@ public class Employee extends Person {
 		PreparedStatement stmt = null;
 		try{
 			super.Create();
-			stmt = con.prepareStatement("INSERT INTO employee (role,id_person) VALUES (?,?)", PreparedStatement.RETURN_GENERATED_KEYS);
-			stmt.setString(1, this.getRole());
-			stmt.setInt(2, this.getIdPerson());
+			stmt = con.prepareStatement("INSERT INTO employee (role,cpf,rg,id_person) VALUES (?,?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, this.getRole());
+            stmt.setString(2, this.getCpf());
+            stmt.setString(3, this.getRg());
+            stmt.setInt(4, this.getIdPerson());
 			stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             LAST_ID_INSERT = rs.next() ? rs.getInt(1) : -1;
@@ -176,6 +187,21 @@ public class Employee extends Person {
 		}
 	}
 
+    public void newLog(String action){
+        switch (action){
+            case "save":
+                action = "Alterado";
+                break;
+            case "create":
+                action = "Cadastrado";
+                break;
+            case "status":
+                action = (this.getStatus()) ? "Ativado" : "Inativado";
+                break;
+        }
+        Log.gerarLog("Funcionário " + this.getNamePerson() + " " + action);
+    }
+
 	public void setIdEmployee(int idEmployee){
 		this.idEmployee = idEmployee;
 	}
@@ -192,5 +218,20 @@ public class Employee extends Person {
 		return this.role;
 	}
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
 } // END class employee
 

@@ -41,7 +41,7 @@ public class Person {
 	public Person(){
 	}
 
-	private void Load(){
+	protected void Load(){
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
