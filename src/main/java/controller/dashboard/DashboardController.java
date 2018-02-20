@@ -638,7 +638,10 @@ public class DashboardController implements Initializable {
             paneTab.getTabs().remove(tabAdmin);
         }
 
-        label_user.setText(upCaseFirst(new Employee(user.getIdEmployee()).getNamePerson()));
+        label_user.setText(upCaseFirst(user.getEmployee().getNamePerson()));
+
+        System.out.println(upCaseFirst(user.getEmployee().getNamePerson()));
+
 
         //region Executor to Query database
 
@@ -683,7 +686,7 @@ public class DashboardController implements Initializable {
         //endregion
 
         //region Tab "Inicio"
-        welcome_user.setText("Bem Vindo " + upCaseFirst(user.getLogin()) + "!");
+        welcome_user.setText("Bem Vindo " + upCaseFirst(user.getEmployee().getNamePerson()) + "!");
 
         //region Tab "Incio" Events
         hl_logout.setOnMouseClicked(this::handlerHyperlinkActionLogout);
