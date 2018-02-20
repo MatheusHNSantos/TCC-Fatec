@@ -72,6 +72,71 @@ public class Ingredient {
 		return ingredientsList;
 	}
 
+    public static ArrayList<Ingredient> readAllActive(){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        ArrayList<Ingredient> ingredientsList = new ArrayList<>();
+        try{
+            stmt = con.prepareStatement("SELECT id_ingredient FROM ingredient where status_ingredient = true");
+            rs = stmt.executeQuery();
+            while(rs.next()){
+                Ingredient ingredient = new Ingredient(rs.getInt("id_ingredient"));
+                ingredientsList.add(ingredient);
+            }
+        } catch (SQLException ex) {
+            FxDialogs.showException("Erro de Leitura!","class: Ingredient"+ " - " + ex.getMessage(),ex);
+        }
+        finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+        return ingredientsList;
+    }
+
+	public static ArrayList<Ingredient> readByName(String name){
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		ArrayList<Ingredient> ingredientsList = new ArrayList<>();
+		try{
+			stmt = con.prepareStatement("SELECT id_ingredient FROM ingredient where name_ingredient LIKE ? ORDER BY name_ingredient ASC");
+			stmt.setString(1,"%"+name+"%");
+			rs = stmt.executeQuery();
+			while(rs.next()){
+				Ingredient ingredient = new Ingredient(rs.getInt("id_ingredient"));
+				ingredientsList.add(ingredient);
+			}
+		} catch (SQLException ex) {
+			FxDialogs.showException("Erro de Leitura!","class: Ingredient" + " - " + ex.getMessage(),ex);
+		}
+		finally{
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+		return ingredientsList;
+	}
+
+    public static ArrayList<Ingredient> readActiveByName(String name){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        ArrayList<Ingredient> ingredientsList = new ArrayList<>();
+        try{
+            stmt = con.prepareStatement("SELECT id_ingredient FROM ingredient where status_ingredient = true and name_ingredient LIKE ? ORDER BY name_ingredient ASC");
+            stmt.setString(1,"%"+name+"%");
+            rs = stmt.executeQuery();
+            while(rs.next()){
+                Ingredient ingredient = new Ingredient(rs.getInt("id_ingredient"));
+                ingredientsList.add(ingredient);
+            }
+        } catch (SQLException ex) {
+            FxDialogs.showException("Erro de Leitura!","class: Ingredient" + " - " + ex.getMessage(),ex);
+        }
+        finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+        return ingredientsList;
+    }
+
 	public void Save(){
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;

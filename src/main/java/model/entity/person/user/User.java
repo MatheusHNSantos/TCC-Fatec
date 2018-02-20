@@ -1,5 +1,6 @@
 package model.entity.person.user;
 
+import model.entity.person.employee.Employee;
 import util.connection.ConnectionFactory;
 import util.dialogs.FxDialogs;
 import util.exception.UserException;
@@ -20,8 +21,21 @@ public class User {
 	private int idEmployee =0;
 	private boolean status =false;
     private int level =0;
+    private Employee employee;
 
-	public User(String login) throws UserException {
+    public boolean isStatus() {
+        return status;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public User(String login) throws UserException {
 		this.setLogin(login);
 		this.Load();
 	}
@@ -53,7 +67,10 @@ public class User {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		try{
-			stmt = con.prepareStatement("SELECT * FROM user WHERE login = ?");
+			stmt = con.prepareStatement(
+			        "SELECT U.password, U.id_employee, U.status, U.level, E.id_person " +
+                            "FROM user U, employee E " +
+                            "WHERE U.id_employee = E.id_employee and U.login = ?");
 			stmt.setString(1, this.getLogin());
 			rs = stmt.executeQuery();
 			rs.next();
@@ -61,8 +78,8 @@ public class User {
 			this.setIdEmployee(rs.getInt("id_employee"));
             this.setStatus(rs.getBoolean("status"));
             this.setLevel(rs.getInt("level"));
-
-		} catch (SQLException ex) {
+            this.setEmployee(new Employee(rs.getInt("id_person"),rs.getInt("id_employee")));
+        } catch (SQLException ex) {
 			FxDialogs.showException("Erro de Leitura!",getClass().getSimpleName()+ " - " + ex.getMessage(),ex);
 		} catch (UserException ex) {
             FxDialogs.showException("Erro no usuário ou senha!",getClass().getSimpleName()+ " - " + ex.getMessage(),ex);
@@ -144,6 +161,29 @@ public class User {
 		}
 		return usersList;
 	}
+
+    public static ArrayList<User> readAllByStatus(boolean status){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        ArrayList<User> usersList = new ArrayList<>();
+        try{
+            stmt = con.prepareStatement("SELECT login FROM user where status = ?");
+            stmt.setBoolean(1, status);
+            rs = stmt.executeQuery();
+            while(rs.next()){
+                User user = new User(rs.getString("login"));
+                usersList.add(user);
+            }
+        } catch (SQLException ex) {
+            FxDialogs.showException("Erro de Leitura!","Class: User" + " - " + ex.getMessage(),ex);
+        } catch (UserException ex) {
+            FxDialogs.showException("Erro no usuário ou senha!","Class: User" + " - " + ex.getMessage(),ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+        return usersList;
+    }
 
 	public void Save(){
 		Connection con = ConnectionFactory.getConnection();

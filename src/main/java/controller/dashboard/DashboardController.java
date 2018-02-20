@@ -1545,13 +1545,44 @@ public class DashboardController implements Initializable {
         setCellsProduct(columnProductFinalPrice, "finalPriceProduct");
         setCellsProduct(columnProductWeight, "weightProduct");
         setCellsProduct(columnProductType, "productType");
-        setCellsProduct(columnProductStatus, "columnProductStatus");
+        setCellsProduct(columnProductStatus, "statusProduct");
 
         //endregion
 
         listProduct = Product.ReadAll();
         dataObervableProduct.addAll(listProduct);
         tview_product.setItems(dataObervableProduct);
+        //endregion
+
+        //region Combo Box Type Search Supplier
+        cbox_typeSearchProduct.getItems().addAll("Nome", "Categoria");
+        cbox_typeSearchProduct.getSelectionModel().select(0);
+        //endregion
+
+        //region Button Search Product
+        btn_searchProduct.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                dataObervableProduct.clear();
+
+                if (txt_searchProduct.getText().equals("")) {
+                    dataObervableProduct.addAll(Product.ReadAll());
+                    return;
+                }
+
+                switch (cbox_typeSearchProduct.getSelectionModel().getSelectedIndex()) {
+                    case 0:
+                        dataObervableProduct.addAll(Product.readByName(txt_searchProduct.getText()));
+                        break;
+
+                    case 1:
+                        dataObervableProduct.addAll(Product.readByCategory(txt_searchProduct.getText()));
+                        break;
+
+                }
+
+            }
+        });
         //endregion
 
         listProductType = ProductType.readAllToString();
@@ -1595,7 +1626,7 @@ public class DashboardController implements Initializable {
         btn_cancelProduct.setOnMouseClicked(this::handlerButtonActionCancelProduct); //Cancelar
         btn_saveProduct.setOnMouseClicked(this::handlerButtonActionSaveProduct); //Salvar
         tbtn_statusProduct.setOnMouseClicked(this::handlerButtonActionStatusProduct); //Seletor de Status
-        btn_searchProduct.setOnMouseClicked(this::handlerButtonActionSearchProduct);
+        //btn_searchProduct.setOnMouseClicked(this::handlerButtonActionSearchProduct);
         cbox_categoryProduct.setOnMouseClicked(this::handlerButtonActionCheckBoxProductType);
         //endregion
 
@@ -3063,11 +3094,11 @@ public class DashboardController implements Initializable {
         else tbtn_statusProduct.setText("Inativo");
     }
 
-    private void handlerButtonActionSearchProduct(MouseEvent event) {
+    /*private void handlerButtonActionSearchProduct(MouseEvent event) {
         listProduct = Product.ReadAll();
         dataObervableProduct.clear();
         dataObervableProduct.addAll(listProduct);
-    }
+    }*/
     //endregion
 
     private void clearProductDetails() {
