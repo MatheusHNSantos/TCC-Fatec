@@ -638,7 +638,7 @@ public class DashboardController implements Initializable {
             paneTab.getTabs().remove(tabAdmin);
         }
 
-        label_user.setText(upCaseFirst(user.getLogin())); //ativar para usar o a tela de login
+        label_user.setText(upCaseFirst(new Employee(user.getIdEmployee()).getNamePerson()));
 
         //region Executor to Query database
 
