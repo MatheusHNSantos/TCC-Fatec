@@ -180,8 +180,9 @@ insert into phone values (null, '1140028922', 2);
 
 insert into customer values(2);
 
-insert into employee values (null, 'CEO', 1);
+insert into employee values (null, 'CEO', '12345678901','123456789',1);
 
 insert into user values ('admin', 'admin', 1, true, 5);
 
-select * from employee
+insert into log values (1,1,'19/02/2018','Editou o cliente josé');
+

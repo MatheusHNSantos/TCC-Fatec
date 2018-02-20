@@ -1,5 +1,6 @@
 package model.entity.product;
 
+import model.entity.log.Log;
 import util.connection.ConnectionFactory;
 import util.dialogs.FxDialogs;
 
@@ -220,6 +221,21 @@ public class Product {
 		finally{
 			ConnectionFactory.closeConnection(con,stmt);
 		}
+	}
+
+	public void newLog(String action){
+		switch (action){
+			case "save":
+				action = "Alterado";
+				break;
+			case "create":
+				action = "Cadastrado";
+				break;
+			case "status":
+				action = (this.getStatusProduct()) ? "Ativado" : "Inativado";
+				break;
+		}
+		Log.gerarLog("Produto " + this.getNameProduct() + " " + action);
 	}
 
 	public ArrayList<Ingredient> getListIngredients() {

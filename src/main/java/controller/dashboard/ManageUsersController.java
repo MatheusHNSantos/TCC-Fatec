@@ -22,6 +22,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.entity.log.Log;
 import model.entity.person.employee.Employee;
 import model.entity.person.user.User;
 import util.dialogs.FxDialogs;
@@ -232,7 +233,7 @@ public class ManageUsersController implements Initializable {
         switch (actionUser ){
             case "Editar":
                 try{
-                    saveUser();
+                    saveUser("save");
                 } catch (UserException ex) {
                     FxDialogs.showException("Erro ao salvar Usuário",ex.getClass() +  " - " + ex.getMessage(),ex);
                 }
@@ -305,7 +306,7 @@ public class ManageUsersController implements Initializable {
         }
     }
 
-    private void saveUser() throws UserException {
+    private void saveUser(String actionLog) throws UserException {
         //Código banco aqui
         User user = new User(idUserEmployeeSelected);
         String level = cbox_levelUser.getSelectionModel().getSelectedItem();
@@ -325,6 +326,7 @@ public class ManageUsersController implements Initializable {
             user.setStatus(tbtn_statusUser.isSelected());
 
             user.SaveByIdEmployee();
+            user.newLog(actionLog);
 
         }else{
             if(user.getLogin().isEmpty() && user.getPassword().isEmpty()){
@@ -346,7 +348,7 @@ public class ManageUsersController implements Initializable {
 
     private void setStatusUser() throws UserException {
         //Código banco aqui
-        saveUser();
+        saveUser("status");
     }
     //endregion
 

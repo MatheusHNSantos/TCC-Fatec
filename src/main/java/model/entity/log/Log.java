@@ -24,6 +24,10 @@ public class Log {
     private static int LAST_ID_INSERT = -1;
     private User user;
 
+    /*public interface ResetLog {
+        public void resetLog(Log log);
+    }*/
+
     public Log(){
     }
 
@@ -59,7 +63,7 @@ public class Log {
         ResultSet rs = null;
         ArrayList<Log> logsList = new ArrayList<>();
         try{
-            stmt = con.prepareStatement("SELECT id_log FROM log");
+            stmt = con.prepareStatement("SELECT id_log FROM log ORDER BY id_log DESC");
             rs = stmt.executeQuery();
             while(rs.next()){
                 Log log = new Log(rs.getInt("id_log"));
@@ -81,7 +85,7 @@ public class Log {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try{
-            stmt = con.prepareStatement("SELECT id_log FROM log where log_date = ?");
+            stmt = con.prepareStatement("SELECT id_log FROM log where log_date = ? ORDER BY id_log DESC");
             stmt.setString(1, date);
             rs = stmt.executeQuery();
             while(rs.next()){
@@ -124,6 +128,11 @@ public class Log {
         log.setLogDate(CalendarUtil.getCurrentDateBR());
         log.setUserAction(text + " as " + CalendarUtil.getCurrentHourBR());
         log.create();
+        log.setUser(new User(log.getIdUser()));
+
+       /* ResetLog rl = DashboardController.dashboardControllerReference;
+        rl.resetLog(log);*/
+
     }
 
     public void setIdLog(int idLog){

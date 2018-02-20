@@ -1,5 +1,6 @@
 package model.entity.sale;
 
+import model.entity.log.Log;
 import model.entity.product.Product;
 import util.connection.ConnectionFactory;
 import util.dialogs.FxDialogs;
@@ -275,6 +276,7 @@ public class Sale {
 
 		return lastID;
 	}
+
 
     public List<Product> getProductsList() {
         return productsList;

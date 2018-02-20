@@ -78,7 +78,7 @@ public class Ingredient {
         ResultSet rs = null;
         ArrayList<Ingredient> ingredientsList = new ArrayList<>();
         try{
-            stmt = con.prepareStatement("SELECT id_ingredient FROM ingredient where ");
+            stmt = con.prepareStatement("SELECT id_ingredient FROM ingredient where status_ingredient = true");
             rs = stmt.executeQuery();
             while(rs.next()){
                 Ingredient ingredient = new Ingredient(rs.getInt("id_ingredient"));

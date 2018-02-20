@@ -92,7 +92,9 @@ import static util.Functions.UpCase.upCaseFirst;
  * @author Matheus Henrique
  */
 
-public class DashboardController implements Initializable {
+public class DashboardController implements Initializable/*, Log.ResetLog */{
+
+
 
     public static DashboardController dashboardControllerReference;
 
@@ -617,6 +619,8 @@ public class DashboardController implements Initializable {
     /**
      * tab "Log" Objects
      */
+    @FXML
+    private Tab tabLog;
 
     //region @FXML Objects
     @FXML
@@ -635,6 +639,7 @@ public class DashboardController implements Initializable {
 
     //region Normal objects
     public ObservableList<Log> dataObservableLog;
+
     //endregion
 
     //endregion
@@ -1643,6 +1648,12 @@ public class DashboardController implements Initializable {
         /**
          * tab "Log" ButtonAction
          */
+        tabLog.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                dashboardControllerReference.resetLog();
+            }
+        });
 
 
         //region TableView
@@ -1654,8 +1665,10 @@ public class DashboardController implements Initializable {
         setCellsLog(columnUserLog, "user");
         //endregion
 
+
         dataObservableLog.addAll(Log.readAll());
         tview_log.setItems(dataObservableLog);
+        //endregion
 
         //region Date Picker
         datePicker_log.setEditable(false);
@@ -1701,34 +1714,21 @@ public class DashboardController implements Initializable {
 
             }
         });
+        //endregion
 
         //region Button Search Employee
         btn_filterLog.setText("Limpar Filtro");
         btn_filterLog.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                /*dataObservableLog.clear();
-                if (datePicker_log.getValue() == null) {
-                    dataObservableLog.addAll(Log.readAll());
-                    return;
-                }
-                String pattern = "dd/MM/yyyy";
-                DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
-
-                dataObservableLog.addAll(Log.readByDate(dateFormatter.format(datePicker_log.getValue())));*/
-
-                datePicker_log.setValue(null);
-                dataObservableLog.clear();
-                dataObservableLog.addAll(Log.readAll());
-
-
+                dashboardControllerReference.resetLog();
             }
         });
         //endregion
 
-        //endregion
 
-        //endregion
+
+
 
 
 
@@ -1739,6 +1739,19 @@ public class DashboardController implements Initializable {
 
     }
 
+    public void resetLog() {
+        datePicker_log.setValue(null);
+        dataObservableLog.clear();
+        dataObservableLog.addAll(Log.readAll());
+    }
+
+    /*@Override
+    public void resetLog(Log log) {
+        datePicker_log.setValue(null);
+        dataObservableLog.addAll(log);
+        System.out.println(log.getUserAction());
+    }
+*/
     //region Setup Initial methods
     private final Label createLabel() {
         Label label = new Label();
@@ -1747,6 +1760,8 @@ public class DashboardController implements Initializable {
         label.setAlignment(Pos.CENTER);
         return label;
     }
+
+
 
     //region date & time (include tests)
     class hora implements ActionListener {
@@ -1796,6 +1811,7 @@ public class DashboardController implements Initializable {
     //region Tab "Inicio" methods
     private void handlerHyperlinkActionLogout(MouseEvent event) {
         try {
+            Log.gerarLog(user.getLogin() + " saiu do sistema ");
             Controller.closeApplication(event);
             LoginController.loader().show();
         } catch (IOException e) {
@@ -1805,6 +1821,7 @@ public class DashboardController implements Initializable {
 
     private void handlerHyperlinkActionFinish(MouseEvent event) {
         try {
+            Log.gerarLog(user.getLogin() + " saiu do sistema ");
             Controller.closeApplication(event);
         } catch (Exception e) {
             e.printStackTrace();
@@ -2346,6 +2363,7 @@ public class DashboardController implements Initializable {
 
     //region Tab "Vendas" methods
     private void resetTableViewSale() {
+        dataObservableSale.clear();
         dataObservableSale.addAll(Sale.ReadAll());
         txt_searchSale.clear();
     }
@@ -3406,6 +3424,7 @@ public class DashboardController implements Initializable {
         listIngredient.addAll(dataObervableIngredient);
         product.setStatusProduct(tbtn_statusProduct.isSelected());
         product.Save();
+        product.newLog("save");
         ProductIngredient.saveListProductIngredient(listIngredient, idProductSelected);
 
         resetTableViewProduct();
@@ -3424,6 +3443,7 @@ public class DashboardController implements Initializable {
         listIngredient.addAll(dataObervableIngredient);
         product.setStatusProduct(tbtn_statusProduct.isSelected());
         product.Create();
+        product.newLog("create");
         ProductIngredient.saveListProductIngredient(listIngredient, product.getIdProduct());
 
         resetTableViewProduct();
@@ -3434,6 +3454,7 @@ public class DashboardController implements Initializable {
         Product product = new Product(idProductSelected);
         product.setStatusProduct(tbtn_statusProduct.isSelected());
         product.Save();
+        product.newLog("status");
 
         resetTableViewProduct();
 
@@ -3446,7 +3467,8 @@ public class DashboardController implements Initializable {
     /**
      * tab "Log" methods
      */
-    //endregion
+
+     //endregion
 
     //endregion
 
