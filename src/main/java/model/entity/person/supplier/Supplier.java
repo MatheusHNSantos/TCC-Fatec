@@ -1,5 +1,6 @@
 package model.entity.person.supplier;
 
+import model.entity.log.Log;
 import model.entity.person.Person;
 import util.connection.ConnectionFactory;
 import util.dialogs.FxDialogs;
@@ -18,13 +19,14 @@ public class Supplier extends Person {
 	private String cnpj;
 
 	public Supplier(int idPerson, String cnpj){
-		super(idPerson);
+		//super(idPerson);
 		this.setCnpj(cnpj);
 		this.Load();
 	}
 
     public Supplier(int idPerson){
-        super(idPerson);
+        //super(idPerson);
+        this.setIdPerson(idPerson);
         this.LoadByPerson();
     }
 
@@ -32,7 +34,7 @@ public class Supplier extends Person {
 
     }
 
-	private void Load(){
+	protected void Load(){
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -42,6 +44,7 @@ public class Supplier extends Person {
 			rs = stmt.executeQuery();
 			rs.next();
 			this.setIdPerson(rs.getInt("id_person"));
+			super.Load();
 		} catch (SQLException ex) {
 			FxDialogs.showException("Erro de Leitura! - Load",getClass().getSimpleName()+ " - " + ex.getMessage(),ex);
 		}
@@ -60,6 +63,7 @@ public class Supplier extends Person {
             rs = stmt.executeQuery();
             rs.next();
             this.setCnpj(rs.getString("cnpj"));
+            super.Load();
         } catch (SQLException ex) {
             FxDialogs.showException("Erro de Leitura! - LoadByPerson",getClass().getSimpleName()+ " - " + ex.getMessage(),ex);
         }
@@ -185,6 +189,21 @@ public class Supplier extends Person {
 			ConnectionFactory.closeConnection(con,stmt);
 		}
 	}
+
+    public void newLog(String action){
+        switch (action){
+            case "save":
+                action = "Alterado";
+                break;
+            case "create":
+                action = "Cadastrado";
+                break;
+            case "status":
+                action = (this.getStatus()) ? "Ativado" : "Inativado";
+                break;
+        }
+        Log.gerarLog("Fornecedor " + this.getNamePerson() + " " + action);
+    }
 
 	public void setCnpj(String cnpj){
 		this.cnpj = cnpj;

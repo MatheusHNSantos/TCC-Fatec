@@ -1,5 +1,6 @@
 package model.entity.person.user;
 
+import model.entity.log.Log;
 import model.entity.person.employee.Employee;
 import util.connection.ConnectionFactory;
 import util.dialogs.FxDialogs;
@@ -101,6 +102,7 @@ public class User {
                 this.setLogin(rs.getString("login"));
                 this.setStatus(rs.getBoolean("status"));
                 this.setLevel(rs.getInt("level"));
+                this.setEmployee(new Employee(this.getIdEmployee()));
             }
 		} catch (SQLException ex) {
 			FxDialogs.showException("Erro de Leitura!",getClass().getSimpleName()+ " - " + ex.getMessage(),ex);
@@ -256,6 +258,21 @@ public class User {
 			ConnectionFactory.closeConnection(con,stmt);
 		}
 	}
+
+    public void newLog(String action){
+        switch (action){
+            case "save":
+                action = "Alterado";
+                break;
+            case "create":
+                action = "Cadastrado";
+                break;
+            case "status":
+                action = (this.getStatus()) ? "Ativado" : "Inativado";
+                break;
+        }
+        Log.gerarLog("Usuário " + this.getLogin() + " " + action);
+    }
 
 	public void setLogin(String login) throws UserException {
         if (login.isEmpty()) {

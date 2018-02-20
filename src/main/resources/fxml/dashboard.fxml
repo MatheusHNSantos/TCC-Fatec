@@ -646,15 +646,15 @@
                                           </AnchorPane>
                                       </content>
                                     </Tab>
-                                    <Tab closable="false" text="Log">
+                                    <Tab fx:id="tabLog" closable="false" text="Log">
                                       <content>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                              <children>
                                                 <TableView fx:id="tview_log" layoutX="14.0" layoutY="64.0" prefHeight="553.0" prefWidth="552.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="64.0">
                                                    <columns>
-                                                      <TableColumn fx:id="row11" prefWidth="135.0" text="Data" />
-                                                      <TableColumn fx:id="row21" prefWidth="250.0" text="Ação" />
-                                                      <TableColumn fx:id="row31" prefWidth="166.0" text="Usuário" />
+                                                      <TableColumn fx:id="columnDateLog" prefWidth="135.0" text="Data" />
+                                                      <TableColumn fx:id="columnActionLog" prefWidth="250.0" text="Ação" />
+                                                      <TableColumn fx:id="columnUserLog" prefWidth="166.0" text="Usuário" />
                                                    </columns>
                                                 </TableView>
                                                 <AnchorPane layoutX="91.0" layoutY="21.0" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="845.0">

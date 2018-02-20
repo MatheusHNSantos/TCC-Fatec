@@ -15,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.entity.log.Log;
 import model.entity.person.user.User;
 import util.dialogs.FxDialogs;
 import util.exception.UserException;
@@ -102,6 +103,7 @@ public class LoginController implements Initializable{
 
                     Controller.closeApplication(event);
                     DashboardController.setUser(user);
+                    Log.gerarLog(user.getLogin() + " entrou no sistema ");
                     DashboardController.loader().show();
 
                 }else{

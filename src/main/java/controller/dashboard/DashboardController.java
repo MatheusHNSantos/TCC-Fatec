@@ -22,6 +22,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 import jeanderson.br.util.MaskFormatter;
+import model.entity.log.Log;
+import util.Calendar.CalendarUtil;
 import util.MaskField.MaskFieldUtil;
 import com.jfoenix.controls.*;
 import controller.Controller;
@@ -91,6 +93,7 @@ import static util.Functions.UpCase.upCaseFirst;
  */
 
 public class DashboardController implements Initializable {
+
 
     public Thread executorAuxThread;
 
@@ -618,12 +621,31 @@ public class DashboardController implements Initializable {
      * tab "Log" Objects
      */
     @FXML
-    private TableView<?> tview_log; //Tabela de logs
+    private Tab tabLog;
+
+    //region @FXML Objects
+    @FXML
+    private TableView<Log> tview_log; //Tabela de logs
+    @FXML
+    private TableColumn<Log, Log> columnDateLog;
+    @FXML
+    private TableColumn<Log, Log> columnActionLog;
+    @FXML
+    private TableColumn<Log, Log> columnUserLog;
     @FXML
     private JFXButton btn_filterLog; //Botão Filtrar Log
     @FXML
     private JFXDatePicker datePicker_log; //Date Picker Log
     //endregion
+
+    //region Normal objects
+    public ObservableList<Log> dataObservableLog;
+
+    //endregion
+
+    //endregion
+
+
     //endregion
 
     //region SimpleDataFormat
@@ -633,13 +655,6 @@ public class DashboardController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-        tabOrder.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                System.out.println("FIRED");
-            }
-        });
 
         dashboardControllerReference = this;
 
@@ -673,6 +688,10 @@ public class DashboardController implements Initializable {
         Timeline timeline = new Timeline(frame);
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
+
+
+        label_user.setText(upCaseFirst(user.getEmployee().getNamePerson())); //ativar para usar o a tela de login
+
 
         //endregion
 
@@ -1044,7 +1063,9 @@ public class DashboardController implements Initializable {
         tview_customer.setItems(dataObservableCustomer);
         //endregion
 
-        //region Supplier Details
+        //endregion
+
+        //region Customer Details
 
         showCustomerDetails(null);
 
@@ -1055,30 +1076,7 @@ public class DashboardController implements Initializable {
 
         //endregion
 
-        //region Events
-        btn_editCustomer.setOnMouseClicked(this::handlerButtonActionEditCustomer);
-        btn_newCustomer.setOnMouseClicked(this::handlerButtonActionNewCustomer);
-        btn_cancelCustomer.setOnMouseClicked(this::handlerButtonActionCancelCustomer);
-        btn_saveCustomer.setOnMouseClicked(this::handlerButtonActionSaveCustomer);
-        tbtn_statusCustomer.setOnMouseClicked(this::handlerButtonActionStatusCustomer);
-        txt_cepCustomer.setOnKeyPressed(this::handleronKeyEnterPressedCEP);
-        //endregion
-
-        //endregion
-
         //region Tab Selection Event
-
-        //region ON TAB WORK
-
-        //region get ID NODE example
-        /*
-        Node source = (Node)event.getSource();
-
-        Node target = (Node)event.getSource();
-
-        String id = target / source .getId();
-        */
-        //endregion
 
         //Listen for clicks when Search by Telephone is being used
         Platform.runLater(new Runnable() {
@@ -1121,42 +1119,15 @@ public class DashboardController implements Initializable {
             }
         });
 
-
-        //region "Working but not all"
-        /*
-        tabCustomer.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean t1) {
-
-                if(comeBackSearchByTelephone && !t1){
-
-                    SingleSelectionModel<Tab> selectionModel = paneTab.getSelectionModel();
-                    selectionModel.select(tabCustomer);
-
-
-                    if (FxDialogs.showConfirmYesNo("Deseja cancelar o cadastro do cliente?", "", FxDialogs.NO, FxDialogs.YES).equals(FxDialogs.YES)){
-                        tfield_telephone.clear();
-                        comeBackSearchByTelephone = false;
-                        clearCustomerDetails();
-                        setCustomerActiveButtons(true, false, "node");
-                        resetTableViewCustomer();
-                        System.out.println("Cadastro hibrido cancelado");
-                    }else{
-                        Platform.runLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                selectionModel.clearAndSelect(2);
-                            }
-                        });
-                    }
-                }
-            }
-        });
-        */
         //endregion
 
-        //endregion
-
+        //region Events
+        btn_editCustomer.setOnMouseClicked(this::handlerButtonActionEditCustomer);
+        btn_newCustomer.setOnMouseClicked(this::handlerButtonActionNewCustomer);
+        btn_cancelCustomer.setOnMouseClicked(this::handlerButtonActionCancelCustomer);
+        btn_saveCustomer.setOnMouseClicked(this::handlerButtonActionSaveCustomer);
+        tbtn_statusCustomer.setOnMouseClicked(this::handlerButtonActionStatusCustomer);
+        txt_cepCustomer.setOnKeyPressed(this::handleronKeyEnterPressedCEP);
         //endregion
 
         //endregion
@@ -1627,6 +1598,85 @@ public class DashboardController implements Initializable {
         /**
          * tab "Log" ButtonAction
          */
+        tabLog.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                resetLog();
+            }
+        });
+
+
+        //region TableView
+        dataObservableLog = FXCollections.observableArrayList();
+
+        //region columns declarations
+        setCellsLog(columnDateLog, "date");
+        setCellsLog(columnActionLog, "action");
+        setCellsLog(columnUserLog, "user");
+        //endregion
+
+
+        dataObservableLog.addAll(Log.readAll());
+        tview_log.setItems(dataObservableLog);
+        //endregion
+
+        //region Date Picker
+        datePicker_log.setEditable(false);
+        datePicker_log.setConverter(new StringConverter<LocalDate>() {
+            String pattern = "dd/MM/yyyy";
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
+
+            {
+                //datePicker_sale.setPromptText(pattern.toLowerCase());
+            }
+
+            @Override
+            public String toString(LocalDate localDate) {
+                if (localDate != null) {
+                    return dateFormatter.format(localDate);
+                } else {
+                    return "";
+                }
+            }
+
+            @Override
+            public LocalDate fromString(String string) {
+                if (string != null && !string.isEmpty()) {
+                    return LocalDate.parse(string, dateFormatter);
+                } else {
+                    return null;
+                }
+            }
+        });
+        datePicker_log.setOnAction(new EventHandler<javafx.event.ActionEvent>() {
+            @Override
+            public void handle(javafx.event.ActionEvent actionEvent) {
+                if (datePicker_log.getValue() != null) {
+
+                    String pattern = "dd/MM/yyyy";
+                    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
+
+                    dataObservableLog.clear();
+                    dataObservableLog.addAll(Log.readByDate(dateFormatter.format(datePicker_log.getValue())));
+
+                }
+
+
+            }
+        });
+        //endregion
+
+        //region Button Search Employee
+        btn_filterLog.setText("Limpar Filtro");
+        btn_filterLog.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                dashboardControllerReference.resetLog();
+            }
+        });
+        //endregion
+
+
         //endregion
 
         //endregion
@@ -1641,6 +1691,7 @@ public class DashboardController implements Initializable {
         label.setAlignment(Pos.CENTER);
         return label;
     }
+
 
     //region date & time (include tests)
     class hora implements ActionListener {
@@ -1690,6 +1741,7 @@ public class DashboardController implements Initializable {
     //region Tab "Inicio" methods
     private void handlerHyperlinkActionLogout(MouseEvent event) {
         try {
+            Log.gerarLog(user.getLogin() + " saiu do sistema ");
             Controller.closeApplication(event);
             LoginController.loader().show();
         } catch (IOException e) {
@@ -2132,6 +2184,7 @@ public class DashboardController implements Initializable {
 
         customer.setAddress(address);
         customer.Save();
+        customer.newLog("save");
 
 
         if (listPhone.size() > 0) {
@@ -2208,6 +2261,7 @@ public class DashboardController implements Initializable {
         customer.setPhone2(phone2);
 
         customer.Create();
+        customer.newLog("create");
 
         propertyPerson.setValue(customer);
 
@@ -2219,6 +2273,7 @@ public class DashboardController implements Initializable {
         Customer customer = new Customer(idCustomerSelected);
         customer.setStatus(tbtn_statusCustomer.isSelected());
         customer.Save();
+        customer.newLog("status");
 
         resetTableViewCustomer();
     }
@@ -2237,6 +2292,7 @@ public class DashboardController implements Initializable {
 
     //region Tab "Vendas" methods
     private void resetTableViewSale() {
+        dataObservableSale.clear();
         dataObservableSale.addAll(Sale.ReadAll());
         txt_searchSale.clear();
     }
@@ -2278,14 +2334,14 @@ public class DashboardController implements Initializable {
         });
 
 
-         executorAuxThread = new Thread(new Runnable() {
+        executorAuxThread = new Thread(new Runnable() {
             @Override
             public void run() {
                 executor.execute(task);
             }
         });
 
-         executorAuxThread.run();
+        executorAuxThread.run();
 
 
     }
@@ -2480,6 +2536,7 @@ public class DashboardController implements Initializable {
 
         supplier.setAddress(address);
         supplier.Save();
+        supplier.newLog("save");
 
 
         if (listPhone.size() > 0) {
@@ -2523,6 +2580,7 @@ public class DashboardController implements Initializable {
 
 
         supplier.Create();
+        supplier.newLog("create");
 
 
         this.resetTableViewSupplier();
@@ -2533,6 +2591,7 @@ public class DashboardController implements Initializable {
         Supplier supplier = new Supplier(idSupplierSelected);
         supplier.setStatus(tbtn_statusSupplier.isSelected());
         supplier.Save();
+        supplier.newLog("status");
 
         this.resetTableViewSupplier();
 
@@ -2552,9 +2611,13 @@ public class DashboardController implements Initializable {
     private void showEmployeeDetails(Employee employee) {
         setEmployeeActiveButtons(true, false, "");
         if (employee != null) {
+            select_loginStatus.setDisable(false);
+            select_typeStatusFunc.setDisable(false);
             btn_editEmployee.setDisable(false);
             txt_nameEmployee.setText(employee.getNamePerson());
             txt_roleEmployee.setText(employee.getRole());
+            txt_cpfEmployee.setText(employee.getCpf());
+            txt_rgEmployee.setText(employee.getRg());
             txt_cepEmployee.setText(employee.getAddress().getCep());
             txt_bairroEmployee.setText(employee.getAddress().getNeighborhood());
             txt_streetEmployee.setText(employee.getAddress().getStreet());
@@ -2657,6 +2720,8 @@ public class DashboardController implements Initializable {
         txt_nameEmployee.setText("");
         txt_roleEmployee.setText("");
         txt_cepEmployee.setText("");
+        txt_cpfEmployee.setText("");
+        txt_rgEmployee.setText("");
         txt_bairroEmployee.setText("");
         txt_streetEmployee.setText("");
         txt_numberEmployee.setText("");
@@ -2670,6 +2735,9 @@ public class DashboardController implements Initializable {
         select_loginStatus.setSelected(false);
         select_typeStatusFunc.setSelected(false);
         select_typeStatusFunc.setText("Inativo");
+        select_loginStatus.setDisable(true);
+        select_typeStatusFunc.setDisable(true);
+
         this.selectLoginStatusAction();
         idEmployeeSelected = 0;
         btn_editEmployee.setDisable(true);
@@ -2739,11 +2807,17 @@ public class DashboardController implements Initializable {
         this.clearEmployeeDetails();
         select_typeStatusFunc.setSelected(true);
         select_typeStatusFunc.setText("Ativo");
+        //select_loginStatus.setSelected(false);
+        // select_loginStatus.setText("Desabilitado");
+        select_loginStatus.setDisable(true);
+        //select_typeStatusFunc.setDisable(false);
 
     }
 
     private void handlerButtonActionEditEmployee(MouseEvent event) {
         setEmployeeActiveButtons(false, true, "Editar");
+        select_loginStatus.setDisable(false);
+        select_typeStatusFunc.setDisable(false);
     }
 
     private void handlerButtonActionStatusEmployee(MouseEvent event) {
@@ -2877,6 +2951,8 @@ public class DashboardController implements Initializable {
 
         employee.setNamePerson(txt_nameEmployee.getText());
         employee.setRole(txt_roleEmployee.getText());
+        employee.setCpf(MaskFieldUtil.onlyDigitsValue(txt_cpfEmployee));
+        employee.setRg(MaskFieldUtil.onlyDigitsValue(txt_rgEmployee));
         employee.setStatus(select_typeStatusFunc.isSelected());
         address.setCep(MaskFieldUtil.onlyDigitsValue(txt_cepEmployee));
         address.setNeighborhood(txt_bairroEmployee.getText());
@@ -2887,6 +2963,7 @@ public class DashboardController implements Initializable {
 
         employee.setAddress(address);
         employee.Save();
+        employee.newLog("save");
 
 
         if (listPhone.size() > 0) {
@@ -2917,6 +2994,8 @@ public class DashboardController implements Initializable {
 
         employee.setNamePerson(txt_nameEmployee.getText());
         employee.setRole(txt_roleEmployee.getText());
+        employee.setCpf(MaskFieldUtil.onlyDigitsValue(txt_cpfEmployee));
+        employee.setRg(MaskFieldUtil.onlyDigitsValue(txt_rgEmployee));
         employee.setStatus(select_typeStatusFunc.isSelected());
         address.setCep(MaskFieldUtil.onlyDigitsValue(txt_cepEmployee));
         address.setNeighborhood(txt_bairroEmployee.getText());
@@ -2932,6 +3011,7 @@ public class DashboardController implements Initializable {
         employee.setPhone2(phone2);
 
         employee.Create();
+        employee.newLog("create");
 
 
         this.resetTableViewEmployee();
@@ -2943,6 +3023,7 @@ public class DashboardController implements Initializable {
         Employee employee = new Employee(idPersonEmployeeSelected, idEmployeeSelected);
         employee.setStatus(select_typeStatusFunc.isSelected());
         employee.Save();
+        employee.newLog("status");
 
         this.resetTableViewEmployee();
 
@@ -2975,6 +3056,7 @@ public class DashboardController implements Initializable {
 
 
             user.SaveByIdEmployee();
+            user.newLog("save");
 
         } else {
             if (user.getLogin().isEmpty() && user.getPassword().isEmpty()) {
@@ -3011,6 +3093,7 @@ public class DashboardController implements Initializable {
 
         if (!user.getLogin().isEmpty() || !user.getPassword().isEmpty() || !level.equals("")) {
             user.Create();
+            user.newLog("create");
         } else {
             if (user.getLogin().isEmpty() && user.getPassword().isEmpty()) {
                 throw new UserException("Digite um login e uma senha!") {
@@ -3282,6 +3365,7 @@ public class DashboardController implements Initializable {
         listIngredient.addAll(dataObervableIngredient);
         product.setStatusProduct(tbtn_statusProduct.isSelected());
         product.Save();
+        product.newLog("save");
         ProductIngredient.saveListProductIngredient(listIngredient, idProductSelected);
 
         resetTableViewProduct();
@@ -3300,6 +3384,7 @@ public class DashboardController implements Initializable {
         listIngredient.addAll(dataObervableIngredient);
         product.setStatusProduct(tbtn_statusProduct.isSelected());
         product.Create();
+        product.newLog("create");
         ProductIngredient.saveListProductIngredient(listIngredient, product.getIdProduct());
 
         resetTableViewProduct();
@@ -3310,6 +3395,7 @@ public class DashboardController implements Initializable {
         Product product = new Product(idProductSelected);
         product.setStatusProduct(tbtn_statusProduct.isSelected());
         product.Save();
+        product.newLog("status");
 
         resetTableViewProduct();
 
@@ -3322,6 +3408,12 @@ public class DashboardController implements Initializable {
     /**
      * tab "Log" methods
      */
+
+    public void resetLog() {
+        datePicker_log.setValue(null);
+        dataObservableLog.clear();
+        dataObservableLog.addAll(Log.readAll());
+    }
     //endregion
 
     //endregion
@@ -3567,6 +3659,54 @@ public class DashboardController implements Initializable {
 
                         case "statusIngredient":
                             text = (ingredient.getStatusIngredient()) ? "Ativo" : "Inativo";
+                            break;
+
+                        default:
+                            break;
+
+                    }
+                    label.setText(text);
+                    setGraphic(graphic);
+                }
+            }
+        });
+    }
+
+    private void setCellsLog(TableColumn<Log, Log> columnDefault, String opc) {
+
+        columnDefault.setCellValueFactory(cellData ->
+                new ReadOnlyObjectWrapper<>(cellData.getValue()));
+
+        columnDefault.setCellFactory(column -> new TableCell<Log, Log>() {
+            private VBox graphic;
+            private Label label;
+
+            // Anonymous constructor:
+            {
+                graphic = new VBox();
+                label = createLabel();
+                graphic.getChildren().addAll(label);
+                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+            }
+
+            @Override
+            public void updateItem(Log log, boolean empty) {
+                if (log == null) {
+                    setGraphic(null);
+                } else {
+                    String text = "";
+
+                    switch (opc) {
+                        case "date":
+                            text = log.getLogDate();
+                            break;
+
+                        case "action":
+                            text = log.getUserAction();
+                            break;
+
+                        case "user":
+                            text = log.getUser().getLogin();
                             break;
 
                         default:

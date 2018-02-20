@@ -14,6 +14,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import model.entity.log.Log;
 
 /**
  *
@@ -26,9 +27,21 @@ public class Main extends Application {
 
         try {
            LoginController.loader().show();
+
+
         }
         catch (Exception ex) {
             ex.printStackTrace();
+        }
+    }
+
+
+
+
+    @Override
+    public void stop() throws Exception {
+        if(DashboardController.getUser() != null){
+            Log.gerarLog(DashboardController.getUser().getLogin() + " saiu do sistema ");
         }
     }
 

@@ -20,6 +20,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import jeanderson.br.util.MaskFormatter;
+import model.entity.log.Log;
 import model.entity.person.Person;
 import model.entity.person.customer.Customer;
 import model.entity.product.Product;
@@ -92,9 +93,11 @@ public class FinishSaleController implements Initializable {
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 switch (newValue.intValue()){
                     case 0:
+                        txt_paymentAmmount.setText("");
                         txt_paymentAmmount.setDisable(false);
                         break;
                     case 1:
+                        txt_paymentAmmount.setText(lbl_totalPriceOnFinishSaleDialog.getText());
                         txt_paymentAmmount.setDisable(true);
                         break;
                 }
@@ -188,7 +191,7 @@ public class FinishSaleController implements Initializable {
             @Override
             public void handle(WorkerStateEvent event) {
                 if(task.getValue()){
-
+                    Log.gerarLog("Venda de ID: " + Sale.LAST_ID_SALE + " " + "Finalizada");
                     Controller.closeApplication(eventOutTask);
                 }else{
                     FxDialogs.showWarning("Erro ao salvar", "Senta e chora");
