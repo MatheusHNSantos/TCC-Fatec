@@ -72,8 +72,36 @@ public class Product {
 		ResultSet rs = null;
 		ArrayList<Product> productsList = new ArrayList<>();
 		try{
-			stmt = con.prepareStatement("SELECT * FROM product where id_product_type = ?");
+			stmt = con.prepareStatement("SELECT id_product FROM product where id_product_type = ?");
 			stmt.setInt(1,category);
+			rs = stmt.executeQuery();
+			while(rs.next()){
+				Product product = new Product(rs.getInt("id_product"));
+				product.setListIngredients(ProductIngredient.ReadAllIngredients(product.getIdProduct()));
+				product.setProductType(new ProductType(product.getIdProductType()));
+				productsList.add(product);
+			}
+		} catch (SQLException ex) {
+			FxDialogs.showException("Erro de Leitura!","class: Product" + " - " + ex.getMessage(),ex);
+		}
+		finally{
+			ConnectionFactory.closeConnection(con, stmt, rs);
+		}
+		return productsList;
+	}
+
+	public static ArrayList<Product> readByCategory(String category){
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		ArrayList<Product> productsList = new ArrayList<>();
+		try{
+			stmt = con.prepareStatement(
+			        "SELECT P.id_product " +
+                            "FROM product P, product_type PT " +
+                            "where P.id_product_type = PT.id_product_type and PT.name_product_type LIKE ? " +
+                            "ORDER BY P.name_product ASC");
+			stmt.setString(1, "%"+category+"%");
 			rs = stmt.executeQuery();
 			while(rs.next()){
 				Product product = new Product(rs.getInt("id_product"));
@@ -96,7 +124,7 @@ public class Product {
 		ResultSet rs = null;
 		ArrayList<Product> productsList = new ArrayList<>();
 		try{
-			stmt = con.prepareStatement("SELECT * FROM product where name_product LIKE ? ORDER BY id_product_type ASC");
+			stmt = con.prepareStatement("SELECT id_product FROM product where name_product LIKE ? ORDER BY id_product_type ASC");
 			stmt.setString(1,"%"+name+"%");
 			rs = stmt.executeQuery();
 			while(rs.next()){

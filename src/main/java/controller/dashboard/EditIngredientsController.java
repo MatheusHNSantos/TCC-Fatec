@@ -8,6 +8,7 @@ import controller.Controller;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -129,6 +130,22 @@ public class EditIngredientsController implements Initializable {
                 }
             }
         });
+
+
+        //region Button Search Ingredient
+        btn_searchIngredient.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                dataObervableIngredient.clear();
+
+                if (txt_searchIngredient.getText().equals("")) {
+                    dataObervableIngredient.addAll(Ingredient.ReadAll());
+                    return;
+                }
+                dataObervableIngredient.addAll(Ingredient.readByName(txt_searchIngredient.getText()));
+            }
+        });
+        //endregion
 
         listIngredient = Ingredient.ReadAll();
         dataObervableIngredient.addAll(listIngredient);

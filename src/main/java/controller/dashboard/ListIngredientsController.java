@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXTextField;
 import controller.Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -46,7 +47,22 @@ public class ListIngredientsController implements Initializable {
 
         columnIngredientName.setCellValueFactory(new PropertyValueFactory<>("nameIngredient"));
 
-        listIngredient = Ingredient.ReadAll();
+        //region Button Search Ingredient
+        btn_searchIngredient.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                dataObervableIngredient.clear();
+
+                if (txt_searchIngredient.getText().equals("")) {
+                    dataObervableIngredient.addAll(Ingredient.readAllActive());
+                    return;
+                }
+                dataObervableIngredient.addAll(Ingredient.readActiveByName(txt_searchIngredient.getText()));
+            }
+        });
+        //endregion
+
+        listIngredient = Ingredient.readAllActive();
         dataObervableIngredient.addAll(listIngredient);
         tview_ingredient.setItems(dataObervableIngredient);
 
