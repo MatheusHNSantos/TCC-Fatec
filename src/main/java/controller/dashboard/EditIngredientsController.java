@@ -139,16 +139,17 @@ public class EditIngredientsController implements Initializable {
                 dataObervableIngredient.clear();
 
                 if (txt_searchIngredient.getText().equals("")) {
-                    dataObervableIngredient.addAll(Ingredient.ReadAll());
+                    if(viewInactive) dataObervableIngredient.addAll(Ingredient.ReadAll());
+                    else dataObervableIngredient.addAll(Ingredient.readAllActive());
                     return;
                 }
-                dataObervableIngredient.addAll(Ingredient.readByName(txt_searchIngredient.getText()));
+                if(viewInactive) dataObervableIngredient.addAll(Ingredient.readByName(txt_searchIngredient.getText()));
+                else dataObervableIngredient.addAll(Ingredient.readActiveByName(txt_searchIngredient.getText()));
             }
         });
         //endregion
 
-        listIngredient = Ingredient.ReadAll();
-        dataObervableIngredient.addAll(listIngredient);
+        this.resetTableViewIngredient();
         tview_ingredients.setItems(dataObervableIngredient);
         //endregion
 
@@ -162,7 +163,8 @@ public class EditIngredientsController implements Initializable {
     }
 
     private void resetTableViewIngredient(){
-        listIngredient = Ingredient.ReadAll();
+        if(viewInactive) listIngredient = Ingredient.ReadAll();
+        else listIngredient = Ingredient.readAllActive();
         dataObervableIngredient.clear();
         dataObervableIngredient.addAll(listIngredient);
     }
@@ -210,6 +212,7 @@ public class EditIngredientsController implements Initializable {
     //region defaut methods
     private void handlerButtonActionCB(MouseEvent event) {
         viewInactive = !viewInactive;
+        this.resetTableViewIngredient();
     }
     private void setIngredientActiveButtons(Boolean bool_1, Boolean bool_2,String action){
         group_dataIngredient.setDisable(bool_1);

@@ -6,8 +6,11 @@ import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
 import controller.Controller;
 import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -35,13 +38,12 @@ public class ManageUsersController implements Initializable {
     public static final String title = "Gerenciar Usuários";
 
     //region @FXML Objects
-    @FXML    private JFXComboBox<?> cbox_exibitionModeUser; //Combo Box de tipo de Pesquisa de usuarios
+    @FXML    private JFXComboBox<String> cbox_exibitionModeUser; //Combo Box de tipo de Pesquisa de usuarios
     @FXML    private JFXComboBox<String> cbox_levelUser; //Combo Box de tipo de nível de usuario
     @FXML    private JFXToggleButton tbtn_statusUser; //Seletor de Status do usuario
     @FXML    private TableView<User> tview_users; //Tabela de usuarios
     @FXML    private Label lbl_nameEmployee; //TextField de campo para nome de funcionario
     @FXML    private Label lbl_roleEmployee; //TextField de campo para função de funcionario
-    @FXML    private JFXTextField txt_nameCostumer; //TextField de campo para nome cliente
     @FXML    private JFXTextField txt_userLogin; //TextField de campo para usuário
     @FXML    private JFXTextField txt_passUser; //TextField de campo para senha
     @FXML    private JFXButton btn_saveUser; //Botão Salvar
@@ -82,101 +84,10 @@ public class ManageUsersController implements Initializable {
 
         //region columns declarations
         columnUserLogin.setCellValueFactory(new PropertyValueFactory<>("login"));
+        setCells(columnUserLevel, "level");
+        setCells(columnUserEmployee, "name_employee");
+        setCells(columnUserStatus, "status");
 
-        //column Level
-        columnUserLevel.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnUserLevel.setCellFactory(column -> new TableCell<User, User>() {
-
-            private VBox graphic ;
-            private Label labelLevel ;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelLevel = createLabel();
-                graphic.getChildren().addAll(labelLevel);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(User user, boolean empty) {
-                if (user == null) {
-                    setGraphic(null);
-                } else {
-                    int level = user.getLevel();
-                    if(level == 5){
-                        labelLevel.setText("Administrador");
-                    }else if (level == 4){
-                        labelLevel.setText("Operador");
-                    }
-
-                    setGraphic(graphic);
-                }
-            }
-        });
-
-        //column Employee
-        columnUserEmployee.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnUserEmployee.setCellFactory(column -> new TableCell<User, User>() {
-
-            private VBox graphic ;
-            private Label labelEmployee ;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelEmployee = createLabel();
-                graphic.getChildren().addAll(labelEmployee);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(User user, boolean empty) {
-                if (user == null) {
-                    setGraphic(null);
-                } else {
-                    Employee employee = new Employee(user.getIdEmployee());
-                    employee = new Employee(employee.getIdPerson(), employee.getIdEmployee());
-                    labelEmployee.setText(employee.getNamePerson());
-                    setGraphic(graphic);
-                }
-            }
-        });
-
-        //column Status
-        columnUserStatus.setCellValueFactory(cellData ->
-                new ReadOnlyObjectWrapper<>(cellData.getValue()));
-        columnUserStatus.setCellFactory(column -> new TableCell<User, User>() {
-
-            private VBox graphic ;
-            private Label labelStatus ;
-
-            // Anonymous constructor:
-            {
-                graphic = new VBox();
-                labelStatus = createLabel();
-                graphic.getChildren().addAll(labelStatus);
-                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
-            }
-
-            @Override
-            public void updateItem(User user, boolean empty) {
-                if (user == null) {
-                    setGraphic(null);
-                } else {
-                    boolean status = user.getStatus();
-                    if(status)
-                        labelStatus.setText("Ativo");
-                    else
-                        labelStatus.setText("Inativo");
-
-
-                    setGraphic(graphic);
-                }
-            }
-        });
         //endregion
 
         listUser = User.ReadAll();
@@ -197,6 +108,34 @@ public class ManageUsersController implements Initializable {
                 (observable, oldValue, newValue) -> showUserDetails(newValue));
         //endregion
 
+        //region Combo Box Type Search Supplier
+        cbox_exibitionModeUser.getItems().addAll("Todos", "Ativos", "Inativos");
+        cbox_exibitionModeUser.getSelectionModel().select(0);
+        //endregion
+
+        //region Button Search Users
+        cbox_exibitionModeUser.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                dataObervableUser.clear();
+
+                switch (cbox_exibitionModeUser.getSelectionModel().getSelectedIndex()) {
+                    case 0:
+                        dataObervableUser.addAll(User.ReadAll());
+                        break;
+                    case 1:
+                        dataObervableUser.addAll(User.readAllByStatus(true));
+                        break;
+                    case 2:
+                        dataObervableUser.addAll(User.readAllByStatus(false));
+                        break;
+
+                }
+            }
+        });
+
+        //endregion
+
 
         //region Events
         btn_saveUser.setOnMouseClicked(this::handlerButtonActionSaveUser);
@@ -205,6 +144,56 @@ public class ManageUsersController implements Initializable {
         tbtn_statusUser.setOnMouseClicked(this::handlerButtonActionStatusUser);
         //endregion
 
+    }
+
+    private void setCells(TableColumn<User, User> columnDefault, String opc) {
+
+        columnDefault.setCellValueFactory(cellData ->
+                new ReadOnlyObjectWrapper<>(cellData.getValue()));
+
+        columnDefault.setCellFactory(column -> new TableCell<User, User>() {
+            private VBox graphic;
+            private Label label;
+
+            // Anonymous constructor:
+            {
+                graphic = new VBox();
+                label = createLabel();
+                graphic.getChildren().addAll(label);
+                setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+            }
+
+            @Override
+            public void updateItem(User user, boolean empty) {
+                if (user == null) {
+                    setGraphic(null);
+                } else {
+                    String text = "";
+
+                    switch (opc) {
+                        case "level":
+                            if(user.getLevel() == 5){
+                                text = "Administrador";
+                            }else if (user.getLevel() == 4){
+                                text = "Operador";
+                            }break;
+
+                        case "name_employee":
+                            text = user.getEmployee().getNamePerson();
+                            break;
+
+                        case "status":
+                            text = (user.getStatus()) ? "Ativo" : "Inativo";
+                            break;
+                        default:
+                            break;
+
+                    }
+                    label.setText(text);
+                    setGraphic(graphic);
+                }
+            }
+        });
     }
 
     private final Label createLabel() {

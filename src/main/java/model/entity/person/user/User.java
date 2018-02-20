@@ -162,6 +162,29 @@ public class User {
 		return usersList;
 	}
 
+    public static ArrayList<User> readAllByStatus(boolean status){
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        ArrayList<User> usersList = new ArrayList<>();
+        try{
+            stmt = con.prepareStatement("SELECT login FROM user where status = ?");
+            stmt.setBoolean(1, status);
+            rs = stmt.executeQuery();
+            while(rs.next()){
+                User user = new User(rs.getString("login"));
+                usersList.add(user);
+            }
+        } catch (SQLException ex) {
+            FxDialogs.showException("Erro de Leitura!","Class: User" + " - " + ex.getMessage(),ex);
+        } catch (UserException ex) {
+            FxDialogs.showException("Erro no usuário ou senha!","Class: User" + " - " + ex.getMessage(),ex);
+        } finally{
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+        return usersList;
+    }
+
 	public void Save(){
 		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement stmt = null;
