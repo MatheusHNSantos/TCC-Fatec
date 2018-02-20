@@ -2027,7 +2027,9 @@ public class DashboardController implements Initializable {
                 || !isTextFieldEmpty(txt_streetCustomer)
                 || !isTextFieldEmpty(txt_numberCustomer)
                 || !isCEPSizeValid(MaskFieldUtil.onlyDigitsValue(txt_cepCustomer))
-                || !isTextFieldEmpty(txt_phone1Customer)) {
+                || !isTextFieldEmpty(txt_phone1Customer)
+                || !isPhoneValid(txt_phone1Customer)
+                || MaskFieldUtil.onlyDigitsValue(txt_phone1Customer).length() < 10) {
             FxDialogs.showWarning("Dados invalidos", "Verifique se alguma caixa de texto se encontra em branco ou com dados invalidos!");
             return false;
         } else {
@@ -3316,6 +3318,15 @@ public class DashboardController implements Initializable {
             System.out.println("EMPTY: " + textField.getId());
             return false;
         } else {
+            return true;
+        }
+    }
+
+    public boolean isPhoneValid(TextField textField){
+        String tx = MaskFieldUtil.onlyDigitsValue(textField);
+        if(tx.length() < 10){
+            return false;
+        }else{
             return true;
         }
     }
